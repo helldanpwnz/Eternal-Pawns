@@ -1,7 +1,0 @@
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.csproj.AssemblyReference.cache
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.GeneratedMSBuildEditorConfig.editorconfig
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.AssemblyInfoInputs.cache
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.AssemblyInfo.cs
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.csproj.CoreCompileInputs.cache
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Assemblies\Finite Population.dll
-E:\SteamLibrary\steamapps\common\RimWorld\Mods\Finite Population\Source\obj\Debug\Finite Population.dll
