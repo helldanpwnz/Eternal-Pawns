@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <FP_SettingsCategory>Eternal Pawns</FP_SettingsCategory>
+
+  <FP_EnableFactionLimit>Enable faction veteran limit</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>If enabled, new pawns are not saved once the limit is reached. Returning veterans are always saved.</FP_EnableFactionLimitTooltip>
+  <FP_FactionVeteranLimit>Faction veteran limit: {0}</FP_FactionVeteranLimit>
+  <FP_FactionVeteranLimitTooltip>Maximum number of veterans in the pool.\n\nSet to 0 so the mod saves ONLY the characters you manually marked (with a star).</FP_FactionVeteranLimitTooltip>
+  
+  <FP_ShowVIPButton>Show “Remember pawn” button</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>Shows the “Memory” button on the Social tab. Lets you manually save any NPC to the veteran database (bypassing limits and quest-pawn filters) and also write notes for a specific pawn if needed.</FP_ShowVIPButtonTooltip>
+
+  <FP_VeteranRecallCooldownDays>Rest days after returning: {0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>Delay before a veteran can be recalled again.</FP_VeteranRecallCooldownDaysTooltip>
+
+  <FP_ForcedFreezeDays>Days until freeze: {0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>After how many idle days to “put the pawn to sleep” for performance.</FP_ForcedFreezeDaysTooltip>
+
+  <FP_VeteranRecallChance>Veteran recall chance: {0}%</FP_VeteranRecallChance>
+  <FP_VeteranRecallChanceTooltip>Chance to use a veteran instead of generating a new pawn.</FP_VeteranRecallChanceTooltip>
+
+  <FP_DeathChanceMultiplier>Old-age death multiplier per year: {0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>Annual death chance for all veterans older than 60:\n\n• Archotech: 0.05%\n• Ultratech: 0.5%\n• Spacer: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Tribal: 7.5%\n\nThis slider scales the chances listed above.</FP_DeathDesc>
+
+  <FP_DiseaseChanceMultiplier>Annual disease chance multiplier: {0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>Chance to get a chronic disease per year (age 60+):\n\n• Archotech: 0.25%\n• Ultratech: 0.5%\n• Spacer: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Tribal: 10.0%\n\nThis slider scales the chances listed above.</FP_DiseaseDesc>
+
+  <FP_ImplantChanceMultiplier>Annual implant chance multiplier: {0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>HOW IT WORKS:\n1. Treatment (All tech levels): If a veteran is missing an arm, leg, or eye, the faction will install a prosthetic of its tech level (Tribal — wooden, Empire — bionic).\n2. Upgrade (Industrial+): 10% chance per year to replace a healthy body part with a more efficient implant.\n\nThis slider scales the overall probability of these events.</FP_ImplantDesc>
+
+  <FP_GeneChanceMultiplier>Annual gene chance multiplier: {0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>10% chance for a gene (Spacer+), 5% chance for an Arch-gene (Ultra+).</FP_GeneChanceTooltip>
+
+  <FP_AnomalyChanceMultiplier>Annual mutation chance multiplier: {0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>5% chance of contact with the Void (Tribal and Medieval).</FP_AnomalyChanceTooltip>
+
+  <FP_EnableDebugLogs>Enable detailed logs</FP_EnableDebugLogs>
+  <FP_EnableDebugLogsTooltip>Print events to the console (~).</FP_EnableDebugLogsTooltip>
+
+  <FP_ClearDatabaseButton>CLEAR VETERAN DATABASE</FP_ClearDatabaseButton>
+  <FP_ClearDatabaseConfirm>Are you absolutely sure you want to completely delete all veterans from the database? This action cannot be undone!</FP_ClearDatabaseConfirm>
+  <FP_DatabaseClearedMessage>Veteran database cleared successfully!</FP_DatabaseClearedMessage>
+  
+  
+  
+  
+  
+  
+  <FP_MemoryHeader>Memory: {0}</FP_MemoryHeader>
+
+  <FP_StatusVeteran><b>Familiar</b>\nI have met them before. Somewhere in the world they walk their own path, and who knows when we’ll meet again.</FP_StatusVeteran>
+  <FP_StatusPinned><b>I’ll remember you</b>\nYou have singled this person out from the crowd. If they leave these lands alive, their story will continue.</FP_StatusPinned>
+  <FP_StatusUnknown><b>Take a closer look</b>\nIn this harsh world it’s easy to vanish without a trace. Pick them out of the crowd in hopes of meeting again.</FP_StatusUnknown>
+
+  <FP_AlreadyInHistory>Already in history</FP_AlreadyInHistory>
+  <FP_AlreadyInHistoryMsg>This character has already become part of the world’s history.</FP_AlreadyInHistoryMsg>
+  <FP_ForgetPawn>Forget</FP_ForgetPawn>
+  <FP_RememberPawn>Remember pawn</FP_RememberPawn>
+  
+  <FP_PersonalNotes>Personal notes:</FP_PersonalNotes>
+  <FP_MemoryButton>Memory</FP_MemoryButton>
+  
+  
+  
+  
+  
+</LanguageData>

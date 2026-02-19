@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <FP_SettingsCategory>永恆棋子</FP_SettingsCategory>
+
+  <FP_EnableFactionLimit>啟用每個派系的老兵上限</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>啟用後，達到上限時將不再保存新棋子。回歸的老兵一律會被保存。</FP_EnableFactionLimitTooltip>
+  <FP_FactionVeteranLimit>每個派系的老兵上限：{0}</FP_FactionVeteranLimit>
+  <FP_FactionVeteranLimitTooltip>老兵池中的最大老兵數量。\n\n將其設為 0，模組只會保存你手動標記（用星號）的角色。</FP_FactionVeteranLimitTooltip>
+  
+  <FP_ShowVIPButton>顯示「記住角色」按鈕</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>在「社交」分頁顯示「記憶」按鈕。允許你將任何 NPC 手動保存到老兵資料庫（繞過上限與任務棋子的過濾），並在需要時為特定棋子撰寫備註。</FP_ShowVIPButtonTooltip>
+
+  <FP_VeteranRecallCooldownDays>回歸後休整天數：{0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>老兵再次被召回前的等待時間。</FP_VeteranRecallCooldownDaysTooltip>
+
+  <FP_ForcedFreezeDays>進入休眠前天數：{0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>閒置多少天後，為優化效能將棋子「休眠」。</FP_ForcedFreezeDaysTooltip>
+
+  <FP_VeteranRecallChance>召回老兵機率：{0}%</FP_VeteranRecallChance>
+  <FP_VeteranRecallChanceTooltip>以老兵取代產生新棋子的機率。</FP_VeteranRecallChanceTooltip>
+
+  <FP_DeathChanceMultiplier>每年因年老死亡倍率：{0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>所有 60 歲以上老兵的年度死亡機率：\n\n• Archotech：0.05%\n• Ultratech：0.5%\n• Spacer：1.5%\n• Industrial：2.5%\n• Medieval：5.0%\n• Tribal：7.5%\n\n此滑桿將等比例縮放上述機率。</FP_DeathDesc>
+
+  <FP_DiseaseChanceMultiplier>每年罹病機率倍率：{0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>每年獲得慢性疾病的機率（60+ 歲）：\n\n• Archotech：0.25%\n• Ultratech：0.5%\n• Spacer：2.5%\n• Industrial：5.0%\n• Medieval：7.5%\n• Tribal：10.0%\n\n此滑桿將等比例縮放上述機率。</FP_DiseaseDesc>
+
+  <FP_ImplantChanceMultiplier>每年植入物機率倍率：{0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>運作方式：\n1. 治療（所有科技等級）：若老兵缺少手臂、腿或眼睛，派系會安裝其科技等級相應的義體（部落——木製，帝國——生化義肢）。\n2. 升級（工業+）：每年有 10% 機率將健康的身體部位替換為更高效的植入物。\n\n此滑桿將等比例縮放這些事件的總體機率。</FP_ImplantDesc>
+
+  <FP_GeneChanceMultiplier>每年基因機率倍率：{0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>獲得基因的機率為 10%（太空+），獲得 Arch 基因的機率為 5%（超科+）。</FP_GeneChanceTooltip>
+
+  <FP_AnomalyChanceMultiplier>每年突變機率倍率：{0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>與虛空接觸的機率為 5%（部落與中世紀）。</FP_AnomalyChanceTooltip>
+
+  <FP_EnableDebugLogs>啟用詳細日誌</FP_EnableDebugLogs>
+  <FP_EnableDebugLogsTooltip>將事件輸出到主控台（~）。</FP_EnableDebugLogsTooltip>
+
+  <FP_ClearDatabaseButton>清空老兵資料庫</FP_ClearDatabaseButton>
+  <FP_ClearDatabaseConfirm>你確定要從資料庫中徹底刪除所有老兵嗎？此操作無法還原！</FP_ClearDatabaseConfirm>
+  <FP_DatabaseClearedMessage>老兵資料庫已成功清空！</FP_DatabaseClearedMessage>
+  
+  
+  
+  
+  
+  
+  <FP_MemoryHeader>記憶：{0}</FP_MemoryHeader>
+
+  <FP_StatusVeteran><b>熟面孔</b>\n我以前見過他／她。世界某處他／她正走在自己的道路上，誰又知道我們何時會再相見。</FP_StatusVeteran>
+  <FP_StatusPinned><b>我會記住你</b>\n你從人群中挑出了這個人。若他／她能活著離開這片土地，他／她的故事將會延續。</FP_StatusPinned>
+  <FP_StatusUnknown><b>多留意</b>\n在這殘酷的世界裡，人很容易無聲無息地消失。把他／她從人群中挑出來，期待將來還能再見。</FP_StatusUnknown>
+
+  <FP_AlreadyInHistory>已記錄在歷史中</FP_AlreadyInHistory>
+  <FP_AlreadyInHistoryMsg>該角色已成為世界歷史的一部分。</FP_AlreadyInHistoryMsg>
+  <FP_ForgetPawn>遺忘</FP_ForgetPawn>
+  <FP_RememberPawn>記住角色</FP_RememberPawn>
+  
+  <FP_PersonalNotes>個人備註：</FP_PersonalNotes>
+  <FP_MemoryButton>記憶</FP_MemoryButton>
+  
+  
+  
+  
+  
+</LanguageData>
