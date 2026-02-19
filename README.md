@@ -1,6 +1,6 @@
 # Eternal Pawns
 
-The main goal of the "Eternal Pawns" mod is to transform the endless stream of randomly generated NPCs into a logical, living population, where characters aren't deleted by the whim of RNG but live in the world until they die of old age—or by your hand. Instead of RimWorld creating a new "Raider #452" and forgetting them forever after the battle, the mod saves surviving characters and brings them back to you again over time, simulating their life and development in the background.
+The main goal of the "Eternal Pawns" mod is to transform the endless stream of randomly generated NPCs into a logical, living population, where characters aren't deleted by the whim of RNG but live in the world until they die of old age or by your hand. Instead of RimWorld creating a new "Raider #452" and forgetting them forever after the battle, the mod saves surviving characters and brings them back to you again over time, simulating their life and development in the background.
 
 ## Veteran System (Saving and Summoning)
 
