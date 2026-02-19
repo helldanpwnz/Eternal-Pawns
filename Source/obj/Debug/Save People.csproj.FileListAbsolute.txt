@@ -1,0 +1,14 @@
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Assemblies\Save People.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.GeneratedMSBuildEditorConfig.editorconfig
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.AssemblyInfoInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.AssemblyInfo.cs
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Save People\Source\obj\Debug\Save People.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Assemblies\Save People.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.csproj.AssemblyReference.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.GeneratedMSBuildEditorConfig.editorconfig
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.AssemblyInfoInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.AssemblyInfo.cs
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.csproj.CoreCompileInputs.cache
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\Save People.dll
