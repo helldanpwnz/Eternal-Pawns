@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework> <!-- RimWorld 1.4 uses 4.7.2, 1.5 uses 4.8. If targeting 1.5, change to net48 -->
     <LangVersion>latest</LangVersion>
-    <OutputPath>..\Assemblies\</OutputPath>
+    <OutputPath>..\1.6\Assemblies\</OutputPath>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <DebugType>none</DebugType>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>

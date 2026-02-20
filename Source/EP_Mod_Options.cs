@@ -88,7 +88,7 @@ public override void DoSettingsWindowContents(Rect inRect)
 
     // --- Заморозка ---
     listing.Label(label: "FP_ForcedFreezeDays".Translate(settings.forcedFreezeDays), tooltip: "FP_ForcedFreezeDaysTooltip".Translate());
-    settings.forcedFreezeDays = (int)listing.Slider(settings.forcedFreezeDays, 1f, 100f);
+    settings.forcedFreezeDays = (int)listing.Slider(settings.forcedFreezeDays, 0f, 100f);
 
     listing.GapLine();
 

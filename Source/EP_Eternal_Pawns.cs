@@ -191,7 +191,7 @@ if (manualVeteranPins != null)
         {
             base.WorldComponentTick();
             VeteranInputQueue.ProcessQueue(this);
-            if (Find.TickManager.TicksGame % 36 == 0) ProcessYearlyVeteranAging();
+            if (Find.TickManager.TicksGame % 3600000 == 0) ProcessYearlyVeteranAging();
         }
 
 public void AddVeteran(Pawn p)
@@ -296,8 +296,8 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
 
                     CleanPawnHealth(p, true);
 
-                    // p.ageTracker.AgeBiologicalTicks += 3600000; ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
-                   // p.ageTracker.AgeChronologicalTicks += 3600000;ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
+                   p.ageTracker.AgeBiologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
+                   p.ageTracker.AgeChronologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
 
                     if (p.skills != null)
                     {
@@ -320,22 +320,23 @@ int age = p.ageTracker.AgeBiologicalYears;
 float deathChance = (age >= 60) ? 0.05f : 0f;
 
 if (deathChance > 0f && p.Faction != null)
-{
-    float techMult = 1f;
-    TechLevel tech = p.Faction.def.techLevel;
+            {
+                // Быстрый переключатель тех-уровня (Switch expression)
+                float techMult = p.Faction.def.techLevel switch
+                {
+                    TechLevel.Animal => 2.0f,
+                    TechLevel.Neolithic => 1.5f,
+                    TechLevel.Medieval => 1.0f,
+                    TechLevel.Industrial => 0.5f,
+                    TechLevel.Spacer => 0.3f,
+                    TechLevel.Ultra => 0.1f,
+                    TechLevel.Archotech => 0.01f,
+                    _ => 1.0f
+                };
 
-    // Настройка множителей для каждого тех-уровня:
-    if (tech == TechLevel.Animal)     techMult = 2.0f; // Дикари
-    if (tech == TechLevel.Neolithic)  techMult = 1.5f; // Племя
-    if (tech == TechLevel.Medieval)   techMult = 1.0f; // Средневековье
-    if (tech == TechLevel.Industrial) techMult = 0.5f; // Индустриальная эра
-    if (tech == TechLevel.Spacer)     techMult = 0.3f; // Космос
-    if (tech == TechLevel.Ultra)      techMult = 0.1f; // Ультратех (Империя)
-    if (tech == TechLevel.Archotech)  techMult = 0.01f; // Архотек
-
-    deathChance *= techMult;
-    deathChance *= FPMod.Settings.deathChanceMultiplier;
-}
+                deathChance *= techMult;
+                deathChance *= FPMod.Settings.deathChanceMultiplier;
+            }
 
 if (Rand.Value < deathChance)
 {
@@ -470,22 +471,26 @@ private void ProcessVeteranGenes(Pawn p)
 		
 private void ProcessVeteranAgeDiseases(Pawn p)
 {
-    // Проверка возраста (начинаем с 60 лет)
+    // 1. Быстрая проверка возраста
     if (p.ageTracker.AgeBiologicalYears < 60) return;
 
-    float techMult = 1f;
-    TechLevel tech = (p.Faction != null) ? p.Faction.def.techLevel : TechLevel.Industrial;
+    // 2. Определяем тех-уровень (безопасно достаем через ?. или используем Industrial по умолчанию)
+    TechLevel tech = p.Faction?.def.techLevel ?? TechLevel.Industrial;
 
-    // Твоя красивая табличка множителей:
-    if (tech == TechLevel.Animal)     techMult = 3.0f; 
-    if (tech == TechLevel.Neolithic)  techMult = 2.0f; 
-    if (tech == TechLevel.Medieval)   techMult = 1.5f; 
-    if (tech == TechLevel.Industrial) techMult = 1.0f; 
-    if (tech == TechLevel.Spacer)     techMult = 0.5f; 
-    if (tech == TechLevel.Ultra)      techMult = 0.1f; 
-    if (tech == TechLevel.Archotech)  techMult = 0.05f; 
+    // 3. Оптимизированный расчет множителя через switch (совет Dusk)
+    float techMult = tech switch
+    {
+        TechLevel.Animal     => 3.0f,
+        TechLevel.Neolithic  => 2.0f,
+        TechLevel.Medieval   => 1.5f,
+        TechLevel.Industrial => 1.0f,
+        TechLevel.Spacer     => 0.5f,
+        TechLevel.Ultra      => 0.1f,
+        TechLevel.Archotech  => 0.05f,
+        _                    => 1.0f
+    };
 
-    // Базовый шанс 5% в год * тех-уровень * настройки
+    // 4. Проверка шанса
     if (Rand.Value < (0.05f * techMult * FPMod.Settings.diseaseChanceMultiplier))
     {
         // УНИВЕРСАЛЬНЫЙ ПОИСК: берем все болезни, которые прописаны расе как "возрастные"
@@ -662,12 +667,13 @@ private void ProcessVeteranAnomaly(Pawn p)
             Faction f = request.Faction;
             if (f == null || !veteranPool.TryGetValue(f.loadID, out var group) || group.pawns.Count == 0) return null;
 
-            if (Find.TickManager.TicksGame != lastTickIssued)
-            {
-                pawnsIssuedThisTickIDs.Clear();
-                lastTickIssued = Find.TickManager.TicksGame;
-            }
-			
+if (Find.TickManager.TicksGame != lastTickIssued)
+{
+    pawnsIssuedThisTickIDs.Clear();
+    lastTickIssued = Find.TickManager.TicksGame;
+}
+
+// Достаем валидатор ОДИН РАЗ перед циклом (Оптимизация!)
 Predicate<Pawn> validator = null;
 try {
     var trav = Traverse.Create(request);
@@ -684,7 +690,7 @@ int index = group.pawns.FindIndex(p =>
     (!veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedTick) || 
      Find.TickManager.TicksGame >= addedTick + (FPMod.Settings.veteranRecallCooldownDays * 60000)) &&
     IsPawnAvailableForDispatch(p) && 
-    PawnMatchesRequest(p, request, validator) 
+    PawnMatchesRequest(p, request, validator)
 );
 
             if (index == -1) return null;
@@ -755,15 +761,8 @@ private bool PawnMatchesRequest(Pawn p, PawnGenerationRequest req, Predicate<Paw
     }
 
     // 9. Внешний валидатор от других модов (Тот самый, что мы вынесли)
-    try 
-    {
-        if (validator != null && !validator(p)) return false;
-    }
-    catch 
-    {
-        // Если сторонний мод выдал ошибку при проверке — на всякий случай пропускаем эту пешку
-        return false; 
-    }
+// Просто используем то, что передали. Никакой рефлексии в цикле!
+if (validator != null && !validator(p)) return false;
 
     return true;
 }
@@ -924,65 +923,91 @@ public static class Patch_PassToWorld
             return true;
         }
     }
+	
+//ЛОГИКА ЗАМОРОЗКИ
+	
 [HarmonyPatch(typeof(WorldPawns), "DefPreventingMothball")]
 public static class Patch_Mothball
 {
+    // 1. Быстрая ссылка на список замороженных пешек (чтобы не было спама логов)
+    private static readonly AccessTools.FieldRef<WorldPawns, HashSet<Pawn>> PawnsMothballedRef = 
+        AccessTools.FieldRefAccess<WorldPawns, HashSet<Pawn>>("pawnsMothballed");
+
+    // 2. Кэш всех зависимостей. Мы заполним его один раз и будем мгновенно проверять.
+    private static HashSet<HediffDef> addictionDefsCache;
+
     [HarmonyPostfix]
     static void Postfix(Pawn p, ref HediffDef __result)
     {
-        // Базовые проверки, чтобы не было ошибок в логах
-        if (__result == null || p?.health?.hediffSet?.hediffs == null) return;
+        // Если игра уже разрешила сон или это не ветеран — выходим мгновенно. 
+        // HashSet.Contains работает за наносекунды.
+        if (__result == null || p == null) return;
 
         var manager = Find.World?.GetComponent<WorldPopulationManager>();
         if (manager == null || !manager.allVeteranIdsCache.Contains(p.thingIDNumber)) return;
 
-        // 1. Ультимативное правило: 30 дней прошло — морозим принудительно
+        // Проверка: пешка уже спит? (для логов)
+        var mothballedSet = PawnsMothballedRef(Find.WorldPawns);
+        bool isAlreadyMothballed = mothballedSet != null && mothballedSet.Contains(p);
+
+        // ЛОГИКА 1: Принудительная заморозка по времени (30 дней)
         if (manager.veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedAt) && 
             Find.TickManager.TicksGame > addedAt + (FPMod.Settings.forcedFreezeDays * 60000))
         {
-			if (!(Traverse.Create(Find.WorldPawns).Field<HashSet<Pawn>>("pawnsMothballed").Value?.Contains(p) ?? false))
-    {
-
-    }
+            if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
+                Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} заморожен по истечении времени.");
+            
             __result = null;
             return;
         }
 
-        // 2. Если это зависимость — ищем, нет ли другого "настоящего" блокера (болезни)
-        if (IsDependency(__result))
+        // ЛОГИКА 2: Разрешение сна при зависимостях (только для ветеранов!)
+        if (IsDependencyOptimized(__result))
         {
-			
-			// Если пешка еще не была заморожена, значит именно СЕЙЧАС она засыпает благодаря нам
-    if (!(Traverse.Create(Find.WorldPawns).Field<HashSet<Pawn>>("pawnsMothballed").Value?.Contains(p) ?? false))
-    {
-				if (FPMod.Settings.enableDebugLogs) 
-{
-        Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} (ID: {p.thingIDNumber}) засыпает. Причина: Разрешена зависимость.");
-}
-    }
-            __result = null; // По умолчанию разрешаем
-            var list = p.health.hediffSet.hediffs;
-            for (int i = 0; i < list.Count; i++)
+            if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
+                Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} засыпает (Разрешена зависимость: {__result.defName}).");
+
+            __result = null;
+
+            // Проверяем, нет ли других БЛОКИРУЮЩИХ болезней (раны, инфекции)
+            var hediffs = p.health.hediffSet.hediffs;
+            for (int i = 0; i < hediffs.Count; i++)
             {
-                var h = list[i];
-                // Ищем первый попавшийся не-перманентный дефф, который НЕ является зависимостью
-                if (!h.def.AlwaysAllowMothball && !h.IsPermanent() && !IsDependency(h.def))
+                var h = hediffs[i];
+                if (!h.def.AlwaysAllowMothball && !h.IsPermanent() && !IsDependencyOptimized(h.def))
                 {
-                    __result = h.def;
+                    __result = h.def; // Нашли реальную болезнь — она запрещает сон
                     break;
                 }
             }
         }
     }
 
-    // Вспомогательный быстрый метод проверки на зависимость
-    private static bool IsDependency(HediffDef def)
+    // Сверхбыстрая проверка через кэш
+    private static bool IsDependencyOptimized(HediffDef def)
     {
-        return typeof(Hediff_Addiction).IsAssignableFrom(def.hediffClass) || 
-               def.defName.Contains("Dependency") || 
-               def.defName.Contains("Deficiency");
+        if (def == null) return false;
+
+        // Если кэш еще не создан (первый запуск), создаем его
+        if (addictionDefsCache == null)
+        {
+            addictionDefsCache = new HashSet<HediffDef>();
+            foreach (var d in DefDatabase<HediffDef>.AllDefs)
+            {
+                if (d.hediffClass != null && 
+                   (typeof(Hediff_Addiction).IsAssignableFrom(d.hediffClass) || 
+                    d.defName.Contains("Dependency") || d.defName.Contains("Addiction")))
+                {
+                    addictionDefsCache.Add(d);
+                }
+            }
+        }
+        return addictionDefsCache.Contains(def);
     }
 }
+
+
+//КОНЕЦ ЛОГИКИ ЗАМОРОЗКИ 
 
 // --- ПАТЧ 3: ОЧИСТКА ПАМЯТИ ПРИ СМЕРТИ НА КАРТЕ ---
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.Kill))]

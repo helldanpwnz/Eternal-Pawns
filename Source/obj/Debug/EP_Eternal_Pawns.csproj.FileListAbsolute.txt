@@ -5,3 +5,4 @@ E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\EP
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\EP_Eternal_Pawns.AssemblyInfo.cs
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\EP_Eternal_Pawns.csproj.CoreCompileInputs.cache
 E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\Source\obj\Debug\EP_Eternal_Pawns.dll
+E:\SteamLibrary\steamapps\common\RimWorld\Mods\Eternal Pawns\1.6\Assemblies\EP_Eternal_Pawns.dll
