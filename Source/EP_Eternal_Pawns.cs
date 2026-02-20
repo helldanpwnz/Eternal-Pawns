@@ -311,10 +311,17 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
                         }
                     }
 					
-					try { ProcessVeteranImplants(p); } catch { }
-					try { ProcessVeteranGenes(p); } catch { }
-					try { ProcessVeteranAnomaly(p); } catch { }
-					try { ProcessVeteranAgeDiseases(p); } catch { }
+try { ProcessVeteranImplants(p); } 
+catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки имплантов для {p.LabelShort}: {ex.Message}"); }
+
+try { ProcessVeteranGenes(p); } 
+catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки генов для {p.LabelShort}: {ex.Message}"); }
+
+try { ProcessVeteranAnomaly(p); } 
+catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки аномалий для {p.LabelShort}: {ex.Message}"); }
+
+try { ProcessVeteranAgeDiseases(p); } 
+catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки болезней для {p.LabelShort}: {ex.Message}"); }
 int age = p.ageTracker.AgeBiologicalYears;
 // Упрощенный шанс: до 60 лет — 0%, после 60 лет — база 5% в год
 float deathChance = (age >= 60) ? 0.05f : 0f;
