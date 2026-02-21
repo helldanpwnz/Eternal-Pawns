@@ -20,7 +20,7 @@ namespace FinitePopulationVeterans
     // --- ОЧЕРЕДЬ ---
     public static class VeteranInputQueue
     {
-        private static HashSet<int> pendingPawnIDs = new HashSet<int>();
+        public static HashSet<int> pendingPawnIDs = new HashSet<int>();
         private static Dictionary<int, Pawn> pendingPawns = new Dictionary<int, Pawn>();
         private static object _lock = new object();
 
@@ -85,8 +85,11 @@ namespace FinitePopulationVeterans
         public Dictionary<int, VeteranGroup> veteranPool = new Dictionary<int, VeteranGroup>();
 		public Dictionary<int, int> veteranAddTicks = new Dictionary<int, int>(); // Время добавления
 		public Dictionary<int, string> pawnNotes = new Dictionary<int, string>();
+		public Dictionary<int, long> savedBioAges = new Dictionary<int, long>();
+private List<long> tmpBioValues; // Для сохранения
 private List<int> tmpTicksKeys;   // Для сохранения
 private List<int> tmpTicksValues; // Для сохранения
+private int ticksToNextUpdate = -1; // По умолчанию 1 год
         
         // КЭШ ID
         public HashSet<int> allVeteranIdsCache = new HashSet<int>(); 
@@ -100,6 +103,7 @@ private List<int> tmpTicksValues; // Для сохранения
         
         private HashSet<int> pawnsIssuedThisTickIDs = new HashSet<int>();
         private int lastTickIssued = -1;
+		private int ticksToNextYearUpdate = 0;
 
 public WorldPopulationManager(World world) : base(world) { }
 
@@ -122,6 +126,15 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 
         public override void ExposeData()
         {
+			// ДОБАВИТЬ ЭТО В НАЧАЛО: Убираем стертых пешек до записи в сейв
+    if (Scribe.mode == LoadSaveMode.Saving)
+    {
+        foreach (var group in veteranPool.Values)
+        {
+            group.pawns.RemoveAll(p => p == null || p.Discarded);
+        }
+    }
+			
             base.ExposeData();
 			if (Scribe.mode == LoadSaveMode.LoadingVars)
         {
@@ -132,9 +145,13 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
             if (veteranPool == null) veteranPool = new Dictionary<int, VeteranGroup>();
 			Scribe_Collections.Look(ref veteransOnMission, "veteransOnMission", LookMode.Value);
             if (veteransOnMission == null) veteransOnMission = new HashSet<int>();
+			Scribe_Values.Look(ref ticksToNextYearUpdate, "ticksToNextYearUpdate", GenDate.TicksPerYear);
 			Scribe_Collections.Look(ref veteranAddTicks, "veteranAddTicks", LookMode.Value, LookMode.Value, ref tmpTicksKeys, ref tmpTicksValues);
 			Scribe_Collections.Look(ref manualVeteranPins, "manualVeteranPins", LookMode.Value);
 			Scribe_Collections.Look(ref pawnNotes, "pawnNotes", LookMode.Value, LookMode.Value);
+			Scribe_Values.Look(ref ticksToNextUpdate, "ticksToNextUpdate", -1);
+			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpTicksKeys, ref tmpBioValues);
+if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
 if (manualVeteranPins == null) manualVeteranPins = new HashSet<int>();
 
@@ -187,12 +204,33 @@ if (manualVeteranPins != null)
             }
         }
 
-        public override void WorldComponentTick()
+public override void WorldComponentTick()
+{
+    base.WorldComponentTick();
+    VeteranInputQueue.ProcessQueue(this);
+
+    // Если это первый тик новой игры — сразу считаем таймер по настройкам
+    if (ticksToNextUpdate < 0)
+    {
+        float startRate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+        ticksToNextUpdate = (int)(3600000 / startRate);
+    }
+
+    ticksToNextUpdate--;
+    if (ticksToNextUpdate <= 0)
+    {
+        // Читаем настройку и заводим таймер на следующий круг
+        float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+        ticksToNextUpdate = (int)(3600000 / rate);
+
+        if (FPMod.Settings.enableDebugLogs)
         {
-            base.WorldComponentTick();
-            VeteranInputQueue.ProcessQueue(this);
-            if (Find.TickManager.TicksGame % 3600000 == 0) ProcessYearlyVeteranAging();
+            Log.Message($"<color=green>[FP-Timer]</color> Цикл запущен! След. через {ticksToNextUpdate / 60000} дней.");
         }
+
+        ProcessYearlyVeteranAging();
+    }
+}
 
 public void AddVeteran(Pawn p)
 {
@@ -220,6 +258,17 @@ if (FPMod.Settings.enableFactionLimit && group.pawns.Count >= FPMod.Settings.fac
 // Снимаем метки (он вернулся / добавлен)
 veteransOnMission.Remove(p.thingIDNumber);
 if (isPinned) manualVeteranPins.Remove(p.thingIDNumber); // Одноразовый билет использован
+
+// ДОБАВИТЬ ЭТО: Отвязываем от ИИ карты, чтобы игра не пыталась сохранить старый рейд
+if (p.mindState != null) p.mindState.duty = null;
+if (p.jobs != null)
+{
+    p.jobs.ClearQueuedJobs();
+    p.jobs.EndCurrentJob(Verse.AI.JobCondition.InterruptForced, false);
+}
+
+// 3. ПОДГОТОВКА (Чистим здоровье)
+CleanPawnHealth(p, false);
 
     // 3. ПОДГОТОВКА (Чистим здоровье)
     CleanPawnHealth(p, false);
@@ -256,6 +305,7 @@ if (isPinned) manualVeteranPins.Remove(p.thingIDNumber); // Одноразовы
 
     group.pawns.Add(p);
     veteranAddTicks[p.thingIDNumber] = Find.TickManager.TicksGame;
+	savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
 
     // 6. ЛОГИ
     if (FPMod.Settings.enableDebugLogs) 
@@ -295,9 +345,33 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
                     if (veteransOnMission.Contains(p.thingIDNumber) || p.Spawned) continue;					
 
                     CleanPawnHealth(p, true);
+					
+					
+// 2. И ТОЛЬКО ПОТОМ пропускаем живых, которые сейчас на карте
+if (veteransOnMission.Contains(p.thingIDNumber) || p.Spawned) continue;					
 
-                   p.ageTracker.AgeBiologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
-                   p.ageTracker.AgeChronologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
+CleanPawnHealth(p, true);
+
+// === УМНОЕ СТАРЕНИЕ ===
+if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
+{
+    // Если возраст за весь цикл почти не изменился (ванилла заблокирована модами)
+    if (p.ageTracker.AgeBiologicalTicks <= lastKnownAge + 60000) 
+    {
+        float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+        p.ageTracker.AgeChronologicalTicks += 3600000;
+        p.ageTracker.AgeBiologicalTicks += (long)(3600000 * rate);
+        
+        if (FPMod.Settings.enableDebugLogs)
+            Log.Message($"[FP] Ветеран {p.LabelShort} состарен вручную (оптимизатор блокирует ваниллу).");
+    }
+}
+// Обновляем запись возраста для следующего года (неважно, ванилла состарила или мы)
+savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
+
+          //         p.ageTracker.AgeBiologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
+
+           //        p.ageTracker.AgeChronologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
 
                     if (p.skills != null)
                     {
@@ -350,14 +424,10 @@ if (Rand.Value < deathChance)
     // Запоминаем имя ДО того, как сотрем пешку из реальности
     string deadName = p.LabelShort; 
 
-    if (Find.WorldPawns.Contains(p))
-    {
-        Find.WorldPawns.RemoveAndDiscardPawnViaGC(p);
-    }
-    else if (!p.Spawned)
-    {
-        p.Discard();
-    }
+if (!p.Dead)
+{
+    p.Kill(null); // Убиваем пешку естественной смертью.
+}
 
     allVeteranIdsCache.Remove(p.thingIDNumber);
     if (veteranAddTicks.ContainsKey(p.thingIDNumber)) 
@@ -943,34 +1013,47 @@ public static class Patch_Mothball
     // 2. Кэш всех зависимостей. Мы заполним его один раз и будем мгновенно проверять.
     private static HashSet<HediffDef> addictionDefsCache;
 
-    [HarmonyPostfix]
-    static void Postfix(Pawn p, ref HediffDef __result)
+[HarmonyPostfix]
+static void Postfix(Pawn p, ref HediffDef __result)
+{
+    if (p == null) return;
+
+    var manager = Find.World?.GetComponent<WorldPopulationManager>();
+    if (manager == null) return;
+
+    // 1. ПРОВЕРКА: Наш ли это ветеран?
+    bool isVeteran = manager.allVeteranIdsCache.Contains(p.thingIDNumber) || 
+                     VeteranInputQueue.pendingPawnIDs.Contains(p.thingIDNumber) || 
+                     WorldPopulationManager.IsManuallyAdding;
+
+    if (!isVeteran) return;
+
+    bool isAlreadyMothballed = PawnsMothballedRef(Find.WorldPawns)?.Contains(p) ?? false;
+
+    // 2. ЛОГИКА 1: Принудительная заморозка (Теперь ПЕРВАЯ и с проверкой >=)
+    // Если стоит 0 дней, сработает мгновенно в момент добавления
+    if (manager.veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedAt) && 
+        Find.TickManager.TicksGame >= addedAt + (FPMod.Settings.forcedFreezeDays * 60000)) 
     {
-        // Если игра уже разрешила сон или это не ветеран — выходим мгновенно. 
-        // HashSet.Contains работает за наносекунды.
-        if (__result == null || p == null) return;
+        if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
+            Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} принудительно заморожен (настройка: {FPMod.Settings.forcedFreezeDays} дн, игнорируя {(__result?.defName ?? "ничего")}).");
+        
+        __result = null; // Разрешаем заморозку, стирая причину отказа (зависимость и т.д.)
+        return;
+    }
 
-        var manager = Find.World?.GetComponent<WorldPopulationManager>();
-        if (manager == null || !manager.allVeteranIdsCache.Contains(p.thingIDNumber)) return;
+    // 3. ЛОГИКА ДЛЯ ЗДОРОВЫХ (Если принудительная выше не сработала по времени)
+    if (__result == null) 
+    {
+        if (FPMod.Settings.enableDebugLogs && !isAlreadyMothballed)
+            Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} заморожен (здоров/естественно).");
+        return;
+    }
 
-        // Проверка: пешка уже спит? (для логов)
-        var mothballedSet = PawnsMothballedRef(Find.WorldPawns);
-        bool isAlreadyMothballed = mothballedSet != null && mothballedSet.Contains(p);
-
-        // ЛОГИКА 1: Принудительная заморозка по времени (30 дней)
-        if (manager.veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedAt) && 
-            Find.TickManager.TicksGame > addedAt + (FPMod.Settings.forcedFreezeDays * 60000))
-        {
-            if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
-                Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} заморожен по истечении времени.");
-            
-            __result = null;
-            return;
-        }
-
-        // ЛОГИКА 2: Разрешение сна при зависимостях (только для ветеранов!)
-        if (IsDependencyOptimized(__result))
-        {
+    // 4. ЛОГИКА 2: Разрешение сна при зависимостях (если время принудительной еще не пришло)
+    if (IsDependencyOptimized(__result))
+    {
+        // ... твой старый код проверки зависимостей ...
             if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
                 Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} засыпает (Разрешена зависимость: {__result.defName}).");
 
@@ -1001,10 +1084,12 @@ public static class Patch_Mothball
             addictionDefsCache = new HashSet<HediffDef>();
             foreach (var d in DefDatabase<HediffDef>.AllDefs)
             {
-                if (d.hediffClass != null && 
-                   (typeof(Hediff_Addiction).IsAssignableFrom(d.hediffClass) || 
-                    d.defName.Contains("Dependency") || d.defName.Contains("Addiction")))
-                {
+		if (d.hediffClass != null && 
+			(typeof(Hediff_Addiction).IsAssignableFrom(d.hediffClass) || 
+			typeof(Hediff_High).IsAssignableFrom(d.hediffClass) ||     
+			typeof(Hediff_Hangover).IsAssignableFrom(d.hediffClass) ||  
+			d.defName.Contains("Dependency") || d.defName.Contains("Addiction")))
+	{
                     addictionDefsCache.Add(d);
                 }
             }

@@ -18,7 +18,7 @@ namespace FinitePopulationVeterans
 		public bool showVIPButton = true;
         public int factionVeteranLimit = 100;
 		public int veteranRecallCooldownDays = 10;
-        public int forcedFreezeDays = 30;
+        public int forcedFreezeDays = 0;
         public float veteranRecallChance = 0.5f;
         public bool enableDebugLogs = false;
 		public float deathChanceMultiplier = 1f;
@@ -33,7 +33,7 @@ namespace FinitePopulationVeterans
             Scribe_Values.Look(ref enableFactionLimit, "enableFactionLimit", true);
 			Scribe_Values.Look(ref showVIPButton, "showVIPButton", true);
             Scribe_Values.Look(ref factionVeteranLimit, "factionVeteranLimit", 100);
-            Scribe_Values.Look(ref forcedFreezeDays, "forcedFreezeDays", 30);
+            Scribe_Values.Look(ref forcedFreezeDays, "forcedFreezeDays", 0);
             Scribe_Values.Look(ref veteranRecallChance, "veteranRecallChance", 0.5f);
             Scribe_Values.Look(ref enableDebugLogs, "enableDebugLogs", true);
 			Scribe_Values.Look(ref deathChanceMultiplier, "deathChanceMultiplier", 1f);
@@ -101,6 +101,7 @@ public override void DoSettingsWindowContents(Rect inRect)
     
     listing.Label(label: "FP_DeathChanceMultiplier".Translate(Math.Round(settings.deathChanceMultiplier * 100)), tooltip: deathDesc);
     settings.deathChanceMultiplier = listing.Slider(settings.deathChanceMultiplier, 0f, 5f);
+	
 
     // --- Болезни ---
     string diseaseDesc = "FP_DiseaseDesc".Translate();
