@@ -42,7 +42,8 @@
   <FP_DatabaseClearedMessage>老兵資料庫已成功清空！</FP_DatabaseClearedMessage>
   
   
-  
+  <FP_ShowGizmoButton>在底部面板 (Gizmo) 中顯示記憶按鈕</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>選中人物時，在底部操作面板 (Gizmo) 中顯示「記憶」按鈕。</FP_ShowGizmoButtonTooltip>
   
   
   

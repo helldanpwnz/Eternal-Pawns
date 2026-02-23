@@ -41,7 +41,8 @@
   <FP_ClearDatabaseConfirm>你确定要从数据库中彻底删除所有老兵吗？此操作不可撤销！</FP_ClearDatabaseConfirm>
   <FP_DatabaseClearedMessage>老兵数据库已成功清空！</FP_DatabaseClearedMessage>
   
-  
+  <FP_ShowGizmoButton>在底部面板 (Gizmo) 中显示记忆按钮</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>选中人物时，在底部操作面板 (Gizmo) 中显示“记忆”按钮。</FP_ShowGizmoButtonTooltip>
   
   
   

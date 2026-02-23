@@ -16,6 +16,7 @@ namespace FinitePopulationVeterans
     {
         public bool enableFactionLimit = true;
 		public bool showVIPButton = true;
+		public bool showGizmoButton = true;
         public int factionVeteranLimit = 100;
 		public int veteranRecallCooldownDays = 10;
         public int forcedFreezeDays = 0;
@@ -32,6 +33,7 @@ namespace FinitePopulationVeterans
             base.ExposeData();
             Scribe_Values.Look(ref enableFactionLimit, "enableFactionLimit", true);
 			Scribe_Values.Look(ref showVIPButton, "showVIPButton", true);
+			Scribe_Values.Look(ref showGizmoButton, "showGizmoButton", true);
             Scribe_Values.Look(ref factionVeteranLimit, "factionVeteranLimit", 100);
             Scribe_Values.Look(ref forcedFreezeDays, "forcedFreezeDays", 0);
             Scribe_Values.Look(ref veteranRecallChance, "veteranRecallChance", 0.5f);
@@ -79,7 +81,11 @@ public override void DoSettingsWindowContents(Rect inRect)
 	// --- НОВАЯ ГАЛОЧКА ДЛЯ КНОПКИ ---
     listing.CheckboxLabeled("FP_ShowVIPButton".Translate(), ref settings.showVIPButton, 
         "FP_ShowVIPButtonTooltip".Translate());
-    listing.Gap(12f);
+
+// --- НОВАЯ ГАЛОЧКА ДЛЯ ГИЗМО ПАНЕЛИ ---
+listing.CheckboxLabeled("FP_ShowGizmoButton".Translate(), ref settings.showGizmoButton, 
+    "FP_ShowGizmoButtonTooltip".Translate());
+listing.Gap(12f);
 	
 
     // --- Отдых ---

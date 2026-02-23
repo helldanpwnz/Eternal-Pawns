@@ -44,8 +44,9 @@
   <FP_AgingYear>Старение за цикл: 1 год</FP_AgingYear>
 <FP_AgingDays>Старение за цикл: {0} дн.</FP_AgingDays>
 <FP_AgingTooltip>Определяет, на сколько дней повзрослеет ветеран за один цикл нахождения в пуле. По умолчанию 60 дней (1 год).</FP_AgingTooltip>
-  
-  
+ 
+  <FP_ShowGizmoButton>Показывать кнопку памяти в панели действий (Gizmo)</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>Отображать кнопку 'Память' в нижней панели действий (Gizmo) при выделении пешки.</FP_ShowGizmoButtonTooltip>
   
   
   

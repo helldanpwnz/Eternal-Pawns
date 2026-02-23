@@ -42,7 +42,8 @@
   <FP_DatabaseClearedMessage>Veteran database cleared successfully!</FP_DatabaseClearedMessage>
   
   
-  
+  <FP_ShowGizmoButton>Show memory button in Gizmo panel</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>Display the "Memory" button in the bottom action panel (Gizmo) when a pawn is selected.</FP_ShowGizmoButtonTooltip>
   
   
   

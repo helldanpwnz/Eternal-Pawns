@@ -114,8 +114,8 @@ public class Window_PawnMemory : Window
 [HarmonyPatch(typeof(SocialCardUtility), "DrawSocialCard")]
 public static class Patch_DrawSocialCardButton
 {
-    [HarmonyPostfix]
-    static void Postfix(Rect rect, Pawn pawn)
+    [HarmonyPrefix] // 1. МЕНЯЕМ Postfix НА Prefix
+    static void Prefix(Rect rect, Pawn pawn) // 2. МЕНЯЕМ ИМЯ МЕТОДА НА Prefix
     {
         // ПРОВЕРКА НАСТРОЕК
         if (FPMod.Settings == null || !FPMod.Settings.showVIPButton) return;
@@ -125,10 +125,7 @@ public static class Patch_DrawSocialCardButton
         if (manager == null) return;
 
         // Рисуем кнопку в правом верхнем углу вкладки Социум
-        Rect btnRect = new Rect(rect.width - 130f, // позиция по горизонтали (X). Отступает 130 пикселей от правого края.
-		45f, // позиция по вертикали (Y). Это отступ сверху. Вот она тебе и нужна!
-		100f, // ширина самой кнопки.
-		24f); // высота самой кнопки.
+        Rect btnRect = new Rect(rect.width - 130f, 45f, 100f, 24f);
         
         bool isVeteran = manager.allVeteranIdsCache.Contains(pawn.thingIDNumber);
         bool isPinned = manager.manualVeteranPins.Contains(pawn.thingIDNumber);
@@ -139,12 +136,68 @@ public static class Patch_DrawSocialCardButton
         else if (isPinned || hasNote) GUI.color = Color.yellow;
         else GUI.color = Color.white;
 
+        // Так как это Prefix, кнопка отрендерится и проверит клик ДО ванильного кода
         if (Widgets.ButtonText(btnRect, "FP_MemoryButton".Translate()))
         {
             Find.WindowStack.Add(new Window_PawnMemory(pawn));
         }
         
         GUI.color = Color.white;
+    }
+}
+
+[HarmonyPatch(typeof(Pawn), nameof(Pawn.GetGizmos))]
+public static class Patch_Pawn_GetGizmos
+{
+    [HarmonyPostfix]
+    static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Pawn __instance)
+    {
+        // 1. Сначала возвращаем все ванильные гизмо (призыв, и т.д.)
+        if (values != null)
+        {
+            foreach (var gizmo in values)
+            {
+                yield return gizmo;
+            }
+        }
+
+        // 2. ПРОВЕРКА НАСТРОЕК
+        if (FPMod.Settings == null || !FPMod.Settings.showGizmoButton) yield break;
+        
+        // 3. ПРОВЕРКА ПЕШКИ (Та же логика, что и во вкладке Социум: только чужие люди)
+        if (__instance == null || __instance.Faction == null || __instance.Faction.IsPlayer || !__instance.RaceProps.Humanlike) yield break;
+
+        var manager = Find.World?.GetComponent<WorldPopulationManager>();
+        if (manager == null) yield break;
+
+        // 4. ОПРЕДЕЛЯЕМ СТАТУС (для цвета)
+        bool isVeteran = manager.allVeteranIdsCache.Contains(__instance.thingIDNumber);
+        bool isPinned = manager.manualVeteranPins.Contains(__instance.thingIDNumber);
+        bool hasNote = manager.pawnNotes.ContainsKey(__instance.thingIDNumber);
+
+        // 5. СОЗДАЕМ КНОПКУ-ГИЗМО
+        Command_Action memoryGizmo = new Command_Action
+        {
+            defaultLabel = "FP_MemoryButton".Translate(),
+            defaultDesc = "Открыть панель памяти и управления статусом этой пешки.", // Добавь ключ перевода по желанию
+            
+
+            icon = ContentFinder<Texture2D>.Get("UI/Icons/EP_MemoryIcon"), 
+            
+            action = delegate
+            {
+                // При клике открываем то же самое окно
+                Find.WindowStack.Add(new Window_PawnMemory(__instance));
+            }
+        };
+
+        // 6. КРАСИМ ИКОНКУ В ЗАВИСИМОСТИ ОТ СТАТУСА (Точно как текст в окне Социума)
+        if (isVeteran) memoryGizmo.defaultIconColor = Color.cyan;
+        else if (isPinned || hasNote) memoryGizmo.defaultIconColor = Color.yellow;
+        else memoryGizmo.defaultIconColor = Color.white;
+
+        // Отдаем нашу кнопку в игру
+        yield return memoryGizmo;
     }
 }
 
