@@ -44,6 +44,12 @@
   <FP_ShowGizmoButton>在底部面板 (Gizmo) 中显示记忆按钮</FP_ShowGizmoButton>
   <FP_ShowGizmoButtonTooltip>选中人物时，在底部操作面板 (Gizmo) 中显示“记忆”按钮。</FP_ShowGizmoButtonTooltip>
   
+  <FP_AutoSaveWanderers>自动保存流浪者</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>当隐藏或临时派系（远古人物、难民、乞丐等）的成员离开地图时，自动为他们寻找新的永久派系并保存。</FP_AutoSaveWanderersTooltip>
+  
+  <FP_TechLevelRange>允许的科技级别差异：{0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>决定流浪者可以加入哪些派系。\n\n0 = 必须是相同的科技级别。\n1 = 相同或相邻（例如：太空时代可以加入超凡时代或工业时代）。\n5 = 任何科技级别（远古人物可以加入使用长矛的部落）。</FP_TechLevelRangeTooltip>
+  
   
   
   

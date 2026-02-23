@@ -45,6 +45,12 @@
   <FP_ShowGizmoButton>Show memory button in Gizmo panel</FP_ShowGizmoButton>
   <FP_ShowGizmoButtonTooltip>Display the "Memory" button in the bottom action panel (Gizmo) when a pawn is selected.</FP_ShowGizmoButtonTooltip>
   
+  <FP_AutoSaveWanderers>Auto-save wanderers</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>Automatically find a new permanent faction and save members of hidden or temporary factions (Ancients, refugees, beggars, etc.) when they leave the map.</FP_AutoSaveWanderersTooltip>
+  
+  <FP_TechLevelRange>Allowed tech level difference: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>Determines which factions wanderers can join.\n\n0 = Strictly same tech level.\n1 = Same or adjacent (e.g., Spacer joins Ultra or Industrial).\n5 = Any tech level (Ancients can join neolithic tribes).</FP_TechLevelRangeTooltip>
+  
   
   
   <FP_MemoryHeader>Memory: {0}</FP_MemoryHeader>

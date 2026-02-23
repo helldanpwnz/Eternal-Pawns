@@ -104,6 +104,7 @@ private int ticksToNextUpdate = -1; // По умолчанию 1 год
         private HashSet<int> pawnsIssuedThisTickIDs = new HashSet<int>();
         private int lastTickIssued = -1;
 		private int ticksToNextYearUpdate = 0;
+		private int ticksToNextCleanup = -1; // НОВЫЙ ТАЙМЕР: 10 дней (60,000 тиков * 10)
 
 public WorldPopulationManager(World world) : base(world) { }
 
@@ -150,6 +151,7 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 			Scribe_Collections.Look(ref manualVeteranPins, "manualVeteranPins", LookMode.Value);
 			Scribe_Collections.Look(ref pawnNotes, "pawnNotes", LookMode.Value, LookMode.Value);
 			Scribe_Values.Look(ref ticksToNextUpdate, "ticksToNextUpdate", -1);
+			Scribe_Values.Look(ref ticksToNextCleanup, "ticksToNextCleanup", -1);
 			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpTicksKeys, ref tmpBioValues);
 if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
@@ -208,6 +210,14 @@ public override void WorldComponentTick()
 {
     base.WorldComponentTick();
     VeteranInputQueue.ProcessQueue(this);
+	
+	// --- НОВЫЙ ЦИКЛ: Очистка зависших миссий (Раз в 10 дней) ---
+    ticksToNextCleanup--;
+    if (ticksToNextCleanup <= 0)
+    {
+        ticksToNextCleanup = 600000; // Заводим таймер заново на 10 дней
+        ProcessMissionCleanup();
+    }
 
     // Если это первый тик новой игры — сразу считаем таймер по настройкам
     if (ticksToNextUpdate < 0)
@@ -232,10 +242,62 @@ public override void WorldComponentTick()
     }
 }
 
+private void ProcessMissionCleanup()
+{
+    // Если на миссиях никого нет, даже не тратим время
+    if (veteransOnMission.Count == 0) return;
+
+    List<Pawn> toRescue = new List<Pawn>();
+
+    foreach (var group in veteranPool.Values)
+    {
+        foreach (Pawn p in group.pawns)
+        {
+            if (p != null && !p.Dead && veteransOnMission.Contains(p.thingIDNumber))
+            {
+                // Если пешки нет на карте И она не в караване ИГРОКА
+                if (p.MapHeld == null && !p.IsCaravanMember())
+                {
+                    toRescue.Add(p);
+                    if (FPMod.Settings.enableDebugLogs)
+                    {
+                        Log.Message($"<color=gray>[FP-Rescue]</color> {p.LabelShort} спасен из пустоты (санитарный цикл). Возвращен в пул!");
+                    }
+                }
+            }
+        }
+    }
+
+    // Безопасно снимаем статус миссии и ВОЗВРАЩАЕМ В МИР
+    foreach (Pawn p in toRescue)
+    {
+        veteransOnMission.Remove(p.thingIDNumber);
+        
+        // ВОТ ОНА, РАЗГАДКА: Если игра потеряла пешку, закидываем её обратно в WorldPawns
+        if (!Find.WorldPawns.Contains(p))
+        {
+            IsManuallyAdding = true; // Блокируем наш перехватчик сохранения
+            try
+            {
+                Find.WorldPawns.PassToWorld(p, PawnDiscardDecideMode.KeepForever);
+            }
+            catch (Exception ex)
+            {
+                Log.Warning($"[FP] Ошибка возврата спасенного ветерана {p.LabelShort} в мир: {ex.Message}");
+            }
+            finally
+            {
+                IsManuallyAdding = false;
+            }
+        }
+    }
+}
+
 public void AddVeteran(Pawn p)
 {
     // 1. Базовые проверки (отсекаем мусор сразу)
     if (p == null || p.Faction == null || p.Faction.def.hidden || p.Dead || p.Discarded) return;
+	if (p.Spawned) return;
 
     int currentFid = p.Faction.loadID;
     if (!veteranPool.ContainsKey(currentFid)) veteranPool[currentFid] = new VeteranGroup();
@@ -270,9 +332,6 @@ if (p.jobs != null)
 // 3. ПОДГОТОВКА (Чистим здоровье)
 CleanPawnHealth(p, false);
 
-    // 3. ПОДГОТОВКА (Чистим здоровье)
-    CleanPawnHealth(p, false);
-
     // 4. ПЕРЕДАЧА В МИР (Теперь это безопасно, так как мы знаем, что место в пуле есть)
     if (!Find.WorldPawns.Contains(p))
     {
@@ -289,20 +348,21 @@ CleanPawnHealth(p, false);
         }
         finally { IsManuallyAdding = false; }
     }
-
-// 5. ОБНОВЛЕНИЕ СПИСКОВ (Убираем дубликат если был, и записываем свежую версию)
-    if (allVeteranIdsCache.Contains(p.thingIDNumber))
+	
+// 5. ФИКС ДУБЛИКАТОВ И ОБНОВЛЕНИЕ СПИСКОВ
+    // Жестко вычищаем старые копии этой пешки из ВСЕХ фракций (включая текущую)
+    foreach (var otherGroup in veteranPool.Values)
     {
-        // Если он уже был ветераном, просто удаляем старую ссылку из списка фракции,
-        // чтобы заменить её на свежую (с новыми ранами/опытом)
-        group.pawns.RemoveAll(x => x.thingIDNumber == p.thingIDNumber);
+        otherGroup.pawns.RemoveAll(x => x.thingIDNumber == p.thingIDNumber);
     }
-    else
+
+    // Если это совершенно новый человек — регистрируем его ID в общем кэше
+    if (!allVeteranIdsCache.Contains(p.thingIDNumber))
     {
-        // Если это новый человек — регистрируем его ID в общем кэше
         allVeteranIdsCache.Add(p.thingIDNumber);
     }
 
+    // Записываем свежую версию пешки в нужную фракцию
     group.pawns.Add(p);
     veteranAddTicks[p.thingIDNumber] = Find.TickManager.TicksGame;
 	savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
@@ -321,36 +381,54 @@ CleanPawnHealth(p, false);
             int deathCount = 0;
             int levelUpCount = 0;
 
-            foreach (var group in veteranPool.Values)
+foreach (var group in veteranPool.Values)
+
             {
+
 for (int i = group.pawns.Count - 1; i >= 0; i--)
+
                 {
+
                     Pawn p = group.pawns[i];
 
+
+
                     // 1. СНАЧАЛА проверяем на смерть (и вычищаем из всех списков, включая миссии)
+
                     if (p == null || p.Dead || p.Discarded) 
+
                     { 
+
                         if (p != null) 
+
                         {
+
                             allVeteranIdsCache.Remove(p.thingIDNumber);
+
                             veteranAddTicks.Remove(p.thingIDNumber); 
+
                             veteransOnMission.Remove(p.thingIDNumber); // <--- ВАЖНО: забираем пропуск у трупа
+
                         }
+
                         group.pawns.RemoveAt(i); 
+
                         continue; 
+
                     }
 
+
+
                     // 2. И ТОЛЬКО ПОТОМ пропускаем живых, которые сейчас на карте
+
                     // Если ветеран жив, но на миссии — пропускаем его старение и мутации в пуле
-                    if (veteransOnMission.Contains(p.thingIDNumber) || p.Spawned) continue;					
+
+                    if (veteransOnMission.Contains(p.thingIDNumber) || p.Spawned) continue;
+
+
 
                     CleanPawnHealth(p, true);
-					
-					
-// 2. И ТОЛЬКО ПОТОМ пропускаем живых, которые сейчас на карте
-if (veteransOnMission.Contains(p.thingIDNumber) || p.Spawned) continue;					
 
-CleanPawnHealth(p, true);
 
 // === УМНОЕ СТАРЕНИЕ ===
 if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
@@ -846,8 +924,16 @@ if (validator != null && !validator(p)) return false;
 
 private bool IsPawnAvailableForDispatch(Pawn p)
 {
-    // 1. Базовая проверка (самая дешевая)
+// 1. Базовая проверка
     if (p == null || !Find.WorldPawns.Contains(p)) return false;
+
+    // --- НОВАЯ ЗАЩИТА: ПЕШКА ДОЛЖНА СТОЯТЬ НА НОГАХ И УМЕТЬ ХОДИТЬ ---
+    if (p.Downed || p.health == null || !p.health.capacities.CapableOf(PawnCapacityDefOf.Moving)) 
+    {
+        if (FPMod.Settings.enableDebugLogs)
+            Log.Message($"<color=yellow>[FP-Filter]</color> {p.LabelShort} пропущен: Не может ходить (Downed).");
+        return false;
+    }
 
     // 2. Цепочка проверок от легких к тяжелым (ленивые вычисления)
     string r = null;
@@ -882,7 +968,7 @@ private bool IsPawnAvailableForDispatch(Pawn p)
 
         public static void Mark(Pawn p)
         {
-            if (p?.RaceProps?.Humanlike == true && p.Faction != null && !p.Faction.IsPlayer)
+            if (p?.RaceProps?.Humanlike == true && (p.Faction == null || !p.Faction.IsPlayer))
             {
                 seenIDs.Add(p.thingIDNumber);
             }
@@ -908,6 +994,7 @@ private bool IsPawnAvailableForDispatch(Pawn p)
     }
 
     // === ПАТЧ 2: ПЕШКА УХОДИТ В МИР (ПРОВЕРКА) ===
+// === ПАТЧ 2: ПЕШКА УХОДИТ В МИР (ПРОВЕРКА) ===
 [HarmonyPatch(typeof(WorldPawns), nameof(WorldPawns.PassToWorld), new[] { typeof(Pawn), typeof(PawnDiscardDecideMode) })]
 public static class Patch_PassToWorld
 {
@@ -917,31 +1004,161 @@ public static class Patch_PassToWorld
         if (Current.ProgramState != ProgramState.Playing || pawn == null) return;
         if (WorldPopulationManager.IsManuallyAdding) return;
         if (discardMode != PawnDiscardDecideMode.Decide) return;
+        if (pawn.Spawned) return;
 
         if (!FPSeenTracker.Contains(pawn.thingIDNumber)) return; 
 
-        // Базовые проверки (трупы, животные и свои колонисты нам точно не нужны)
-        if (!pawn.RaceProps.Humanlike || pawn.Faction == null || pawn.Faction.IsPlayer || pawn.Dead) return;
-        if (pawn.ParentHolder is Building) return; 
-        if (pawn.Faction.def.hidden) return;
+        // 1. ЕДИНЫЙ ФИЛЬТР: Базовые проверки, мутанты, СТРОГАЯ защита квестов
+        if (!FPUtility.IsPawnSavable(pawn)) return;
 
-        // ПРОВЕРЯЕМ НАЛИЧИЕ ЗВЕЗДЫ
+        // 2. ДОПОЛНИТЕЛЬНЫЕ ПРЕДОХРАНИТЕЛИ:
+        if (pawn.ParentHolder is Building) return; 
+        
+        // Отсекаем младенцев (Biotech) - пускаем только от Child (3+ лет) и старше
+        if (pawn.DevelopmentalStage == DevelopmentalStage.Baby || pawn.DevelopmentalStage == DevelopmentalStage.Newborn) return;
+        
+        // Отсекаем зомби/голограммы (дополнительная страховка от модов)
+        if (pawn.health != null && pawn.health.Dead) return; 
+        // -----------------------------
+
         var manager = Find.World?.GetComponent<WorldPopulationManager>();
         bool isPinned = manager != null && manager.manualVeteranPins.Contains(pawn.thingIDNumber);
 
-        // ЕСЛИ ЗВЕЗДЫ НЕТ - проводим строгую проверку на квесты
-        if (!isPinned)
+        bool isTemporaryOrHidden = false;
+        string dn = "None";
+        
+        // 3. БЕЗОПАСНОЕ определение проблемных фракций (учитываем безфракционных)
+        if (pawn.Faction == null)
         {
-            string dn = pawn.Faction.def.defName;
-            // Исключаем временных квестовых пешек
-            if (dn.Contains("Refugee") || dn.Contains("Beggar") || dn.Contains("Ancient") || dn.Contains("Sleeper")) return;
-            if (PawnUtility.IsKidnappedPawn(pawn)) return;
+            isTemporaryOrHidden = true; // Считаем безфракционных скитальцев временными/проблемными
+        }
+        else
+        {
+            dn = pawn.Faction.def.defName;
+            isTemporaryOrHidden = pawn.Faction.def.hidden || pawn.Faction.temporary || 
+                                  dn.Contains("Refugee") || dn.Contains("Beggar") || 
+                                  dn.Contains("Ancient") || dn.Contains("Sleeper");
         }
 
-        // Если пешка дошла сюда (либо она нормальная, либо на ней Звезда) - сохраняем!
+        if (isTemporaryOrHidden)
+        {
+            // Если игрок НЕ нажал "Память" и НЕ включил галочку автосохранения — пропускаем (ванилльное удаление)
+            if (!isPinned && (FPMod.Settings == null || !FPMod.Settings.autoSaveWanderers)) return;
+
+            // --- ЛОГИКА СМЕНЫ ФРАКЦИИ ---
+            
+            // ТЕПЕРЬ БЕРЕМ ЗНАЧЕНИЕ ИЗ ПОЛЗУНКА В НАСТРОЙКАХ (по умолчанию 1)
+            int allowedRange = FPMod.Settings != null ? FPMod.Settings.techLevelRange : 1;
+            
+            // Безопасно вытаскиваем тех-уровень (спасает от крашей с попрошайками)
+            TechLevel pawnTech = TechLevel.Industrial; // Дефолт на крайний случай
+            if (pawn.Faction != null)
+            {
+                pawnTech = pawn.Faction.def.techLevel;
+            }
+            
+            // Ищем все постоянные фракции (враги, нейтралы, союзники), подходящие по тех-уровню (+/- allowedRange)
+            var validFactions = Find.FactionManager.AllFactionsListForReading.Where(f => 
+                !f.def.hidden && 
+                !f.IsPlayer && 
+                !f.temporary && 
+                f.def.humanlikeFaction && 
+                Math.Abs((int)f.def.techLevel - (int)pawnTech) <= allowedRange && 
+                IsXenotypeCompatible(pawn, f) // Наша новая проверка
+            ).ToList();
+            
+            // СПАСАТЕЛЬНЫЙ КРУГ ДЛЯ ПОПРОШАЕК: 
+            // Если список пуст (ничего не подошло по технологиям), расширяем поиск
+            if (validFactions.Count == 0)
+            {
+                validFactions = Find.FactionManager.AllFactionsListForReading.Where(f => 
+                    !f.def.hidden && 
+                    !f.IsPlayer && 
+                    !f.temporary && 
+                    f.def.humanlikeFaction &&
+                    IsXenotypeCompatible(pawn, f)
+                ).ToList();
+            }
+
+            if (validFactions.Count > 0)
+            {
+                Faction newFaction = validFactions.RandomElement();
+                pawn.SetFaction(newFaction);
+                
+                if (FPMod.Settings != null && FPMod.Settings.enableDebugLogs)
+                {
+                    Log.Message($"<color=cyan>[FP-Wanderer]</color> Скиталец {pawn.LabelShort} (бывш. {dn}) примкнул к постоянной фракции {newFaction.Name}!");
+                }
+            }
+            else
+            {
+                // Защита от ошибок: если подходящей фракции в мире ВООБЩЕ нет, не сохраняем
+                if (FPMod.Settings != null && FPMod.Settings.enableDebugLogs)
+                {
+                    Log.Warning($"<color=yellow>[FP-Wanderer]</color> Не найдено подходящей фракции для {pawn.LabelShort} (Тех: {pawnTech}). Пешка стерта, чтобы не стать призраком.");
+                }
+                return;
+            }
+        }
+        else
+        {
+            // Для обычных (постоянных) фракций всё по-старому:
+            // Если звезды нет, отсеиваем тех, кого просто утащили с карты (похищенных)
+            if (!isPinned && PawnUtility.IsKidnappedPawn(pawn)) return;
+        }
+
+        // Если дошли сюда — пешка легальна, фракция правильная, можно сохранять!
         FPSeenTracker.Remove(pawn.thingIDNumber);
         VeteranInputQueue.Enqueue(pawn);
     }
+    // ... дальше метод IsXenotypeCompatible ...
+	
+private static bool IsXenotypeCompatible(Pawn pawn, Faction f)
+{
+    // Если DLC Biotech выключено или у пешки нет генов — все совместимо
+    if (!ModsConfig.BiotechActive || pawn.genes == null) return true; 
+
+    XenotypeDef pawnXeno = pawn.genes.Xenotype ?? XenotypeDefOf.Baseliner;
+    if (f.def.xenotypeSet == null) return true; // Фракция без жестких рамок принимает всех
+
+    // Используем Traverse (HarmonyLib) для динамического доступа, 
+    // чтобы обойти различия API и ошибки компилятора
+    var traverseSet = Traverse.Create(f.def.xenotypeSet);
+    
+    // Пытаемся достать список шансов под всеми возможными именами
+    var chancesList = traverseSet.Field("xenotypeChances").GetValue() 
+                   ?? traverseSet.Field("chances").GetValue()
+                   ?? traverseSet.Property("XenotypeChances").GetValue();
+
+    // Если список найден (будь то массив или List)
+    if (chancesList is System.Collections.IEnumerable enumerable)
+    {
+        float totalMutantChance = 0f;
+        
+        foreach (var item in enumerable)
+        {
+            var traverseItem = Traverse.Create(item);
+            XenotypeDef xDef = traverseItem.Field("xenotype").GetValue<XenotypeDef>();
+            float chance = traverseItem.Field("chance").GetValue<float>();
+            
+            if (xDef == pawnXeno && chance > 0f) return true;
+            totalMutantChance += chance;
+        }
+        
+        // ВАЖНЫЙ НЮАНС ВАНИЛЛЫ: Шанс спавна обычных людей (Baseliner) — это остаток от 100%.
+        // Если сумма шансов мутантов < 1f (например, 0.8f), значит остальные 20% - это люди, и нам туда можно!
+        if (pawnXeno == XenotypeDefOf.Baseliner && totalMutantChance < 1f) return true; 
+        
+        return false; // Ксенотип строго не подходит для этой фракции!
+    }
+
+    // Если игра не позволила прочитать список (страховка), разрешаем по умолчанию
+    return true; 
+}
+	
+	
+	
+	
 }
 
     [HarmonyPatch(typeof(WorldPawnGC), "GetCriticalPawnReason")]
@@ -986,11 +1203,26 @@ public static class Patch_PassToWorld
                 // Пробуем достать ветерана
                 Pawn v = manager.TryGetVeteran(request, silent);
                 
-                if (v != null) 
+if (v != null) 
                 { 
                     if (request.KindDef != null) v.kindDef = request.KindDef; 
+                    
+                    // --- НОВАЯ ОЧИСТКА РАЗУМА (ЧТОБЫ ИИ НЕ СХОДИЛ С УМА) ---
+                    if (v.mindState != null)
+                    {
+                        v.mindState.duty = null;
+                        v.mindState.mentalStateHandler?.Reset();
+                        v.mindState.enemyTarget = null;
+                    }
+                    if (v.jobs != null)
+                    {
+                        v.jobs.ClearQueuedJobs();
+                        v.jobs.StopAll();
+                    }
+                    // -------------------------------------------------------
+
                     __result = v; 
-                    return false; // Прерываем генерацию, ветеран найден!
+                    return false;
                 }
             }
             
@@ -1129,5 +1361,26 @@ static void Postfix(Pawn p, ref HediffDef __result)
         }
     }
 
+public static class FPUtility
+{
+    public static bool IsPawnSavable(Pawn pawn)
+    {
+        // 1. Базовые проверки
+        if (pawn == null || !pawn.RaceProps.Humanlike || pawn.Dead) return false;
+        if (pawn.Faction != null && pawn.Faction.IsPlayer) return false;
+
+        // 2. Мутанты (Anomaly)
+        if (ModsConfig.AnomalyActive && pawn.IsMutant) return false;
+
+        // 3. СТРОГАЯ ЗАЩИТА КВЕСТОВ (Никаких исключений!)
+        // Отсекаем и гостей (Стелларх), и зарезервированных (попрошайки, беженцы)
+        if (pawn.IsQuestLodger() || QuestUtility.IsReservedByQuestOrQuestBeingGenerated(pawn))
+        {
+            return false;
+        }
+
+        return true; // Если дошли сюда — пешка полностью свободна
+    }
+}
 	
 }

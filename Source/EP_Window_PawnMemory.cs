@@ -117,9 +117,10 @@ public static class Patch_DrawSocialCardButton
     [HarmonyPrefix] // 1. МЕНЯЕМ Postfix НА Prefix
     static void Prefix(Rect rect, Pawn pawn) // 2. МЕНЯЕМ ИМЯ МЕТОДА НА Prefix
     {
-        // ПРОВЕРКА НАСТРОЕК
+// ПРОВЕРКА НАСТРОЕК
         if (FPMod.Settings == null || !FPMod.Settings.showVIPButton) return;
-        if (pawn == null || pawn.Faction == null || pawn.Faction.IsPlayer || !pawn.RaceProps.Humanlike) return;
+		
+		if (!FPUtility.IsPawnSavable(pawn)) return;
 
         var manager = Find.World?.GetComponent<WorldPopulationManager>();
         if (manager == null) return;
@@ -162,10 +163,10 @@ public static class Patch_Pawn_GetGizmos
         }
 
         // 2. ПРОВЕРКА НАСТРОЕК
-        if (FPMod.Settings == null || !FPMod.Settings.showGizmoButton) yield break;
+		if (FPMod.Settings == null || !FPMod.Settings.showGizmoButton) yield break;
         
-        // 3. ПРОВЕРКА ПЕШКИ (Та же логика, что и во вкладке Социум: только чужие люди)
-        if (__instance == null || __instance.Faction == null || __instance.Faction.IsPlayer || !__instance.RaceProps.Humanlike) yield break;
+        // 3. НОВАЯ ПРОВЕРКА: Пускаем попрошаек и дикарей (Faction может быть null)
+		if (!FPUtility.IsPawnSavable(__instance)) yield break;
 
         var manager = Find.World?.GetComponent<WorldPopulationManager>();
         if (manager == null) yield break;

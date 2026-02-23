@@ -48,6 +48,13 @@
   <FP_ShowGizmoButton>Показывать кнопку памяти в панели действий (Gizmo)</FP_ShowGizmoButton>
   <FP_ShowGizmoButtonTooltip>Отображать кнопку 'Память' в нижней панели действий (Gizmo) при выделении пешки.</FP_ShowGizmoButtonTooltip>
   
+  <FP_AutoSaveWanderers>Автоматически сохранять скитальцев</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>Автоматически подбирать новую постоянную фракцию и сохранять уходящих с карты представителей скрытых или временных фракций (Древние, беженцы, попрошайки и т.д.).</FP_AutoSaveWanderersTooltip>
+  
+  <FP_TechLevelRange>Допустимый разброс тех-уровня: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>Определяет, к каким фракциям могут присоединиться скитальцы.\n\n0 = Строго свой уровень.\n1 = Свой или соседний (например, Космос пойдет к Ультра или Индустриальному).\n5 = Любой уровень (Древние могут примкнуть к дикарям с копьями).</FP_TechLevelRangeTooltip>
+
+  
   
   
   <FP_MemoryHeader>Память: {0}</FP_MemoryHeader>

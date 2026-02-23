@@ -17,6 +17,7 @@ namespace FinitePopulationVeterans
         public bool enableFactionLimit = true;
 		public bool showVIPButton = true;
 		public bool showGizmoButton = true;
+		public bool autoSaveWanderers = false;
         public int factionVeteranLimit = 100;
 		public int veteranRecallCooldownDays = 10;
         public int forcedFreezeDays = 0;
@@ -27,6 +28,7 @@ namespace FinitePopulationVeterans
 		public float implantChanceMultiplier = 1f;
 		public float geneChanceMultiplier = 1f;
 		public float anomalyChanceMultiplier = 1f;
+		public int techLevelRange = 1;
 
         public override void ExposeData()
         {
@@ -34,6 +36,8 @@ namespace FinitePopulationVeterans
             Scribe_Values.Look(ref enableFactionLimit, "enableFactionLimit", true);
 			Scribe_Values.Look(ref showVIPButton, "showVIPButton", true);
 			Scribe_Values.Look(ref showGizmoButton, "showGizmoButton", true);
+			Scribe_Values.Look(ref autoSaveWanderers, "autoSaveWanderers", false);
+			Scribe_Values.Look(ref techLevelRange, "techLevelRange", 1);
             Scribe_Values.Look(ref factionVeteranLimit, "factionVeteranLimit", 100);
             Scribe_Values.Look(ref forcedFreezeDays, "forcedFreezeDays", 0);
             Scribe_Values.Look(ref veteranRecallChance, "veteranRecallChance", 0.5f);
@@ -78,6 +82,8 @@ public override void DoSettingsWindowContents(Rect inRect)
         tooltip: "FP_FactionVeteranLimitTooltip".Translate());
         settings.factionVeteranLimit = (int)listing.Slider(settings.factionVeteranLimit, 0f, 500f);
     }
+	
+	
 	// --- НОВАЯ ГАЛОЧКА ДЛЯ КНОПКИ ---
     listing.CheckboxLabeled("FP_ShowVIPButton".Translate(), ref settings.showVIPButton, 
         "FP_ShowVIPButtonTooltip".Translate());
@@ -85,7 +91,16 @@ public override void DoSettingsWindowContents(Rect inRect)
 // --- НОВАЯ ГАЛОЧКА ДЛЯ ГИЗМО ПАНЕЛИ ---
 listing.CheckboxLabeled("FP_ShowGizmoButton".Translate(), ref settings.showGizmoButton, 
     "FP_ShowGizmoButtonTooltip".Translate());
+	
+	// --- НОВАЯ ГАЛОЧКА ДЛЯ СКИТАЛЬЦЕВ ---
+listing.CheckboxLabeled("FP_AutoSaveWanderers".Translate(), ref settings.autoSaveWanderers, 
+    "FP_AutoSaveWanderersTooltip".Translate());
+// --- НОВЫЙ ПОЛЗУНОК ДЛЯ ДИАПАЗОНА ТЕХ-УРОВНЯ ---
+// Текст будет подставлять текущую цифру, например: "Допустимый разброс тех-уровня: 1"
+listing.Label("FP_TechLevelRange".Translate(settings.techLevelRange), -1, "FP_TechLevelRangeTooltip".Translate());
+settings.techLevelRange = (int)listing.Slider(settings.techLevelRange, 0f, 5f);
 listing.Gap(12f);
+
 	
 
     // --- Отдых ---
