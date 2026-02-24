@@ -440,23 +440,41 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
 // === УМНОЕ СТАРЕНИЕ ===
 if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
 {
+    // Проверяем все варианты биологического бессмертия
+    bool isBiologicallyImmortal = ModsConfig.BiotechActive && p.genes != null && 
+                                  p.genes.GenesListForReading.Any(g => g.Active && (
+                                      g.def.defName.ToLower().Contains("ageless") || 
+                                      g.def.defName.ToLower().Contains("immortal") || 
+                                      g.def.defName.ToLower().Contains("nonsenescent")
+                                  ));
+
     // Если возраст за весь цикл почти не изменился (ванилла заблокирована модами)
     if (p.ageTracker.AgeBiologicalTicks <= lastKnownAge + 60000) 
     {
         float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
-        p.ageTracker.AgeChronologicalTicks += 3600000;
-        p.ageTracker.AgeBiologicalTicks += (long)(3600000 * rate);
         
-        if (FPMod.Settings.enableDebugLogs)
-            Log.Message($"[FP] Ветеран {p.LabelShort} состарен вручную (оптимизатор блокирует ваниллу).");
+        // Хронологический возраст (время в мире) растет ВСЕГДА
+        p.ageTracker.AgeChronologicalTicks += 3600000;
+
+        // Биологический возраст растет ТОЛЬКО если нет генов бессмертия
+        if (!isBiologicallyImmortal)
+        {
+            p.ageTracker.AgeBiologicalTicks += (long)(3600000 * rate);
+            
+            if (FPMod.Settings.enableDebugLogs)
+                Log.Message($"[FP-Aging] Ветеран {p.LabelShort} состарен (Био: +1 год).");
+        }
+        else
+        {
+            if (FPMod.Settings.enableDebugLogs)
+                Log.Message($"[FP-Aging] Ветеран {p.LabelShort} сохранил молодость (Бессмертие/Ageless).");
+        }
     }
 }
 // Обновляем запись возраста для следующего года (неважно, ванилла состарила или мы)
 savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
 
-          //         p.ageTracker.AgeBiologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
 
-           //        p.ageTracker.AgeChronologicalTicks += 3600000;  //ПОКА ОСТАВЛЮ Я НЕ ПОМНЮ ЕСТЬ ЛИ СТАРЕНИЕ В ВАНИЛЕ
 
                     if (p.skills != null)
                     {
