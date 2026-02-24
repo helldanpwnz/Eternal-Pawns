@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <FP_SettingsCategory>Eternal Pawns</FP_SettingsCategory>
+
+  <FP_EnableFactionLimit>Activar límite de veteranos por facción</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>Si está activado, no se guardarán nuevos peones una vez alcanzado el límite. Los veteranos que regresan siempre se guardan.</FP_EnableFactionLimitTooltip>
+  <FP_FactionVeteranLimit>Límite de veteranos por facción: {0}</FP_FactionVeteranLimit>
+  <FP_FactionVeteranLimitTooltip>Número máximo de veteranos en la reserva.\n\nEstablécelo en 0 para que el mod guarde SOLO los personajes que marques manualmente (con una estrella).</FP_FactionVeteranLimitTooltip>
+  
+  <FP_ShowVIPButton>Mostrar botón “Recordar peón”</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>Muestra el botón “Memoria” en la pestaña Social. Permite guardar manualmente cualquier NPC en la base de datos de veteranos (ignorando límites y filtros de peones de misión) y también escribir notas para un peón específico si es necesario.</FP_ShowVIPButtonTooltip>
+
+  <FP_VeteranRecallCooldownDays>Días de descanso tras regresar: {0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>Tiempo de espera antes de que un veterano pueda ser llamado nuevamente.</FP_VeteranRecallCooldownDaysTooltip>
+
+  <FP_ForcedFreezeDays>Días hasta hibernar: {0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>Tras cuántos días inactivo se “pone a dormir” al peón por rendimiento.</FP_ForcedFreezeDaysTooltip>
+
+  <FP_VeteranRecallChance>Probabilidad de reaparición de veterano: {0}%</FP_VeteranRecallChance>
+  <FP_VeteranRecallChanceTooltip>Probabilidad de usar un veterano en lugar de generar un peón nuevo.</FP_VeteranRecallChanceTooltip>
+
+  <FP_DeathChanceMultiplier>Multiplicador anual de muerte por vejez: {0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>Probabilidad anual de muerte para todos los veteranos mayores de 60:\n\n• Archotech: 0.05%\n• Ultratech: 0.5%\n• Spacer: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Tribal: 7.5%\n\nEste control deslizante escala las probabilidades indicadas arriba.</FP_DeathDesc>
+
+  <FP_DiseaseChanceMultiplier>Multiplicador anual de enfermedad: {0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>Probabilidad anual de contraer una enfermedad crónica (edad 60+):\n\n• Archotech: 0.25%\n• Ultratech: 0.5%\n• Spacer: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Tribal: 10.0%\n\nEste control deslizante escala las probabilidades indicadas arriba.</FP_DiseaseDesc>
+
+  <FP_ImplantChanceMultiplier>Multiplicador anual de implantes: {0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>CÓMO FUNCIONA:\n1. Tratamiento (Todos los niveles tecnológicos): Si a un veterano le falta un brazo, pierna u ojo, la facción instalará una prótesis acorde a su nivel tecnológico (Tribal — madera, Imperio — biónica).\n2. Mejora (Industrial+): 10% de probabilidad anual de reemplazar una parte sana del cuerpo por un implante más eficiente.\n\nEste control deslizante escala la probabilidad general de estos eventos.</FP_ImplantDesc>
+
+  <FP_GeneChanceMultiplier>Multiplicador anual de genes: {0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>10% de probabilidad de obtener un gen (Spacer+), 5% de probabilidad de un Archigen (Ultra+).</FP_GeneChanceTooltip>
+
+  <FP_AnomalyChanceMultiplier>Multiplicador anual de mutación: {0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>5% de probabilidad de contacto con el Vacío (Tribal y Medieval).</FP_AnomalyChanceTooltip>
+
+  <FP_EnableDebugLogs>Activar registros detallados</FP_EnableDebugLogs>
+  <FP_EnableDebugLogsTooltip>Mostrar eventos en la consola (~).</FP_EnableDebugLogsTooltip>
+
+  <FP_ClearDatabaseButton>BORRAR BASE DE DATOS DE VETERANOS</FP_ClearDatabaseButton>
+  <FP_ClearDatabaseConfirm>¿Estás absolutamente seguro de que quieres eliminar completamente todos los veteranos de la base de datos? ¡Esta acción no se puede deshacer!</FP_ClearDatabaseConfirm>
+  <FP_DatabaseClearedMessage>¡Base de datos de veteranos borrada correctamente!</FP_DatabaseClearedMessage>
+  
+  <FP_ShowGizmoButton>Mostrar botón de memoria en el panel Gizmo</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>Mostrar el botón "Memoria" en el panel de acciones inferior (Gizmo) cuando un peón esté seleccionado.</FP_ShowGizmoButtonTooltip>
+  
+  <FP_AutoSaveWanderers>Guardar automáticamente a los errantes</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>Buscar automáticamente una nueva facción permanente y guardar a miembros de facciones ocultas o temporales (Antiguos, refugiados, mendigos, etc.) cuando abandonen el mapa.</FP_AutoSaveWanderersTooltip>
+  
+  <FP_TechLevelRange>Diferencia de nivel tecnológico permitida: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>Determina a qué facciones pueden unirse los errantes.\n\n0 = Estrictamente el mismo nivel tecnológico.\n1 = Mismo nivel o adyacente (ej., Spacer puede unirse a Ultra o Industrial).\n5 = Cualquier nivel tecnológico (los Antiguos pueden unirse a tribus neolíticas).</FP_TechLevelRangeTooltip>
+  
+  <FP_MemoryHeader>Memoria: {0}</FP_MemoryHeader>
+  <FP_OpenPawnMemoryPanelDesc>Abrir el panel de gestión de memoria y estado para este peón.</FP_OpenPawnMemoryPanelDesc>
+
+  <FP_StatusVeteran><b>Conocido</b>\nYa me he cruzado con esta persona antes. En algún lugar del mundo sigue su propio camino, y quién sabe cuándo volveremos a encontrarnos.</FP_StatusVeteran>
+  <FP_StatusPinned><b>No te olvidaré</b>\nHas destacado a esta persona entre la multitud. Si abandona estas tierras con vida, su historia continuará.</FP_StatusPinned>
+  <FP_StatusUnknown><b>Obsérvalo más de cerca</b>\nEn este mundo hostil es fácil desaparecer sin dejar rastro. Señálalo entre la multitud con la esperanza de volver a encontrarte.</FP_StatusUnknown>
+
+  <FP_AlreadyInHistory>Ya forma parte de la historia</FP_AlreadyInHistory>
+  <FP_AlreadyInHistoryMsg>Este personaje ya se ha convertido en parte de la historia del mundo.</FP_AlreadyInHistoryMsg>
+  <FP_ForgetPawn>Olvidar</FP_ForgetPawn>
+  <FP_RememberPawn>Recordar peón</FP_RememberPawn>
+  
+  <FP_PersonalNotes>Notas personales:</FP_PersonalNotes>
+  <FP_MemoryButton>Memoria</FP_MemoryButton>
+  
+</LanguageData>
