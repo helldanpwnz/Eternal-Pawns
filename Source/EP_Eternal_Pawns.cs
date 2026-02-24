@@ -437,41 +437,48 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
                     CleanPawnHealth(p, true);
 
 
-// === УМНОЕ СТАРЕНИЕ ===
+// === УМНОЕ СТАРЕНИЕ (Система точной компенсации) ===
 if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
 {
-    // Проверяем все варианты биологического бессмертия
-    bool isBiologicallyImmortal = ModsConfig.BiotechActive && p.genes != null && 
-                                  p.genes.GenesListForReading.Any(g => g.Active && (
-                                      g.def.defName.ToLower().Contains("ageless") || 
-                                      g.def.defName.ToLower().Contains("immortal") || 
-                                      g.def.defName.ToLower().Contains("nonsenescent")
-                                  ));
+    float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+    long actualTicksPassed = (long)(3600000 / rate); // Время, прошедшее в мире от звонка до звонка таймера
+    
+    // Хронологический возраст (время в мире) догоняем жестко
+    p.ageTracker.AgeChronologicalTicks += actualTicksPassed;
 
-    // Если возраст за весь цикл почти не изменился (ванилла заблокирована модами)
-    if (p.ageTracker.AgeBiologicalTicks <= lastKnownAge + 60000) 
+    float pawnAgeFactor = p.ageTracker.BiologicalTicksPerTick; 
+    
+    if (pawnAgeFactor > 0f)
     {
-        float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
-        
-        // Хронологический возраст (время в мире) растет ВСЕГДА
-        p.ageTracker.AgeChronologicalTicks += 3600000;
+        // 1. Сколько пешка ДОЛЖНА была состариться за этот цикл (с учетом ее генов)?
+        long expectedBioGrowth = (long)(3600000 * pawnAgeFactor); 
 
-        // Биологический возраст растет ТОЛЬКО если нет генов бессмертия
-        if (!isBiologicallyImmortal)
+        // 2. Сколько она РЕАЛЬНО состарилась силами самой игры?
+        long actualBioGrowth = p.ageTracker.AgeBiologicalTicks - lastKnownAge;
+
+        // 3. Защита от старения вспять (мало ли какие баги в других модах)
+        if (actualBioGrowth < 0) actualBioGrowth = 0;
+
+        // 4. Если ванилла недодала возраст (например, дала 6 дней вместо 30) - компенсируем разницу!
+        if (actualBioGrowth < expectedBioGrowth)
         {
-            p.ageTracker.AgeBiologicalTicks += (long)(3600000 * rate);
-            
+            long catchUpTicks = expectedBioGrowth - actualBioGrowth;
+            p.ageTracker.AgeBiologicalTicks += catchUpTicks;
+
             if (FPMod.Settings.enableDebugLogs)
-                Log.Message($"[FP-Aging] Ветеран {p.LabelShort} состарен (Био: +1 год).");
+                Log.Message($"[FP-Aging] {p.LabelShort}: Ванилла дала +{actualBioGrowth / 60000f:F1} дн. Мод компенсировал нехватку: +{catchUpTicks / 60000f:F1} дн.");
         }
         else
         {
+            // Если actualBioGrowth >= expectedBioGrowth, значит ванилла честно старила пешку весь год сама.
+            // Мод ничего не делает, чтобы не состарить ее дважды.
             if (FPMod.Settings.enableDebugLogs)
-                Log.Message($"[FP-Aging] Ветеран {p.LabelShort} сохранил молодость (Бессмертие/Ageless).");
+                Log.Message($"[FP-Aging] {p.LabelShort}: Ванилла сама состарила пешку штатно. Вмешательство не требуется.");
         }
     }
 }
-// Обновляем запись возраста для следующего года (неважно, ванилла состарила или мы)
+
+// В самом конце обязательно обновляем слепок возраста на следующий год
 savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
 
 
@@ -504,23 +511,32 @@ int age = p.ageTracker.AgeBiologicalYears;
 float deathChance = (age >= 60) ? 0.05f : 0f;
 
 // --- УМНАЯ ЗАЩИТА ГЕНАМИ ОТ СМЕРТИ ПО СТАРОСТИ ---
-    if (deathChance > 0f && ModsConfig.BiotechActive && p.genes != null)
-    {
-// Ищем бессмертие и нестарение (включая моды на вампиров и т.д.)
-    bool isImmortal = p.genes.GenesListForReading.Any(g => 
-        g.Active && (
-            g.def.defName.ToLower().Contains("deathless") || 
-            g.def.defName.ToLower().Contains("ageless") || 
-            g.def.defName.ToLower().Contains("immortal") ||
-            g.def.defName.ToLower().Contains("nonsenescent")
-        )
-    );
+if (deathChance > 0f)
+{
+    // 1. Нативная проверка: если биологические часы остановлены (ageless и его аналоги из модов)
+    bool isAgeless = p.ageTracker.BiologicalTicksPerTick == 0f;
 
-        if (isImmortal)
-        {
-            deathChance = 0f; // Смерть отменяется
-        }
+    // 2. Поиск генов на неуязвимость
+    bool isImmortal = false;
+    
+    // Ищем гены только если пешка все-таки стареет (иначе зачем тратить ресурсы процессора?)
+    if (!isAgeless && ModsConfig.BiotechActive && p.genes != null)
+    {
+        isImmortal = p.genes.GenesListForReading.Any(g => 
+            g.Active && (
+                g.def.defName.IndexOf("deathless", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                g.def.defName.IndexOf("immortal", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                g.def.defName.IndexOf("nonsenescent", StringComparison.OrdinalIgnoreCase) >= 0
+            )
+        );
     }
+
+    // Если пешка не стареет или физически не может умереть
+    if (isAgeless || isImmortal)
+    {
+        deathChance = 0f; // Смерть отменяется
+    }
+}
 
 if (deathChance > 0f && p.Faction != null)
             {
@@ -572,56 +588,76 @@ if (!p.Dead)
         }
 		
 private void ProcessVeteranImplants(Pawn p)
+{
+    if (!allVeteranIdsCache.Contains(p.thingIDNumber)) return;
+    if (p.Faction == null || p.Faction.def.hidden || p.health?.hediffSet == null) return;
+
+    TechLevel tech = p.Faction.def.techLevel;
+    bool changed = false;
+
+    // --- КЭШИРОВАНИЕ БАЗЫ (если еще не создана) ---
+    // Это гарантия, что кэш протезов точно загружен до того, как мы начнем апгрейд
+    if (cachedProstheticRecipes == null)
+    {
+        cachedProstheticRecipes = DefDatabase<RecipeDef>.AllDefsListForReading.Where(r =>
+            r.addsHediff != null && 
+            r.appliedOnFixedBodyParts != null && 
+            (typeof(Recipe_InstallArtificialBodyPart).IsAssignableFrom(r.workerClass) || 
+             typeof(Recipe_InstallImplant).IsAssignableFrom(r.workerClass))
+        ).ToList();
+    }
+
+    // 1. ЛЕЧИМ ИНВАЛИДОВ
+    // Здесь ToList() нужен ОБЯЗАТЕЛЬНО, так как RestorePart модифицирует коллекцию прямо во время цикла
+    var missingParts = p.health.hediffSet.GetMissingPartsCommonAncestors().ToList();
+    foreach (var missing in missingParts)
+    {
+        HediffDef prosth = GetDynamicProstheticFor(missing.Part, tech);
+        if (prosth != null)
         {
-			if (!allVeteranIdsCache.Contains(p.thingIDNumber)) return;
-			if (p.Faction == null || p.Faction.def.hidden) return;
-			
-			
-            if (p.Faction == null || p.health == null || p.health.hediffSet == null) return;
+            p.health.RestorePart(missing.Part);
+            p.health.AddHediff(prosth, missing.Part);
+            changed = true;
+        }
+    }
 
-            TechLevel tech = p.Faction.def.techLevel;
-            bool changed = false;
+    // 2. АПГРЕЙД (Оптимизированный поиск)
+    if (tech >= TechLevel.Industrial && Rand.Value < (0.10f * FPMod.Settings.implantChanceMultiplier))
+    {
+        // Выбираем из нашего кэша ТОЛЬКО те протезы, до которых фракция доросла по технологиям
+        var availableUpgrades = cachedProstheticRecipes.Where(r => 
+        {
+            var itemDef = r.ingredients.FirstOrDefault()?.filter?.AnyAllowedDef;
+            return itemDef != null && itemDef.techLevel <= tech;
+        }).ToList();
 
-            // 1. ЛЕЧИМ ИНВАЛИДОВ (Заменяем оторванные органы и конечности)
-            var missingParts = p.health.hediffSet.GetMissingPartsCommonAncestors().ToList();
-            foreach (var missing in missingParts)
+        // Перемешиваем доступные рецепты протезов (их всего пара десятков, это очень быстро!)
+        availableUpgrades.Shuffle(); 
+
+        foreach (var recipe in availableUpgrades)
+        {
+            // Смотрим, есть ли у пешки свободное место под этот конкретный протез
+            var partToUpgrade = p.RaceProps.body.AllParts.FirstOrDefault(part => 
+                recipe.appliedOnFixedBodyParts.Contains(part.def) &&
+                !p.health.hediffSet.PartIsMissing(part) &&
+                !p.health.hediffSet.HasDirectlyAddedPartFor(part)
+            );
+
+            // Если место нашлось — ставим имплант и сразу выходим
+            if (partToUpgrade != null)
             {
-                HediffDef prosth = GetDynamicProstheticFor(missing.Part, tech);
-                if (prosth != null)
-                {
-                    p.health.RestorePart(missing.Part);
-                    p.health.AddHediff(prosth, missing.Part);
-                    changed = true;
-                }
-            }
-
-            // 2. АПГРЕЙД (10% шанс прокачать ЛЮБУЮ здоровую часть тела)
-            if (tech >= TechLevel.Industrial && Rand.Value < (0.10f * FPMod.Settings.implantChanceMultiplier))
-            {
-                // Берем вообще ВСЕ части тела (сердце, позвоночник, мозг, хвост из мода и т.д.), 
-                // которые целы и на которых еще нет протезов
-                var validParts = p.RaceProps.body.AllParts.Where(x => 
-                    !p.health.hediffSet.PartIsMissing(x) && 
-                    !p.health.hediffSet.HasDirectlyAddedPartFor(x)
-                ).InRandomOrder().ToList(); // Сортируем случайно
-
-                foreach (var partToUpgrade in validParts)
-                {
-                    HediffDef upgrade = GetDynamicProstheticFor(partToUpgrade, tech);
-                    if (upgrade != null)
-                    {
-                        p.health.AddHediff(upgrade, partToUpgrade);
-                        changed = true;
-                        break; // Ставим только 1 апгрейд в год, чтобы он не превратился в киборга за секунду
-                    }
-                }
-            }
-
-            if (changed && FPMod.Settings.enableDebugLogs)
-            {
-                Log.Message($"<color=cyan>[FP-Surgery]</color> Ветеран {p.LabelShort} ({p.Faction.Name}) получил импланты за год отсутствия!");
+                p.health.AddHediff(recipe.addsHediff, partToUpgrade);
+                changed = true;
+                break; 
             }
         }
+    }
+
+    if (changed && FPMod.Settings.enableDebugLogs)
+    {
+        Log.Message($"<color=cyan>[FP-Surgery]</color> Ветеран {p.LabelShort} ({p.Faction.Name}) получил импланты за год отсутствия!");
+    }
+}
 		
 private void ProcessVeteranGenes(Pawn p)
         {
@@ -673,24 +709,29 @@ private void ProcessVeteranGenes(Pawn p)
 		
 private void ProcessVeteranAgeDiseases(Pawn p)
 {
-    // 1. Быстрая проверка возраста
+    // 1. Быстрая проверка возраста (до 60 лет старческих болезней не бывает)
     if (p.ageTracker.AgeBiologicalYears < 60) return;
-	
-// --- УМНАЯ ЗАЩИТА ГЕНАМИ И МОДАМИ ОТ СТАРЧЕСКИХ БОЛЕЗНЕЙ ---
+
+    // 2. УНИВЕРСАЛЬНАЯ ПРОВЕРКА ДВИЖКА: 
+    // Если биологические часы стоят (ванильный Ageless и 99% модов), 
+    // пешка не стареет, а значит, и новые старческие болезни получать не должна!
+    if (p.ageTracker.BiologicalTicksPerTick == 0f) return;
+    
+    // 3. УМНАЯ ЗАЩИТА ГЕНАМИ ИЗ МОДОВ (Оптимизированный поиск)
     if (ModsConfig.BiotechActive && p.genes != null)
     {
-		// Ищем гены по ключевым словам в названии (игнорируя регистр)
+        // Ищем гены "бога", игнорируя регистр букв и не создавая мусор в памяти
         bool immuneToDisease = p.genes.GenesListForReading.Any(g => 
             g.Active && (
-                g.def.defName.ToLower().Contains("diseasefree") || 
-                g.def.defName.ToLower().Contains("perfectimmunity") || 
-                g.def.defName.ToLower().Contains("ageless") ||
-                g.def.defName.ToLower().Contains("deathless") || // Добавили бессмертие
-                g.def.defName.ToLower().Contains("immortal")    // Добавили вечность
+                g.def.defName.IndexOf("diseasefree", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                g.def.defName.IndexOf("perfectimmunity", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                g.def.defName.IndexOf("deathless", StringComparison.OrdinalIgnoreCase) >= 0 || 
+                g.def.defName.IndexOf("immortal", StringComparison.OrdinalIgnoreCase) >= 0 ||
+                g.def.defName.IndexOf("nonsenescent", StringComparison.OrdinalIgnoreCase) >= 0
             )
         );
 
-        if (immuneToDisease) return; // У пешки иммунитет, выходим из метода
+        if (immuneToDisease) return; // У пешки абсолютный иммунитет, выходим
     }
 
     // 2. Определяем тех-уровень (безопасно достаем через ?. или используем Industrial по умолчанию)
