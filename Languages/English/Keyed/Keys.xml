@@ -54,6 +54,7 @@
   
   
   <FP_MemoryHeader>Memory: {0}</FP_MemoryHeader>
+  <FP_OpenPawnMemoryPanelDesc>Open the memory and status management panel for this pawn.</FP_OpenPawnMemoryPanelDesc>
 
   <FP_StatusVeteran><b>Familiar</b>\nI have met them before. Somewhere in the world they walk their own path, and who knows when we’ll meet again.</FP_StatusVeteran>
   <FP_StatusPinned><b>I’ll remember you</b>\nYou have singled this person out from the crowd. If they leave these lands alive, their story will continue.</FP_StatusPinned>

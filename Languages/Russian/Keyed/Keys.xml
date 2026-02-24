@@ -58,6 +58,7 @@
   
   
   <FP_MemoryHeader>Память: {0}</FP_MemoryHeader>
+  <FP_OpenPawnMemoryPanelDesc>Открыть панель памяти и управления статусом этой пешки.</FP_OpenPawnMemoryPanelDesc>
 
   <FP_StatusVeteran><b>Знакомый</b>\nЯ уже встречал его. Где-то в мире у него своя дорога, и кто знает, когда мы увидимся снова.</FP_StatusVeteran>
   <FP_StatusPinned><b>Я тебя запомню</b>\nВы выделили этого персонажа из толпы. Если он покинет эти земли живым, его история продолжится.</FP_StatusPinned>

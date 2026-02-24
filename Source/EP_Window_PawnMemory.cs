@@ -180,7 +180,7 @@ public static class Patch_Pawn_GetGizmos
         Command_Action memoryGizmo = new Command_Action
         {
             defaultLabel = "FP_MemoryButton".Translate(),
-            defaultDesc = "Открыть панель памяти и управления статусом этой пешки.", // Добавь ключ перевода по желанию
+            defaultDesc = "FP_OpenPawnMemoryPanelDesc".Translate(),
             
 
             icon = ContentFinder<Texture2D>.Get("UI/Icons/EP_MemoryIcon"), 

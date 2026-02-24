@@ -54,6 +54,7 @@
   
   
   <FP_MemoryHeader>記憶：{0}</FP_MemoryHeader>
+  <FP_OpenPawnMemoryPanelDesc>打開該角色的記憶與狀態管理面板。</FP_OpenPawnMemoryPanelDesc>
 
   <FP_StatusVeteran><b>熟面孔</b>\n我以前見過他／她。世界某處他／她正走在自己的道路上，誰又知道我們何時會再相見。</FP_StatusVeteran>
   <FP_StatusPinned><b>我會記住你</b>\n你從人群中挑出了這個人。若他／她能活著離開這片土地，他／她的故事將會延續。</FP_StatusPinned>

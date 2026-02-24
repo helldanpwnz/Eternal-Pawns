@@ -1297,10 +1297,11 @@ private static bool IsXenotypeCompatible(Pawn pawn, Faction f)
             if (pawn != null && pawn.Faction != null && !pawn.Faction.IsPlayer)
             {
                 var manager = Find.World?.GetComponent<WorldPopulationManager>();
-                if (manager != null && manager.allVeteranIdsCache.Contains(pawn.thingIDNumber))
-                {
-                    __result = "FinitePopulation_Veteran";
-                }
+if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) || 
+                        VeteranInputQueue.pendingPawnIDs.Contains(pawn.thingIDNumber)))
+{
+    __result = "FinitePopulation_Veteran";
+}
             }
         }
     }
