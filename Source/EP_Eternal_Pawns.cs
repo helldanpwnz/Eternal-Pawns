@@ -90,6 +90,13 @@ private List<long> tmpBioValues; // Для сохранения
 private List<int> tmpTicksKeys;   // Для сохранения
 private List<int> tmpTicksValues; // Для сохранения
 private int ticksToNextUpdate = -1; // По умолчанию 1 год
+
+
+// КЭШ БАЗЫ ДАННЫХ ДЛЯ ОПТИМИЗАЦИИ СТАРЕНИЯ
+        private static List<RecipeDef> cachedAnomalyRecipes = null;
+        private static List<GeneDef> cachedArchiteGenes = null;
+        private static List<GeneDef> cachedNormalGenes = null;
+        private static List<RecipeDef> cachedProstheticRecipes = null;
         
         // КЭШ ID
         public HashSet<int> allVeteranIdsCache = new HashSet<int>(); 
@@ -478,6 +485,25 @@ int age = p.ageTracker.AgeBiologicalYears;
 // Упрощенный шанс: до 60 лет — 0%, после 60 лет — база 5% в год
 float deathChance = (age >= 60) ? 0.05f : 0f;
 
+// --- УМНАЯ ЗАЩИТА ГЕНАМИ ОТ СМЕРТИ ПО СТАРОСТИ ---
+    if (deathChance > 0f && ModsConfig.BiotechActive && p.genes != null)
+    {
+// Ищем бессмертие и нестарение (включая моды на вампиров и т.д.)
+    bool isImmortal = p.genes.GenesListForReading.Any(g => 
+        g.Active && (
+            g.def.defName.ToLower().Contains("deathless") || 
+            g.def.defName.ToLower().Contains("ageless") || 
+            g.def.defName.ToLower().Contains("immortal") ||
+            g.def.defName.ToLower().Contains("nonsenescent")
+        )
+    );
+
+        if (isImmortal)
+        {
+            deathChance = 0f; // Смерть отменяется
+        }
+    }
+
 if (deathChance > 0f && p.Faction != null)
             {
                 // Быстрый переключатель тех-уровня (Switch expression)
@@ -598,16 +624,19 @@ private void ProcessVeteranGenes(Pawn p)
             // 10% шанс на обычный ген (если Архит не выпал)
             bool getsNormal = !getsArchite && Rand.Value < (0.10f * FPMod.Settings.geneChanceMultiplier);
 
-            // 3. ЕСЛИ ПРОКНУЛА ХОТЯ БЫ ОДНА МУТАЦИЯ
+// 3. ЕСЛИ ПРОКНУЛА ХОТЯ БЫ ОДНА МУТАЦИЯ
             if (getsArchite || getsNormal)
             {
-                // Собираем список доступных генов
-                var availableGenes = DefDatabase<GeneDef>.AllDefsListForReading.Where(g =>
-                    !p.genes.HasActiveGene(g) && 
-                    // Если прокнул Архит — ищем только гены с архо-капсулами (biostatArc > 0)
-                    // Если обычный — ищем гены без архо-капсул (biostatArc == 0)
-                    (getsArchite ? g.biostatArc > 0 : g.biostatArc == 0) 
-                ).ToList();
+                // Заполняем кэш генов ОДИН РАЗ за игру
+                if (cachedArchiteGenes == null || cachedNormalGenes == null)
+                {
+                    cachedArchiteGenes = DefDatabase<GeneDef>.AllDefsListForReading.Where(g => g.biostatArc > 0).ToList();
+                    cachedNormalGenes = DefDatabase<GeneDef>.AllDefsListForReading.Where(g => g.biostatArc == 0).ToList();
+                }
+
+                // Быстро берем нужный список из кэша и отсеиваем только те гены, которых еще нет у пешки
+                var baseGenesList = getsArchite ? cachedArchiteGenes : cachedNormalGenes;
+                var availableGenes = baseGenesList.Where(g => !p.genes.HasActiveGene(g)).ToList();
 
                 if (availableGenes.Count > 0)
                 {
@@ -628,6 +657,23 @@ private void ProcessVeteranAgeDiseases(Pawn p)
 {
     // 1. Быстрая проверка возраста
     if (p.ageTracker.AgeBiologicalYears < 60) return;
+	
+// --- УМНАЯ ЗАЩИТА ГЕНАМИ И МОДАМИ ОТ СТАРЧЕСКИХ БОЛЕЗНЕЙ ---
+    if (ModsConfig.BiotechActive && p.genes != null)
+    {
+		// Ищем гены по ключевым словам в названии (игнорируя регистр)
+        bool immuneToDisease = p.genes.GenesListForReading.Any(g => 
+            g.Active && (
+                g.def.defName.ToLower().Contains("diseasefree") || 
+                g.def.defName.ToLower().Contains("perfectimmunity") || 
+                g.def.defName.ToLower().Contains("ageless") ||
+                g.def.defName.ToLower().Contains("deathless") || // Добавили бессмертие
+                g.def.defName.ToLower().Contains("immortal")    // Добавили вечность
+            )
+        );
+
+        if (immuneToDisease) return; // У пешки иммунитет, выходим из метода
+    }
 
     // 2. Определяем тех-уровень (безопасно достаем через ?. или используем Industrial по умолчанию)
     TechLevel tech = p.Faction?.def.techLevel ?? TechLevel.Industrial;
@@ -687,13 +733,18 @@ private void ProcessVeteranAnomaly(Pawn p)
             if (Rand.Value < (0.05f * FPMod.Settings.anomalyChanceMultiplier))
             {
                 // Ищем все медицинские рецепты из Anomaly (Позвонок ревенанта и т.д.)
-                var anomalyRecipes = DefDatabase<RecipeDef>.AllDefsListForReading.Where(r =>
-                    r.addsHediff != null &&
-                    r.modContentPack != null &&
-                    r.modContentPack.PackageId.ToLower() == "ludeon.rimworld.anomaly" &&
-                    (typeof(Recipe_InstallArtificialBodyPart).IsAssignableFrom(r.workerClass) || 
-                     typeof(Recipe_InstallImplant).IsAssignableFrom(r.workerClass))
-                ).ToList();
+// Ищем все рецепты из Anomaly ТОЛЬКО ОДИН РАЗ
+                if (cachedAnomalyRecipes == null)
+                {
+                    cachedAnomalyRecipes = DefDatabase<RecipeDef>.AllDefsListForReading.Where(r =>
+                        r.addsHediff != null &&
+                        r.modContentPack != null &&
+                        r.modContentPack.PackageId.ToLower() == "ludeon.rimworld.anomaly" &&
+                        (typeof(Recipe_InstallArtificialBodyPart).IsAssignableFrom(r.workerClass) || 
+                         typeof(Recipe_InstallImplant).IsAssignableFrom(r.workerClass))
+                    ).ToList();
+                }
+                var anomalyRecipes = cachedAnomalyRecipes;
 
                 // Выбираем, что дадут боги Пустоты: 
                 // 50% на ритуальную мутацию (щупальца), 50% на хирургический артефакт (позвонок)
@@ -754,32 +805,33 @@ private void ProcessVeteranAnomaly(Pawn p)
         }
 
 
-        // --- УМНЫЙ ПОИСК ПРОТЕЗОВ ПО БАЗЕ ДАННЫХ ---
+// --- УМНЫЙ ПОИСК ПРОТЕЗОВ ПО БАЗЕ ДАННЫХ (С КЭШЕМ) ---
         private HediffDef GetDynamicProstheticFor(BodyPartRecord part, TechLevel factionTech)
         {
-            // Ищем в игре ВСЕ рецепты хирургии (включая из модов)
-            var validRecipes = DefDatabase<RecipeDef>.AllDefsListForReading.Where(r =>
-                r.addsHediff != null && // Рецепт дает хедифф (протез/имплант)
-                r.appliedOnFixedBodyParts != null && 
-                r.appliedOnFixedBodyParts.Contains(part.def) && // Подходит именно для этой части тела
-                (typeof(Recipe_InstallArtificialBodyPart).IsAssignableFrom(r.workerClass) || 
-                 typeof(Recipe_InstallImplant).IsAssignableFrom(r.workerClass)) // Это именно установка импланта
-            );
-
-            // Фильтруем по уровню развития фракции
-            var available = validRecipes.Where(r => 
+            // 1. Создаем глобальный кэш всех протезов игры ТОЛЬКО ОДИН РАЗ
+            if (cachedProstheticRecipes == null)
             {
-                // Проверяем предмет (коробку с протезом), который нужен для операции
+                cachedProstheticRecipes = DefDatabase<RecipeDef>.AllDefsListForReading.Where(r =>
+                    r.addsHediff != null && 
+                    r.appliedOnFixedBodyParts != null && 
+                    (typeof(Recipe_InstallArtificialBodyPart).IsAssignableFrom(r.workerClass) || 
+                     typeof(Recipe_InstallImplant).IsAssignableFrom(r.workerClass))
+                ).ToList();
+            }
+
+            // 2. Быстро фильтруем готовый кэш под конкретную часть тела и тех-уровень
+            var available = cachedProstheticRecipes.Where(r => 
+            {
+                if (!r.appliedOnFixedBodyParts.Contains(part.def)) return false;
+                
                 var itemDef = r.ingredients.FirstOrDefault()?.filter?.AnyAllowedDef;
                 if (itemDef == null) return false;
                 
-                // Главное условие: технологический уровень импланта не должен превышать уровень фракции
                 return itemDef.techLevel <= factionTech; 
             }).ToList();
 
-            if (available.Count == 0) return null; // Подходящих протезов нет
+            if (available.Count == 0) return null;
 
-            // Выдаем случайный протез из тех, что подошли по развитию
             return available.RandomElement().addsHediff;
         }
 
@@ -828,12 +880,6 @@ if (Find.TickManager.TicksGame != lastTickIssued)
     lastTickIssued = Find.TickManager.TicksGame;
 }
 
-// Достаем валидатор ОДИН РАЗ перед циклом (Оптимизация!)
-Predicate<Pawn> validator = null;
-try {
-    var trav = Traverse.Create(request);
-    validator = trav.Property<Predicate<Pawn>>("Validator").Value ?? trav.Field<Predicate<Pawn>>("validator").Value;
-} catch { }
 				 
 				 
 
@@ -844,8 +890,8 @@ int index = group.pawns.FindIndex(p =>
     // ПРОВЕРКА КУЛДАУНА:
     (!veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedTick) || 
      Find.TickManager.TicksGame >= addedTick + (FPMod.Settings.veteranRecallCooldownDays * 60000)) &&
-    IsPawnAvailableForDispatch(p) && 
-    PawnMatchesRequest(p, request, validator)
+IsPawnAvailableForDispatch(p) && 
+    PawnMatchesRequest(p, request)
 );
 
             if (index == -1) return null;
@@ -874,7 +920,7 @@ if (FPMod.Settings.enableDebugLogs) // Убрано !silent
         }
 
 // === ЛОГИКА СОВМЕСТИМОСТИ (ПОЛНАЯ ВЕРСИЯ) ===
-private bool PawnMatchesRequest(Pawn p, PawnGenerationRequest req, Predicate<Pawn> validator)
+private bool PawnMatchesRequest(Pawn p, PawnGenerationRequest req)
 {
     // 1. Раса (Alien Races / Androids)
     if (req.KindDef != null && p.def != req.KindDef.race) return false;
@@ -915,13 +961,24 @@ private bool PawnMatchesRequest(Pawn p, PawnGenerationRequest req, Predicate<Paw
         if (p.mutant == null || p.mutant.Def != req.ForcedMutant) return false;
     }
 
-    // 9. Внешний валидатор от других модов (Тот самый, что мы вынесли)
-// Просто используем то, что передали. Никакой рефлексии в цикле!
-if (validator != null && !validator(p)) return false;
+
+// 9. Внешние валидаторы от других модов (Новый API RimWorld 1.5)
+    if (req.ValidatorPreGear != null && !req.ValidatorPreGear(p))
+    {
+        if (FPMod.Settings.enableDebugLogs) 
+            Log.Message($"<color=yellow>[FP-Validator]</color> Ветеран {p.LabelShort} забракован (не прошел PreGear проверку).");
+        return false;
+    }
+    
+    if (req.ValidatorPostGear != null && !req.ValidatorPostGear(p))
+    {
+        if (FPMod.Settings.enableDebugLogs) 
+            Log.Message($"<color=yellow>[FP-Validator]</color> Ветеран {p.LabelShort} забракован (не прошел PostGear проверку).");
+        return false;
+    }
 
     return true;
 }
-
 private bool IsPawnAvailableForDispatch(Pawn p)
 {
 // 1. Базовая проверка
@@ -1084,6 +1141,16 @@ public static class Patch_PassToWorld
             {
                 Faction newFaction = validFactions.RandomElement();
                 pawn.SetFaction(newFaction);
+				
+				// --- ВЕРНУТЬ ЭТОТ ФИКС ---
+                foreach (var otherFaction in Find.FactionManager.AllFactionsListForReading)
+                {
+                    if (otherFaction != newFaction && newFaction.RelationWith(otherFaction, true) == null)
+                    {
+                        newFaction.TryMakeInitialRelationsWith(otherFaction);
+                    }
+                }
+                // -------------------------
                 
                 if (FPMod.Settings != null && FPMod.Settings.enableDebugLogs)
                 {
@@ -1282,29 +1349,31 @@ static void Postfix(Pawn p, ref HediffDef __result)
         return;
     }
 
-    // 4. ЛОГИКА 2: Разрешение сна при зависимостях (если время принудительной еще не пришло)
+// 4. ЛОГИКА 2: Разрешение сна при зависимостях (если время принудительной еще не пришло)
     if (IsDependencyOptimized(__result))
     {
-        // ... твой старый код проверки зависимостей ...
-            if (!isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
-                Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} засыпает (Разрешена зависимость: {__result.defName}).");
+        HediffDef addictionDef = __result; // Запомним, что это была за зависимость, для лога
+        __result = null;
 
-            __result = null;
-
-            // Проверяем, нет ли других БЛОКИРУЮЩИХ болезней (раны, инфекции)
-            var hediffs = p.health.hediffSet.hediffs;
-            for (int i = 0; i < hediffs.Count; i++)
+        // Проверяем, нет ли других БЛОКИРУЮЩИХ болезней (раны, инфекции, недоедание)
+        var hediffs = p.health.hediffSet.hediffs;
+        for (int i = 0; i < hediffs.Count; i++)
+        {
+            var h = hediffs[i];
+            if (!h.def.AlwaysAllowMothball && !h.IsPermanent() && !IsDependencyOptimized(h.def))
             {
-                var h = hediffs[i];
-                if (!h.def.AlwaysAllowMothball && !h.IsPermanent() && !IsDependencyOptimized(h.def))
-                {
-                    __result = h.def; // Нашли реальную болезнь — она запрещает сон
-                    break;
-                }
+                __result = h.def; // Нашли реальную болезнь — она запрещает сон
+                break;
             }
         }
-    }
 
+        // ПИШЕМ ЛОГ ТОЛЬКО ЗДЕСЬ: если других болезней не нашлось и пешка РЕАЛЬНО уснула
+        if (__result == null && !isAlreadyMothballed && FPMod.Settings.enableDebugLogs)
+        {
+            Log.Message($"<color=orange>[FP-Freeze]</color> {p.LabelShort} засыпает (Разрешена зависимость: {addictionDef.defName}).");
+        }
+    }
+}
     // Сверхбыстрая проверка через кэш
     private static bool IsDependencyOptimized(HediffDef def)
     {
