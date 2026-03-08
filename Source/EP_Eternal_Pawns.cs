@@ -1376,9 +1376,27 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
 
                         if (v.inventory != null && v.inventory.innerContainer != null)
                         {
-                            // Очищаем инвентарь от старых патронов и еды и выдаем свежий комплект 
-                            // Это 100% решает проблему с патронами из CE и других оружейных модов
-                            v.inventory.innerContainer.ClearAndDestroyContents();
+                            // --- ЭЛЕГАНТНАЯ ОЧИСТКА ИНВЕНТАРЯ ---
+                            // Удаляем только старые расходники (еду, лекарства, наркотики) и патроны.
+                            // Сохраняем серебро, уникальные предметы из модов, ключи и прочий ценный лут!
+                            var toDestroy = new List<Thing>();
+                            foreach (Thing t in v.inventory.innerContainer)
+                            {
+                                bool isConsumable = t.def.IsIngestible || t.def.IsMedicine || t.def.IsDrug;
+                                bool isAmmo = t.def.thingCategories != null && t.def.thingCategories.Any(c => c.defName.ToLower().Contains("ammo"));
+                                
+                                if (isConsumable || isAmmo)
+                                {
+                                    toDestroy.Add(t);
+                                }
+                            }
+                            
+                            foreach (Thing t in toDestroy)
+                            {
+                                t.Destroy();
+                            }
+
+                            // Выдаем свежий паек и патроны для текущего оружия
                             PawnInventoryGenerator.GenerateInventoryFor(v, request);
                         }
                     }
