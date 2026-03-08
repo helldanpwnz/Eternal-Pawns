@@ -710,6 +710,7 @@ private void ProcessVeteranRegeneration(Pawn p)
                name.IndexOf("reconstruct", StringComparison.OrdinalIgnoreCase) >= 0 ||
                name.IndexOf("recuperat", StringComparison.OrdinalIgnoreCase) >= 0 ||
                label.IndexOf("regeneration", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               name.IndexOf("totalhealing", StringComparison.OrdinalIgnoreCase) >= 0 ||
                desc.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0;
     });
 
