@@ -521,6 +521,9 @@ savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
                         }
                     }
 					
+try { ProcessVeteranRegeneration(p); } 
+catch (Exception ex) { Log.Warning($"[FP] Ошибка регенерации для {p.LabelShort}: {ex.Message}"); }
+
 try { ProcessVeteranImplants(p); } 
 catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки имплантов для {p.LabelShort}: {ex.Message}"); }
 
@@ -682,6 +685,55 @@ private void ProcessVeteranImplants(Pawn p)
     if (changed && FPMod.Settings.enableDebugLogs)
     {
         Log.Message($"<color=cyan>[FP-Surgery]</color> Ветеран {p.LabelShort} ({p.Faction.Name}) получил импланты за год отсутствия!");
+    }
+}
+
+private void ProcessVeteranRegeneration(Pawn p)
+{
+    if (!ModsConfig.BiotechActive || p.genes == null) return;
+
+    // ОПТИМИЗАЦИЯ: Если пешка и так полностью здорова, ничего не делаем
+    if (!p.health.hediffSet.GetMissingPartsCommonAncestors().Any() && 
+        !p.health.hediffSet.hediffs.Any(h => h.IsPermanent() && h is Hediff_Injury)) return;
+
+    // Расширенный поиск по ключевым словам (включая описание гена для 100% охвата)
+    bool hasRegenGene = p.genes.GenesListForReading.Any(g => 
+    {
+        if (!g.Active) return false;
+        string name = g.def.defName ?? "";
+        string label = g.def.label ?? "";
+        string desc = g.def.description ?? "";
+
+        return name.IndexOf("regen", StringComparison.OrdinalIgnoreCase) >= 0 || 
+               name.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               name.IndexOf("repair", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               name.IndexOf("reconstruct", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               name.IndexOf("recuperat", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               label.IndexOf("regeneration", StringComparison.OrdinalIgnoreCase) >= 0 ||
+               desc.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0;
+    });
+
+    if (!hasRegenGene) return;
+
+    // 1. Приоритет: Отращивание утерянных частей тела
+    var missing = p.health.hediffSet.GetMissingPartsCommonAncestors().ToList();
+    if (missing.Any())
+    {
+        var partToRegrow = missing.RandomElement();
+        p.health.RestorePart(partToRegrow.Part);
+        if (FPMod.Settings.enableDebugLogs)
+            Log.Message($"<color=green>[FP-Regen]</color> {p.LabelShort}: Отращена часть тела ({partToRegrow.Part.Label}) благодаря генам.");
+        return; 
+    }
+
+    // 2. Вторично: Лечение шрамов
+    var scar = p.health.hediffSet.hediffs.Where(h => h.IsPermanent() && h is Hediff_Injury).ToList();
+    if (scar.Any())
+    {
+        var targetScar = scar.RandomElement();
+        p.health.RemoveHediff(targetScar);
+        if (FPMod.Settings.enableDebugLogs)
+            Log.Message($"<color=green>[FP-Regen]</color> {p.LabelShort}: Заживлен шрам ({targetScar.Label}) благодаря генам.");
     }
 }
 		
