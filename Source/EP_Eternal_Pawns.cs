@@ -1376,10 +1376,11 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
 
                         if (v.inventory != null && v.inventory.innerContainer != null)
                         {
-                            // --- ЭЛЕГАНТНАЯ ОЧИСТКА ИНВЕНТАРЯ ---
-                            // Удаляем только старые расходники (еду, лекарства, наркотики) и патроны.
-                            // Сохраняем серебро, уникальные предметы из модов, ключи и прочий ценный лут!
+                            // --- ЭЛЕГАНТНАЯ ОЧИСТКА ИНВЕНТАРЯ И ЗАЩИТА ЛУТА ---
+                            var savedLoot = new List<Thing>();
                             var toDestroy = new List<Thing>();
+
+                            // Разделяем карманы на "сохранить" и "удалить"
                             foreach (Thing t in v.inventory.innerContainer)
                             {
                                 bool isConsumable = t.def.IsIngestible || t.def.IsMedicine || t.def.IsDrug;
@@ -1389,15 +1390,33 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                                 {
                                     toDestroy.Add(t);
                                 }
+                                else
+                                {
+                                    savedLoot.Add(t);
+                                }
                             }
                             
+                            // Физически достаем ценный лут (сталь, ресурсы, ключи) из карманов пешки
+                            // Это спасет их, если базовый генератор попытается удалить всё!
+                            foreach (Thing t in savedLoot)
+                            {
+                                v.inventory.innerContainer.Remove(t);
+                            }
+
+                            // Уничтожаем старый мусор (старые патроны/еду)
                             foreach (Thing t in toDestroy)
                             {
                                 t.Destroy();
                             }
 
-                            // Выдаем свежий паек и патроны для текущего оружия
+                            // Выдаем свежий паек и патроны для текущего оружия (ванилиный метод иногда стирает всё)
                             PawnInventoryGenerator.GenerateInventoryFor(v, request);
+
+                            // Возвращаем ценный спасенный лут обратно в карманы!
+                            foreach (Thing t in savedLoot)
+                            {
+                                v.inventory.innerContainer.TryAdd(t);
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -1623,8 +1642,11 @@ public static class FPUtility
         }
 
         // 4. ЗАЩИТА ОТ ИСЦЕЛЕНИЯ В КАРАВАНАХ/КАПСУЛАХ И ТЮРЬМАХ
-        if (pawn.IsPrisoner || pawn.IsPrisonerOfColony) return false;
         if (pawn.IsCaravanMember() || PawnUtility.IsTravelingInTransportPodWorldObject(pawn)) return false;
+        
+        // Отсекаем ваших текущих пленников (чтобы не лутали лечение при переноске),
+        // НО разрешаем тех, кого ВЫПУСТИЛИ на волю (Released = true)
+        if ((pawn.IsPrisoner || pawn.IsPrisonerOfColony) && (pawn.guest == null || !pawn.guest.Released)) return false;
 
         return true; // Если дошли сюда — пешка полностью свободна
     }
