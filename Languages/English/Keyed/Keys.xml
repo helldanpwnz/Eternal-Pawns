@@ -72,4 +72,6 @@
   
   
   
+  <FP_EnableMothball>Enable mothball (freeze) system</FP_EnableMothball>
+  <FP_EnableMothballTooltip>Allows the mod to put idle pawns to sleep for performance reasons. Disable if you use aggressive optimization mods that conflict with this.</FP_EnableMothballTooltip>
 </LanguageData>

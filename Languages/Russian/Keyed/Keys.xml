@@ -76,4 +76,6 @@
   
   
   
+  <FP_EnableMothball>Включить систему заморозки (Mothball)</FP_EnableMothball>
+  <FP_EnableMothballTooltip>Позволяет моду 'усыплять' бездействующих пешек для повышения производительности. Отключите, если используете агрессивные моды на оптимизацию, в случае конфликтов.</FP_EnableMothballTooltip>
 </LanguageData>

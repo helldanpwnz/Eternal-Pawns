@@ -21,6 +21,7 @@ namespace FinitePopulationVeterans
         public int factionVeteranLimit = 100;
 		public int veteranRecallCooldownDays = 10;
         public int forcedFreezeDays = 0;
+        public bool enableMothball = true;
         public float veteranRecallChance = 0.5f;
         public bool enableDebugLogs = false;
 		public float deathChanceMultiplier = 1f;
@@ -40,6 +41,7 @@ namespace FinitePopulationVeterans
 			Scribe_Values.Look(ref techLevelRange, "techLevelRange", 1);
             Scribe_Values.Look(ref factionVeteranLimit, "factionVeteranLimit", 100);
             Scribe_Values.Look(ref forcedFreezeDays, "forcedFreezeDays", 0);
+            Scribe_Values.Look(ref enableMothball, "enableMothball", true);
             Scribe_Values.Look(ref veteranRecallChance, "veteranRecallChance", 0.5f);
             Scribe_Values.Look(ref enableDebugLogs, "enableDebugLogs", true);
 			Scribe_Values.Look(ref deathChanceMultiplier, "deathChanceMultiplier", 1f);
@@ -108,8 +110,12 @@ listing.Gap(12f);
     settings.veteranRecallCooldownDays = (int)listing.Slider(settings.veteranRecallCooldownDays, 0f, 60f);
 
     // --- Заморозка ---
-    listing.Label(label: "FP_ForcedFreezeDays".Translate(settings.forcedFreezeDays), tooltip: "FP_ForcedFreezeDaysTooltip".Translate());
-    settings.forcedFreezeDays = (int)listing.Slider(settings.forcedFreezeDays, 0f, 100f);
+    listing.CheckboxLabeled("FP_EnableMothball".Translate(), ref settings.enableMothball, "FP_EnableMothballTooltip".Translate());
+    if (settings.enableMothball)
+    {
+        listing.Label(label: "FP_ForcedFreezeDays".Translate(settings.forcedFreezeDays), tooltip: "FP_ForcedFreezeDaysTooltip".Translate());
+        settings.forcedFreezeDays = (int)listing.Slider(settings.forcedFreezeDays, 0f, 100f);
+    }
 
     listing.GapLine();
 

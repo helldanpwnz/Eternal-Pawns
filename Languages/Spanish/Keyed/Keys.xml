@@ -65,4 +65,6 @@
   <FP_PersonalNotes>Notas personales:</FP_PersonalNotes>
   <FP_MemoryButton>Memoria</FP_MemoryButton>
   
+  <FP_EnableMothball>Habilitar el sistema de congelación (Mothball)</FP_EnableMothball>
+  <FP_EnableMothballTooltip>Permite al mod poner a dormir a los peones inactivos por razones de rendimiento. Desactívalo si usas mods de optimización agresivos en caso de conflictos.</FP_EnableMothballTooltip>
 </LanguageData>

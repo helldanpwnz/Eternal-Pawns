@@ -128,6 +128,29 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
         if (p.needs.food != null) p.needs.food.CurLevelPercentage = 1f;
         if (p.needs.rest != null) p.needs.rest.CurLevelPercentage = 1f;
     }
+
+    // --- ВОССТАНОВЛЕНИЕ ПРОЧНОСТИ ВЕЩЕЙ ---
+    if (p.apparel != null)
+    {
+        foreach (var ap in p.apparel.WornApparel)
+        {
+            if (ap.def.useHitPoints) ap.HitPoints = ap.MaxHitPoints;
+        }
+    }
+    if (p.equipment != null)
+    {
+        foreach (var eq in p.equipment.AllEquipmentListForReading)
+        {
+            if (eq.def.useHitPoints) eq.HitPoints = eq.MaxHitPoints;
+        }
+    }
+    if (p.inventory != null)
+    {
+        foreach (var item in p.inventory.innerContainer)
+        {
+            if (item.def.useHitPoints) item.HitPoints = item.MaxHitPoints;
+        }
+    }
 }
 
 		
@@ -1330,10 +1353,82 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                 // Пробуем достать ветерана
                 Pawn v = manager.TryGetVeteran(request, silent);
                 
-if (v != null) 
+                if (v != null) 
                 { 
                     if (request.KindDef != null) v.kindDef = request.KindDef; 
+
+                    // --- ВОССТАНОВЛЕНИЕ ОРУЖИЯ И ОДЕЖДЫ ДЛЯ ГОЛЫХ ВЕТЕРАНОВ ---
+                    try
+                    {
+                        if (v.apparel != null && v.apparel.WornApparel.Count < 3)
+                        {
+                            var worn = v.apparel.WornApparel.ToList();
+                            foreach (var item in worn)
+                            {
+                                v.apparel.Remove(item);
+                                item.Destroy();
+                            }
+                            PawnApparelGenerator.GenerateStartingApparelFor(v, request);
+                        }
+
+                        if (v.equipment != null && !v.equipment.AllEquipmentListForReading.Any(eq => eq.def.IsWeapon))
+                            PawnWeaponGenerator.TryGenerateWeaponFor(v, request);
+
+                        if (v.inventory != null && v.inventory.innerContainer != null)
+                        {
+                            // Очищаем инвентарь от старых патронов и еды и выдаем свежий комплект 
+                            // Это 100% решает проблему с патронами из CE и других оружейных модов
+                            v.inventory.innerContainer.ClearAndDestroyContents();
+                            PawnInventoryGenerator.GenerateInventoryFor(v, request);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Log.Warning($"[FP] Не удалось сгенерировать экипировку для {v.LabelShort}: {ex.Message}");
+                    }
+
+                    // --- ВЫДАЧА ТИТУЛОВ ДЛЯ КВЕСТОВЫХ ПЕШЕК (ROYALTY) ---
+                    if (ModsConfig.RoyaltyActive && request.KindDef != null && request.Faction != null)
+                    {
+                        try
+                        {
+                            if (request.KindDef.titleRequired != null)
+                            {
+                                if (v.royalty != null && !v.royalty.HasTitle(request.KindDef.titleRequired))
+                                    v.royalty.SetTitle(request.Faction, request.KindDef.titleRequired, true, false, true);
+                            }
+                            else if (request.KindDef.titleSelectOne != null && request.KindDef.titleSelectOne.Count > 0)
+                            {
+                                var randomTitle = request.KindDef.titleSelectOne.RandomElement();
+                                if (v.royalty != null && !v.royalty.HasTitle(randomTitle))
+                                    v.royalty.SetTitle(request.Faction, randomTitle, true, false, true);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            Log.Warning($"[FP] Ошибка выдачи титула для {v.LabelShort}: {ex.Message}");
+                        }
+                    }
+
+                    // --- ОЧИСТКА ЗАВИСИМОСТЕЙ ЕСЛИ НУЖНО (в данном случае мы не чистим перманентные болезни, но в будущем можно)
                     
+                    // --- ОЧИСТКА СТАТУСА ПЛЕННИКА / ГОСТЯ И ДРУГИХ ХВОСТОВ КОЛОНИИ ---
+                    // Это исправит баг, когда отпущенный пленник, вернувшийся в виде рейдера, 
+                    // все еще считался вашим узником, хотя физически нападал на вас.
+                    if (v.guest != null) v.guest.SetGuestStatus(null);
+                    
+                    if (v.playerSettings != null)
+                    {
+                        v.playerSettings.AreaRestrictionInPawnCurrentMap = null;
+                        v.playerSettings.hostilityResponse = HostilityResponseMode.Flee; // Сброс политики атаки колонистов
+                    }
+                    
+                    if (v.ownership != null) v.ownership.UnclaimAll(); // Отвязываем от кроватей колонии
+                    
+                    if (v.timetable != null) v.timetable.times = null; // Сбрасываем расписание колонии
+                    
+                    if (v.drafter != null) v.drafter.Drafted = false; // Снимаем боевой режим, если он багом остался
+
                     // --- НОВАЯ ОЧИСТКА РАЗУМА (ЧТОБЫ ИИ НЕ СХОДИЛ С УМА) ---
                     if (v.mindState != null)
                     {
@@ -1379,6 +1474,7 @@ static void Postfix(Pawn p, ref HediffDef __result)
 
     var manager = Find.World?.GetComponent<WorldPopulationManager>();
     if (manager == null) return;
+    if (FPMod.Settings != null && !FPMod.Settings.enableMothball) return;
 
     // 1. ПРОВЕРКА: Наш ли это ветеран?
     bool isVeteran = manager.allVeteranIdsCache.Contains(p.thingIDNumber) || 
@@ -1507,6 +1603,10 @@ public static class FPUtility
         {
             return false;
         }
+
+        // 4. ЗАЩИТА ОТ ИСЦЕЛЕНИЯ В КАРАВАНАХ/КАПСУЛАХ И ТЮРЬМАХ
+        if (pawn.IsPrisoner || pawn.IsPrisonerOfColony) return false;
+        if (pawn.IsCaravanMember() || PawnUtility.IsTravelingInTransportPodWorldObject(pawn)) return false;
 
         return true; // Если дошли сюда — пешка полностью свободна
     }
