@@ -151,6 +151,9 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
             if (item.def.useHitPoints) item.HitPoints = item.MaxHitPoints;
         }
     }
+
+    // Перезарядка оружия (CE, Yayo и т.д.)
+    FPUtility.ReloadWeapons(p);
 }
 
 		
@@ -1371,9 +1374,6 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                             PawnApparelGenerator.GenerateStartingApparelFor(v, request);
                         }
 
-                        if (v.equipment != null && !v.equipment.AllEquipmentListForReading.Any(eq => eq.def.IsWeapon))
-                            PawnWeaponGenerator.TryGenerateWeaponFor(v, request);
-
                         if (v.inventory != null && v.inventory.innerContainer != null)
                         {
                             // --- ЭЛЕГАНТНАЯ ОЧИСТКА ИНВЕНТАРЯ И ЗАЩИТА ЛУТА ---
@@ -1384,9 +1384,10 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                             foreach (Thing t in v.inventory.innerContainer)
                             {
                                 bool isConsumable = t.def.IsIngestible || t.def.IsMedicine || t.def.IsDrug;
-                                bool isAmmo = t.def.thingCategories != null && t.def.thingCategories.Any(c => c.defName.ToLower().Contains("ammo"));
                                 
-                                if (isConsumable || isAmmo)
+                                // Мы БОЛЬШЕ НЕ удаляем патроны! Combat Extended выдает их только при 
+                                // генерации новой пушки. Если мы их удалим, старая пушка останется пустой!
+                                if (isConsumable)
                                 {
                                     toDestroy.Add(t);
                                 }
@@ -1396,20 +1397,20 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                                 }
                             }
                             
-                            // Физически достаем ценный лут (сталь, ресурсы, ключи) из карманов пешки
+                            // Физически достаем ценный лут (сталь, ресурсы, ключи, ПАТРОНЫ) из карманов пешки
                             // Это спасет их, если базовый генератор попытается удалить всё!
                             foreach (Thing t in savedLoot)
                             {
                                 v.inventory.innerContainer.Remove(t);
                             }
 
-                            // Уничтожаем старый мусор (старые патроны/еду)
+                            // Уничтожаем старый мусор (старую еду)
                             foreach (Thing t in toDestroy)
                             {
                                 t.Destroy();
                             }
 
-                            // Выдаем свежий паек и патроны для текущего оружия (ванилиный метод иногда стирает всё)
+                            // Выдаем свежий паек (ванилиный метод иногда стирает всё)
                             PawnInventoryGenerator.GenerateInventoryFor(v, request);
 
                             // Возвращаем ценный спасенный лут обратно в карманы!
@@ -1418,6 +1419,93 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                                 v.inventory.innerContainer.TryAdd(t);
                             }
                         }
+
+                        // --- ГЕНЕРАЦИЯ ОРУЖИЯ ---
+                        if (v.equipment != null && !v.equipment.AllEquipmentListForReading.Any(eq => eq.def.IsWeapon))
+                            PawnWeaponGenerator.TryGenerateWeaponFor(v, request);
+
+                        // --- КРИТИЧЕСКАЯ СОВМЕСТИМОСТЬ ПАТРОНОВ (Combat Extended, Yayo's, etc.) ---
+                        // Если ветеран вернулся с пушкой, к ней НУЖНЫ патроны. 
+                        // Многие моды выдают их только при создании НОВОЙ пушки, поэтому мы делаем это сами.
+                        if (v.equipment != null && v.equipment.Primary != null && v.inventory != null)
+                        {
+                            var weapon = v.equipment.Primary;
+                            // Ищем ЛЮБОЙ компонент, связанный с патронами (AmmoUser, CompAmmo, и т.д.)
+                            var ammoComp = weapon.AllComps.FirstOrDefault(c => 
+                                c.GetType().Name.Contains("Ammo") || 
+                                c.GetType().Name.Contains("Reload") ||
+                                c.GetType().Name.Contains("Yayo"));
+
+                            if (ammoComp != null)
+                            {
+                                try
+                                {
+                                    var trComp = Traverse.Create(ammoComp);
+                                    ThingDef ammoDef = null;
+
+                                    // 1. Пытаемся достать текущий тип патрона (CE стиль)
+                                    var currentAmmo = trComp.Property("CurrentAmmo").GetValue();
+                                    if (currentAmmo != null) ammoDef = currentAmmo as ThingDef;
+
+                                    // 2. Если пусто — лезем в список доступных патронов (Yayo / CE fallback)
+                                    if (ammoDef == null)
+                                    {
+                                         // Пробуем разные названия полей, где моды хранят списки патронов
+                                         var ammoSet = trComp.Field("ammoSet").GetValue() ?? trComp.Property("AmmoSet").GetValue();
+                                         if (ammoSet != null)
+                                         {
+                                             var trSet = Traverse.Create(ammoSet);
+                                             var ammoTypes = trSet.Field("ammoTypes").GetValue() as System.Collections.IEnumerable 
+                                                          ?? trSet.Property("AmmoTypes").GetValue() as System.Collections.IEnumerable;
+                                             
+                                             if (ammoTypes != null)
+                                             {
+                                                 foreach (var at in ammoTypes)
+                                                 {
+                                                     var trAt = Traverse.Create(at);
+                                                     ammoDef = trAt.Field("ammo").GetValue<ThingDef>() 
+                                                            ?? trAt.Property("Ammo").GetValue<ThingDef>()
+                                                            ?? trAt.Field("ammoDef").GetValue<ThingDef>();
+                                                     if (ammoDef != null) break;
+                                                 }
+                                             }
+                                         }
+                                    }
+
+                                    // 3. Совместимость конкретно с Yayo's Combat (если ничего не помогло)
+                                    if (ammoDef == null)
+                                    {
+                                        ammoDef = trComp.Field("ammoDef").GetValue<ThingDef>() 
+                                               ?? trComp.Property("AmmoDef").GetValue<ThingDef>();
+                                    }
+
+                                    // Если патрон найден — выдаем боезапас!
+                                    if (ammoDef != null)
+                                    {
+                                        // Определяем количество: 3 магазина или стандартные 60 штук
+                                        int magSize = 0;
+                                        try { magSize = trComp.Property("MagSize").GetValue<int>(); } catch { }
+                                        if (magSize <= 0) try { magSize = trComp.Field("magSize").GetValue<int>(); } catch { }
+                                        
+                                        int ammoToGive = (magSize > 0) ? magSize * 3 : 60;
+                                        
+                                        // Проверяем текущее наличие, чтобы не спамить патронами
+                                        int currentCount = v.inventory.innerContainer.Where(t => t.def == ammoDef).Sum(t => t.stackCount);
+                                        
+                                        if (currentCount < ammoToGive)
+                                        {
+                                            Thing ammoThing = ThingMaker.MakeThing(ammoDef);
+                                            ammoThing.stackCount = Mathf.Min(ammoToGive - currentCount, ammoDef.stackLimit);
+                                            v.inventory.innerContainer.TryAdd(ammoThing);
+                                        }
+                                    }
+                                }
+                                catch { /* Безопасный пропуск ошибок рефлексии */ }
+                            }
+                        }
+
+                        // ПЕРЕЗАРИЖАЕМ ОРУЖИЕ ПРЯМО ПРИ СПАВНЕ
+                        FPUtility.ReloadWeapons(v);
                     }
                     catch (Exception ex)
                     {
@@ -1454,11 +1542,9 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                     // все еще считался вашим узником, хотя физически нападал на вас.
                     if (v.guest != null) v.guest.SetGuestStatus(null);
                     
-                    if (v.playerSettings != null)
-                    {
-                        v.playerSettings.AreaRestrictionInPawnCurrentMap = null;
-                        v.playerSettings.hostilityResponse = HostilityResponseMode.Flee; // Сброс политики атаки колонистов
-                    }
+                    // Полностью удаляем настройки игрока (политки атаки, зоны, медикаменты), 
+                    // так как пешка теперь принадлежит другой фракции.
+                    v.playerSettings = null;
                     
                     if (v.ownership != null) v.ownership.UnclaimAll(); // Отвязываем от кроватей колонии
                     
@@ -1625,6 +1711,123 @@ static void Postfix(Pawn p, ref HediffDef __result)
 
 public static class FPUtility
 {
+    public static void ReloadWeapons(Pawn p)
+    {
+        if (p == null || p.equipment == null) return;
+        
+        foreach (var eq in p.equipment.AllEquipmentListForReading)
+        {
+            if (eq == null) continue;
+            
+            foreach (var comp in eq.AllComps)
+            {
+                string compName = comp.GetType().Name;
+                if (!compName.Contains("Ammo") && !compName.Contains("Reload") && !compName.Contains("Charged")) continue;
+
+                try
+                {
+                    var tr = Traverse.Create(comp);
+                    
+                    // 1. ИНИЦИАЛИЗАЦИЯ ТИПА ПАТРОНА
+                    // ДОБАВЛЕНО: CurrentAmmo и SelectedAmmo (с большой буквы для CE)
+                    string[] ammoDefFields = { "ammoDef", "CurrentAmmo", "SelectedAmmo", "currentAmmo", "curAmmo", "selectedAmmo" };
+                    foreach (var adf in ammoDefFields)
+                    {
+                        var f = tr.Field(adf);
+                        var prop = tr.Property(adf); // ДОБАВЛЕНО: Поиск по Property
+                        
+                        bool isField = f.FieldExists();
+                        bool isProp = prop.PropertyExists();
+
+                        // Проверяем и Field, и Property
+                        if ((isField && f.GetValue() == null) || (isProp && prop.GetValue() == null))
+                        {
+                            // Пытаемся найти список доступных патронов и взять первый
+                            var props = tr.Property("Props").GetValue() ?? tr.Field("props").GetValue();
+                            if (props != null)
+                            {
+                                var trP = Traverse.Create(props);
+                                var ammoSet = trP.Field("ammoSet").GetValue() ?? trP.Field("ammoTypes").GetValue();
+                                if (ammoSet is System.Collections.IEnumerable list)
+                                {
+                                    foreach (var item in list)
+                                    {
+                                        var itemDef = Traverse.Create(item).Field("ammo").GetValue<ThingDef>() 
+                                                   ?? Traverse.Create(item).Field("ammoDef").GetValue<ThingDef>();
+                                        
+                                        if (itemDef != null) 
+                                        { 
+                                            // Устанавливаем туда, что удалось найти
+                                            if (isField) f.SetValue(itemDef);
+                                            if (isProp) prop.SetValue(itemDef);
+                                            break; 
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    int magSize = 0;
+                    // 2. Ищем МАКСИМУМ
+                    magSize = tr.Property("MaxCharges").GetValue<int>();
+                    if (magSize <= 0) magSize = tr.Method("MaxAmmoAmount").GetValue<int>();
+                    if (magSize <= 0) magSize = tr.Property("MagSize").GetValue<int>();
+                    if (magSize <= 0) magSize = tr.Field("magSize").GetValue<int>();
+                    if (magSize <= 0) magSize = tr.Property("AmmoCountMax").GetValue<int>();
+
+                    if (magSize <= 0)
+                    {
+                        var props = tr.Property("Props").GetValue() ?? tr.Field("props").GetValue();
+                        if (props != null)
+                        {
+                            var trP = Traverse.Create(props);
+                            magSize = trP.Field("maxCharges").GetValue<int>();
+                            if (magSize <= 0) magSize = trP.Field("magSize").GetValue<int>();
+                            if (magSize <= 0) magSize = trP.Field("magazineSize").GetValue<int>(); // ДОБАВЛЕНО: для CE
+                            if (magSize <= 0) magSize = trP.Field("ammoCountMax").GetValue<int>();
+                            if (magSize <= 0) magSize = trP.Property("Capacity").GetValue<int>();
+                        }
+                    }
+
+                    if (magSize > 0)
+                    {
+                        // 3. Устанавливаем ТЕКУЩЕЕ количество
+                        bool set = false;
+                        // ДОБАВЛЕНО: CurMagCount с большой буквы
+                        string[] countFields = { "remainingCharges", "CurMagCount", "curMagCount", "curAmmoCount", "ammoCount", "curAmmo", "count", "ammo" };
+                        
+                        foreach (var fName in countFields)
+                        {
+                            var f = tr.Field(fName);
+                            if (f.FieldExists()) { f.SetValue(magSize); set = true; }
+                            
+                            var pField = tr.Property(fName);
+                            if (pField.PropertyExists()) { pField.SetValue(magSize); set = true; }
+                        }
+
+                        // 4. Сброс состояния (вызов родных методов мода)
+                        // ДОБАВЛЕНО: ResetAmmoCount (стандартный метод CE для полной перезарядки оружия без анимации)
+                        string[] resetMethods = { "ResetAmmoCount", "ResetAmmo", "FullReload", "Reload", "FillMagazine", "UpdateVerbs" };
+                        foreach (var mName in resetMethods)
+                        {
+                            var method = tr.Method(mName);
+                            if (method.MethodExists()) 
+                            { 
+                                method.GetValue(); 
+                                set = true; 
+                            }
+                        }
+
+                        if (set && FPMod.Settings != null && FPMod.Settings.enableDebugLogs)
+                            Log.Message($"<color=orange>[FP-Reload]</color> {p.LabelShort}: {eq.LabelShort} заряжено: {magSize}");
+                    }
+                }
+                catch (Exception) { }
+            }
+        }
+    }
+
     public static bool IsPawnSavable(Pawn pawn)
     {
         // 1. Базовые проверки
