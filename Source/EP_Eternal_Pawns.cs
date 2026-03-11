@@ -704,11 +704,19 @@ private void ProcessVeteranRegeneration(Pawn p)
         string label = g.def.label ?? "";
         string desc = g.def.description ?? "";
 
+        // ЧЕРНЫЙ СПИСОК: Пропускаем гены одежды, воды или слишком слабые эффекты
+        if (name.IndexOf("apparel", StringComparison.OrdinalIgnoreCase) >= 0 || 
+            label.IndexOf("apparel", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            name.IndexOf("item", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            name.IndexOf("water", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            label.IndexOf("minor", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            label.IndexOf("slow", StringComparison.OrdinalIgnoreCase) >= 0 ||
+            name.IndexOf("wound", StringComparison.OrdinalIgnoreCase) >= 0) return false;
+
         return name.IndexOf("regen", StringComparison.OrdinalIgnoreCase) >= 0 || 
                name.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0 ||
                name.IndexOf("repair", StringComparison.OrdinalIgnoreCase) >= 0 ||
                name.IndexOf("reconstruct", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               name.IndexOf("recuperat", StringComparison.OrdinalIgnoreCase) >= 0 ||
                label.IndexOf("regeneration", StringComparison.OrdinalIgnoreCase) >= 0 ||
                name.IndexOf("totalhealing", StringComparison.OrdinalIgnoreCase) >= 0 ||
                desc.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0;
@@ -1163,7 +1171,7 @@ private bool IsPawnAvailableForDispatch(Pawn p)
 
         public static void Mark(Pawn p)
         {
-            if (p?.RaceProps?.Humanlike == true && (p.Faction == null || !p.Faction.IsPlayer))
+            if (p?.RaceProps?.Humanlike == true)
             {
                 seenIDs.Add(p.thingIDNumber);
             }
@@ -1193,6 +1201,8 @@ private bool IsPawnAvailableForDispatch(Pawn p)
 [HarmonyPatch(typeof(WorldPawns), nameof(WorldPawns.PassToWorld), new[] { typeof(Pawn), typeof(PawnDiscardDecideMode) })]
 public static class Patch_PassToWorld
 {
+    private static RecordDef timeAsColonistRecord;
+
     [HarmonyPrefix]
     static void Prefix(Pawn pawn, PawnDiscardDecideMode discardMode)
     {
@@ -1230,15 +1240,22 @@ public static class Patch_PassToWorld
         else
         {
             dn = pawn.Faction.def.defName;
-            isTemporaryOrHidden = pawn.Faction.def.hidden || pawn.Faction.temporary || 
+            isTemporaryOrHidden = pawn.Faction.def.hidden || pawn.Faction.temporary || pawn.Faction.IsPlayer ||
                                   dn.Contains("Refugee") || dn.Contains("Beggar") || 
                                   dn.Contains("Ancient") || dn.Contains("Sleeper");
         }
 
         if (isTemporaryOrHidden)
         {
-            // Если игрок НЕ нажал "Память" и НЕ включил галочку автосохранения — пропускаем (ванилльное удаление)
-            if (!isPinned && (FPMod.Settings == null || !FPMod.Settings.autoSaveWanderers)) return;
+            // Кэшируем определение рекорда один раз для макс. производительности
+            if (timeAsColonistRecord == null) 
+                timeAsColonistRecord = DefDatabase<RecordDef>.GetNamed("TimeAsColonistOrSlave", false);
+
+            // Проверка: был ли он колонистом?
+            bool wasColonist = pawn.records != null && timeAsColonistRecord != null && pawn.records.GetValue(timeAsColonistRecord) > 0.1f;
+
+            // Если игрок НЕ нажал "Память", он НЕ бывший колонист и НЕ включена галочка автосохранения — пропускаем
+            if (!isPinned && !wasColonist && (FPMod.Settings == null || !FPMod.Settings.autoSaveWanderers)) return;
 
             // --- ЛОГИКА СМЕНЫ ФРАКЦИИ ---
             
