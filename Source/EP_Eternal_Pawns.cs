@@ -113,7 +113,7 @@ private int ticksToNextUpdate = -1; // По умолчанию 1 год
 		private int ticksToNextYearUpdate = 0;
 		private int ticksToNextCleanup = -1; // НОВЫЙ ТАЙМЕР: 10 дней (60,000 тиков * 10)
 
-public WorldPopulationManager(World world) : base(world) { }
+public WorldPopulationManager(World world) : base(world) { FPSeenTracker.Clear(); }
 
 private void CleanPawnHealth(Pawn p, bool fullHeal)
 {
