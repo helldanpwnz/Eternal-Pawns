@@ -67,4 +67,11 @@
   
   <FP_EnableMothball>Habilitar el sistema de congelación (Mothball)</FP_EnableMothball>
   <FP_EnableMothballTooltip>Permite al mod poner a dormir a los peones inactivos por razones de rendimiento. Desactívalo si usas mods de optimización agresivos en caso de conflictos.</FP_EnableMothballTooltip>
+
+  <FP_EnableAgingVisuals>Activar encanecimiento del cabello</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>Si se activa, los humanoides encanecerán gradualmente a medida que envejecen.</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>El encanecimiento comienza al: {0}% de la vida</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>Porcentaje de esperanza de vida cuando comienza a aparecer el cabello gris. Para los humanos (80 años), el 45% es aproximadamente 36 años.</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>El encanecimiento total toma: {0}% de la vida</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>Determina la velocidad del encanecimiento. Al 25%, un humano se volverá completamente blanco a los 80 años. Valores más altos = encanecimiento más lento.</FP_GrayingYearlyRatioTooltip>
 </LanguageData>

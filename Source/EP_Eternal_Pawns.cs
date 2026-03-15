@@ -86,6 +86,7 @@ namespace FinitePopulationVeterans
 		public Dictionary<int, int> veteranAddTicks = new Dictionary<int, int>(); // Время добавления
 		public Dictionary<int, string> pawnNotes = new Dictionary<int, string>();
 		public Dictionary<int, long> savedBioAges = new Dictionary<int, long>();
+        public Dictionary<int, Color> originalHairColors = new Dictionary<int, Color>();
 private List<long> tmpBioValues; // Для сохранения
 private List<int> tmpTicksKeys;   // Для сохранения
 private List<int> tmpTicksValues; // Для сохранения
@@ -152,7 +153,7 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
         }
     }
 
-    // Перезарядка оружия (CE, Yayo и т.д.)
+    // Перезарядка оружия (CE, Yayo и т.d.)
     FPUtility.ReloadWeapons(p);
 }
 
@@ -186,9 +187,11 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 			Scribe_Values.Look(ref ticksToNextUpdate, "ticksToNextUpdate", -1);
 			Scribe_Values.Look(ref ticksToNextCleanup, "ticksToNextCleanup", -1);
 			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpTicksKeys, ref tmpBioValues);
+            Scribe_Collections.Look(ref originalHairColors, "originalHairColors", LookMode.Value, LookMode.Value);
 if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
 if (manualVeteranPins == null) manualVeteranPins = new HashSet<int>();
+if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>();
 
             // ЧИСТКА ДУБЛИКАТОВ
             if (Scribe.mode == LoadSaveMode.PostLoadInit)
@@ -220,8 +223,28 @@ if (manualVeteranPins == null) manualVeteranPins = new HashSet<int>();
                 }
 				
 				var activeIds = new HashSet<int>(allVeteranIdsCache);
-var keys = veteranAddTicks.Keys.ToList();
-foreach (var k in keys) if (!activeIds.Contains(k)) veteranAddTicks.Remove(k);
+				var keys = veteranAddTicks.Keys.ToList();
+				foreach (var k in keys) if (!activeIds.Contains(k)) veteranAddTicks.Remove(k);
+
+				// --- ОЧИСТКА ОТ УТЕЧЕК ПАМЯТИ ---
+				if (savedBioAges != null)
+				{
+					var keysBio = savedBioAges.Keys.ToList();
+					foreach (var k in keysBio) if (!activeIds.Contains(k)) savedBioAges.Remove(k);
+				}
+
+				if (pawnNotes != null)
+				{
+					var keysNotes = pawnNotes.Keys.ToList();
+					foreach (var k in keysNotes) if (!activeIds.Contains(k)) pawnNotes.Remove(k);
+				}
+
+                if (originalHairColors != null)
+                {
+                    var keysHair = originalHairColors.Keys.ToList();
+                    foreach (var k in keysHair) if (!activeIds.Contains(k)) originalHairColors.Remove(k);
+                }
+                // --- КОНЕЦ ОЧИСТКИ ---
 
 // --- ОЧИСТКА РУЧНЫХ МЕТОК ---
 if (manualVeteranPins != null)
@@ -383,6 +406,8 @@ CleanPawnHealth(p, false);
     }
 	
 // 5. ФИКС ДУБЛИКАТОВ И ОБНОВЛЕНИЕ СПИСКОВ
+    savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
+    
     // Жестко вычищаем старые копии этой пешки из ВСЕХ фракций (включая текущую)
     foreach (var otherGroup in veteranPool.Values)
     {
@@ -437,11 +462,11 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
                         {
 
                             allVeteranIdsCache.Remove(p.thingIDNumber);
-
                             veteranAddTicks.Remove(p.thingIDNumber); 
-
                             veteransOnMission.Remove(p.thingIDNumber); // <--- ВАЖНО: забираем пропуск у трупа
-
+                            savedBioAges.Remove(p.thingIDNumber); 
+                            pawnNotes.Remove(p.thingIDNumber);
+                            originalHairColors.Remove(p.thingIDNumber);
                         }
 
                         group.pawns.RemoveAt(i); 
@@ -535,6 +560,21 @@ catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки ано
 
 try { ProcessVeteranAgeDiseases(p); } 
 catch (Exception ex) { Log.Warning($"[FP] Ошибка обработки болезней для {p.LabelShort}: {ex.Message}"); }
+
+// --- ВИЗУАЛЬНОЕ СТАРЕНИЕ (СЕДИНА) ---
+if (FPMod.Settings.enableAgingVisuals)
+{
+    try 
+    { 
+        // Вычисляем, на сколько реально состарилась пешка за этот цикл
+        float yearsAgeed = (p.ageTracker.AgeBiologicalTicks - lastKnownAge) / (float)GenDate.TicksPerYear;
+        if (yearsAgeed > 0.01f) 
+        {
+            FPUtility.ProcessGrayingHair(p, yearsAgeed);
+        }
+    } 
+    catch (Exception ex) { Log.Warning($"[FP] Ошибка визуального старения для {p.LabelShort}: {ex.Message}"); }
+}
 int age = p.ageTracker.AgeBiologicalYears;
 // Упрощенный шанс: до 60 лет — 0%, после 60 лет — база 5% в год
 float deathChance = (age >= 60) ? 0.05f : 0f;
@@ -600,6 +640,11 @@ if (!p.Dead)
     if (veteranAddTicks.ContainsKey(p.thingIDNumber)) 
         veteranAddTicks.Remove(p.thingIDNumber);
     
+    savedBioAges.Remove(p.thingIDNumber); 
+    pawnNotes.Remove(p.thingIDNumber);
+    veteransOnMission.Remove(p.thingIDNumber);
+    originalHairColors.Remove(p.thingIDNumber);
+    
     group.pawns.RemoveAt(i);
     deathCount++; // Вернули счетчик смертей!
 
@@ -641,7 +686,7 @@ private void ProcessVeteranImplants(Pawn p)
     var missingParts = p.health.hediffSet.GetMissingPartsCommonAncestors().ToList();
     foreach (var missing in missingParts)
     {
-        HediffDef prosth = GetDynamicProstheticFor(missing.Part, tech);
+        HediffDef prosth = GetDynamicProstheticFor(p, missing.Part, tech);
         if (prosth != null)
         {
             p.health.RestorePart(missing.Part);
@@ -656,6 +701,9 @@ private void ProcessVeteranImplants(Pawn p)
         // Выбираем из нашего кэша ТОЛЬКО те протезы, до которых фракция доросла по технологиям
         var availableUpgrades = cachedProstheticRecipes.Where(r => 
         {
+            // ФИКС ОТ СОБАЧЬИХ ЛАП: Проверяем, разрешен ли этот рецепт для расы этой пешки
+            if (!p.def.AllRecipes.Contains(r)) return false;
+
             var itemDef = r.ingredients.FirstOrDefault()?.filter?.AnyAllowedDef;
             return itemDef != null && itemDef.techLevel <= tech;
         }).ToList();
@@ -696,30 +744,33 @@ private void ProcessVeteranRegeneration(Pawn p)
     if (!p.health.hediffSet.GetMissingPartsCommonAncestors().Any() && 
         !p.health.hediffSet.hediffs.Any(h => h.IsPermanent() && h is Hediff_Injury)) return;
 
-    // Расширенный поиск по ключевым словам (включая описание гена для 100% охвата)
+    // Проверка генов регенерации (всё в одном месте для удобства правки)
     bool hasRegenGene = p.genes.GenesListForReading.Any(g => 
     {
         if (!g.Active) return false;
-        string name = g.def.defName ?? "";
-        string label = g.def.label ?? "";
-        string desc = g.def.description ?? "";
-
-        // ЧЕРНЫЙ СПИСОК: Пропускаем гены одежды, воды или слишком слабые эффекты
-        if (name.IndexOf("apparel", StringComparison.OrdinalIgnoreCase) >= 0 || 
-            label.IndexOf("apparel", StringComparison.OrdinalIgnoreCase) >= 0 ||
-            name.IndexOf("item", StringComparison.OrdinalIgnoreCase) >= 0 ||
-            name.IndexOf("water", StringComparison.OrdinalIgnoreCase) >= 0 ||
-            label.IndexOf("minor", StringComparison.OrdinalIgnoreCase) >= 0 ||
-            label.IndexOf("slow", StringComparison.OrdinalIgnoreCase) >= 0 ||
-            name.IndexOf("wound", StringComparison.OrdinalIgnoreCase) >= 0) return false;
-
-        return name.IndexOf("regen", StringComparison.OrdinalIgnoreCase) >= 0 || 
-               name.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               name.IndexOf("repair", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               name.IndexOf("reconstruct", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               label.IndexOf("regeneration", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               name.IndexOf("totalhealing", StringComparison.OrdinalIgnoreCase) >= 0 ||
-               desc.IndexOf("regrow", StringComparison.OrdinalIgnoreCase) >= 0;
+        switch (g.def.defName)
+        {
+            case "AG_LimbRegeneration":
+            case "VRE_OrganRegeneration":
+            case "VQEA_SelfRepairingTissue":
+            case "BS_Fast_TotalHealing":
+            case "Cinder_Revive":
+            case "ArchoGenes_ArchoRegeneration":
+            case "WVC_MechaHidden_ArchiteForge":
+            case "WVC_WoundHealing_SelfRepair":
+            case "WVC_WoundHealing_Unnatural":
+            case "WVC_MecaBodyParts_Kidney":
+            case "Turn_Gene_FleshbeastRegeneration":
+            case "Outland_Regeneration":
+            case "ImmortalRegenerant":
+            case "SHGE_EternalDivineBless":
+            case "SHGE_SelfRegeneration":
+            case "SHGE_SuperRegeneration":
+            case "SHGE_ExtremeSpeedRegeneration":
+                return true;
+            default:
+                return false;
+        }
     });
 
     if (!hasRegenGene) return;
@@ -952,7 +1003,7 @@ private void ProcessVeteranAnomaly(Pawn p)
 
 
 // --- УМНЫЙ ПОИСК ПРОТЕЗОВ ПО БАЗЕ ДАННЫХ (С КЭШЕМ) ---
-        private HediffDef GetDynamicProstheticFor(BodyPartRecord part, TechLevel factionTech)
+        private HediffDef GetDynamicProstheticFor(Pawn p, BodyPartRecord part, TechLevel factionTech)
         {
             // 1. Создаем глобальный кэш всех протезов игры ТОЛЬКО ОДИН РАЗ
             if (cachedProstheticRecipes == null)
@@ -970,6 +1021,9 @@ private void ProcessVeteranAnomaly(Pawn p)
             {
                 if (!r.appliedOnFixedBodyParts.Contains(part.def)) return false;
                 
+                // Проверяем совместимость с расой (A Dog Said и др.)
+                if (!p.def.AllRecipes.Contains(r)) return false;
+
                 var itemDef = r.ingredients.FirstOrDefault()?.filter?.AnyAllowedDef;
                 if (itemDef == null) return false;
                 
@@ -1449,24 +1503,49 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                             // --- ЭЛЕГАНТНАЯ ОЧИСТКА ИНВЕНТАРЯ И ЗАЩИТА ЛУТА ---
                             var savedLoot = new List<Thing>();
                             var toDestroy = new List<Thing>();
+                            int randomJunkCount = 0; // Счетчик сувениров
 
                             // Разделяем карманы на "сохранить" и "удалить"
                             foreach (Thing t in v.inventory.innerContainer)
                             {
-                                bool isConsumable = t.def.IsIngestible || t.def.IsMedicine || t.def.IsDrug;
-                                
-                                // Мы БОЛЬШЕ НЕ удаляем патроны! Combat Extended выдает их только при 
-                                // генерации новой пушки. Если мы их удалим, старая пушка останется пустой!
-                                if (isConsumable)
+                                // 1. Еда и наркотики -> в мусор (игра выдаст новые)
+                                if (t.def.IsIngestible || t.def.IsMedicine || t.def.IsDrug)
                                 {
                                     toDestroy.Add(t);
+                                    continue; // Предмет обработан, переходим к следующему
+                                }
+
+                                // 2. Умный поиск патронов (Combat Extended и др.) -> ВСЕГДА сохраняем
+                                bool isAmmo = (t.def.thingCategories != null && t.def.thingCategories.Any(c => c.defName.IndexOf("Ammo", StringComparison.OrdinalIgnoreCase) >= 0)) ||
+                                              t.def.defName.IndexOf("Ammo", StringComparison.OrdinalIgnoreCase) >= 0;
+
+                                if (isAmmo)
+                                {
+                                    savedLoot.Add(t);
+                                    continue; // Переходим к следующему, патроны не занимают лимит сувениров
+                                }
+
+                                // 3. Серебро -> режем стак и ВСЕГДА сохраняем
+                                if (t.def == ThingDefOf.Silver)
+                                {
+                                    int randomCap = Rand.RangeInclusive(100, 1000);
+                                    t.stackCount = Mathf.Min(t.stackCount, randomCap);
+                                    savedLoot.Add(t);
+                                    continue; // Серебро обработано
+                                }
+
+                                // 4. ОСТАЛЬНОЙ ЛУТ (Статуи, шкуры, запасное оружие) -> применяем лимит в 4 предмета
+                                if (randomJunkCount < 4)
+                                {
+                                    savedLoot.Add(t);
+                                    randomJunkCount++;
                                 }
                                 else
                                 {
-                                    savedLoot.Add(t);
+                                    toDestroy.Add(t); // Если сувениров уже 4, остальное выбрасываем
                                 }
                             }
-                            
+
                             // Физически достаем ценный лут (сталь, ресурсы, ключи, ПАТРОНЫ) из карманов пешки
                             // Это спасет их, если базовый генератор попытается удалить всё!
                             foreach (Thing t in savedLoot)
@@ -1474,13 +1553,13 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                                 v.inventory.innerContainer.Remove(t);
                             }
 
-                            // Уничтожаем старый мусор (старую еду)
+                            // Уничтожаем старый мусор (старую еду и лишние товары)
                             foreach (Thing t in toDestroy)
                             {
                                 t.Destroy();
                             }
 
-                            // Выдаем свежий паек (ванилиный метод иногда стирает всё)
+                            // Выдаем свежий паек (ванильный метод иногда стирает всё)
                             PawnInventoryGenerator.GenerateInventoryFor(v, request);
 
                             // Возвращаем ценный спасенный лут обратно в карманы!
@@ -1576,6 +1655,21 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
 
                         // ПЕРЕЗАРИЖАЕМ ОРУЖИЕ ПРЯМО ПРИ СПАВНЕ
                         FPUtility.ReloadWeapons(v);
+
+                        if (FPMod.Settings.enableAgingVisuals && manager.savedBioAges.TryGetValue(v.thingIDNumber, out long lastAge))
+                        {
+                            float diffYears = (v.ageTracker.AgeBiologicalTicks - lastAge) / (float)GenDate.TicksPerYear;
+                            if (diffYears > 0.01f) 
+                            {
+                                FPUtility.ProcessGrayingHair(v, diffYears);
+                                
+                                // ФИКС CS-280: Синхронизируем внутренний счетчик ваниллы, 
+                                // чтобы игра не запускала BirthdayBiological за пропущенные в пуле годы.
+                                Traverse.Create(v.ageTracker).Field("lastBirthdayBiologicalYear").SetValue(v.ageTracker.AgeBiologicalYears);
+                            }
+                            // Обновляем метку, чтобы стационарный цикл в пуле не считал это время еще раз
+                            manager.savedBioAges[v.thingIDNumber] = v.ageTracker.AgeBiologicalTicks;
+                        }
                     }
                     catch (Exception ex)
                     {
@@ -1779,7 +1873,7 @@ static void Postfix(Pawn p, ref HediffDef __result)
         }
     }
 
-public static class FPUtility
+public static partial class FPUtility
 {
     public static void ReloadWeapons(Pawn p)
     {

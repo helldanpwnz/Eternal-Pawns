@@ -74,4 +74,11 @@
   
   <FP_EnableMothball>啟用冬眠（凍結）系統</FP_EnableMothball>
   <FP_EnableMothballTooltip>允許mod讓空閒的兵卒休眠以提高性能。如果您使用可能發生衝突的激進優化mod，請禁用此選項。</FP_EnableMothballTooltip>
+
+  <FP_EnableAgingVisuals>啟用發色衰老</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>如果啟用，仿人生物在衰老過程中會逐漸長出白髮。</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>衰老開始於: {0}% 預期壽命</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>開始長出白髮的預期壽命百分比。對於人類（80年），45%約為36歲。</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>完全白髮需要: {0}% 預期壽命</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>決定發色衰老的速度。在25%時，人類到80歲時將完全變白。數值越高 = 衰老越慢。</FP_GrayingYearlyRatioTooltip>
 </LanguageData>

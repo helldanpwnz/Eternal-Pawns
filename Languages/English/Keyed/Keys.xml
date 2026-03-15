@@ -74,4 +74,11 @@
   
   <FP_EnableMothball>Enable mothball (freeze) system</FP_EnableMothball>
   <FP_EnableMothballTooltip>Allows the mod to put idle pawns to sleep for performance reasons. Disable if you use aggressive optimization mods that conflict with this.</FP_EnableMothballTooltip>
+
+  <FP_EnableAgingVisuals>Enable hair graying</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>If enabled, humanoids will gradually grow gray hair as they age.</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>Graying starts at: {0}% of life</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>Percentage of life expectancy when gray hair begins to appear. For humans (80 years), 45% is about 36 years.</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>Full graying takes: {0}% of life</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>Determines the speed of graying. At 25%, a human will become fully white by age 80. Higher values = slower graying.</FP_GrayingYearlyRatioTooltip>
 </LanguageData>

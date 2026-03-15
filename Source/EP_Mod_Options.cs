@@ -30,6 +30,9 @@ namespace FinitePopulationVeterans
 		public float geneChanceMultiplier = 1f;
 		public float anomalyChanceMultiplier = 1f;
 		public int techLevelRange = 1;
+		public bool enableAgingVisuals = true;
+		public float startGrayingHairRatio = 0.45f;
+		public float grayingYearlyRatio = 0.25f;
 
         public override void ExposeData()
         {
@@ -50,6 +53,9 @@ namespace FinitePopulationVeterans
 			Scribe_Values.Look(ref geneChanceMultiplier, "geneChanceMultiplier", 1f);
 			Scribe_Values.Look(ref anomalyChanceMultiplier, "anomalyChanceMultiplier", 1f);
 			Scribe_Values.Look(ref veteranRecallCooldownDays, "veteranRecallCooldownDays", 10);
+			Scribe_Values.Look(ref enableAgingVisuals, "enableAgingVisuals", true);
+			Scribe_Values.Look(ref startGrayingHairRatio, "startGrayingHairRatio", 0.5f);
+			Scribe_Values.Look(ref grayingYearlyRatio, "grayingYearlyRatio", 0.25f);
         }
     }
 
@@ -63,6 +69,23 @@ namespace FinitePopulationVeterans
         {
             settings = GetSettings<FPSettings>();
         }
+
+        public override void WriteSettings()
+        {
+            base.WriteSettings();
+            // Мгновенное обновление всех пешек на карте при выходе из настроек
+            if (Current.ProgramState == ProgramState.Playing && Find.Maps != null)
+            {
+                foreach (Map map in Find.Maps)
+                {
+                    foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned)
+                    {
+                        FPUtility.SyncAgingVisuals(pawn);
+                    }
+                }
+            }
+        }
+
 		private static Vector2 scrollPosition = Vector2.zero;
 public override void DoSettingsWindowContents(Rect inRect)
 {
@@ -93,12 +116,23 @@ public override void DoSettingsWindowContents(Rect inRect)
 // --- НОВАЯ ГАЛОЧКА ДЛЯ ГИЗМО ПАНЕЛИ ---
 listing.CheckboxLabeled("FP_ShowGizmoButton".Translate(), ref settings.showGizmoButton, 
     "FP_ShowGizmoButtonTooltip".Translate());
-	
-	// --- НОВАЯ ГАЛОЧКА ДЛЯ СКИТАЛЬЦЕВ ---
-listing.CheckboxLabeled("FP_AutoSaveWanderers".Translate(), ref settings.autoSaveWanderers, 
+
+    // --- ПЕРЕНЕСЕННЫЕ НАСТРОЙКИ СЕДИНЫ ---
+    listing.Gap(12f);
+    listing.CheckboxLabeled("FP_EnableAgingVisuals".Translate(), ref settings.enableAgingVisuals, "FP_EnableAgingVisualsTooltip".Translate());
+    if (settings.enableAgingVisuals)
+    {
+        listing.Label("FP_StartGrayingRatio".Translate(Math.Round(settings.startGrayingHairRatio * 100)), -1, "FP_StartGrayingRatioTooltip".Translate());
+        settings.startGrayingHairRatio = listing.Slider(settings.startGrayingHairRatio, 0.1f, 1f);
+
+        listing.Label("FP_GrayingYearlyRatio".Translate(Math.Round(settings.grayingYearlyRatio * 100)), -1, "FP_GrayingYearlyRatioTooltip".Translate());
+        settings.grayingYearlyRatio = listing.Slider(settings.grayingYearlyRatio, 0.01f, 1f);
+    }
+    listing.Gap(12f);
+
+	// --- Скитальцы и Тех-уровень ---
+    listing.CheckboxLabeled("FP_AutoSaveWanderers".Translate(), ref settings.autoSaveWanderers, 
     "FP_AutoSaveWanderersTooltip".Translate());
-// --- НОВЫЙ ПОЛЗУНОК ДЛЯ ДИАПАЗОНА ТЕХ-УРОВНЯ ---
-// Текст будет подставлять текущую цифру, например: "Допустимый разброс тех-уровня: 1"
 listing.Label("FP_TechLevelRange".Translate(settings.techLevelRange), -1, "FP_TechLevelRangeTooltip".Translate());
 settings.techLevelRange = (int)listing.Slider(settings.techLevelRange, 0f, 5f);
 listing.Gap(12f);
