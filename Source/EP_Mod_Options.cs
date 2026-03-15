@@ -78,7 +78,7 @@ namespace FinitePopulationVeterans
             {
                 foreach (Map map in Find.Maps)
                 {
-                    foreach (Pawn pawn in map.mapPawns.AllPawnsSpawned)
+                    foreach (Pawn pawn in map.mapPawns.AllPawns)
                     {
                         FPUtility.SyncAgingVisuals(pawn);
                     }

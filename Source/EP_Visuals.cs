@@ -57,17 +57,24 @@ namespace FinitePopulationVeterans
                     }
                 }
             }
-
+            // Приоритет 2: Наша база данных
             if (!foundBase)
             {
                 var manager = Find.World?.GetComponent<WorldPopulationManager>();
                 if (manager != null) {
-                    if (manager.originalHairColors.TryGetValue(pawn.thingIDNumber, out Color remembered)) baseColor = remembered;
-                    else manager.originalHairColors[pawn.thingIDNumber] = baseColor;
+                    if (manager.originalHairColors.TryGetValue(pawn.thingIDNumber, out Color remembered)) 
+                    {
+                        baseColor = remembered;
+                        foundBase = true;
+                    }
+                    else if (FPMod.Settings.enableAgingVisuals) // Сохраняем ТОЛЬКО если мод включен и мы "видим" пешку впервые
+                    {
+                        manager.originalHairColors[pawn.thingIDNumber] = baseColor;
+                    }
                 }
             }
 
-            // 2. Установка цвета
+            // 2. Устанавливаем итоговый цвет
             pawn.story.HairColor = GetColorForAge(pawn, baseColor);
 
             if (pawn.Spawned && pawn.Drawer?.renderer != null)
