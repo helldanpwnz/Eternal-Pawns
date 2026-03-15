@@ -27,12 +27,21 @@ namespace FinitePopulationVeterans
             float span = (lifeExpectancy - startAge) * (ratio / 0.25f);
             float progress = Mathf.Clamp01((currentAge - startAge) / span);
 
+            // МАТЕМАТИКА "РЕАЛИСТИЧНОГО ВЫЦВЕТАНИЯ"
+            // Насыщенность (S) падает СТРЕМИТЕЛЬНО (вымываем пигмент)
+            float satProgress = Mathf.Pow(progress, 0.5f); 
+            // Яркость (V) следует по кривой "темного вымывания"
+            float valProgress = Mathf.Pow(progress, 2.0f);
+            // Эффект "пепельного потемнения": в середине пути волосы теряют блеск и кажутся темнее
+            float darkeningEffect = 0.15f * Mathf.Sin(Mathf.PI * progress);
+
             float h, s, v;
             Color.RGBToHSV(baseColor, out h, out s, out v);
 
-            float finalS = Mathf.Lerp(s, 0f, progress);
-            float targetV = Mathf.Max(v, 0.96f);
-            float finalV = Mathf.Lerp(v, targetV, progress);
+            float finalS = Mathf.Lerp(s, 0f, satProgress);
+            // Плавно идем к белому, но вычитаем "пепельный эффект" в середине
+            float finalV = Mathf.Lerp(v, 0.96f, valProgress) - (darkeningEffect * s);
+            finalV = Mathf.Clamp(finalV, 0.1f, 0.98f); // Защита от ухода в черную дыру
 
             Color result = Color.HSVToRGB(h, finalS, finalV);
             result.a = baseColor.a;
