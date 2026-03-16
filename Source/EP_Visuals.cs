@@ -92,7 +92,9 @@ namespace FinitePopulationVeterans
 
             // 2. Умная установка цвета
             Color newColor = GetColorForAge(pawn, baseColor);
-            if (pawn.story.HairColor != newColor)
+            Color32 c1 = pawn.story.HairColor;
+            Color32 c2 = newColor;
+            if (c1.r != c2.r || c1.g != c2.g || c1.b != c2.b)
             {
                 pawn.story.HairColor = newColor;
 
