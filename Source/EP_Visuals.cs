@@ -51,7 +51,8 @@ namespace FinitePopulationVeterans
         public static void SyncAgingVisuals(Pawn pawn)
         {
             if (pawn == null || !pawn.RaceProps.Humanlike || pawn.story == null) return;
-            if (pawn.IsColonyMech || pawn.IsGhoul) return;
+            if (pawn.IsColonyMech || pawn.IsGhoul || (ModsConfig.AnomalyActive && pawn.IsMutant)) return;
+            if (pawn.Faction != null && pawn.Faction.def.defName == "Entities") return;
 
             // 1. Проба найти "Якорь" (эталонный цвет)
             Color baseColor = pawn.story.HairColor;
@@ -89,13 +90,17 @@ namespace FinitePopulationVeterans
                 }
             }
 
-            // 2. Установка цвета
-            pawn.story.HairColor = GetColorForAge(pawn, baseColor);
-
-            if (pawn.Spawned && pawn.Drawer?.renderer != null)
+            // 2. Умная установка цвета
+            Color newColor = GetColorForAge(pawn, baseColor);
+            if (pawn.story.HairColor != newColor)
             {
-                pawn.Drawer.renderer.SetAllGraphicsDirty();
-                PortraitsCache.SetDirty(pawn);
+                pawn.story.HairColor = newColor;
+
+                if (pawn.Spawned && pawn.Drawer?.renderer != null)
+                {
+                    pawn.Drawer.renderer.SetAllGraphicsDirty();
+                    PortraitsCache.SetDirty(pawn);
+                }
             }
         }
 

@@ -1227,6 +1227,10 @@ private bool IsPawnAvailableForDispatch(Pawn p)
         {
             if (p?.RaceProps?.Humanlike == true)
             {
+                // ЗАЩИТА: Не помечаем мутантов (Шамблеров) и сущностей, чтобы даже не пытаться их сохранять
+                if (ModsConfig.AnomalyActive && p.IsMutant) return;
+                if (p.Faction != null && p.Faction.def.defName == "Entities") return;
+
                 seenIDs.Add(p.thingIDNumber);
             }
         }
@@ -1998,8 +2002,9 @@ public static partial class FPUtility
         if (pawn == null || !pawn.RaceProps.Humanlike || pawn.Dead) return false;
         if (pawn.Faction != null && pawn.Faction.IsPlayer) return false;
 
-        // 2. Мутанты (Anomaly)
+        // 2. Мутанты и Сущности (Anomaly) - Никогда не сохраняем
         if (ModsConfig.AnomalyActive && pawn.IsMutant) return false;
+        if (pawn.Faction != null && pawn.Faction.def.defName == "Entities") return false;
 
         // 3. СТРОГАЯ ЗАЩИТА КВЕСТОВ (Никаких исключений!)
         // Отсекаем и гостей (Стелларх), и зарезервированных (попрошайки, беженцы)
