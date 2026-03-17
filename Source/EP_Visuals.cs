@@ -48,6 +48,15 @@ namespace FinitePopulationVeterans
             return result;
         }
 
+        private static readonly Color[] NaturalHairColors = new Color[] 
+        {
+            new Color(0.2f, 0.20f, 0.20f), // Black
+            new Color(0.35f, 0.23f, 0.15f), // Dark Brown
+            new Color(0.55f, 0.40f, 0.25f), // Light Brown
+            new Color(0.90f, 0.85f, 0.50f), // Blonde
+            new Color(0.70f, 0.40f, 0.20f)  // Reddish
+        };
+
         public static void SyncAgingVisuals(Pawn pawn)
         {
             if (pawn == null || !pawn.RaceProps.Humanlike || pawn.story == null) return;
@@ -83,7 +92,18 @@ namespace FinitePopulationVeterans
                         baseColor = remembered;
                         foundBase = true;
                     }
-                    else if (FPMod.Settings.enableAgingVisuals)
+
+                    // КОРРЕКЦИЯ: Если цвет седой, а мы его только "поймали" у старого или помолодевшего
+                    Color.RGBToHSV(baseColor, out float h, out float s, out float v);
+                    // Если насыщенность почти нулевая (седина) и это либо новый эталон, либо пешка должна быть молодой
+                    if (s < 0.05f && v > 0.6f && (!foundBase || pawn.ageTracker.AgeBiologicalYearsFloat < (pawn.RaceProps.lifeExpectancy * (FPMod.Settings?.startGrayingHairRatio ?? 0.65f))))
+                    {
+                        // Генерируем реальный цвет из безопасного списка (чтобы избежать ошибок с Defs)
+                        baseColor = NaturalHairColors[pawn.thingIDNumber % NaturalHairColors.Length];
+                        foundBase = false; 
+                    }
+
+                    if (!foundBase && FPMod.Settings != null && FPMod.Settings.enableAgingVisuals)
                     {
                         manager.originalHairColors[pawn.thingIDNumber] = baseColor;
                     }
