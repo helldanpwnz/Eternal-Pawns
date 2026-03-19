@@ -59,69 +59,98 @@ namespace FinitePopulationVeterans
 
         public static void SyncAgingVisuals(Pawn pawn)
         {
-            if (pawn == null || !pawn.RaceProps.Humanlike || pawn.story == null) return;
+            if (pawn == null || !pawn.RaceProps.Humanlike || pawn.story == null || pawn.ageTracker == null) return;
             if (pawn.IsColonyMech || pawn.IsGhoul || (ModsConfig.AnomalyActive && pawn.IsMutant)) return;
-            if (pawn.Faction != null && pawn.Faction.def.defName == "Entities") return;
+            if (pawn.Faction != null && pawn.Faction.def?.defName == "Entities") return;
 
-            // 1. Проба найти "Якорь" (эталонный цвет)
+            var settings = FPMod.Settings;
+            if (settings == null || !settings.enableAgingVisuals) return;
+
+            var manager = Find.World?.GetComponent<WorldPopulationManager>();
+            if (manager == null) return;
+
             Color baseColor = pawn.story.HairColor;
-            bool foundBase = false;
+            bool hasSavedAnchor = manager.originalHairColors.TryGetValue(pawn.thingIDNumber, out Color remembered);
 
-            // Оптимизированный проход по генам (последний активный ген цвета имеет приоритет)
-            if (pawn.genes != null)
+            if (hasSavedAnchor)
             {
-                foreach (var g in pawn.genes.GenesListForReading) 
+                baseColor = remembered;
+                
+                // ДЕТЕКТОР КРАСКИ (Dye Detection)
+                // Если текущий цвет СИЛЬНО отличается от того, что МЫ насчитали - значит игрок покрасил пешку
+                Color expectedNow = GetColorForAge(pawn, baseColor);
+                Color32 cReal = pawn.story.HairColor;
+                Color32 cExp = expectedNow;
+                
+                if (cReal.r != cExp.r || cReal.g != cExp.g || cReal.b != cExp.b)
                 {
-                    if (!g.Active) continue;
-                    if (g.def.neverGrayHair) return; // Сразу выходим, если есть ген на запрет седины
-                    
-                    if (g.def.hairColorOverride.HasValue) 
+                    Color.RGBToHSV(pawn.story.HairColor, out float h, out float s, out float v);
+                    // Если новый цвет НЕ седой (есть пигмент s > 0.08) - принимаем его как новый эталон
+                    if (s > 0.08f)
                     {
-                        baseColor = g.def.hairColorOverride.Value; 
-                        foundBase = true; 
-                    }
-                }
-            }
-
-            if (!foundBase)
-            {
-                var manager = Find.World?.GetComponent<WorldPopulationManager>();
-                if (manager != null) {
-                    if (manager.originalHairColors.TryGetValue(pawn.thingIDNumber, out Color remembered)) 
-                    {
-                        baseColor = remembered;
-                        foundBase = true;
-                    }
-
-                    // КОРРЕКЦИЯ: Если цвет седой, а мы его только "поймали" у старого или помолодевшего
-                    Color.RGBToHSV(baseColor, out float h, out float s, out float v);
-                    // Если насыщенность почти нулевая (седина) и это либо новый эталон, либо пешка должна быть молодой
-                    if (s < 0.05f && v > 0.6f && (!foundBase || pawn.ageTracker.AgeBiologicalYearsFloat < (pawn.RaceProps.lifeExpectancy * (FPMod.Settings?.startGrayingHairRatio ?? 0.65f))))
-                    {
-                        // Генерируем реальный цвет из безопасного списка (чтобы избежать ошибок с Defs)
-                        baseColor = NaturalHairColors[pawn.thingIDNumber % NaturalHairColors.Length];
-                        foundBase = false; 
-                    }
-
-                    if (!foundBase && FPMod.Settings != null && FPMod.Settings.enableAgingVisuals)
-                    {
+                        baseColor = pawn.story.HairColor;
                         manager.originalHairColors[pawn.thingIDNumber] = baseColor;
                     }
                 }
             }
+            else // Записи в базе нет — ищем отправную точку
+            {
+                bool gotGeneric = false;
+                // А) Смотрим гены (если есть и активны)
+                if (pawn.genes != null)
+                {
+                    foreach (var g in pawn.genes.GenesListForReading) 
+                    {
+                        if (!g.Active) continue;
+                        if (g.def.neverGrayHair) return; // Сразу выходим (запрет седины)
+                        if (g.def.hairColorOverride.HasValue) 
+                        {
+                            baseColor = g.def.hairColorOverride.Value; 
+                            gotGeneric = true;
+                        }
+                    }
+                }
 
-            // 2. Умная установка цвета
+                // Б) Проверяем на "уже седой" при первом знакомстве
+                Color.RGBToHSV(pawn.story.HairColor, out float h, out float s, out float v);
+                float grayStart = pawn.RaceProps.lifeExpectancy * settings.startGrayingHairRatio;
+                
+                if (s < 0.05f && v > 0.6f && pawn.ageTracker.AgeBiologicalYearsFloat < grayStart)
+                {
+                    // Если пешка еще молодая, но уже белая — значит игра выдала седину по ошибке, восстанавливаем
+                    if (!gotGeneric) 
+                    {
+                        int colorIdx = Math.Abs(pawn.thingIDNumber) % NaturalHairColors.Length;
+                        baseColor = NaturalHairColors[colorIdx];
+                    }
+                    // Если был ген, baseColor уже установлен из него
+                }
+                else
+                {
+                    // Сохраняем текущий цвет как базу (даже если он от генов или Natural)
+                    baseColor = pawn.story.HairColor;
+                }
+                
+                manager.originalHairColors[pawn.thingIDNumber] = baseColor;
+            }
+
+            // 2. Установка цвета
             Color newColor = GetColorForAge(pawn, baseColor);
             Color32 c1 = pawn.story.HairColor;
             Color32 c2 = newColor;
+            
             if (c1.r != c2.r || c1.g != c2.g || c1.b != c2.b)
             {
                 pawn.story.HairColor = newColor;
 
                 if (pawn.Spawned && pawn.Drawer?.renderer != null)
                 {
-                    pawn.Drawer.renderer.SetAllGraphicsDirty();
-                    PortraitsCache.SetDirty(pawn);
+                    try 
+                    {
+                        pawn.Drawer.renderer.SetAllGraphicsDirty();
+                        PortraitsCache.SetDirty(pawn);
+                    }
+                    catch { /* Глушим ошибки инициализации UI */ }
                 }
             }
         }

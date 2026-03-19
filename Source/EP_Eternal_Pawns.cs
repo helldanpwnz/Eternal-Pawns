@@ -241,8 +241,19 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
 
                 if (originalHairColors != null)
                 {
+                    // Сохраняем цвета не только ветеранов, но и всех живых пешек в мире (включая колонистов)
                     var keysHair = originalHairColors.Keys.ToList();
-                    foreach (var k in keysHair) if (!activeIds.Contains(k)) originalHairColors.Remove(k);
+                    var allLivingIds = new HashSet<int>(allVeteranIdsCache);
+                    
+                    // Добавляем ID всех существующих пешек, чтобы не тереть их эталоны цвета
+                    foreach (var m in Find.Maps)
+                        foreach (var p in m.mapPawns.AllPawns) allLivingIds.Add(p.thingIDNumber);
+                    foreach (var p in Find.WorldPawns.AllPawnsAliveOrDead) allLivingIds.Add(p.thingIDNumber);
+
+                    foreach (var k in keysHair) 
+                    {
+                        if (!allLivingIds.Contains(k)) originalHairColors.Remove(k);
+                    }
                 }
                 // --- КОНЕЦ ОЧИСТКИ ---
 

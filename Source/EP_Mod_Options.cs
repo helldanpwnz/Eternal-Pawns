@@ -30,7 +30,7 @@ namespace FinitePopulationVeterans
 		public float geneChanceMultiplier = 1f;
 		public float anomalyChanceMultiplier = 1f;
 		public int techLevelRange = 1;
-		public bool enableAgingVisuals = true;
+		public bool enableAgingVisuals = false;
 		public float startGrayingHairRatio = 0.45f;
 		public float grayingYearlyRatio = 0.25f;
 
@@ -53,7 +53,7 @@ namespace FinitePopulationVeterans
 			Scribe_Values.Look(ref geneChanceMultiplier, "geneChanceMultiplier", 1f);
 			Scribe_Values.Look(ref anomalyChanceMultiplier, "anomalyChanceMultiplier", 1f);
 			Scribe_Values.Look(ref veteranRecallCooldownDays, "veteranRecallCooldownDays", 10);
-			Scribe_Values.Look(ref enableAgingVisuals, "enableAgingVisuals", true);
+			Scribe_Values.Look(ref enableAgingVisuals, "enableAgingVisuals", false);
 			Scribe_Values.Look(ref startGrayingHairRatio, "startGrayingHairRatio", 0.5f);
 			Scribe_Values.Look(ref grayingYearlyRatio, "grayingYearlyRatio", 0.25f);
         }
