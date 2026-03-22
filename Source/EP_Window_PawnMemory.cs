@@ -151,12 +151,12 @@ public static class Patch_DrawSocialCardButton
 public static class Patch_Pawn_GetGizmos
 {
     [HarmonyPostfix]
-    static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> values, Pawn __instance)
+    static IEnumerable<Gizmo> Postfix(IEnumerable<Gizmo> __result, Pawn __instance)
     {
         // 1. Сначала возвращаем все ванильные гизмо (призыв, и т.д.)
-        if (values != null)
+        if (__result != null)
         {
-            foreach (var gizmo in values)
+            foreach (var gizmo in __result)
             {
                 yield return gizmo;
             }

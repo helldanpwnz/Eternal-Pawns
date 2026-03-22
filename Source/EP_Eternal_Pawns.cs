@@ -164,9 +164,15 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 			// ДОБАВИТЬ ЭТО В НАЧАЛО: Убираем стертых пешек до записи в сейв
     if (Scribe.mode == LoadSaveMode.Saving)
     {
-        foreach (var group in veteranPool.Values)
+        if (veteranPool != null)
         {
-            group.pawns.RemoveAll(p => p == null || p.Discarded);
+            foreach (var group in veteranPool.Values)
+            {
+                if (group != null && group.pawns != null)
+                {
+                    group.pawns.RemoveAll(p => p == null || p.Discarded);
+                }
+            }
         }
     }
 			
@@ -175,6 +181,12 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
         {
             VeteranInputQueue.Clear();
 			FPSeenTracker.Clear();
+            // Сбрасываем временные списки
+            tmpTicksKeys = null;
+            tmpTicksValues = null;
+            tmpBioValues = null;
+            tmpVeteranKeys = null;
+            tmpVeteranValues = null;
         }
             Scribe_Collections.Look(ref veteranPool, "veteranPool", LookMode.Value, LookMode.Deep, ref tmpVeteranKeys, ref tmpVeteranValues);
             if (veteranPool == null) veteranPool = new Dictionary<int, VeteranGroup>();
@@ -186,8 +198,12 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 			Scribe_Collections.Look(ref pawnNotes, "pawnNotes", LookMode.Value, LookMode.Value);
 			Scribe_Values.Look(ref ticksToNextUpdate, "ticksToNextUpdate", -1);
 			Scribe_Values.Look(ref ticksToNextCleanup, "ticksToNextCleanup", -1);
-			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpTicksKeys, ref tmpBioValues);
-            Scribe_Collections.Look(ref originalHairColors, "originalHairColors", LookMode.Value, LookMode.Value);
+            
+            // Используем уникальные списки для ID веков, чтобы избежать конфликтов при загрузке
+            List<int> tmpBioKeys = null;
+			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpBioKeys, ref tmpBioValues);
+			Scribe_Collections.Look(ref originalHairColors, "originalHairColors", LookMode.Value, LookMode.Value);
+
 if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
 if (manualVeteranPins == null) manualVeteranPins = new HashSet<int>();
@@ -199,7 +215,7 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
                 allVeteranIdsCache.Clear();
                 foreach (var group in veteranPool.Values)
                 {
-                    if (group.pawns != null)
+                    if (group != null && group.pawns != null)
                     {
                         group.pawns.RemoveAll(x => x == null);
                         HashSet<int> seenIds = new HashSet<int>();
@@ -207,13 +223,13 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
                         
                         foreach (var p in group.pawns)
                         {
-                            if (!seenIds.Contains(p.thingIDNumber))
+                            if (p != null && !seenIds.Contains(p.thingIDNumber))
                             {
                                 seenIds.Add(p.thingIDNumber);
                                 uniquePawns.Add(p);
                                 allVeteranIdsCache.Add(p.thingIDNumber);
                             }
-                            else
+                            else if (p != null)
                             {
                                 if (!p.Spawned && !p.Dead) p.Discard();
                             }
