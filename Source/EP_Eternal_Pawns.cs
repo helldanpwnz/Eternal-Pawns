@@ -1745,12 +1745,10 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                     // все еще считался вашим узником, хотя физически нападал на вас.
                     if (v.guest != null) v.guest.SetGuestStatus(null);
                     
-                    // Полностью удаляем настройки игрока (политки атаки, зоны, медикаменты), 
-                    // так как пешка теперь принадлежит другой фракции.
-                    v.playerSettings = null;
-                    v.timetable = null;
-                    v.workSettings = null;
-                    v.drafter = null;
+                    // --- ОБЯЗАТЕЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ФРАКЦИИ ---
+                    // Это безопаснее ручного обнуления, так как SetFaction сам удалит/создаст 
+                    // нужные трекеры (playerSettings, drafter и т.д.) в зависимости от новой фракции.
+                    v.SetFaction(request.Faction, null);
                     
                     if (v.ownership != null) v.ownership.UnclaimAll(); // Отвязываем от кроватей колонии
 
