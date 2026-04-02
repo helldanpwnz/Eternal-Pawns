@@ -1497,7 +1497,15 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
         [HarmonyPrefix]
         static bool Prefix(ref PawnGenerationRequest request, ref Pawn __result)
         {
-            if (request.Faction == null || request.Faction.IsPlayer || !request.Faction.def.humanlikeFaction) return true;
+            if (request.Faction == null) return true;
+            
+            // Защита от потенциально неинициализированной фракции (e.g. More Factions)
+            if (request.Faction.def == null || !request.Faction.def.humanlikeFaction) return true;
+            
+            if (request.Faction.IsPlayer) return true;
+            
+            if (request.Faction.loadID < 0) return true; // Фракция еще не зарегистрирована в мире
+            
             if (request.ForceGenerateNewPawn) return true;
             if (!request.CanGeneratePawnRelations) return true;
 
@@ -1740,12 +1748,11 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                     // Полностью удаляем настройки игрока (политки атаки, зоны, медикаменты), 
                     // так как пешка теперь принадлежит другой фракции.
                     v.playerSettings = null;
+                    v.timetable = null;
+                    v.workSettings = null;
+                    v.drafter = null;
                     
                     if (v.ownership != null) v.ownership.UnclaimAll(); // Отвязываем от кроватей колонии
-                    
-                    if (v.timetable != null) v.timetable.times = null; // Сбрасываем расписание колонии
-                    
-                    if (v.drafter != null) v.drafter.Drafted = false; // Снимаем боевой режим, если он багом остался
 
                     // --- НОВАЯ ОЧИСТКА РАЗУМА (ЧТОБЫ ИИ НЕ СХОДИЛ С УМА) ---
                     if (v.mindState != null)
