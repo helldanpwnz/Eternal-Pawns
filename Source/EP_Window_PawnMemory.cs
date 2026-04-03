@@ -14,22 +14,38 @@ namespace FinitePopulationVeterans
 public class Window_PawnMemory : Window
 {
     private Pawn pawn;
+    private DeceasedPawnRecord deceasedRecord;
+    private int thingID;
+    private string pawnLabel;
     private WorldPopulationManager manager;
     private string currentNote = "";
 
-    public override Vector2 InitialSize => new Vector2(650f, // ШИРИНА ОКНА
-	500f); // ВЫСОТА ОКНА
+    public override Vector2 InitialSize => new Vector2(650f, 500f);
 
     public Window_PawnMemory(Pawn pawn)
     {
         this.pawn = pawn;
+        this.thingID = pawn.thingIDNumber;
+        this.pawnLabel = pawn.LabelShort;
+        Init();
+    }
+
+    public Window_PawnMemory(int id, DeceasedPawnRecord record)
+    {
+        this.deceasedRecord = record;
+        this.thingID = id;
+        this.pawnLabel = record.name;
+        Init();
+    }
+
+    private void Init()
+    {
         this.manager = Find.World?.GetComponent<WorldPopulationManager>();
-        
         this.doCloseButton = true; 
         this.doCloseX = true;      
         this.absorbInputAroundWindow = false; 
 
-        if (manager != null && manager.pawnNotes.TryGetValue(pawn.thingIDNumber, out string savedNote))
+        if (manager != null && manager.pawnNotes.TryGetValue(thingID, out string savedNote))
         {
             currentNote = savedNote;
         }
@@ -37,40 +53,54 @@ public class Window_PawnMemory : Window
 
     public override void DoWindowContents(Rect inRect)
     {
-        if (manager == null || pawn == null) return;
+        if (manager == null) return;
 
-        int id = pawn.thingIDNumber;
-        bool isVeteran = manager.allVeteranIdsCache.Contains(id);
-        bool isPinned = manager.manualVeteranPins.Contains(id);
+        bool isDead = deceasedRecord != null || (pawn != null && pawn.Dead);
+        bool isVeteran = manager.allVeteranIdsCache.Contains(thingID);
+        bool isPinned = manager.manualVeteranPins.Contains(thingID);
 
         // --- ЗАГОЛОВОК ---
         Text.Font = GameFont.Medium;
-        Widgets.Label(new Rect(0, 0, inRect.width, 35f), "FP_MemoryHeader".Translate(pawn.LabelShort));
+        Widgets.Label(new Rect(0, 0, inRect.width, 35f), "FP_MemoryHeader".Translate(pawnLabel));
         Text.Font = GameFont.Small;
 
-        // --- АТМОСФЕРНЫЙ ТЕКСТ СТАТУСА (Из твоего старого тултипа) ---
-        Rect statusRect = new Rect(0, 40f, inRect.width, 60f);
-        if (isVeteran)
-        {
-            GUI.color = Color.cyan;
-            Widgets.Label(statusRect, "FP_StatusVeteran".Translate());
-        }
-        else if (isPinned)
-        {
-            GUI.color = Color.yellow;
-            Widgets.Label(statusRect, "FP_StatusPinned".Translate());
-        }
-        else
-        {
-            GUI.color = Color.gray;
-            Widgets.Label(statusRect, "FP_StatusUnknown".Translate());
-        }
-        GUI.color = Color.white;
+        // --- ДАТА ДОБАВЛЕНИЯ ---
+        int addedTicks = (deceasedRecord != null) ? deceasedRecord.addedTick : 0;
+        if (addedTicks == 0 && manager.veteranAddTicks.TryGetValue(thingID, out int t)) addedTicks = t;
 
-        // --- КНОПКА ДЕЙСТВИЯ (Заменяет клик по звездочке) ---
-        Rect btnRect = new Rect(0, 105f, 200f, 30f);
+        if (addedTicks > 0)
+        {
+            Rect dateRect = new Rect(0, 35f, inRect.width, 24f); 
+            GUI.color = Color.gray;
+            Widgets.Label(dateRect, "FP_AddedOn".Translate(GenDate.DateFullStringAt((long)addedTicks, Vector2.zero)));
+            GUI.color = Color.white;
+        }
+
+        // --- СТАТУС (ТОЛЬКО ДЛЯ ЖИВЫХ) ---
+        if (!isDead)
+        {
+            Rect statusRect = new Rect(0, 60f, inRect.width, 40f);
+            if (isVeteran)
+            {
+                GUI.color = Color.cyan;
+                Widgets.Label(statusRect, "FP_StatusVeteran".Translate());
+            }
+            else if (isPinned)
+            {
+                GUI.color = Color.yellow;
+                Widgets.Label(statusRect, "FP_StatusPinned".Translate());
+            }
+            GUI.color = Color.white;
+        }
+
+        // --- КНОПКА ДЕЙСТВИЯ ---
+        Rect btnRect = new Rect(0, 105f, 180f, 30f); 
         
-        if (isVeteran)
+        if (isDead)
+        {
+            // У мертвых нет кнопки действий, просто место
+        }
+        else if (isVeteran)
         {
             if (Widgets.ButtonText(btnRect, "FP_AlreadyInHistory".Translate()))
             {
@@ -81,8 +111,8 @@ public class Window_PawnMemory : Window
         {
             if (Widgets.ButtonText(btnRect, "FP_ForgetPawn".Translate()))
             {
-                manager.manualVeteranPins.Remove(id);
-				manager.pawnNotes.Remove(id);
+                manager.manualVeteranPins.Remove(thingID);
+				manager.pawnNotes.Remove(thingID);
                 SoundDefOf.Tick_Low.PlayOneShotOnCamera();
             }
         }
@@ -90,23 +120,34 @@ public class Window_PawnMemory : Window
         {
             if (Widgets.ButtonText(btnRect, "FP_RememberPawn".Translate()))
             {
-                manager.manualVeteranPins.Add(id);
+                manager.manualVeteranPins.Add(thingID);
                 SoundDefOf.Tick_High.PlayOneShotOnCamera();
             }
         }
 
+        // --- НОВАЯ КНОПКА: СОБЫТИЯ ---
+        if (FPMod.Settings.enableEventLogging)
+        {
+            Rect eventsBtnRect = new Rect(isDead ? 0 : 190f, 105f, 140f, 30f);
+            if (Widgets.ButtonText(eventsBtnRect, "FP_EventsButton".Translate()))
+            {
+                if (deceasedRecord != null) Find.WindowStack.Add(new Window_PawnEvents(thingID, pawnLabel));
+                else Find.WindowStack.Add(new Window_PawnEvents(pawn));
+            }
+        }
+
         // --- ПОЛЕ ДЛЯ ЗАМЕТОК ---
-        Rect labelRect = new Rect(0, 145f, inRect.width, 24f);
+        Rect labelRect = new Rect(0, 155f, inRect.width, 24f);
         Widgets.Label(labelRect, "FP_PersonalNotes".Translate());
 
-        Rect textRect = new Rect(0, 170f, inRect.width, inRect.height - 230f); 
+        Rect textRect = new Rect(0, 180f, inRect.width, inRect.height - 230f); 
         string newNote = Widgets.TextArea(textRect, currentNote);
 
         if (newNote != currentNote)
         {
             currentNote = newNote;
-            if (string.IsNullOrWhiteSpace(currentNote)) manager.pawnNotes.Remove(id);
-            else manager.pawnNotes[id] = currentNote;
+            if (string.IsNullOrWhiteSpace(currentNote)) manager.pawnNotes.Remove(thingID);
+            else manager.pawnNotes[thingID] = currentNote;
         }
     }
 }

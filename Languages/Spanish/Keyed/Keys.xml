@@ -2,76 +2,118 @@
 <LanguageData>
   <FP_SettingsCategory>Eternal Pawns</FP_SettingsCategory>
 
-  <FP_EnableFactionLimit>Activar límite de veteranos por facción</FP_EnableFactionLimit>
-  <FP_EnableFactionLimitTooltip>Si está activado, no se guardarán nuevos peones una vez alcanzado el límite. Los veteranos que regresan siempre se guardan.</FP_EnableFactionLimitTooltip>
+  <FP_EnableFactionLimit>Habilitar límite de veteranos por facción</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>Si está habilitado, los nuevos colonos no se guardarán una vez que se alcance el límite. Los veteranos que regresan siempre se guardan.</FP_EnableFactionLimitTooltip>
   <FP_FactionVeteranLimit>Límite de veteranos por facción: {0}</FP_FactionVeteranLimit>
-  <FP_FactionVeteranLimitTooltip>Número máximo de veteranos en la reserva.\n\nEstablécelo en 0 para que el mod guarde SOLO los personajes que marques manualmente (con una estrella).</FP_FactionVeteranLimitTooltip>
+  <FP_FactionVeteranLimitTooltip>Número máximo de veteranos en el pozo para cada facción.\n\nEstablezca en 0 para guardar SOLAMENTE a los personajes que marque manualmente (con una estrella).</FP_FactionVeteranLimitTooltip>
   
-  <FP_ShowVIPButton>Mostrar botón “Recordar peón”</FP_ShowVIPButton>
-  <FP_ShowVIPButtonTooltip>Muestra el botón “Memoria” en la pestaña Social. Permite guardar manualmente cualquier NPC en la base de datos de veteranos (ignorando límites y filtros de peones de misión) y también escribir notas para un peón específico si es necesario.</FP_ShowVIPButtonTooltip>
+  <FP_ShowVIPButton>Mostrar botón 'Memoria' en la pestaña Social</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>Muestra el botón 'Memoria' en la pestaña Social. Permite guardar manualmente a cualquier NPC en la base de datos de veteranos y escribir notas personales.</FP_ShowVIPButtonTooltip>
 
-  <FP_VeteranRecallCooldownDays>Días de descanso tras regresar: {0}</FP_VeteranRecallCooldownDays>
-  <FP_VeteranRecallCooldownDaysTooltip>Tiempo de espera antes de que un veterano pueda ser llamado nuevamente.</FP_VeteranRecallCooldownDaysTooltip>
+  <FP_VeteranRecallCooldownDays>Días de descanso tras el regreso: {0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>Período de enfriamiento antes de que un veterano pueda ser convocado de nuevo.</FP_VeteranRecallCooldownDaysTooltip>
 
-  <FP_ForcedFreezeDays>Días hasta hibernar: {0}</FP_ForcedFreezeDays>
-  <FP_ForcedFreezeDaysTooltip>Tras cuántos días inactivo se “pone a dormir” al peón por rendimiento.</FP_ForcedFreezeDaysTooltip>
+  <FP_ForcedFreezeDays>Días hasta la hibernación: {0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>Número de días de descanso antes de 'poner a dormir' a un colono por optimización.</FP_ForcedFreezeDaysTooltip>
 
-  <FP_VeteranRecallChance>Probabilidad de reaparición de veterano: {0}%</FP_VeteranRecallChance>
-  <FP_VeteranRecallChanceTooltip>Probabilidad de usar un veterano en lugar de generar un peón nuevo.</FP_VeteranRecallChanceTooltip>
+  <FP_VeteranRecallChance>Probabilidad de llamada de veteranos: {0}%</FP_VeteranRecallChance>
+  <FP_VeteranRecallChanceTooltip>Probabilidad de usar un veterano existente en lugar de generar un colono nuevo.</FP_VeteranRecallChanceTooltip>
 
-  <FP_DeathChanceMultiplier>Multiplicador anual de muerte por vejez: {0}%</FP_DeathChanceMultiplier>
-  <FP_DeathDesc>Probabilidad anual de muerte para todos los veteranos mayores de 60:\n\n• Archotech: 0.05%\n• Ultratech: 0.5%\n• Spacer: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Tribal: 7.5%\n\nEste control deslizante escala las probabilidades indicadas arriba.</FP_DeathDesc>
-
-  <FP_DiseaseChanceMultiplier>Multiplicador anual de enfermedad: {0}%</FP_DiseaseChanceMultiplier>
-  <FP_DiseaseDesc>Probabilidad anual de contraer una enfermedad crónica (edad 60+):\n\n• Archotech: 0.25%\n• Ultratech: 0.5%\n• Spacer: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Tribal: 10.0%\n\nEste control deslizante escala las probabilidades indicadas arriba.</FP_DiseaseDesc>
-
-  <FP_ImplantChanceMultiplier>Multiplicador anual de implantes: {0}%</FP_ImplantChanceMultiplier>
-  <FP_ImplantDesc>CÓMO FUNCIONA:\n1. Tratamiento (Todos los niveles tecnológicos): Si a un veterano le falta un brazo, pierna u ojo, la facción instalará una prótesis acorde a su nivel tecnológico (Tribal — madera, Imperio — biónica).\n2. Mejora (Industrial+): 10% de probabilidad anual de reemplazar una parte sana del cuerpo por un implante más eficiente.\n\nEste control deslizante escala la probabilidad general de estos eventos.</FP_ImplantDesc>
-
-  <FP_GeneChanceMultiplier>Multiplicador anual de genes: {0}%</FP_GeneChanceMultiplier>
-  <FP_GeneChanceTooltip>10% de probabilidad de obtener un gen (Spacer+), 5% de probabilidad de un Archigen (Ultra+).</FP_GeneChanceTooltip>
-
-  <FP_AnomalyChanceMultiplier>Multiplicador anual de mutación: {0}%</FP_AnomalyChanceMultiplier>
-  <FP_AnomalyChanceTooltip>5% de probabilidad de contacto con el Vacío (Tribal y Medieval).</FP_AnomalyChanceTooltip>
-
-  <FP_EnableDebugLogs>Activar registros detallados</FP_EnableDebugLogs>
-  <FP_EnableDebugLogsTooltip>Mostrar eventos en la consola (~).</FP_EnableDebugLogsTooltip>
-
-  <FP_ClearDatabaseButton>BORRAR BASE DE DATOS DE VETERANOS</FP_ClearDatabaseButton>
-  <FP_ClearDatabaseConfirm>¿Estás absolutamente seguro de que quieres eliminar completamente todos los veteranos de la base de datos? ¡Esta acción no se puede deshacer!</FP_ClearDatabaseConfirm>
-  <FP_DatabaseClearedMessage>¡Base de datos de veteranos borrada correctamente!</FP_DatabaseClearedMessage>
+  <FP_DeathChanceMultiplier>Multiplicador de mortalidad por vejez: {0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>Probabilidad anual de muerte para veteranos mayores de 60 años:\n\n• Archotec: 0.05%\n• Ultratec: 0.5%\n• Espacial: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Neolítico: 7.5%\n\nEste deslizador escala las probabilidades anteriores.</FP_DeathDesc>
   
-  <FP_ShowGizmoButton>Mostrar botón de memoria en el panel Gizmo</FP_ShowGizmoButton>
-  <FP_ShowGizmoButtonTooltip>Mostrar el botón "Memoria" en el panel de acciones inferior (Gizmo) cuando un peón esté seleccionado.</FP_ShowGizmoButtonTooltip>
+  <FP_RandomDeathChance>Probabilidad anual de muerte aleatoria: {0}%</FP_RandomDeathChance>
+  <FP_RandomDeathDesc>Probabilidad de que un veterano muera cada año por circunstancias desconocidas (accidentes, enfermedades, conflictos). Se aplica a colonos de CUALQUIER edad.</FP_RandomDeathDesc>
+
+  <FP_DiseaseChanceMultiplier>Multiplicador de probabilidad de enfermedad: {0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>Probabilidad anual de desarrollar una enfermedad crónica (60+ años):\n\n• Archotec: 0.25%\n• Ultratec: 0.5%\n• Espacial: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Neolítico: 10.0%\n\nEste deslizador escala las probabilidades anteriores.</FP_DiseaseDesc>
+
+  <FP_ImplantChanceMultiplier>Multiplicador de implantes/curación: {0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>CÓMO FUNCIONA:\n1. Curación (Todos los niveles): Si a un veterano le falta un miembro u ojo, la facción le pondrá una prótesis de su nivel tecnológico.\n2. Mejora (Industrial+): 10% de probabilidad anual de reemplazar una parte sana por un implante superior.\n\nEste deslizador escala la probabilidad general.</FP_ImplantDesc>
+
+  <FP_GeneChanceMultiplier>Multiplicador de cambio de genes: {0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>10% de probabilidad de gen normal (Espacial+), 5% de gen Arquetec (Ultra+).</FP_GeneChanceTooltip>
+
+  <FP_AnomalyChanceMultiplier>Probabilidad de mutación/anomalía: {0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>5% de probabilidad de contacto con el Vacío (Neolítico y Medieval).</FP_AnomalyChanceTooltip>
+
+  <FP_EnableDebugLogs>Habilitar registros detallados</FP_EnableDebugLogs>
+  <FP_EnableDebugLogsTooltip>Muestra eventos internos en la consola de errores (~).</FP_EnableDebugLogsTooltip>
+
+  <FP_ClearDatabaseButton>LIMPIAR BASE DE DATOS DE VETERANOS</FP_ClearDatabaseButton>
+  <FP_ClearDatabaseConfirm>¿Estás absolutamente seguro de que quieres eliminar permanentemente a todos los veteranos? ¡Esta acción es irreversible!</FP_ClearDatabaseConfirm>
+  <FP_DatabaseClearedMessage>¡Base de datos de veteranos limpiada con éxito!</FP_DatabaseClearedMessage>
+  <FP_ResetSettingsButton>RESTABLECER AJUSTES</FP_ResetSettingsButton>
   
-  <FP_AutoSaveWanderers>Guardar automáticamente a los errantes</FP_AutoSaveWanderers>
-  <FP_AutoSaveWanderersTooltip>Buscar automáticamente una nueva facción permanente y guardar a miembros de facciones ocultas o temporales (Antiguos, refugiados, mendigos, etc.) cuando abandonen el mapa.</FP_AutoSaveWanderersTooltip>
+  <FP_AgingYear>Envejecimiento por ciclo: 1 año</FP_AgingYear>
+  <FP_AgingDays>Envejecimiento por ciclo: {0} días</FP_AgingDays>
+  <FP_AgingTooltip>Determina cuántos días envejece un veterano por ciclo. Por defecto son 60 días (1 año).</FP_AgingTooltip>
+ 
+  <FP_ShowGizmoButton>Mostrar botón de Memoria en el panel de acciones (Gizmo)</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>Muestra el botón 'Memoria' en la barra inferior al seleccionar un colono.</FP_ShowGizmoButtonTooltip>
   
-  <FP_TechLevelRange>Diferencia de nivel tecnológico permitida: {0}</FP_TechLevelRange>
-  <FP_TechLevelRangeTooltip>Determina a qué facciones pueden unirse los errantes.\n\n0 = Estrictamente el mismo nivel tecnológico.\n1 = Mismo nivel o adyacente (ej., Spacer puede unirse a Ultra o Industrial).\n5 = Cualquier nivel tecnológico (los Antiguos pueden unirse a tribus neolíticas).</FP_TechLevelRangeTooltip>
+  <FP_AutoSaveWanderers>Guardar vagabundos automáticamente</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>Asigna automáticamente una facción permanente y guarda a los miembros de facciones ocultas o temporales cuando abandonan el mapa.</FP_AutoSaveWanderersTooltip>
   
+  <FP_TechLevelRange>Tolerancia de desviación de nivel tecnológico: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>Determina a qué facciones pueden unirse los vagabundos.\n\n0 = Nivel tecnológico exacto.\n1 = Nivel exacto o adyacente.\n5 = Cualquier nivel.</FP_TechLevelRangeTooltip>
+
   <FP_MemoryHeader>Memoria: {0}</FP_MemoryHeader>
-  <FP_OpenPawnMemoryPanelDesc>Abrir el panel de gestión de memoria y estado para este peón.</FP_OpenPawnMemoryPanelDesc>
+  <FP_OpenPawnMemoryPanelDesc>Abrir panel de memoria para gestionar el estado y notas de este colono.</FP_OpenPawnMemoryPanelDesc>
 
-  <FP_StatusVeteran><b>Conocido</b>\nYa me he cruzado con esta persona antes. En algún lugar del mundo sigue su propio camino, y quién sabe cuándo volveremos a encontrarnos.</FP_StatusVeteran>
-  <FP_StatusPinned><b>No te olvidaré</b>\nHas destacado a esta persona entre la multitud. Si abandona estas tierras con vida, su historia continuará.</FP_StatusPinned>
-  <FP_StatusUnknown><b>Obsérvalo más de cerca</b>\nEn este mundo hostil es fácil desaparecer sin dejar rastro. Señálalo entre la multitud con la esperanza de volver a encontrarte.</FP_StatusUnknown>
+  <FP_StatusVeteran><b>Conocido</b>\nYa lo he conocido antes. Tiene su propio camino en el mundo, y quién sabe cuándo nos volveremos a ver.</FP_StatusVeteran>
+  <FP_StatusPinned><b>Te recordaré</b>\nHas marcado a este personaje. Si abandona estas tierras con vida, su historia continuará.</FP_StatusPinned>
+  <FP_StatusDead><b>Descansa en paz</b>\nLa historia de esta persona ha terminado. Sus registros permanecerán en nuestros archivos durante un año más.</FP_StatusDead>
+  <FP_StatusUnknown><b>Vigilar</b>\nEn este mundo cruel, es fácil desaparecer sin dejar rastro. Márcalo para asegurar el seguimiento de su viaje.</FP_StatusUnknown>
 
-  <FP_AlreadyInHistory>Ya forma parte de la historia</FP_AlreadyInHistory>
-  <FP_AlreadyInHistoryMsg>Este personaje ya se ha convertido en parte de la historia del mundo.</FP_AlreadyInHistoryMsg>
-  <FP_ForgetPawn>Olvidar</FP_ForgetPawn>
-  <FP_RememberPawn>Recordar peón</FP_RememberPawn>
+  <FP_AlreadyInHistory>Ya en la historia</FP_AlreadyInHistory>
+  <FP_AlreadyInHistoryMsg>Este personaje ya es parte de la historia del mundo.</FP_AlreadyInHistoryMsg>
+  <FP_ForgetPawn>Olvidar personaje</FP_ForgetPawn>
+  <FP_RememberPawn>Recordar personaje</FP_RememberPawn>
   
   <FP_PersonalNotes>Notas personales:</FP_PersonalNotes>
   <FP_MemoryButton>Memoria</FP_MemoryButton>
   
-  <FP_EnableMothball>Habilitar el sistema de congelación (Mothball)</FP_EnableMothball>
-  <FP_EnableMothballTooltip>Permite al mod poner a dormir a los peones inactivos por razones de rendimiento. Desactívalo si usas mods de optimización agresivos en caso de conflictos.</FP_EnableMothballTooltip>
+  <FP_EnableMothball>Habilitar hibernación (Mothball)</FP_EnableMothball>
+  <FP_EnableMothballTooltip>Permite al mod 'poner a dormir' a los colonos inactivos para mejorar el rendimiento.</FP_EnableMothballTooltip>
 
-  <FP_EnableAgingVisuals>Activar encanecimiento del cabello</FP_EnableAgingVisuals>
-  <FP_EnableAgingVisualsTooltip>Si se activa, los humanoides encanecerán gradualmente a medida que envejecen.</FP_EnableAgingVisualsTooltip>
-  <FP_StartGrayingRatio>El encanecimiento comienza al: {0}% de la vida</FP_StartGrayingRatio>
-  <FP_StartGrayingRatioTooltip>Porcentaje de esperanza de vida cuando comienza a aparecer el cabello gris. Para los humanos (80 años), el 45% es aproximadamente 36 años.</FP_StartGrayingRatioTooltip>
-  <FP_GrayingYearlyRatio>El encanecimiento total toma: {0}% de la vida</FP_GrayingYearlyRatio>
-  <FP_GrayingYearlyRatioTooltip>Determina la velocidad del encanecimiento. Al 25%, un humano se volverá completamente blanco a los 80 años. Valores más altos = encanecimiento más lento.</FP_GrayingYearlyRatioTooltip>
+  <FP_EnableAgingVisuals>Habilitar encanecimiento del cabello</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>Si está habilitado, los humanos y humanoides encanecerán gradualmente con la edad biológica.</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>Inicio del encanecimiento: {0}% de vida</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>Porcentaje de vida al que empieza a aparecer el vello gris. Para humanos (80 años), el 45% es aprox. 36 años.</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>Velocidad de encanecimiento: {0}% de vida</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>Determina la rapidez con la que el cabello se vuelve gris.</FP_GrayingYearlyRatioTooltip>
+
+  <FP_ShowMainTab>Mostrar pestaña de veteranos en la barra inferior</FP_ShowMainTab>
+  <FP_ShowMainTabTooltip>Añade un botón de 'Veteranos' a la barra inferior para ver a todos los personajes guardados.</FP_ShowMainTabTooltip>
+  <FP_VeteransTabHeader>Lista de Veteranos del Mundo</FP_VeteransTabHeader>
+  <FP_UnknownFaction>Facción desconocida</FP_UnknownFaction>
+  <FP_Details>Detalles</FP_Details>
+  <FP_History>Historia</FP_History>
+  <FP_Dead>Muerto</FP_Dead>
+  <FP_WorldManagerNotFound>Gestor de mundo no encontrado.</FP_WorldManagerNotFound>
+  <FP_AddedOn>En mis notas desde: {0}</FP_AddedOn>
+  <FP_EventsButton>Eventos</FP_EventsButton>
+  <FP_EventsHeader>Historia: {0}</FP_EventsHeader>
+  <FP_NoEventsCaught>Sin registros aún.</FP_NoEventsCaught>
+  <FP_YearHeader>Año {0}</FP_YearHeader>
+  <FP_Event_Aged>Los años dejan su huella: la edad biológica alcanzó los {0} años.</FP_Event_Aged>
+  <FP_Event_SkillUp>Maestría en {0} perfeccionada a un nuevo nivel ({1}).</FP_Event_SkillUp>
+  <FP_Event_Implant>Cuerpo modificado: {0} ahora reemplaza a {1}.</FP_Event_Implant>
+  <FP_Event_RegenPart>Milagro de la carne: {0} ha sido restaurado.</FP_Event_RegenPart>
+  <FP_Event_RegenScar>Cicatrices borradas: {0} sanó sin dejar rastro.</FP_Event_RegenScar>
+  <FP_Event_Gene>La naturaleza cambió: se manifestó un nuevo gen — {0}.</FP_Event_Gene>
+  <FP_Event_Disease>El peso de los años pasó factura: desarrolló {0}.</FP_Event_Disease>
+  <FP_Event_Anomaly>El Vacío tocó a esta persona, dejando una marca: {0}.</FP_Event_Anomaly>
+  <FP_Event_DiedOf>La vida llegó a su fin debido a: {0}, a la edad de {1} años.</FP_Event_DiedOf>
+  <FP_Event_DiedInBattle>Cayó en el campo de batalla a la edad de {0} años.</FP_Event_DiedInBattle>
+  <FP_Event_KilledByPawn>Cayó a manos de {1} ({0}), a la edad de {2} años.</FP_Event_KilledByPawn>
+  <FP_Event_KilledByDamage>Su vida fue segada por: {0}, a la edad de {1} años.</FP_Event_KilledByDamage>
+  <FP_Event_NaturalDeath>Murió de vejez a la edad biológica de {0}.</FP_Event_NaturalDeath>
+  <FP_EventsTooltip>Ver el historial de vida y eventos de esta persona durante su tiempo en el mundo.</FP_EventsTooltip>
+  <FP_EnableEventLogging>Rastrear historial de eventos</FP_EnableEventLogging>
+  <FP_EnableEventLoggingTooltip>Si está habilitado, el mod registrará eventos clave de los veteranos (edad, habilidades, implantes).</FP_EnableEventLoggingTooltip>
+  <FP_EventHistoryLimit>Retener historial de eventos por {0} años</FP_EventHistoryLimit>
+  <FP_EventHistoryLimitInfinity>Retener historial de eventos indefinidamente</FP_EventHistoryLimitInfinity>
+  <FP_EventHistoryLimitTooltip>Determina cuánto tiempo se conservan los registros de eventos.</FP_EventHistoryLimitTooltip>
 </LanguageData>

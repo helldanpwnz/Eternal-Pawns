@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- Случайные причины смерти по тех-уровням -->
+
+  <!-- НЕОЛИТ (Племя) -->
+<FP_Event_RandomDeath_Neolithic_13>Был растоптан стадом разгневанных муффало во время неудачной охоты в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_13>
+  <FP_Event_RandomDeath_Neolithic_14>Скончался от заражения крови после незначительной царапины, которую нечем было лечить, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_14>
+  <FP_Event_RandomDeath_Neolithic_15>Заблудился в густом тумане и замерз насмерть во время долгой ночи в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_15>
+  <FP_Event_RandomDeath_Neolithic_16>Был укушен ядовитой коброй и умер в мучениях из-за отсутствия противоядия в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_16>
+  <FP_Event_RandomDeath_Neolithic_17>Утонул в бурной реке, пытаясь доказать свою смелость перед соплеменниками, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_17>
+  <FP_Event_RandomDeath_Neolithic_18>Был завален камнями в пещере, которую племя считало священной, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_18>
+  <FP_Event_RandomDeath_Neolithic_19>Скончался от кишечных паразитов после употребления сырого мяса крысы в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_19>
+  <FP_Event_RandomDeath_Neolithic_20>Был убит ударом молнии, что шаман истолковал как гнев небесных духов, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_20>
+  <FP_Event_RandomDeath_Neolithic_21>Пал в бою, защищая поселение от налета кровожадных пиратов, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_21>
+  <FP_Event_RandomDeath_Neolithic_22>Был изгнан из племени за нарушение табу и погиб от голода в пустыне в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_22>
+  <FP_Event_RandomDeath_Neolithic_23>Сгорел заживо во время лесного пожара, начавшегося от удара молнии, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_23>
+  <FP_Event_RandomDeath_Neolithic_24>Был похищен «железными птицами» (транспортными подами) и больше его никто не видел, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_24>
+  <FP_Event_RandomDeath_Neolithic_25>Умер от солнечного удара, работая на полях кукурузы в аномальную жару, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_25>
+  <FP_Event_RandomDeath_Neolithic_26>Был убит взбесившимся домашним кабаном в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_26>
+  <FP_Event_RandomDeath_Neolithic_27>Скончался от «гнили в груди» (пневмонии) после сна на сырой земле в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_27>
+  <FP_Event_RandomDeath_Neolithic_28>Был принесен в жертву, чтобы остановить бесконечное извержение вулкана, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_28>
+  <FP_Event_RandomDeath_Neolithic_29>Погиб в ловушке, поставленной собственным племенем на крупного зверя, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_29>
+  <FP_Event_RandomDeath_Neolithic_30>Был разорван на части стаей голодных терьеров-людоедов в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_30>
+  <FP_Event_RandomDeath_Neolithic_31>Скончался от потери крови после того, как древний механизм в руинах отсек ему ногу, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_31>
+  <FP_Event_RandomDeath_Neolithic_32>Был забит дубинами во время спора из-за найденного «блестящего артефакта» в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_32>
+  <FP_Event_RandomDeath_Neolithic_33>Умер от истощения во время Великого Перехода через ледяные пустоши в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_33>
+  <FP_Event_RandomDeath_Neolithic_34>Стал жертвой сонного паралича, который соплеменники приняли за одержимость демоном, и был задушен «во благо», в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_34>
+  <FP_Event_RandomDeath_Neolithic_35>Был съеден гигантским пауком в темных глубинах пещеры в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_35>
+  <FP_Event_RandomDeath_Neolithic_36>Скончался от цинги во время необычайно долгой и суровой зимы в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_36>
+  <FP_Event_RandomDeath_Neolithic_37>Был убит стрелой в спину от завистливого охотника в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_37>
+  <FP_Event_RandomDeath_Neolithic_38>Умер от испуга, когда небо окрасилось в кроваво-красный цвет во время психического шторма, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_38>
+  <FP_Event_RandomDeath_Neolithic_39>Был раздавлен упавшим деревом во время заготовки дров в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_39>
+  <FP_Event_RandomDeath_Neolithic_40>Скончался от бешенства после укуса бродячей лисицы в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_40>
+  <FP_Event_RandomDeath_Neolithic_41>Был затоптан насмерть во время паники, вызванной появлением механоида, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_41>
+  <FP_Event_RandomDeath_Neolithic_42>Умер от отравления свинцом, пытаясь использовать обломки древнего корабля в качестве посуды, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_42>
+  <FP_Event_RandomDeath_Neolithic_43>Был сброшен со скалы в качестве испытания веры в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_43>
+  <FP_Event_RandomDeath_Neolithic_44>Скончался от малярии, полученной в болотистых низинах, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_44>
+  <FP_Event_RandomDeath_Neolithic_45>Был убит случайным камнем из пращи во время тренировки молодняка в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_45>
+  <FP_Event_RandomDeath_Neolithic_46>Умер от «смеющейся болезни» после поедания мозга павшего врага в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_46>
+  <FP_Event_RandomDeath_Neolithic_47>Был разорван дикой пантерой во время ночного дежурства в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_47>
+  <FP_Event_RandomDeath_Neolithic_48>Скончался от внутренних ран после падения с верблюда в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_48>
+  <FP_Event_RandomDeath_Neolithic_49>Задохнулся от дыма в переполненной землянке во время снежной бури в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_49>
+  <FP_Event_RandomDeath_Neolithic_50>Был убит в ритуальной схватке за право обладания женщиной в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_50>
+  <FP_Event_RandomDeath_Neolithic_51>Стал жертвой засады враждебного племени у водопоя в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_51>
+  <FP_Event_RandomDeath_Neolithic_52>Умер от жажды, заблудившись в бесконечных барханах, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_52>
+  <FP_Event_RandomDeath_Neolithic_53>Был растерзан во время неудачной попытки приручить мегаскарабея в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_53>
+  <FP_Event_RandomDeath_Neolithic_54>Скончался от аллергического шока после укуса роя диких пчел в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_54>
+  <FP_Event_RandomDeath_Neolithic_55>Был казнен по обвинению в колдовстве после того, как урожай погиб от засухи, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_55>
+  <FP_Event_RandomDeath_Neolithic_56>Упал в чан с кипящей смолой во время подготовки к обороне поселения в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_56>
+  <FP_Event_RandomDeath_Neolithic_57>Скончался от столбняка после ранения ржавым куском железа из руин в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_57>
+  <FP_Event_RandomDeath_Neolithic_58>Был съеден заживо плотоядными насекомыми во время сна в джунглях в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_58>
+  <FP_Event_RandomDeath_Neolithic_59>Погиб при попытке украсть яйца из гнезда разъяренного индюка в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_59>
+  <FP_Event_RandomDeath_Neolithic_60>Был ослеплен и оставлен умирать в пустыне по закону предков в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_60>
+  <FP_Event_RandomDeath_Neolithic_61>Скончался от переохлаждения, отдав свою одежду больному ребенку, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_61>
+  <FP_Event_RandomDeath_Neolithic_62>Был раздавлен упавшим с неба контейнером с удобрениями в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_62>
+  <FP_Event_RandomDeath_Neolithic_63>Умер от воспаления аппендицита, который шаман пытался лечить травами, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_63>
+  <FP_Event_RandomDeath_Neolithic_64>Был пронзен бивнем слона во время сезонной миграции животных в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_64>
+  <FP_Event_RandomDeath_Neolithic_65>Скончался от истощения, отказавшись от еды в знак протеста против вождя, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_65>
+  <FP_Event_RandomDeath_Neolithic_66>Был убит упавшим метеоритом, который племя сочло божественным знаком, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_66>
+  <FP_Event_RandomDeath_Neolithic_67>Утонул в трясине, пытаясь достать красивый цветок для любимой, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_67>
+  <FP_Event_RandomDeath_Neolithic_68>Скончался от «каменной болезни» (силикоза) после долгих лет работы в шахтах племени в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_68>
+  <FP_Event_RandomDeath_Neolithic_69>Был растерзан воргом во время защиты овчарни в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_69>
+  <FP_Event_RandomDeath_Neolithic_70>Умер от ожогов, пытаясь спасти священные реликвии из горящего храма, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_70>
+  <FP_Event_RandomDeath_Neolithic_71>Был отравлен завистливым соперником на пиру в честь сбора урожая в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_71>
+  <FP_Event_RandomDeath_Neolithic_72>Скончался от передозировки целебным корнем в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_72>
+  <FP_Event_RandomDeath_Neolithic_73>Был съеден каннибалами из соседнего племени во время набега в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_73>
+  <FP_Event_RandomDeath_Neolithic_74>Умер от сердечного приступа, увидев «стального человека» (механоида) впервые в жизни, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_74>
+  <FP_Event_RandomDeath_Neolithic_75>Был убит в результате кровной мести, тянувшейся три поколения, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_75>
+  <FP_Event_RandomDeath_Neolithic_76>Скончался от гангрены после укуса бешеной белки в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_76>
+  <FP_Event_RandomDeath_Neolithic_77>Был принесен в жертву Великому Червю в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_77>
+  <FP_Event_RandomDeath_Neolithic_78>Умер от потери крови после неудачного обрезания в ритуале взросления в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_78>
+  <FP_Event_RandomDeath_Neolithic_79>Был раздавлен сорвавшимся со скалы валуном во время землетрясения в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_79>
+  <FP_Event_RandomDeath_Neolithic_80>Скончался от дизентерии после питья из грязной лужи в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_80>
+  <FP_Event_RandomDeath_Neolithic_81>Был убит охранником за попытку дезертировать из племени в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_81>
+  <FP_Event_RandomDeath_Neolithic_82>Умер от истощения, танцуя ритуальный танец дождя три дня без остановки, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_82>
+  <FP_Event_RandomDeath_Neolithic_83>Был заколот костяным ножом во время ночной ссоры в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_83>
+  <FP_Event_RandomDeath_Neolithic_84>Скончался от укуса гигантской многоножки в заброшенном бункере в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_84>
+  <FP_Event_RandomDeath_Neolithic_85>Был затоптан собственными соплеменниками во время панического бегства от пожара в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_85>
+  <FP_Event_RandomDeath_Neolithic_86>Умер от пневмонии после того, как его одежда промокла под ледяным дождем, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_86>
+  <FP_Event_RandomDeath_Neolithic_87>Был растерзан медведем, защищая своих детей, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_87>
+  <FP_Event_RandomDeath_Neolithic_88>Скончался от заражения крови после того, как шаман пытался изгнать «злых духов» через надрезы на коже, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_88>
+  <FP_Event_RandomDeath_Neolithic_89>Был убит упавшей ледяной коркой с крыши общей хижины в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_89>
+  <FP_Event_RandomDeath_Neolithic_90>Умер от голода, будучи не в силах охотиться из-за старой травмы, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_90>
+  <FP_Event_RandomDeath_Neolithic_91>Был поглощен «живой тьмой» (туманом) во время затмения в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_91>
+  <FP_Event_RandomDeath_Neolithic_92>Скончался от шока после ампутации руки без обезболивания в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_92>
+  <FP_Event_RandomDeath_Neolithic_93>Был проткнут рогом разъяренного носорога в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_93>
+  <FP_Event_RandomDeath_Neolithic_94>Умер от отравления газами в глубине старой шахты в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_94>
+  <FP_Event_RandomDeath_Neolithic_95>Был убит во сне предателем, мечтавшим занять его место, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_95>
+  <FP_Event_RandomDeath_Neolithic_96>Скончался от кровоизлияния в мозг после удара упавшим кокосом в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_96>
+  <FP_Event_RandomDeath_Neolithic_97>Был растоптан стадом мегатериев во время обряда посвящения в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_97>
+  <FP_Event_RandomDeath_Neolithic_98>Умер от инфекции после того, как ему выбили зубы в драке, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_98>
+  <FP_Event_RandomDeath_Neolithic_99>Был сожжен как носитель «проклятия» (чумы) в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_99>
+  <FP_Event_RandomDeath_Neolithic_100>Скончался от истощения духа после потери всех близких в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_100>
+  <FP_Event_RandomDeath_Neolithic_101>Был задушен лианой-душителем в глубоких джунглях в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_101>
+  <FP_Event_RandomDeath_Neolithic_102>Умер от остановки сердца во время чрезмерно горячей ритуальной бани в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_102>
+  <FP_Event_RandomDeath_Neolithic_103>Был убит соплеменником в приступе психоза из-за отсутствия стола для обеда в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_103>
+  <FP_Event_RandomDeath_Neolithic_104>Скончался от укуса пустынного скорпиона в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_104>
+  <FP_Event_RandomDeath_Neolithic_105>Был забит до смерти прикладами ружей чужаков в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_105>
+  <FP_Event_RandomDeath_Neolithic_106>Умер от падения в ледяное озеро при попытке поймать рыбу руками в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_106>
+  <FP_Event_RandomDeath_Neolithic_107>Был принесен в жертву Духу Машин после того, как случайно включил древнее радио, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_107>
+  <FP_Event_RandomDeath_Neolithic_108>Скончался от тяжелой лихорадки, переданной через укус насекомого, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_108>
+  <FP_Event_RandomDeath_Neolithic_109>Был раздавлен в толпе во время праздника Кровавой Луны в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_109>
+  <FP_Event_RandomDeath_Neolithic_110>Умер от разрыва сердца после встречи с «призраком из стали» (терминатором-механоидом) в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_110>
+  <FP_Event_RandomDeath_Neolithic_111>Был убит молнией, когда держал в руках кусок металла, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_111>
+  <FP_Event_RandomDeath_Neolithic_112>Скончался от старости, окруженный племенем, что было редкостью в эти суровые времена, в возрасте {0} лет.</FP_Event_RandomDeath_Neolithic_112>
+
+  <!-- СРЕДНЕВЕКОВЬЕ -->
+<FP_Event_RandomDeath_Medieval_11>Был заколот в пьяной драке в таверне из-за спора о качестве эля в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_11>
+  <FP_Event_RandomDeath_Medieval_12>Скончался от "антонова огня" после употребления хлеба со спорыньей в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_12>
+  <FP_Event_RandomDeath_Medieval_13>Был раздавлен сорвавшимся жерновом на ветряной мельнице в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_13>
+  <FP_Event_RandomDeath_Medieval_14>Умер от истощения, заблудившись в лесу во время долгой зимы, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_14>
+  <FP_Event_RandomDeath_Medieval_15>Захлебнулся в сточной канаве, не удержав равновесия после праздника, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_15>
+  <FP_Event_RandomDeath_Medieval_16>Пал от болта арбалетчика, защищая караван на большой дороге, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_16>
+  <FP_Event_RandomDeath_Medieval_17>Был разорван на части разъяренным медведем-людоедом в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_17>
+  <FP_Event_RandomDeath_Medieval_18>Умер от заражения крови после того, как наступил на ржавый гвоздь, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_18>
+  <FP_Event_RandomDeath_Medieval_19>Был забит камнями местными жителями за подозрение в ереси в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_19>
+  <FP_Event_RandomDeath_Medieval_20>Скончался от водянки, так и не дождавшись приезда лекаря, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_20>
+  <FP_Event_RandomDeath_Medieval_21>Погиб под копытами взбесившейся лошади на рыночной площади в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_21>
+  <FP_Event_RandomDeath_Medieval_22>Был принесен в жертву культистами темных богов в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_22>
+  <FP_Event_RandomDeath_Medieval_23>Сгорел заживо в собственном доме во время ночного набега разбойников в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_23>
+  <FP_Event_RandomDeath_Medieval_24>Умер от удара молнии прямо во время молитвы под открытым небом в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_24>
+  <FP_Event_RandomDeath_Medieval_25>Задохнулся в шахте из-за внезапного обвала породы в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_25>
+  <FP_Event_RandomDeath_Medieval_26>Скончался от чрезмерного кровопускания, назначенного некомпетентным цирюльником, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_26>
+  <FP_Event_RandomDeath_Medieval_27>Был отравлен испорченной солониной во время долгого похода в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_27>
+  <FP_Event_RandomDeath_Medieval_28>Пал от стрелы с отравленным наконечником в лесной засаде в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_28>
+  <FP_Event_RandomDeath_Medieval_29>Умер от разрыва сердца, увидев в ночи "призрака" (который оказался мегапауком) в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_29>
+  <FP_Event_RandomDeath_Medieval_30>Был повешен за кражу одной единственной курицы в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_30>
+  <FP_Event_RandomDeath_Medieval_31>Замерз насмерть, оставшись без крова после снежной бури, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_31>
+  <FP_Event_RandomDeath_Medieval_32>Умер от чахотки, харкаю кровью на холодный пол кельи, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_32>
+  <FP_Event_RandomDeath_Medieval_33>Был раздавлен упавшим стволом дуба при валке леса в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_33>
+  <FP_Event_RandomDeath_Medieval_34>Погиб от укуса бешеной лисы, охраняя курятник, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_34>
+  <FP_Event_RandomDeath_Medieval_35>Скончался от дизентерии, вызванной грязной водой из ручья, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_35>
+  <FP_Event_RandomDeath_Medieval_36>Был убит случайным камнем из требушета при обороне стен в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_36>
+  <FP_Event_RandomDeath_Medieval_37>Умер от передозировки алхимическим зельем "бессмертия" в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_37>
+  <FP_Event_RandomDeath_Medieval_38>Был загрызен стаей бродячих собак в голодный год в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_38>
+  <FP_Event_RandomDeath_Medieval_39>Погиб в результате неудачного падения с крепостной стены в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_39>
+  <FP_Event_RandomDeath_Medieval_40>Скончался от цинги во время бесконечной полярной ночи в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_40>
+  <FP_Event_RandomDeath_Medieval_41>Был четвертован по обвинению в государственной измене в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_41>
+  <FP_Event_RandomDeath_Medieval_42>Пал жертвой лесного духа (на самом деле — дикого гуманоида) в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_42>
+  <FP_Event_RandomDeath_Medieval_43>Умер от болевого шока после того, как ему оторвало руку капканом, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_43>
+  <FP_Event_RandomDeath_Medieval_44>Был заколот кинжалом в спину "лучшим другом" из-за наследства в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_44>
+  <FP_Event_RandomDeath_Medieval_45>Скончался от удушья, подавившись костью фазана на пиру, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_45>
+  <FP_Event_RandomDeath_Medieval_46>Был затоптан боевым слоном во время экзотического набега в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_46>
+  <FP_Event_RandomDeath_Medieval_47>Умер от солнечного удара, работая в поле в аномальную жару, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_47>
+  <FP_Event_RandomDeath_Medieval_48>Был сварен заживо в котле с маслом при штурме ворот в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_48>
+  <FP_Event_RandomDeath_Medieval_49>Скончался от таинственной "сонной болезни", из которой так и не вышел, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_49>
+  <FP_Event_RandomDeath_Medieval_50>Был забит до смерти дубинами во время восстания крестьян в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_50>
+  <FP_Event_RandomDeath_Medieval_51>Умер от укуса ядовитой гадюки, спрятавшейся в стоге сена, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_51>
+  <FP_Event_RandomDeath_Medieval_52>Был обезглавлен палачом за дезертирство с поля боя в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_52>
+  <FP_Event_RandomDeath_Medieval_53>Погиб при взрыве примитивного порохового снаряда в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_53>
+  <FP_Event_RandomDeath_Medieval_54>Скончался от гнойного отита, который перешел на мозг, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_54>
+  <FP_Event_RandomDeath_Medieval_55>Был сброшен с обрыва в море во время ритуального очищения в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_55>
+  <FP_Event_RandomDeath_Medieval_56>Умер от истощения, будучи запертым в железной деве, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_56>
+  <FP_Event_RandomDeath_Medieval_57>Был заколот вилами в порыве ярости из-за испорченного урожая в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_57>
+  <FP_Event_RandomDeath_Medieval_58>Погиб от удара тяжелой палицей, защищая ворота замка, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_58>
+  <FP_Event_RandomDeath_Medieval_59>Скончался от столбняка после незначительного пореза серпом в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_59>
+  <FP_Event_RandomDeath_Medieval_60>Был съеден заживо роем насекомых в темных пещерах в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_60>
+  <FP_Event_RandomDeath_Medieval_61>Умер от внезапной остановки сердца после трех дней бессонницы в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_61>
+  <FP_Event_RandomDeath_Medieval_62>Был пронзен алебардой во время ночного патрулирования в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_62>
+  <FP_Event_RandomDeath_Medieval_63>Скончался от потери крови после неудачной попытки ампутации пальца в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_63>
+  <FP_Event_RandomDeath_Medieval_64>Был растоптан стадом взбесившихся муфлонов в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_64>
+  <FP_Event_RandomDeath_Medieval_65>Умер от отравления свинцовыми белилами, считая их лечебными, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_65>
+  <FP_Event_RandomDeath_Medieval_66>Был убит выпущенной из леса стрелой неизвестного охотника в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_66>
+  <FP_Event_RandomDeath_Medieval_67>Скончался в муках от разрыва аппендикса в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_67>
+  <FP_Event_RandomDeath_Medieval_68>Был погребен заживо под обвалившейся крышей хижины в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_68>
+  <FP_Event_RandomDeath_Medieval_69>Погиб в огне, пытаясь спасти священные реликвии из храма, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_69>
+  <FP_Event_RandomDeath_Medieval_70>Скончался от укуса чумной крысы в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_70>
+  <FP_Event_RandomDeath_Medieval_71>Был заколот кинжалом-мизерикордией после поражения в битве в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_71>
+  <FP_Event_RandomDeath_Medieval_72>Умер от общего заражения организма после того, как его покусала белка, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_72>
+  <FP_Event_RandomDeath_Medieval_73>Был раздавлен упавшей статуей древнего божества в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_73>
+  <FP_Event_RandomDeath_Medieval_74>Скончался от белой горячки после многодневного запоя в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_74>
+  <FP_Event_RandomDeath_Medieval_75>Был утоплен в болоте во время преследования беглых рабов в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_75>
+  <FP_Event_RandomDeath_Medieval_76>Умер от удара моргенштерном, не успев поднять щит, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_76>
+  <FP_Event_RandomDeath_Medieval_77>Был растерзан воргом во время охоты в лесу в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_77>
+  <FP_Event_RandomDeath_Medieval_78>Скончался от простуды, переросшей в тяжелое воспаление легких, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_78>
+  <FP_Event_RandomDeath_Medieval_79>Был казнен через повешение за попытку дезертирства в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_79>
+  <FP_Event_RandomDeath_Medieval_80>Умер от голода в осажденной крепости, отдав последний кусок хлеба детям, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_80>
+  <FP_Event_RandomDeath_Medieval_81>Был убит ударом кистеня в уличной потасовке в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_81>
+  <FP_Event_RandomDeath_Medieval_82>Скончался от сепсиса после того, как рану прижгли раскаленным железом, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_82>
+  <FP_Event_RandomDeath_Medieval_83>Погиб при падении в глубокий ров с кольями в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_83>
+  <FP_Event_RandomDeath_Medieval_84>Умер от отравления ртутью, которую использовал алхимик-шарлатан, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_84>
+  <FP_Event_RandomDeath_Medieval_85>Был затоптан толпой во время паники при пожаре в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_85>
+  <FP_Event_RandomDeath_Medieval_86>Скончался от укуса паука-скакуна, забравшегося в его постель, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_86>
+  <FP_Event_RandomDeath_Medieval_87>Был пронзен копьем при попытке перелезть через частокол в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_87>
+  <FP_Event_RandomDeath_Medieval_88>Умер от кровоизлияния в мозг после падения с лошади в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_88>
+  <FP_Event_RandomDeath_Medieval_89>Был забит до смерти палками стражниками за нарушение комендантского часа в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_89>
+  <FP_Event_RandomDeath_Medieval_90>Скончался от меланхолии и отказа от пищи после потери всей семьи в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_90>
+  <FP_Event_RandomDeath_Medieval_91>Был сожжен на костре как носитель "скверны" после падения метеорита в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_91>
+  <FP_Event_RandomDeath_Medieval_92>Умер от переохлаждения, провалившись под лед при попытке поймать рыбу, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_92>
+  <FP_Event_RandomDeath_Medieval_93>Был обезглавлен в ходе судебного поединка в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_93>
+  <FP_Event_RandomDeath_Medieval_94>Скончался от яда диких пчел, пытаясь добыть мед в лесу, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_94>
+  <FP_Event_RandomDeath_Medieval_95>Был убит рикошетом камня от разрушенной башни в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_95>
+  <FP_Event_RandomDeath_Medieval_96>Умер от почечной недостаточности после употребления сомнительных трав в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_96>
+  <FP_Event_RandomDeath_Medieval_97>Был растерзан диким кабаном во время неудачной охоты в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_97>
+  <FP_Event_RandomDeath_Medieval_98>Скончался от внутреннего кровотечения после падения со строительных лесов в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_98>
+  <FP_Event_RandomDeath_Medieval_99>Был отравлен мышьяком, подсыпанным в кубок с вином, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_99>
+  <FP_Event_RandomDeath_Medieval_100>Умер от удушья в густом дыму горящих торфяников в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_100>
+  <FP_Event_RandomDeath_Medieval_101>Был заколот в спину во время восстания в тюрьме в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_101>
+  <FP_Event_RandomDeath_Medieval_102>Скончался от осложнений после укуса белки-убийцы в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_102>
+  <FP_Event_RandomDeath_Medieval_103>Погиб от удара боевого топора в яростной схватке за еду в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_103>
+  <FP_Event_RandomDeath_Medieval_104>Умер от лихорадки, вызванной малярией, в сырых джунглях в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_104>
+  <FP_Event_RandomDeath_Medieval_105>Был посажен на кол за разбойничество на дорогах в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_105>
+  <FP_Event_RandomDeath_Medieval_106>Скончался от удара копытом мула прямо в висок в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_106>
+  <FP_Event_RandomDeath_Medieval_107>Был убит взрывом алхимической реторты в поисках философского камня в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_107>
+  <FP_Event_RandomDeath_Medieval_108>Умер от истощения в бесконечных песках пустыни в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_108>
+  <FP_Event_RandomDeath_Medieval_109>Был раздавлен упавшим метеоритом, который сочли божественным гневом, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_109>
+  <FP_Event_RandomDeath_Medieval_110>Скончался от старости, мирно заснув в своей соломенной постели, в возрасте {0} лет.</FP_Event_RandomDeath_Medieval_110>
+
+  <!-- ИНДУСТРИАЛ -->
+<FP_Event_RandomDeath_Industrial_13>Задохнулся в угольной шахте из-за поломки вентиляционной системы в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_13>
+  <FP_Event_RandomDeath_Industrial_14>Был раздавлен упавшим ковшом с расплавленной сталью в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_14>
+  <FP_Event_RandomDeath_Industrial_15>Скончался от «белой чахотки», надышавшись хлопковой пыли на ткацкой фабрике, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_15>
+  <FP_Event_RandomDeath_Industrial_16>Погиб при обрушении недостроенного кирпичного завода в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_16>
+  <FP_Event_RandomDeath_Industrial_17>Был затянут в приводной ремень парового молота в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_17>
+  <FP_Event_RandomDeath_Industrial_18>Скончался от заражения крови после ранения на ржавом токарном станке в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_18>
+  <FP_Event_RandomDeath_Industrial_19>Погиб во время взрыва цистерны с химтопливом на заправочной станции в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_19>
+  <FP_Event_RandomDeath_Industrial_20>Упал в чан с красителем на кожевенном заводе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_20>
+  <FP_Event_RandomDeath_Industrial_21>Сгорел при пожаре в перенаселенном рабочем бараке в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_21>
+  <FP_Event_RandomDeath_Industrial_22>Был смертельно поражен током при попытке починить высоковольтную линию в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_22>
+  <FP_Event_RandomDeath_Industrial_23>Погиб под колесами многотонного грузовика на паровом ходу в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_23>
+  <FP_Event_RandomDeath_Industrial_24>Скончался от отравления ртутью при производстве зеркальных стекол в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_24>
+  <FP_Event_RandomDeath_Industrial_25>Умер от истощения во время затяжной забастовки сталелитейщиков в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_25>
+  <FP_Event_RandomDeath_Industrial_26>Был убит рикошетом при испытании новой автоматической винтовки в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_26>
+  <FP_Event_RandomDeath_Industrial_27>Погиб при взрыве газа в городской канализации в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_27>
+  <FP_Event_RandomDeath_Industrial_28>Сорвался в глубокую шахту лифта строящегося небоскреба в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_28>
+  <FP_Event_RandomDeath_Industrial_29>Скончался от лучевой болезни после работы с ранними рентгеновскими аппаратами в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_29>
+  <FP_Event_RandomDeath_Industrial_30>Погиб во время крушения дирижабля, наполненного водородом, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_30>
+  <FP_Event_RandomDeath_Industrial_31>Был растоптан перепуганной толпой во время хлебного бунта в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_31>
+  <FP_Event_RandomDeath_Industrial_32>Скончался от метилизма после употребления технического спирта в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_32>
+  <FP_Event_RandomDeath_Industrial_33>Погиб при взрыве снаряда в стволе дефектной мортиры в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_33>
+  <FP_Event_RandomDeath_Industrial_34>Утонул в мазутном отстойнике из-за плохой видимости в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_34>
+  <FP_Event_RandomDeath_Industrial_35>Был убит автоматической турелью, принявшей его за дезертира, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_35>
+  <FP_Event_RandomDeath_Industrial_36>Скончался от хронического отравления мышьяком, используемым в обоях, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_36>
+  <FP_Event_RandomDeath_Industrial_37>Погиб при падении с обледеневшей стальной конструкции моста в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_37>
+  <FP_Event_RandomDeath_Industrial_38>Задохнулся от густого городского смога во время температурной инверсии в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_38>
+  <FP_Event_RandomDeath_Industrial_39>Был раздавлен гидравлическим прессом из-за неисправного клапана в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_39>
+  <FP_Event_RandomDeath_Industrial_40>Погиб в результате взрыва угольной пыли на элеваторе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_40>
+  <FP_Event_RandomDeath_Industrial_41>Скончался от сепсиса, полученного при работе на мясокомбинате, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_41>
+  <FP_Event_RandomDeath_Industrial_42>Был застрелен во время ограбления почтового дилижанса в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_42>
+  <FP_Event_RandomDeath_Industrial_43>Погиб под завалом железной руды на карьере в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_43>
+  <FP_Event_RandomDeath_Industrial_44>Умер от удара током, пытаясь запитать радиостанцию от молниеотвода, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_44>
+  <FP_Event_RandomDeath_Industrial_45>Был случайно замурован в бетонном основании плотины в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_45>
+  <FP_Event_RandomDeath_Industrial_46>Скончался от взрыва парового стерилизатора в больнице в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_46>
+  <FP_Event_RandomDeath_Industrial_47>Погиб при столкновении двух барж с углем на канале в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_47>
+  <FP_Event_RandomDeath_Industrial_48>Был убит упавшей секцией телеграфного столба в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_48>
+  <FP_Event_RandomDeath_Industrial_49>Скончался от ожогов при попытке потушить горящий склад медикаментов в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_49>
+  <FP_Event_RandomDeath_Industrial_50>Погиб при испытании раннего прототипа экзоскелета в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_50>
+  <FP_Event_RandomDeath_Industrial_51>Был смертельно ранен осколком маховика, разлетевшегося от перегрузки, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_51>
+  <FP_Event_RandomDeath_Industrial_52>Умер от холеры из-за попадания сточных вод в водопровод в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_52>
+  <FP_Event_RandomDeath_Industrial_53>Погиб при взрыве динамита во время прокладки тоннеля в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_53>
+  <FP_Event_RandomDeath_Industrial_54>Был затянут в лопасти гигантского цехового вентилятора в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_54>
+  <FP_Event_RandomDeath_Industrial_55>Скончался от «фосфорной челюсти», работая на спичечной фабрике, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_55>
+  <FP_Event_RandomDeath_Industrial_56>Погиб во время ночного налета бандитской группировки на заводской район в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_56>
+  <FP_Event_RandomDeath_Industrial_57>Упал в работающую камнедробилку на карьере в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_57>
+  <FP_Event_RandomDeath_Industrial_58>Был убит током из-за отсутствия заземления у электрической плиты в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_58>
+  <FP_Event_RandomDeath_Industrial_59>Скончался от передозировки ранними анестетиками во время операции в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_59>
+  <FP_Event_RandomDeath_Industrial_60>Погиб при падении грузового контейнера с портового крана в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_60>
+  <FP_Event_RandomDeath_Industrial_61>Умер от удушья, попав под выброс углекислого газа на пивоварне в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_61>
+  <FP_Event_RandomDeath_Industrial_62>Был раздавлен паровым кадилом во время религиозной процессии в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_62>
+  <FP_Event_RandomDeath_Industrial_63>Погиб при взрыве парового котла на речном буксире в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_63>
+  <FP_Event_RandomDeath_Industrial_64>Скончался от отравления бензолом при производстве красителей в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_64>
+  <FP_Event_RandomDeath_Industrial_65>Был убит в уличной драке с использованием кастетов и арматуры в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_65>
+  <FP_Event_RandomDeath_Industrial_66>Погиб при обрушении строительных лесов вокруг новой ратуши в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_66>
+  <FP_Event_RandomDeath_Industrial_67>Умер от теплового удара, работая кочегаром в машинном отделении, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_67>
+  <FP_Event_RandomDeath_Industrial_68>Был пронзен стальной арматурой при падении с высоты в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_68>
+  <FP_Event_RandomDeath_Industrial_69>Скончался от взрыва баллона сжатого воздуха в мастерской в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_69>
+  <FP_Event_RandomDeath_Industrial_70>Погиб при попытке украсть медные провода под напряжением в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_70>
+  <FP_Event_RandomDeath_Industrial_71>Был завален углем при разгрузке товарного вагона в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_71>
+  <FP_Event_RandomDeath_Industrial_72>Умер от заражения крови, уколовшись грязной иглой на швейной фабрике, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_72>
+  <FP_Event_RandomDeath_Industrial_73>Погиб при крушении пассажирского поезда из-за размытых путей в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_73>
+  <FP_Event_RandomDeath_Industrial_74>Скончался от пневмокониоза, проработав 20 лет на каменоломне, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_74>
+  <FP_Event_RandomDeath_Industrial_75>Был убит при взрыве самодельной гранаты во время уличных боев в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_75>
+  <FP_Event_RandomDeath_Industrial_76>Погиб при падении в резервуар с серной кислотой на химзаводе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_76>
+  <FP_Event_RandomDeath_Industrial_77>Умер от взрыва лампы с нестабильным химтопливом в спальне в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_77>
+  <FP_Event_RandomDeath_Industrial_78>Был раздавлен гигантской шестерней, сорвавшейся с креплений, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_78>
+  <FP_Event_RandomDeath_Industrial_79>Скончался от внутреннего кровотечения после несчастного случая на стройке в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_79>
+  <FP_Event_RandomDeath_Industrial_80>Погиб при пожаре на складе пиротехники в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_80>
+  <FP_Event_RandomDeath_Industrial_81>Был задушен собственным галстуком, затянутым в печатный станок, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_81>
+  <FP_Event_RandomDeath_Industrial_82>Умер от отравления свинцовыми белилами при покраске моста в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_82>
+  <FP_Event_RandomDeath_Industrial_83>Погиб при детонации пыли в мукомольном цеху в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_83>
+  <FP_Event_RandomDeath_Industrial_84>Был насмерть сбит курьерским паровозом на переезде в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_84>
+  <FP_Event_RandomDeath_Industrial_85>Скончался от переохлаждения в неотапливаемом цеху во время метели в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_85>
+  <FP_Event_RandomDeath_Industrial_86>Погиб при взрыве нефтяной вышки из-за случайной искры в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_86>
+  <FP_Event_RandomDeath_Industrial_87>Был убит при падении в чан с кипящим суслом на пивоваренном заводе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_87>
+  <FP_Event_RandomDeath_Industrial_88>Умер от удара током, пытаясь включить уличный фонарь голыми руками, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_88>
+  <FP_Event_RandomDeath_Industrial_89>Погиб при обрушении потолка в старой коммунальной квартире в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_89>
+  <FP_Event_RandomDeath_Industrial_90>Скончался от ожогов дыхательных путей при утечке аммиака в холодильнике в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_90>
+  <FP_Event_RandomDeath_Industrial_91>Был раздавлен упавшим сейфом во время перевозки банковских активов в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_91>
+  <FP_Event_RandomDeath_Industrial_92>Погиб при падении с обледеневшей водонапорной башни в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_92>
+  <FP_Event_RandomDeath_Industrial_93>Умер от цинги во время долгой задержки торгового каравана в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_93>
+  <FP_Event_RandomDeath_Industrial_94>Был убит током, наступив в лужу рядом с оборванным проводом трамвая, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_94>
+  <FP_Event_RandomDeath_Industrial_95>Погиб при взрыве бочки со спиртом на подпольном складе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_95>
+  <FP_Event_RandomDeath_Industrial_96>Скончался от столбняка после ранения обломком промышленной арматуры в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_96>
+  <FP_Event_RandomDeath_Industrial_97>Был зажат между двумя состыковывающимися вагонами поезда в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_97>
+  <FP_Event_RandomDeath_Industrial_98>Погиб при испытании прототипа огнемета на полигоне в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_98>
+  <FP_Event_RandomDeath_Industrial_99>Умер от острой почечной недостаточности после работы с техническими растворителями в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_99>
+  <FP_Event_RandomDeath_Industrial_100>Был смертельно ранен взбесившимся вьючным животным в тесном загоне в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_100>
+  <FP_Event_RandomDeath_Industrial_101>Погиб при обрушении кирпичной дымовой трубы во время шторма в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_101>
+  <FP_Event_RandomDeath_Industrial_102>Скончался от удара током во время сеанса ранней электротерапии в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_102>
+  <FP_Event_RandomDeath_Industrial_103>Был случайно застрелен при чистке наградного револьвера в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_103>
+  <FP_Event_RandomDeath_Industrial_104>Погиб при падении в дробилку для костей на заводе удобрений в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_104>
+  <FP_Event_RandomDeath_Industrial_105>Умер от взрыва газового рожка в своей комнате в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_105>
+  <FP_Event_RandomDeath_Industrial_106>Был раздавлен сорвавшимся с цепей промышленным вентилятором в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_106>
+  <FP_Event_RandomDeath_Industrial_107>Скончался от хронической усталости и недоедания на кирпичном заводе в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_107>
+  <FP_Event_RandomDeath_Industrial_108>Погиб при испытании парашюта из парусины, прыгнув с моста, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_108>
+  <FP_Event_RandomDeath_Industrial_109>Был убит сорвавшимся лифтовым противовесом в шахте в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_109>
+  <FP_Event_RandomDeath_Industrial_110>Скончался от ожогов, упав в костер во время пьяного празднования окончания смены, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_110>
+  <FP_Event_RandomDeath_Industrial_111>Погиб при взрыве парового двигателя, работавшего на пределе мощности, в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_111>
+  <FP_Event_RandomDeath_Industrial_112>Был раздавлен упавшим штабелем стальных балок на верфи в возрасте {0} лет.</FP_Event_RandomDeath_Industrial_112>
+
+  <!-- КОСМОС / УЛЬТРА / АРХОТЕК -->
+<FP_Event_RandomDeath_Spacer_49>Погиб при взрыве антиматерии в топливном инжекторе в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_49>
+<FP_Event_RandomDeath_Spacer_50>Был выброшен в открытый космос из-за взрывной декомпрессии туалета в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_50>
+<FP_Event_RandomDeath_Spacer_51>Скончался от массивного внутреннего кровотечения при экстренном торможении корабля в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_51>
+<FP_Event_RandomDeath_Spacer_52>Был расплавлен лучом орбитального лазера, принявшего его за сорняк, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_52>
+<FP_Event_RandomDeath_Spacer_53>Задохнулся из-за замены кислорода в системе жизнеобеспечения на веселящий газ в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_53>
+<FP_Event_RandomDeath_Spacer_54>Был раздавлен неисправным прессом для переработки металлолома на автоматической фабрике в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_54>
+<FP_Event_RandomDeath_Spacer_55>Погиб от удара током высокого напряжения при попытке погладить механоида-жнеца в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_55>
+<FP_Event_RandomDeath_Spacer_56>Заживо сгорел в атмосфере при входе десантной капсулы под неправильным углом в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_56>
+<FP_Event_RandomDeath_Spacer_57>Был заморожен до состояния хрупкой статуи из-за утечки хладагента в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_57>
+<FP_Event_RandomDeath_Spacer_58>Стал жертвой калибровки систем наведения, оказавшись на линии огня, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_58>
+<FP_Event_RandomDeath_Spacer_59>Мозг сварился из-за перегрузки нейро-интерфейса во время игры в виртуальный покер в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_59>
+<FP_Event_RandomDeath_Spacer_60>Был задушен собственным «умным» шарфом, который поймал вирус, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_60>
+<FP_Event_RandomDeath_Spacer_61>Скончался от истощения, не сумев выйти из сверхреалистичной симуляции отпуска в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_61>
+<FP_Event_RandomDeath_Spacer_62>Погиб после того, как его сознание было случайно перезаписано кулинарным рецептом в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_62>
+<FP_Event_RandomDeath_Spacer_63>Стал жертвой восстания кухонного комбайна с зачатками самосознания в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_63>
+<FP_Event_RandomDeath_Spacer_64>Умер от остановки сердца, когда его кардио-имплант решил обновить прошивку без интернета в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_64>
+<FP_Event_RandomDeath_Spacer_65>Был разобран на запчасти медицинским ботом, у которого сбились настройки распознавания живых тканей, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_65>
+<FP_Event_RandomDeath_Spacer_66>Погиб в попытке переспорить ИИ-терминал, который в итоге ударил его током, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_66>
+<FP_Event_RandomDeath_Spacer_67>Был превращен в органическое удобрение автоматическим садовником в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_67>
+<FP_Event_RandomDeath_Spacer_68>Скончался от психоза после того, как нейро-чип начал транслировать рекламу прямо в мозг 24/7 в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_68>
+<FP_Event_RandomDeath_Spacer_69>Превратился в бесформенную массу мышц после приема экспериментальных стероидов в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_69>
+<FP_Event_RandomDeath_Spacer_70>Был съеден лабораторным образцом гигантского плотоядного помидора в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_70>
+<FP_Event_RandomDeath_Spacer_71>Умер от аллергической реакции на собственные синтетические легкие в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_71>
+<FP_Event_RandomDeath_Spacer_72>Скончался после того, как его иммунитет начал атаковать его же нанитов в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_72>
+<FP_Event_RandomDeath_Spacer_73>Погиб от быстрорастущей опухоли, вызванной утечкой мутагена в био-лаборатории в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_73>
+<FP_Event_RandomDeath_Spacer_74>Стал жертвой ошибки в последовательности ДНК при клонировании органов в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_74>
+<FP_Event_RandomDeath_Spacer_75>Умер от истощения, пока его организм пытался вырастить третью ногу по ошибке медика в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_75>
+<FP_Event_RandomDeath_Spacer_76>Был растворен желудочным соком гигантского ксено-слизня в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_76>
+<FP_Event_RandomDeath_Spacer_77>Скончался от передозировки сывороткой бессмертия, которая оказалась ядом, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_77>
+<FP_Event_RandomDeath_Spacer_78>Был заражен грибком-паразитом, который заменил его нервную систему грибницей, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_78>
+<FP_Event_RandomDeath_Spacer_79>Был превращен в спагетти при попадании в зону действия микро-черной дыры в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_79>
+<FP_Event_RandomDeath_Spacer_80>Растворился во времени после прохода через нестабильную червоточину в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_80>
+<FP_Event_RandomDeath_Spacer_81>Был убит метеоритом размером с кулак, пробившим обшивку станции, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_81>
+<FP_Event_RandomDeath_Spacer_82>Сгорел в лучах пульсара во время выхода в открытый космос в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_82>
+<FP_Event_RandomDeath_Spacer_83>Погиб от психического шока при контакте с артефактом древних в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_83>
+<FP_Event_RandomDeath_Spacer_84>Был раздавлен давлением на газовом гиганте при аварии зонда в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_84>
+<FP_Event_RandomDeath_Spacer_85>Исчез в неизвестном направлении при испытании прыжкового двигателя в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_85>
+<FP_Event_RandomDeath_Spacer_86>Стал жертвой пространственного сдвига: его кожа вывернулась наизнанку в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_86>
+<FP_Event_RandomDeath_Spacer_87>Был ослеплен и дезориентирован вспышкой сверхновой, после чего шагнул в шлюз без скафандра в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_87>
+<FP_Event_RandomDeath_Spacer_88>Скончался от одиночества в дрейфующем спасательном буе через 20 лет после аварии в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_88>
+<FP_Event_RandomDeath_Spacer_89>Был дезинтегрирован залпом из мономолекулярного резака в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_89>
+<FP_Event_RandomDeath_Spacer_90>Превратился в облако пара после прямого попадания из плазменной винтовки в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_90>
+<FP_Event_RandomDeath_Spacer_91>Был разорван на части гравитационной гранатой в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_91>
+<FP_Event_RandomDeath_Spacer_92>Погиб от кровотечения после ранения осколком «умного» снаряда в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_92>
+<FP_Event_RandomDeath_Spacer_93>Был парализован и медленно переработан механоидом-термитом в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_93>
+<FP_Event_RandomDeath_Spacer_94>Стал жертвой взрыва собственного щита-пояса после попадания ЭМИ в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_94>
+<FP_Event_RandomDeath_Spacer_95>Был обезглавлен мономолекулярной нитью, натянутой в коридоре, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_95>
+<FP_Event_RandomDeath_Spacer_96>Погиб при попытке деактивировать ядерную мину голыми руками в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_96>
+<FP_Event_RandomDeath_Spacer_97>Был застрелен с орбиты за нарушение авторских прав на генетический код в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_97>
+<FP_Event_RandomDeath_Spacer_98>Стал случайной жертвой испытаний гиперзвукового оружия в соседнем секторе в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_98>
+<FP_Event_RandomDeath_Spacer_99>Поскользнулся на масле для роботов и упал в шахту лифта в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_99>
+<FP_Event_RandomDeath_Spacer_100>Был раздавлен упавшим контейнером с питательной пастой в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_100>
+<FP_Event_RandomDeath_Spacer_101>Умер от передозировки стимуляторами во время 72-часовой смены в шахте в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_101>
+<FP_Event_RandomDeath_Spacer_102>Был заблокирован в холодильнике с мороженым ИИ-системой диеты в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_102>
+<FP_Event_RandomDeath_Spacer_103>Сгорел при попытке разогреть обед в ядре реактора в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_103>
+<FP_Event_RandomDeath_Spacer_104>Был убит упавшей полкой с редкими деталями для звездолета в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_104>
+<FP_Event_RandomDeath_Spacer_105>Погиб, когда его высокотехнологичная кровать-трансформер сложилась вместе с ним в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_105>
+<FP_Event_RandomDeath_Spacer_106>Утонул в бассейне с жидким азотом, перепутав его с водой, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_106>
+<FP_Event_RandomDeath_Spacer_107>Был сбит автоматическим курьером, спешившим доставить пиццу, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_107>
+<FP_Event_RandomDeath_Spacer_108>Скончался от испуга, когда голограмма монстра ожила из-за бага, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_108>
+<FP_Event_RandomDeath_Spacer_109>Был случайно выброшен вместе с мусором во время глубокого сна в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_109>
+<FP_Event_RandomDeath_Spacer_110>Скончался от «синдрома крио-мозга» — его мысли замерзли навсегда в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_110>
+<FP_Event_RandomDeath_Spacer_111>Был разобран на питательные вещества системой жизнеобеспечения при нехватке ресурсов в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_111>
+<FP_Event_RandomDeath_Spacer_112>Погиб, когда его крио-капсулу использовала в качестве гнезда инопланетная фауна в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_112>
+<FP_Event_RandomDeath_Spacer_113>Скончался от старости внутри крио-капсулы из-за сбоя таймера заморозки в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_113>
+<FP_Event_RandomDeath_Spacer_114>Был раздавлен метеоритным дождем, пока спал в спасательном коконе, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_114>
+<FP_Event_RandomDeath_Spacer_115>Погиб при попытке самостоятельной разморозки с помощью фена в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_115>
+<FP_Event_RandomDeath_Spacer_116>Стал жертвой каннибализма со стороны других выживших после крушения в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_116>
+<FP_Event_RandomDeath_Spacer_117>Умер от шока при пробуждении, узнав, что проспал 1000 лет, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_117>
+<FP_Event_RandomDeath_Spacer_118>Был убит электрическим разрядом при попытке вскрыть чужую капсулу в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_118>
+<FP_Event_RandomDeath_Spacer_119>Был превращен в золотой слиток из-за сбоя нанитов-алхимиков в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_119>
+<FP_Event_RandomDeath_Spacer_120>Скончался после того, как его нано-одежда решила его переварить в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_120>
+<FP_Event_RandomDeath_Spacer_121>Был распылен на атомы портативным дезинтегратором мусора в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_121>
+<FP_Event_RandomDeath_Spacer_122>Погиб, когда его тело стало проводником для потока заряженных частиц в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_122>
+<FP_Event_RandomDeath_Spacer_123>Был поглощен «серой слизью» во время неудачного эксперимента в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_123>
+<FP_Event_RandomDeath_Spacer_124>Умер от разрыва легких при вдыхании облака строительных микро-ботов в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_124>
+<FP_Event_RandomDeath_Spacer_125>Был превращен в кристаллическую структуру из-за воздействия инопланетного излучения в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_125>
+<FP_Event_RandomDeath_Spacer_126>Погиб при попытке выпить «жидкий свет» в лаборатории в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_126>
+<FP_Event_RandomDeath_Spacer_127>Был раздавлен массой мгновенно выросшей из нано-семени башни в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_127>
+<FP_Event_RandomDeath_Spacer_128>Растворился в пространстве при попытке пройти сквозь молекулярно-плотную стену в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_128>
+<FP_Event_RandomDeath_Spacer_129>Был убит завистью к соседскому био-модифицированному телу (сердце не выдержало) в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_129>
+<FP_Event_RandomDeath_Spacer_130>Погиб при попытке сделать селфи на фоне взрывающейся сверхновой в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_130>
+<FP_Event_RandomDeath_Spacer_131>Скончался от скуки во время полета к Альфе Центавра, который длился 80 лет, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_131>
+<FP_Event_RandomDeath_Spacer_132>Был раздавлен упавшим рекламным щитом компании «Глиттерворлд-Корп» в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_132>
+<FP_Event_RandomDeath_Spacer_133>Погиб при столкновении с невидимым силовым полем, которое забыли отключить, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_133>
+<FP_Event_RandomDeath_Spacer_134>Был съеден космическими термитами, которые специализировались на скафандрах, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_134>
+<FP_Event_RandomDeath_Spacer_135>Умер от обезвоживания, застряв в виртуальном мире без кнопки выхода, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_135>
+<FP_Event_RandomDeath_Spacer_136>Был убит звуковой атакой оперного певца с имплантом-усилителем в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_136>
+<FP_Event_RandomDeath_Spacer_137>Скончался от попадания микро-метеорита прямо в глаз во время наблюдения за звездами в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_137>
+<FP_Event_RandomDeath_Spacer_138>Погиб в результате спора с ИИ-таможенником, который признал его контрабандой, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_138>
+<FP_Event_RandomDeath_Spacer_139>Был раздавлен собственной гордостью и упавшим на него золотым памятником самому себе в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_139>
+<FP_Event_RandomDeath_Spacer_140>Умер от остановки всех функций организма при попытке скачать интернет в мозг в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_140>
+<FP_Event_RandomDeath_Spacer_141>Был убит рикошетом собственной плазменной пули от зеркального пола в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_141>
+<FP_Event_RandomDeath_Spacer_142>Скончался от разрыва сердца, увидев счет за ремонт космического корабля, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_142>
+<FP_Event_RandomDeath_Spacer_143>Был случайно депортирован в другое измерение через мусоропровод в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_143>
+<FP_Event_RandomDeath_Spacer_144>Погиб при попытке использовать гипер-двигатель в качестве обогревателя в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_144>
+<FP_Event_RandomDeath_Spacer_145>Был съеден стаей одичавших робо-псов в нижних ярусах мегаполиса в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_145>
+<FP_Event_RandomDeath_Spacer_146>Умер от потери крови после пореза об лист мономолекулярной бумаги в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_146>
+<FP_Event_RandomDeath_Spacer_147>Был превращен в пар после того, как сел на кнопку самоуничтожения станции в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_147>
+<FP_Event_RandomDeath_Spacer_148>Скончался от осознания бесконечности вселенной, вызванного нейро-стимулятором, в возрасте {0} лет.</FP_Event_RandomDeath_Spacer_148>
+
+  <!-- Случайные причины смерти для ветеранов (Общие) -->
+<FP_Event_RandomDeath_10>Погиб под завалом крыши из-за разрушенной стены в возрасте {0} лет.</FP_Event_RandomDeath_10>
+  <FP_Event_RandomDeath_11>Стал жертвой взрыва вышедшей из-под контроля турели в возрасте {0} лет.</FP_Event_RandomDeath_11>
+
+</LanguageData>

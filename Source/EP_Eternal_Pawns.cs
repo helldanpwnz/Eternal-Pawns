@@ -17,6 +17,37 @@ namespace FinitePopulationVeterans
         public void ExposeData() => Scribe_Collections.Look(ref pawns, "pawns", LookMode.Reference);
     }
 
+    // --- СОБЫТИЯ ---
+    public class PawnEvent : IExposable
+    {
+        public int ticks;
+        public string text;
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref ticks, "ticks");
+            Scribe_Values.Look(ref text, "text");
+        }
+    }
+
+    // --- МЕРТВЫЕ ПЕШКИ (Метаданные для истории) ---
+    public class DeceasedPawnRecord : IExposable
+    {
+        public string name;
+        public int bioAge;
+        public int deathTick;
+        public int addedTick; // Сохраняем дату добавления в базу
+        public int factionId;
+
+        public void ExposeData()
+        {
+            Scribe_Values.Look(ref name, "name");
+            Scribe_Values.Look(ref bioAge, "bioAge");
+            Scribe_Values.Look(ref deathTick, "deathTick");
+            Scribe_Values.Look(ref addedTick, "addedTick");
+            Scribe_Values.Look(ref factionId, "factionId");
+        }
+    }
+
     // --- ОЧЕРЕДЬ ---
     public static class VeteranInputQueue
     {
@@ -87,6 +118,9 @@ namespace FinitePopulationVeterans
 		public Dictionary<int, string> pawnNotes = new Dictionary<int, string>();
 		public Dictionary<int, long> savedBioAges = new Dictionary<int, long>();
         public Dictionary<int, Color> originalHairColors = new Dictionary<int, Color>();
+        public Dictionary<int, List<PawnEvent>> pawnEvents = new Dictionary<int, List<PawnEvent>>();
+        public Dictionary<int, DeceasedPawnRecord> deceasedPawns = new Dictionary<int, DeceasedPawnRecord>(); // ID -> Данные
+        private int currentAgingCycleTicks = -1; // Метка для разброса дат
 private List<long> tmpBioValues; // Для сохранения
 private List<int> tmpTicksKeys;   // Для сохранения
 private List<int> tmpTicksValues; // Для сохранения
@@ -98,6 +132,8 @@ private int ticksToNextUpdate = -1; // По умолчанию 1 год
         private static List<GeneDef> cachedArchiteGenes = null;
         private static List<GeneDef> cachedNormalGenes = null;
         private static List<RecipeDef> cachedProstheticRecipes = null;
+        private static Dictionary<TechLevel, List<int>> cachedTechDeathIndices = new Dictionary<TechLevel, List<int>>();
+        private static List<int> cachedGenericDeathIndices = null;
         
         // КЭШ ID
         public HashSet<int> allVeteranIdsCache = new HashSet<int>(); 
@@ -115,6 +151,68 @@ private int ticksToNextUpdate = -1; // По умолчанию 1 год
 		private int ticksToNextCleanup = -1; // НОВЫЙ ТАЙМЕР: 10 дней (60,000 тиков * 10)
 
 public WorldPopulationManager(World world) : base(world) { FPSeenTracker.Clear(); }
+
+        public void AddPawnEvent(int id, string text, bool ignoreScatter = false)
+        {
+            if (!FPMod.Settings.enableEventLogging) return;
+            if (!pawnEvents.ContainsKey(id)) pawnEvents[id] = new List<PawnEvent>();
+            
+            int finalTick = Find.TickManager.TicksGame;
+            
+            // Если мы в цикле старения — разбрасываем дату назад
+            if (!ignoreScatter && currentAgingCycleTicks > 0)
+            {
+                finalTick -= Rand.Range(1000, currentAgingCycleTicks - 1000);
+            }
+
+            pawnEvents[id].Add(new PawnEvent { ticks = finalTick, text = text });
+        }
+
+        private string GetRandomDeathKey(TechLevel tech)
+        {
+            string prefix = tech switch
+            {
+                TechLevel.Animal => "FP_Event_RandomDeath_Neolithic_",
+                TechLevel.Neolithic => "FP_Event_RandomDeath_Neolithic_",
+                TechLevel.Medieval => "FP_Event_RandomDeath_Medieval_",
+                TechLevel.Industrial => "FP_Event_RandomDeath_Industrial_",
+                TechLevel.Spacer => "FP_Event_RandomDeath_Spacer_",
+                TechLevel.Ultra => "FP_Event_RandomDeath_Spacer_",
+                TechLevel.Archotech => "FP_Event_RandomDeath_Spacer_",
+                _ => "FP_Event_RandomDeath_"
+            };
+
+            if (!cachedTechDeathIndices.TryGetValue(tech, out List<int> indices))
+            {
+                indices = new List<int>();
+                for (int i = 0; i <= 255; i++)
+                {
+                    if ((prefix + i).CanTranslate()) indices.Add(i);
+                }
+                cachedTechDeathIndices[tech] = indices;
+            }
+
+            if (indices.Count > 0)
+            {
+                return prefix + indices.RandomElement();
+            }
+
+            if (cachedGenericDeathIndices == null)
+            {
+                cachedGenericDeathIndices = new List<int>();
+                for (int i = 0; i <= 255; i++)
+                {
+                    if (("FP_Event_RandomDeath_" + i).CanTranslate()) cachedGenericDeathIndices.Add(i);
+                }
+            }
+
+            if (cachedGenericDeathIndices.Count > 0)
+            {
+                return "FP_Event_RandomDeath_" + cachedGenericDeathIndices.RandomElement();
+            }
+
+            return "FP_Event_RandomDeath_10"; // Безопасный дефолт, так как в XML начинается с 10
+        }
 
 private void CleanPawnHealth(Pawn p, bool fullHeal)
 {
@@ -203,6 +301,10 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
             List<int> tmpBioKeys = null;
 			Scribe_Collections.Look(ref savedBioAges, "savedBioAges", LookMode.Value, LookMode.Value, ref tmpBioKeys, ref tmpBioValues);
 			Scribe_Collections.Look(ref originalHairColors, "originalHairColors", LookMode.Value, LookMode.Value);
+			Scribe_Collections.Look(ref pawnEvents, "pawnEvents", LookMode.Value, LookMode.Deep);
+            Scribe_Collections.Look(ref deceasedPawns, "deceasedPawns", LookMode.Value, LookMode.Deep);
+if (pawnEvents == null) pawnEvents = new Dictionary<int, List<PawnEvent>>();
+if (deceasedPawns == null) deceasedPawns = new Dictionary<int, DeceasedPawnRecord>();
 
 if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
@@ -231,7 +333,9 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
                             }
                             else if (p != null)
                             {
-                                if (!p.Spawned && !p.Dead) p.Discard();
+                                if (p.relations != null) p.relations.ClearAllRelations();
+                                if (p.ownership != null) p.ownership.UnclaimAll();
+                                if (!p.Spawned) p.Discard();
                             }
                         }
                         group.pawns = uniquePawns;
@@ -239,6 +343,8 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
                 }
 				
 				var activeIds = new HashSet<int>(allVeteranIdsCache);
+                if (deceasedPawns != null) foreach (var id in deceasedPawns.Keys) activeIds.Add(id);
+                if (manualVeteranPins != null) foreach (var id in manualVeteranPins) activeIds.Add(id);
 				var keys = veteranAddTicks.Keys.ToList();
 				foreach (var k in keys) if (!activeIds.Contains(k)) veteranAddTicks.Remove(k);
 
@@ -254,6 +360,12 @@ if (originalHairColors == null) originalHairColors = new Dictionary<int, Color>(
 					var keysNotes = pawnNotes.Keys.ToList();
 					foreach (var k in keysNotes) if (!activeIds.Contains(k)) pawnNotes.Remove(k);
 				}
+
+                if (pawnEvents != null)
+                {
+                    var keysEvents = pawnEvents.Keys.ToList();
+                    foreach (var k in keysEvents) if (!activeIds.Contains(k)) pawnEvents.Remove(k);
+                }
 
                 if (originalHairColors != null)
                 {
@@ -291,6 +403,11 @@ if (manualVeteranPins != null)
 
 public override void WorldComponentTick()
 {
+    // --- НОВАЯ ЛОГИКА: Авто-очистка базы при отключении в настройках ---
+    if (!FPMod.Settings.enableEventLogging && (pawnEvents != null && pawnEvents.Count > 0))
+    {
+        pawnEvents.Clear();
+    }
     base.WorldComponentTick();
     VeteranInputQueue.ProcessQueue(this);
 	
@@ -300,9 +417,9 @@ public override void WorldComponentTick()
     {
         ticksToNextCleanup = 600000; // Заводим таймер заново на 10 дней
         ProcessMissionCleanup();
+        CleanupDeceasedPawns();
     }
-
-    // Если это первый тик новой игры — сразу считаем таймер по настройкам
+        // Если это первый тик новой игры — сразу считаем таймер по настройкам
     if (ticksToNextUpdate < 0)
     {
         float startRate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
@@ -324,6 +441,87 @@ public override void WorldComponentTick()
         ProcessYearlyVeteranAging();
     }
 }
+
+private void CleanupDeceasedPawns()
+{
+    if (deceasedPawns == null) return;
+    
+    // Используем множитель старения из настроек рассказатчика
+    float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+    int agingYearTicks = (int)(3600000 / rate); 
+
+    int cutoff = Find.TickManager.TicksGame - agingYearTicks;
+    var toRemove = deceasedPawns.Where(kvp => kvp.Value.deathTick < cutoff).Select(kvp => kvp.Key).ToList();
+    foreach (var id in toRemove) deceasedPawns.Remove(id);
+}
+
+        public void RegisterDeathMetadata(Pawn p, DamageInfo? dinfo = null, string flavorKey = null)
+        {
+            if (p == null || p.Faction == null) return;
+            
+            // Если вкладка мемориала выключена — не создаем записей в мемориал
+            if (FPMod.Settings == null || !FPMod.Settings.showMainTab) return;
+
+            // --- ЛОГИРОВАНИЕ СОБЫТИЯ СМЕРТИ (С ДЕТАЛЯМИ) ---
+            if (FPMod.Settings.enableEventLogging && !deceasedPawns.ContainsKey(p.thingIDNumber))
+            {
+                string deathReasonStr = "";
+                int age = p.ageTracker.AgeBiologicalYears;
+
+                // 1. Если есть художественное описание (от цикла старения)
+                if (!string.IsNullOrEmpty(flavorKey) && flavorKey != "FP_Event_NaturalDeath")
+                {
+                    deathReasonStr = flavorKey.Translate(age);
+                }
+                // 2. Иначе смотрим урон (бой)
+                else if (dinfo.HasValue)
+                {
+                    string damageLabel = dinfo.Value.Def?.LabelCap ?? "???";
+                    if (dinfo.Value.Instigator != null)
+                    {
+                        deathReasonStr = "FP_Event_KilledByPawn".Translate(damageLabel, dinfo.Value.Instigator.LabelShort, age);
+                    }
+                    else
+                    {
+                        deathReasonStr = "FP_Event_KilledByDamage".Translate(damageLabel, age);
+                    }
+                }
+                else
+                {
+                    // КЕЙС 2: СМЕРТЬ ОТ ЗДОРОВЬЯ (БОЛЕЗНИ И Т.Д.)
+                    var lethal = p.health?.hediffSet?.hediffs
+                        .Where(h => h.Visible && h.def.isBad)
+                        .OrderByDescending(h => h.Severity)
+                        .FirstOrDefault();
+
+                    if (lethal != null)
+                    {
+                        deathReasonStr = "FP_Event_DiedOf".Translate(lethal.LabelCap, age);
+                    }
+                    else
+                    {
+                        deathReasonStr = "FP_Event_NaturalDeath".Translate(age);
+                    }
+                }
+
+                if (!string.IsNullOrEmpty(deathReasonStr))
+                {
+                    AddPawnEvent(p.thingIDNumber, deathReasonStr, true);
+                }
+            }
+
+            int added = 0;
+            if (veteranAddTicks.TryGetValue(p.thingIDNumber, out int t)) added = t;
+
+            deceasedPawns[p.thingIDNumber] = new DeceasedPawnRecord
+            {
+                name = p.LabelShort,
+                bioAge = p.ageTracker.AgeBiologicalYears,
+                deathTick = Find.TickManager.TicksGame,
+                addedTick = added,
+                factionId = p.Faction.loadID
+            };
+        }
 
 private void ProcessMissionCleanup()
 {
@@ -449,8 +647,14 @@ CleanPawnHealth(p, false);
 
     // Записываем свежую версию пешки в нужную фракцию
     group.pawns.Add(p);
-    veteranAddTicks[p.thingIDNumber] = Find.TickManager.TicksGame;
-	savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
+
+    // Записываем дату только один раз (при самом первом попадании в базу)
+    if (!veteranAddTicks.ContainsKey(p.thingIDNumber))
+    {
+        veteranAddTicks[p.thingIDNumber] = Find.TickManager.TicksGame;
+    }
+    
+    savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
 
     // 6. ЛОГИ
     if (FPMod.Settings.enableDebugLogs) 
@@ -461,7 +665,8 @@ CleanPawnHealth(p, false);
 
         private void ProcessYearlyVeteranAging()
         {
-			
+            float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
+            currentAgingCycleTicks = (int)(3600000 / rate);
 			
             int deathCount = 0;
             int levelUpCount = 0;
@@ -485,12 +690,14 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
                     { 
 
                         if (p != null) 
-
                         {
+                            if (p.Dead) RegisterDeathMetadata(p);
+                            if (p.relations != null) p.relations.ClearAllRelations();
+                            if (p.ownership != null) p.ownership.UnclaimAll();
 
                             allVeteranIdsCache.Remove(p.thingIDNumber);
                             veteranAddTicks.Remove(p.thingIDNumber); 
-                            veteransOnMission.Remove(p.thingIDNumber); // <--- ВАЖНО: забираем пропуск у трупа
+                            veteransOnMission.Remove(p.thingIDNumber); 
                             savedBioAges.Remove(p.thingIDNumber); 
                             pawnNotes.Remove(p.thingIDNumber);
                             originalHairColors.Remove(p.thingIDNumber);
@@ -518,7 +725,6 @@ for (int i = group.pawns.Count - 1; i >= 0; i--)
 // === УМНОЕ СТАРЕНИЕ (Система точной компенсации) ===
 if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
 {
-    float rate = Mathf.Max(0.01f, Find.Storyteller.difficulty.adultAgingRate);
     long actualTicksPassed = (long)(3600000 / rate); // Время, прошедшее в мире от звонка до звонка таймера
     
     // Хронологический возраст (время в мире) догоняем жестко
@@ -528,8 +734,8 @@ if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
     
     if (pawnAgeFactor > 0f)
     {
-        // 1. Сколько пешка ДОЛЖНА была состариться за этот цикл (с учетом ее генов)?
-        long expectedBioGrowth = (long)(3600000 * pawnAgeFactor); 
+        // 1. Сколько пешка ДОЛЖНА была состариться за этот цикл (с учетом ее генов и настроек игры)?
+        long expectedBioGrowth = (long)(actualTicksPassed * pawnAgeFactor); 
 
         // 2. Сколько она РЕАЛЬНО состарилась силами самой игры?
         long actualBioGrowth = p.ageTracker.AgeBiologicalTicks - lastKnownAge;
@@ -557,6 +763,18 @@ if (savedBioAges.TryGetValue(p.thingIDNumber, out long lastKnownAge))
 }
 
 // В самом конце обязательно обновляем слепок возраста на следующий год
+// (Событие старения в историю больше не пишем, только обновляем savedBioAges)
+savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
+if (pawnEvents.TryGetValue(p.thingIDNumber, out List<PawnEvent> events))
+{
+    if (FPMod.Settings.eventHistoryLimitYears > 0)
+    {
+        int limitTicks = FPMod.Settings.eventHistoryLimitYears * 3600000;
+        int cutoff = Find.TickManager.TicksGame - limitTicks;
+        events.RemoveAll(ev => ev.ticks < cutoff);
+    }
+}
+
 savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
 
 
@@ -569,6 +787,7 @@ savedBioAges[p.thingIDNumber] = p.ageTracker.AgeBiologicalTicks;
                             var skill = learnable.RandomElementByWeight(s => s.passion == Passion.Major ? 3f : (s.passion == Passion.Minor ? 2f : 1f));
                             skill.Level++;
                             skill.xpSinceLastLevel = skill.XpRequiredForLevelUp / 2f;
+                            AddPawnEvent(p.thingIDNumber, "FP_Event_SkillUp".Translate(skill.def.LabelCap, skill.Level));
                             levelUpCount++;
                         }
                     }
@@ -653,30 +872,44 @@ if (deathChance > 0f && p.Faction != null)
                 deathChance *= FPMod.Settings.deathChanceMultiplier;
             }
 
-if (Rand.Value < deathChance)
-{
-    // Запоминаем имя ДО того, как сотрем пешку из реальности
-    string deadName = p.LabelShort; 
+bool diedNow = false;
+string deathEventKey = "FP_Event_NaturalDeath";
 
-if (!p.Dead)
+if (Rand.Value < FPMod.Settings.randomDeathChance)
 {
-    p.Kill(null); // Убиваем пешку естественной смертью.
+    diedNow = true;
+    deathEventKey = GetRandomDeathKey(p.Faction?.def?.techLevel ?? TechLevel.Undefined);
+}
+else if (Rand.Value < deathChance)
+{
+    diedNow = true;
+    deathEventKey = "FP_Event_NaturalDeath";
 }
 
+if (diedNow)
+{
+    string deadName = p.LabelShort; 
+
+    // СОХРАНЯЕМ ТЕКСТОВУЮ ЗАМЕТКУ И УДАЛЯЕМ ПЕШКУ
+    RegisterDeathMetadata(p, null, deathEventKey);
+
+    if (!p.Dead) p.Kill(null);
+
+    if (p.relations != null) p.relations.ClearAllRelations();
+    if (p.ownership != null) p.ownership.UnclaimAll();
+
     allVeteranIdsCache.Remove(p.thingIDNumber);
-    if (veteranAddTicks.ContainsKey(p.thingIDNumber)) 
-        veteranAddTicks.Remove(p.thingIDNumber);
-    
+    // Оставляем в veteranAddTicks, чтобы дата "В моих заметках с..." не пропадала в истории
     savedBioAges.Remove(p.thingIDNumber); 
     pawnNotes.Remove(p.thingIDNumber);
     veteransOnMission.Remove(p.thingIDNumber);
     originalHairColors.Remove(p.thingIDNumber);
-    
     group.pawns.RemoveAt(i);
-    deathCount++; // Вернули счетчик смертей!
+    
+    deathCount++;
 
     if (FPMod.Settings != null && FPMod.Settings.enableDebugLogs)
-        Log.Message($"<color=red>[FP-Death]</color> Ветеран {deadName} скончался от старости в мире.");
+        Log.Message($"<color=red>[FP-Death]</color> Ветеран {deadName} скончался. Тело удалено, данные сохранены в истории на год.");
 }
                 }
             }
@@ -686,6 +919,8 @@ if (!p.Dead)
 {
                 Log.Message($"[FP] ГОДОВОЙ ОТЧЕТ: {levelUpCount} ветеранов получили LevelUp. {deathCount} скончались от старости.");
 				}
+
+            currentAgingCycleTicks = -1; // Сбрасываем метку разброса
         }
 		
 private void ProcessVeteranImplants(Pawn p)
@@ -718,6 +953,7 @@ private void ProcessVeteranImplants(Pawn p)
         {
             p.health.RestorePart(missing.Part);
             p.health.AddHediff(prosth, missing.Part);
+            AddPawnEvent(p.thingIDNumber, "FP_Event_Implant".Translate(prosth.LabelCap, missing.Part.Label));
             changed = true;
         }
     }
@@ -751,6 +987,7 @@ private void ProcessVeteranImplants(Pawn p)
             if (partToUpgrade != null)
             {
                 p.health.AddHediff(recipe.addsHediff, partToUpgrade);
+                AddPawnEvent(p.thingIDNumber, "FP_Event_Implant".Translate(recipe.addsHediff.LabelCap, partToUpgrade.Label));
                 changed = true;
                 break; 
             }
@@ -808,6 +1045,7 @@ private void ProcessVeteranRegeneration(Pawn p)
     {
         var partToRegrow = missing.RandomElement();
         p.health.RestorePart(partToRegrow.Part);
+        AddPawnEvent(p.thingIDNumber, "FP_Event_RegenPart".Translate(partToRegrow.Part.Label));
         if (FPMod.Settings.enableDebugLogs)
             Log.Message($"<color=green>[FP-Regen]</color> {p.LabelShort}: Отращена часть тела ({partToRegrow.Part.Label}) благодаря генам.");
         return; 
@@ -819,6 +1057,7 @@ private void ProcessVeteranRegeneration(Pawn p)
     {
         var targetScar = scar.RandomElement();
         p.health.RemoveHediff(targetScar);
+        AddPawnEvent(p.thingIDNumber, "FP_Event_RegenScar".Translate(targetScar.Label));
         if (FPMod.Settings.enableDebugLogs)
             Log.Message($"<color=green>[FP-Regen]</color> {p.LabelShort}: Заживлен шрам ({targetScar.Label}) благодаря генам.");
     }
@@ -861,6 +1100,7 @@ private void ProcessVeteranGenes(Pawn p)
                 {
                     GeneDef newGene = availableGenes.RandomElement();
                     p.genes.AddGene(newGene, xenogene: true);
+                    AddPawnEvent(p.thingIDNumber, "FP_Event_Gene".Translate(newGene.LabelCap));
 
                     if (FPMod.Settings.enableDebugLogs)
                     {
@@ -934,7 +1174,8 @@ private void ProcessVeteranAgeDiseases(Pawn p)
         {
             // TryApply — это стандартный метод игры. Он сам найдет нужную часть тела 
             // (глаз для катаракты, позвоночник для спины) и наложит эффект.
-            giver.TryApply(p);
+                giver.TryApply(p);
+                AddPawnEvent(p.thingIDNumber, "FP_Event_Disease".Translate(giver.hediff.LabelCap));
 
             if (FPMod.Settings.enableDebugLogs)
                 Log.Message($"<color=red>[FP-Disease]</color> {p.LabelShort} получил возрастную болезнь: {giver.hediff.label} (из пула {p.def.label})");
@@ -988,6 +1229,7 @@ private void ProcessVeteranAnomaly(Pawn p)
                             if (p.health.hediffSet.GetFirstHediffOfDef(hediff) == null)
                             {
                                 p.health.AddHediff(hediff);
+                                AddPawnEvent(p.thingIDNumber, "FP_Event_Anomaly".Translate(hediff.LabelCap));
                                 if (FPMod.Settings.enableDebugLogs) Log.Message($"<color=#800080>[FP-Anomaly]</color> Ветеран {p.LabelShort} получил ритуал: {hediff.label}!");
                             }
                         }
@@ -1001,6 +1243,7 @@ private void ProcessVeteranAnomaly(Pawn p)
                             if (shoulder != null)
                             {
                                 p.health.AddHediff(hediff, shoulder);
+                                AddPawnEvent(p.thingIDNumber, "FP_Event_Anomaly".Translate(hediff.LabelCap));
                                 if (FPMod.Settings.enableDebugLogs) Log.Message($"<color=#800080>[FP-Anomaly]</color> У дикаря {p.LabelShort} отросло {hediff.label}!");
                             }
                         }
@@ -1021,6 +1264,7 @@ private void ProcessVeteranAnomaly(Pawn p)
                         if (validPart != null)
                         {
                             p.health.AddHediff(recipe.addsHediff, validPart);
+                            AddPawnEvent(p.thingIDNumber, "FP_Event_Anomaly".Translate(recipe.addsHediff.LabelCap));
                             if (FPMod.Settings.enableDebugLogs) Log.Message($"<color=#800080>[FP-Anomaly]</color> {p.LabelShort} вживил себе артефакт: {recipe.addsHediff.label}!");
                         }
                     }
@@ -1098,6 +1342,8 @@ private void ProcessVeteranAnomaly(Pawn p)
         // === SMART MATCHING ===
         public Pawn TryGetVeteran(PawnGenerationRequest request, bool silent = false)
         {
+            if (Find.TickManager == null) return null;
+
             Faction f = request.Faction;
             if (f == null || !veteranPool.TryGetValue(f.loadID, out var group) || group.pawns.Count == 0) return null;
 
@@ -1110,27 +1356,31 @@ if (Find.TickManager.TicksGame != lastTickIssued)
 				 
 				 
 
-int index = group.pawns.FindIndex(p => 
-    p != null && !p.Dead && !p.Discarded && !p.Spawned && p.Map == null && 
-    !pawnsIssuedThisTickIDs.Contains(p.thingIDNumber) && 
-    !veteransOnMission.Contains(p.thingIDNumber) && 
-    // ПРОВЕРКА КУЛДАУНА:
-    (!veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedTick) || 
-     Find.TickManager.TicksGame >= addedTick + (FPMod.Settings.veteranRecallCooldownDays * 60000)) &&
-IsPawnAvailableForDispatch(p) && 
-    PawnMatchesRequest(p, request)
-);
+            List<int> validIndices = new List<int>();
+            for (int i = 0; i < group.pawns.Count; i++)
+            {
+                Pawn p = group.pawns[i];
+                if (p != null && !p.Dead && !p.Discarded && !p.Spawned && p.Map == null && 
+                    !pawnsIssuedThisTickIDs.Contains(p.thingIDNumber) && 
+                    !veteransOnMission.Contains(p.thingIDNumber) && 
+                    (!veteranAddTicks.TryGetValue(p.thingIDNumber, out int addedTick) || 
+                     Find.TickManager.TicksGame >= addedTick + (FPMod.Settings.veteranRecallCooldownDays * 60000)) &&
+                    IsPawnAvailableForDispatch(p) && 
+                    PawnMatchesRequest(p, request))
+                {
+                    validIndices.Add(i);
+                }
+            }
 
-            if (index == -1) return null;
+            if (validIndices.Count == 0) return null;
 
-            Pawn candidate = group.pawns[index];     
-if (Find.WorldPawns.Contains(candidate))
-{
-    Find.WorldPawns.RemovePawn(candidate);
-}           
-pawnsIssuedThisTickIDs.Add(candidate.thingIDNumber);
-veteranAddTicks.Remove(candidate.thingIDNumber);
-veteransOnMission.Add(candidate.thingIDNumber);
+            int index = validIndices.RandomElement();
+            Pawn candidate = group.pawns[index];
+            if (candidate == null) return null;
+          
+            pawnsIssuedThisTickIDs.Add(candidate.thingIDNumber);
+            veteranAddTicks.Remove(candidate.thingIDNumber);
+            veteransOnMission.Add(candidate.thingIDNumber);
 
 // Найти в методе TryGetVeteran этот блок и заменить:
 if (FPMod.Settings.enableDebugLogs) // Убрано !silent
@@ -1746,9 +1996,8 @@ if (manager != null && (manager.allVeteranIdsCache.Contains(pawn.thingIDNumber) 
                     if (v.guest != null) v.guest.SetGuestStatus(null);
                     
                     // --- ОБЯЗАТЕЛЬНАЯ ИНИЦИАЛИЗАЦИЯ ФРАКЦИИ ---
-                    // Это безопаснее ручного обнуления, так как SetFaction сам удалит/создаст 
-                    // нужные трекеры (playerSettings, drafter и т.д.) в зависимости от новой фракции.
-                    v.SetFaction(request.Faction, null);
+                    if (v.Faction != request.Faction)
+                        v.SetFaction(request.Faction, null);
                     
                     if (v.ownership != null) v.ownership.UnclaimAll(); // Отвязываем от кроватей колонии
 
@@ -1878,7 +2127,27 @@ static void Postfix(Pawn p, ref HediffDef __result)
     }
 }
 
+// --- ПАТЧИ ДЛЯ МГНОВЕННОЙ РЕГИСТРАЦИИ СМЕРТИ ---
+namespace FinitePopulationVeterans
+{
+    [HarmonyPatch(typeof(Pawn), "Kill")]
+    public static class Patch_Pawn_Kill
+    {
+        static void Postfix(Pawn __instance, DamageInfo? dinfo)
+        {
+            // Если вкладка мемориала выключена — выходим мгновенно
+            if (FPMod.Settings == null || !FPMod.Settings.showMainTab) return;
 
+            if (__instance == null || !__instance.RaceProps.Humanlike) return;
+            
+            var manager = Find.World?.GetComponent<WorldPopulationManager>();
+            if (manager != null && manager.allVeteranIdsCache.Contains(__instance.thingIDNumber))
+            {
+                manager.RegisterDeathMetadata(__instance, dinfo);
+            }
+        }
+    }
+}
 //КОНЕЦ ЛОГИКИ ЗАМОРОЗКИ 
 
 // --- ПАТЧ 3: ОЧИСТКА ПАМЯТИ ПРИ СМЕРТИ НА КАРТЕ ---

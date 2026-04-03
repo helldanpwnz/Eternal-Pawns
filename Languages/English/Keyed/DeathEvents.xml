@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- Random causes of death by tech level -->
+
+  <!-- NEOLITHIC (Tribe) -->
+<FP_Event_RandomDeath_Neolithic_13>Was trampled by a herd of enraged muffalo during a failed hunt at the age of {0}.</FP_Event_RandomDeath_Neolithic_13>
+  <FP_Event_RandomDeath_Neolithic_14>Succumbed to blood poisoning from a minor scratch that couldn't be treated at the age of {0}.</FP_Event_RandomDeath_Neolithic_14>
+  <FP_Event_RandomDeath_Neolithic_15>Got lost in a thick fog and froze to death during the long night at the age of {0}.</FP_Event_RandomDeath_Neolithic_15>
+  <FP_Event_RandomDeath_Neolithic_16>Was bitten by a venomous cobra and died in agony due to a lack of antivenom at the age of {0}.</FP_Event_RandomDeath_Neolithic_16>
+  <FP_Event_RandomDeath_Neolithic_17>Drowned in a turbulent river while trying to prove his bravery to his tribesmen at the age of {0}.</FP_Event_RandomDeath_Neolithic_17>
+  <FP_Event_RandomDeath_Neolithic_18>Was crushed by rocks in a cave the tribe considered sacred at the age of {0}.</FP_Event_RandomDeath_Neolithic_18>
+  <FP_Event_RandomDeath_Neolithic_19>Succumbed to intestinal parasites after eating raw rat meat at the age of {0}.</FP_Event_RandomDeath_Neolithic_19>
+  <FP_Event_RandomDeath_Neolithic_20>Was killed by a lightning strike, which the shaman interpreted as the wrath of sky spirits, at the age of {0}.</FP_Event_RandomDeath_Neolithic_20>
+  <FP_Event_RandomDeath_Neolithic_21>Fell in battle defending the settlement from a raid by bloodthirsty pirates at the age of {0}.</FP_Event_RandomDeath_Neolithic_21>
+  <FP_Event_RandomDeath_Neolithic_22>Was exiled from the tribe for breaking a taboo and starved to death in the desert at the age of {0}.</FP_Event_RandomDeath_Neolithic_22>
+  <FP_Event_RandomDeath_Neolithic_23>Burned alive during a forest fire started by a lightning strike at the age of {0}.</FP_Event_RandomDeath_Neolithic_23>
+  <FP_Event_RandomDeath_Neolithic_24>Was kidnapped by "iron birds" (transport pods) and never seen again at the age of {0}.</FP_Event_RandomDeath_Neolithic_24>
+  <FP_Event_RandomDeath_Neolithic_25>Died of heatstroke while working in a cornfield during an anomalous heatwave at the age of {0}.</FP_Event_RandomDeath_Neolithic_25>
+  <FP_Event_RandomDeath_Neolithic_26>Was killed by a rampaging domestic boar at the age of {0}.</FP_Event_RandomDeath_Neolithic_26>
+  <FP_Event_RandomDeath_Neolithic_27>Succumbed to "rot in the chest" (pneumonia) after sleeping on damp ground at the age of {0}.</FP_Event_RandomDeath_Neolithic_27>
+  <FP_Event_RandomDeath_Neolithic_28>Was sacrificed to stop an endless volcanic eruption at the age of {0}.</FP_Event_RandomDeath_Neolithic_28>
+  <FP_Event_RandomDeath_Neolithic_29>Perished in a trap set by his own tribe for a large beast at the age of {0}.</FP_Event_RandomDeath_Neolithic_29>
+  <FP_Event_RandomDeath_Neolithic_30>Was torn apart by a pack of starving man-eating terriers at the age of {0}.</FP_Event_RandomDeath_Neolithic_30>
+  <FP_Event_RandomDeath_Neolithic_31>Died from blood loss after an ancient mechanism in the ruins severed his leg at the age of {0}.</FP_Event_RandomDeath_Neolithic_31>
+  <FP_Event_RandomDeath_Neolithic_32>Was clubbed to death during a dispute over a found "shiny artifact" at the age of {0}.</FP_Event_RandomDeath_Neolithic_32>
+  <FP_Event_RandomDeath_Neolithic_33>Died of exhaustion during the Great Migration across the ice wastes at the age of {0}.</FP_Event_RandomDeath_Neolithic_33>
+  <FP_Event_RandomDeath_Neolithic_34>Fell victim to sleep paralysis, which tribesmen mistook for demonic possession, and was strangled "for the greater good" at the age of {0}.</FP_Event_RandomDeath_Neolithic_34>
+  <FP_Event_RandomDeath_Neolithic_35>Was eaten by a giant spider in the dark depths of a cave at the age of {0}.</FP_Event_RandomDeath_Neolithic_35>
+  <FP_Event_RandomDeath_Neolithic_36>Succumbed to scurvy during an unusually long and harsh winter at the age of {0}.</FP_Event_RandomDeath_Neolithic_36>
+  <FP_Event_RandomDeath_Neolithic_37>Was killed by an arrow in the back from a jealous hunter at the age of {0}.</FP_Event_RandomDeath_Neolithic_37>
+  <FP_Event_RandomDeath_Neolithic_38>Died of fright when the sky turned blood-red during a psychic storm at the age of {0}.</FP_Event_RandomDeath_Neolithic_38>
+  <FP_Event_RandomDeath_Neolithic_39>Was crushed by a falling tree while chopping wood at the age of {0}.</FP_Event_RandomDeath_Neolithic_39>
+  <FP_Event_RandomDeath_Neolithic_40>Succumbed to rabies after being bitten by a stray fox at the age of {0}.</FP_Event_RandomDeath_Neolithic_40>
+  <FP_Event_RandomDeath_Neolithic_41>Was trampled to death during a panic caused by the appearance of a mechanoid at the age of {0}.</FP_Event_RandomDeath_Neolithic_41>
+  <FP_Event_RandomDeath_Neolithic_42>Died of lead poisoning while trying to use wreckage of an ancient ship as tableware at the age of {0}.</FP_Event_RandomDeath_Neolithic_42>
+  <FP_Event_RandomDeath_Neolithic_43>Was thrown off a cliff as a test of faith at the age of {0}.</FP_Event_RandomDeath_Neolithic_43>
+  <FP_Event_RandomDeath_Neolithic_44>Succumbed to malaria contracted in the swampy lowlands at the age of {0}.</FP_Event_RandomDeath_Neolithic_44>
+  <FP_Event_RandomDeath_Neolithic_45>Was killed by a stray stone from a sling during youth training at the age of {0}.</FP_Event_RandomDeath_Neolithic_45>
+  <FP_Event_RandomDeath_Neolithic_46>Died of the "laughing sickness" after eating the brain of a fallen enemy at the age of {0}.</FP_Event_RandomDeath_Neolithic_46>
+  <FP_Event_RandomDeath_Neolithic_47>Was torn apart by a wild panther during a night watch at the age of {0}.</FP_Event_RandomDeath_Neolithic_47>
+  <FP_Event_RandomDeath_Neolithic_48>Succumbed to internal injuries after falling from a camel at the age of {0}.</FP_Event_RandomDeath_Neolithic_48>
+  <FP_Event_RandomDeath_Neolithic_49>Suffocated from smoke in an overcrowded dugout during a blizzard at the age of {0}.</FP_Event_RandomDeath_Neolithic_49>
+  <FP_Event_RandomDeath_Neolithic_50>Was killed in a ritual fight for the right to possess a woman at the age of {0}.</FP_Event_RandomDeath_Neolithic_50>
+  <FP_Event_RandomDeath_Neolithic_51>Fell victim to an ambush by a hostile tribe at a watering hole at the age of {0}.</FP_Event_RandomDeath_Neolithic_51>
+  <FP_Event_RandomDeath_Neolithic_52>Died of thirst, lost in endless sand dunes, at the age of {0}.</FP_Event_RandomDeath_Neolithic_52>
+  <FP_Event_RandomDeath_Neolithic_53>Was mauled during a failed attempt to tame a megascarab at the age of {0}.</FP_Event_RandomDeath_Neolithic_53>
+  <FP_Event_RandomDeath_Neolithic_54>Succumbed to anaphylactic shock after being stung by a swarm of wild bees at the age of {0}.</FP_Event_RandomDeath_Neolithic_54>
+  <FP_Event_RandomDeath_Neolithic_55>Was executed on charges of witchcraft after the crops failed due to drought at the age of {0}.</FP_Event_RandomDeath_Neolithic_55>
+  <FP_Event_RandomDeath_Neolithic_56>Fell into a vat of boiling resin while preparing the settlement's defenses at the age of {0}.</FP_Event_RandomDeath_Neolithic_56>
+  <FP_Event_RandomDeath_Neolithic_57>Succumbed to tetanus after being wounded by a rusty piece of iron from the ruins at the age of {0}.</FP_Event_RandomDeath_Neolithic_57>
+  <FP_Event_RandomDeath_Neolithic_58>Was eaten alive by carnivorous insects while sleeping in the jungle at the age of {0}.</FP_Event_RandomDeath_Neolithic_58>
+  <FP_Event_RandomDeath_Neolithic_59>Perished while trying to steal eggs from the nest of an enraged turkey at the age of {0}.</FP_Event_RandomDeath_Neolithic_59>
+  <FP_Event_RandomDeath_Neolithic_60>Was blinded and left to die in the desert according to the law of the ancestors at the age of {0}.</FP_Event_RandomDeath_Neolithic_60>
+  <FP_Event_RandomDeath_Neolithic_61>Succumbed to hypothermia after giving his own clothes to a sick child at the age of {0}.</FP_Event_RandomDeath_Neolithic_61>
+  <FP_Event_RandomDeath_Neolithic_62>Was crushed by a container of fertilizer falling from the sky at the age of {0}.</FP_Event_RandomDeath_Neolithic_62>
+  <FP_Event_RandomDeath_Neolithic_63>Died of appendicitis, which the shaman tried to treat with herbs, at the age of {0}.</FP_Event_RandomDeath_Neolithic_63>
+  <FP_Event_RandomDeath_Neolithic_64>Was impaled by an elephant's tusk during the seasonal animal migration at the age of {0}.</FP_Event_RandomDeath_Neolithic_64>
+  <FP_Event_RandomDeath_Neolithic_65>Succumbed to exhaustion, refusing food in protest against the chief, at the age of {0}.</FP_Event_RandomDeath_Neolithic_65>
+  <FP_Event_RandomDeath_Neolithic_66>Was killed by a falling meteorite, which the tribe considered a divine sign, at the age of {0}.</FP_Event_RandomDeath_Neolithic_66>
+  <FP_Event_RandomDeath_Neolithic_67>Drowned in a bog while trying to pick a beautiful flower for his beloved at the age of {0}.</FP_Event_RandomDeath_Neolithic_67>
+  <FP_Event_RandomDeath_Neolithic_68>Succumbed to "stone disease" (silicosis) after many years of work in the tribe's mines at the age of {0}.</FP_Event_RandomDeath_Neolithic_68>
+  <FP_Event_RandomDeath_Neolithic_69>Was mauled by a warg while defending the sheepfold at the age of {0}.</FP_Event_RandomDeath_Neolithic_69>
+  <FP_Event_RandomDeath_Neolithic_70>Died of burns while trying to save sacred relics from a burning temple at the age of {0}.</FP_Event_RandomDeath_Neolithic_70>
+  <FP_Event_RandomDeath_Neolithic_71>Was poisoned by a jealous rival at a harvest festival feast at the age of {0}.</FP_Event_RandomDeath_Neolithic_71>
+  <FP_Event_RandomDeath_Neolithic_72>Succumbed to an overdose of a medicinal root at the age of {0}.</FP_Event_RandomDeath_Neolithic_72>
+  <FP_Event_RandomDeath_Neolithic_73>Was eaten by cannibals from a neighboring tribe during a raid at the age of {0}.</FP_Event_RandomDeath_Neolithic_73>
+  <FP_Event_RandomDeath_Neolithic_74>Died of a heart attack upon seeing a "steel man" (mechanoid) for the first time in his life at the age of {0}.</FP_Event_RandomDeath_Neolithic_74>
+  <FP_Event_RandomDeath_Neolithic_75>Was killed in a blood feud that had lasted three generations at the age of {0}.</FP_Event_RandomDeath_Neolithic_75>
+  <FP_Event_RandomDeath_Neolithic_76>Succumbed to gangrene after being bitten by a rabid squirrel at the age of {0}.</FP_Event_RandomDeath_Neolithic_76>
+  <FP_Event_RandomDeath_Neolithic_77>Was sacrificed to the Great Worm at the age of {0}.</FP_Event_RandomDeath_Neolithic_77>
+  <FP_Event_RandomDeath_Neolithic_78>Died from blood loss after a botched circumcision during a coming-of-age ritual at the age of {0}.</FP_Event_RandomDeath_Neolithic_78>
+  <FP_Event_RandomDeath_Neolithic_79>Was crushed by a boulder that broke loose from a cliff during an earthquake at the age of {0}.</FP_Event_RandomDeath_Neolithic_79>
+  <FP_Event_RandomDeath_Neolithic_80>Succumbed to dysentery after drinking from a muddy puddle at the age of {0}.</FP_Event_RandomDeath_Neolithic_80>
+  <FP_Event_RandomDeath_Neolithic_81>Was killed by a guard for attempting to desert the tribe at the age of {0}.</FP_Event_RandomDeath_Neolithic_81>
+  <FP_Event_RandomDeath_Neolithic_82>Died of exhaustion after dancing the ritual rain dance for three days non-stop at the age of {0}.</FP_Event_RandomDeath_Neolithic_82>
+  <FP_Event_RandomDeath_Neolithic_83>Was stabbed with a bone knife during a night brawl at the age of {0}.</FP_Event_RandomDeath_Neolithic_83>
+  <FP_Event_RandomDeath_Neolithic_84>Succumbed to the bite of a giant centipede in an abandoned bunker at the age of {0}.</FP_Event_RandomDeath_Neolithic_84>
+  <FP_Event_RandomDeath_Neolithic_85>Was trampled by his own tribesmen during a panicked flight from a fire at the age of {0}.</FP_Event_RandomDeath_Neolithic_85>
+  <FP_Event_RandomDeath_Neolithic_86>Died of pneumonia after his clothes got soaked in freezing rain at the age of {0}.</FP_Event_RandomDeath_Neolithic_86>
+  <FP_Event_RandomDeath_Neolithic_87>Was mauled by a bear while protecting his children at the age of {0}.</FP_Event_RandomDeath_Neolithic_87>
+  <FP_Event_RandomDeath_Neolithic_88>Succumbed to blood poisoning after the shaman tried to exorcise "evil spirits" through incisions in the skin at the age of {0}.</FP_Event_RandomDeath_Neolithic_88>
+  <FP_Event_RandomDeath_Neolithic_89>Was killed by a falling ice crust from the roof of a communal hut at the age of {0}.</FP_Event_RandomDeath_Neolithic_89>
+  <FP_Event_RandomDeath_Neolithic_90>Died of starvation, unable to hunt due to an old injury, at the age of {0}.</FP_Event_RandomDeath_Neolithic_90>
+  <FP_Event_RandomDeath_Neolithic_91>Was consumed by "living darkness" (fog) during an eclipse at the age of {0}.</FP_Event_RandomDeath_Neolithic_91>
+  <FP_Event_RandomDeath_Neolithic_92>Succumbed to shock after having an arm amputated without anesthesia at the age of {0}.</FP_Event_RandomDeath_Neolithic_92>
+  <FP_Event_RandomDeath_Neolithic_93>Was impaled by the horn of an enraged rhinoceros at the age of {0}.</FP_Event_RandomDeath_Neolithic_93>
+  <FP_Event_RandomDeath_Neolithic_94>Died from gas poisoning deep within an old mine at the age of {0}.</FP_Event_RandomDeath_Neolithic_94>
+  <FP_Event_RandomDeath_Neolithic_95>Was killed in his sleep by a traitor dreaming of taking his place at the age of {0}.</FP_Event_RandomDeath_Neolithic_95>
+  <FP_Event_RandomDeath_Neolithic_96>Succumbed to a cerebral hemorrhage after being hit by a falling coconut at the age of {0}.</FP_Event_RandomDeath_Neolithic_96>
+  <FP_Event_RandomDeath_Neolithic_97>Was trampled by a herd of megatheriums during an initiation rite at the age of {0}.</FP_Event_RandomDeath_Neolithic_97>
+  <FP_Event_RandomDeath_Neolithic_98>Died from an infection after having his teeth knocked out in a fight at the age of {0}.</FP_Event_RandomDeath_Neolithic_98>
+  <FP_Event_RandomDeath_Neolithic_99>Was burned as a carrier of the "curse" (plague) at the age of {0}.</FP_Event_RandomDeath_Neolithic_99>
+  <FP_Event_RandomDeath_Neolithic_100>Succumbed to spiritual exhaustion after losing all his loved ones at the age of {0}.</FP_Event_RandomDeath_Neolithic_100>
+  <FP_Event_RandomDeath_Neolithic_101>Was strangled by a strangler vine in the deep jungle at the age of {0}.</FP_Event_RandomDeath_Neolithic_101>
+  <FP_Event_RandomDeath_Neolithic_102>Died of cardiac arrest during an overly hot ritual bath at the age of {0}.</FP_Event_RandomDeath_Neolithic_102>
+  <FP_Event_RandomDeath_Neolithic_103>Was killed by a fellow tribesman in a fit of psychosis due to the lack of a table for dining at the age of {0}.</FP_Event_RandomDeath_Neolithic_103>
+  <FP_Event_RandomDeath_Neolithic_104>Succumbed to the bite of a desert scorpion at the age of {0}.</FP_Event_RandomDeath_Neolithic_104>
+  <FP_Event_RandomDeath_Neolithic_105>Was beaten to death with gun butts by strangers at the age of {0}.</FP_Event_RandomDeath_Neolithic_105>
+  <FP_Event_RandomDeath_Neolithic_106>Died from falling through an icy lake while trying to catch fish with his bare hands at the age of {0}.</FP_Event_RandomDeath_Neolithic_106>
+  <FP_Event_RandomDeath_Neolithic_107>Was sacrificed to the Spirit of Machines after accidentally turning on an ancient radio at the age of {0}.</FP_Event_RandomDeath_Neolithic_107>
+  <FP_Event_RandomDeath_Neolithic_108>Succumbed to a severe fever transmitted through an insect bite at the age of {0}.</FP_Event_RandomDeath_Neolithic_108>
+  <FP_Event_RandomDeath_Neolithic_109>Was crushed in a crowd during the Blood Moon festival at the age of {0}.</FP_Event_RandomDeath_Neolithic_109>
+  <FP_Event_RandomDeath_Neolithic_110>Died of a broken heart after encountering a "ghost of steel" (terminator-mechanoid) at the age of {0}.</FP_Event_RandomDeath_Neolithic_110>
+  <FP_Event_RandomDeath_Neolithic_111>Was killed by lightning while holding a piece of metal at the age of {0}.</FP_Event_RandomDeath_Neolithic_111>
+  <FP_Event_RandomDeath_Neolithic_112>Died of old age surrounded by the tribe, a rarity in these harsh times, at the age of {0}.</FP_Event_RandomDeath_Neolithic_112>
+
+  <!-- MEDIEVAL -->
+<FP_Event_RandomDeath_Medieval_11>Was stabbed in a drunken brawl at a tavern over the quality of the ale at the age of {0}.</FP_Event_RandomDeath_Medieval_11>
+  <FP_Event_RandomDeath_Medieval_12>Succumbed to "St. Anthony's Fire" after eating bread contaminated with ergot at the age of {0}.</FP_Event_RandomDeath_Medieval_12>
+  <FP_Event_RandomDeath_Medieval_13>Was crushed by a falling millstone at a windmill at the age of {0}.</FP_Event_RandomDeath_Medieval_13>
+  <FP_Event_RandomDeath_Medieval_14>Died of exhaustion, lost in the woods during a long winter, at the age of {0}.</FP_Event_RandomDeath_Medieval_14>
+  <FP_Event_RandomDeath_Medieval_15>Drowned in a sewer ditch, losing his balance after a feast, at the age of {0}.</FP_Event_RandomDeath_Medieval_15>
+  <FP_Event_RandomDeath_Medieval_16>Fell to a crossbow bolt while guarding a caravan on the highway at the age of {0}.</FP_Event_RandomDeath_Medieval_16>
+  <FP_Event_RandomDeath_Medieval_17>Was torn apart by an enraged man-eating bear at the age of {0}.</FP_Event_RandomDeath_Medieval_17>
+  <FP_Event_RandomDeath_Medieval_18>Died from blood poisoning after stepping on a rusty nail at the age of {0}.</FP_Event_RandomDeath_Medieval_18>
+  <FP_Event_RandomDeath_Medieval_19>Was stoned to death by locals on suspicion of heresy at the age of {0}.</FP_Event_RandomDeath_Medieval_19>
+  <FP_Event_RandomDeath_Medieval_20>Succumbed to dropsy, never seeing a doctor, at the age of {0}.</FP_Event_RandomDeath_Medieval_20>
+  <FP_Event_RandomDeath_Medieval_21>Perished under the hooves of a rampaging horse in the market square at the age of {0}.</FP_Event_RandomDeath_Medieval_21>
+  <FP_Event_RandomDeath_Medieval_22>Was sacrificed by cultists of dark gods at the age of {0}.</FP_Event_RandomDeath_Medieval_22>
+  <FP_Event_RandomDeath_Medieval_23>Burned alive in his own home during a night raid by bandits at the age of {0}.</FP_Event_RandomDeath_Medieval_23>
+  <FP_Event_RandomDeath_Medieval_24>Died of a lightning strike while praying in the open air at the age of {0}.</FP_Event_RandomDeath_Medieval_24>
+  <FP_Event_RandomDeath_Medieval_25>Suffocated in a mine due to a sudden cave-in at the age of {0}.</FP_Event_RandomDeath_Medieval_25>
+  <FP_Event_RandomDeath_Medieval_26>Succumbed to excessive bloodletting prescribed by an incompetent barber at the age of {0}.</FP_Event_RandomDeath_Medieval_26>
+  <FP_Event_RandomDeath_Medieval_27>Was poisoned by spoiled corned beef during a long march at the age of {0}.</FP_Event_RandomDeath_Medieval_27>
+  <FP_Event_RandomDeath_Medieval_28>Fell to a poisoned-tipped arrow in a forest ambush at the age of {0}.</FP_Event_RandomDeath_Medieval_28>
+  <FP_Event_RandomDeath_Medieval_29>Died of a broken heart upon seeing a "ghost" in the night (which turned out to be a megaspider) at the age of {0}.</FP_Event_RandomDeath_Medieval_29>
+  <FP_Event_RandomDeath_Medieval_30>Was hanged for stealing a single chicken at the age of {0}.</FP_Event_RandomDeath_Medieval_30>
+  <FP_Event_RandomDeath_Medieval_31>Froze to death, left homeless after a blizzard, at the age of {0}.</FP_Event_RandomDeath_Medieval_31>
+  <FP_Event_RandomDeath_Medieval_32>Died of consumption, coughing blood onto the cold floor of his cell, at the age of {0}.</FP_Event_RandomDeath_Medieval_32>
+  <FP_Event_RandomDeath_Medieval_33>Was crushed by a falling oak trunk while felling timber at the age of {0}.</FP_Event_RandomDeath_Medieval_33>
+  <FP_Event_RandomDeath_Medieval_34>Perished from the bite of a rabid fox while guarding the henhouse at the age of {0}.</FP_Event_RandomDeath_Medieval_34>
+  <FP_Event_RandomDeath_Medieval_35>Succumbed to dysentery caused by dirty water from a stream at the age of {0}.</FP_Event_RandomDeath_Medieval_35>
+  <FP_Event_RandomDeath_Medieval_36>Was killed by a stray stone from a trebuchet while defending the walls at the age of {0}.</FP_Event_RandomDeath_Medieval_36>
+  <FP_Event_RandomDeath_Medieval_37>Died of an overdose of an alchemical "immortality" potion at the age of {0}.</FP_Event_RandomDeath_Medieval_37>
+  <FP_Event_RandomDeath_Medieval_38>Was mauled by a pack of stray dogs during a famine year at the age of {0}.</FP_Event_RandomDeath_Medieval_38>
+  <FP_Event_RandomDeath_Medieval_39>Perished from a failed fall from a fortress wall at the age of {0}.</FP_Event_RandomDeath_Medieval_39>
+  <FP_Event_RandomDeath_Medieval_40>Succumbed to scurvy during an endless polar night at the age of {0}.</FP_Event_RandomDeath_Medieval_40>
+  <FP_Event_RandomDeath_Medieval_41>Was drawn and quartered on charges of high treason at the age of {0}.</FP_Event_RandomDeath_Medieval_41>
+  <FP_Event_RandomDeath_Medieval_42>Fell victim to a forest spirit (actually a feral humanoid) at the age of {0}.</FP_Event_RandomDeath_Medieval_42>
+  <FP_Event_RandomDeath_Medieval_43>Died of pain shock after having his arm torn off by a trap at the age of {0}.</FP_Event_RandomDeath_Medieval_43>
+  <FP_Event_RandomDeath_Medieval_44>Was stabbed in the back by his "best friend" over an inheritance at the age of {0}.</FP_Event_RandomDeath_Medieval_44>
+  <FP_Event_RandomDeath_Medieval_45>Succumbed to suffocation, choking on a pheasant bone at a feast, at the age of {0}.</FP_Event_RandomDeath_Medieval_45>
+  <FP_Event_RandomDeath_Medieval_46>Was trampled by a war elephant during an exotic raid at the age of {0}.</FP_Event_RandomDeath_Medieval_46>
+  <FP_Event_RandomDeath_Medieval_47>Died of heatstroke while working in a field during an anomalous heatwave at the age of {0}.</FP_Event_RandomDeath_Medieval_47>
+  <FP_Event_RandomDeath_Medieval_48>Was boiled alive in a cauldron of oil during an assault on the gate at the age of {0}.</FP_Event_RandomDeath_Medieval_48>
+  <FP_Event_RandomDeath_Medieval_49>Succumbed to a mysterious "sleeping sickness" from which he never awoke at the age of {0}.</FP_Event_RandomDeath_Medieval_49>
+  <FP_Event_RandomDeath_Medieval_50>Was beaten to death with clubs during a peasant revolt at the age of {0}.</FP_Event_RandomDeath_Medieval_50>
+  <FP_Event_RandomDeath_Medieval_51>Died from the bite of a venomous viper hiding in a haystack at the age of {0}.</FP_Event_RandomDeath_Medieval_51>
+  <FP_Event_RandomDeath_Medieval_52>Was beheaded by an executioner for deserting the battlefield at the age of {0}.</FP_Event_RandomDeath_Medieval_52>
+  <FP_Event_RandomDeath_Medieval_53>Perished in an explosion of a primitive gunpowder charge at the age of {0}.</FP_Event_RandomDeath_Medieval_53>
+  <FP_Event_RandomDeath_Medieval_54>Succumbed to purulent otitis that spread to the brain at the age of {0}.</FP_Event_RandomDeath_Medieval_54>
+  <FP_Event_RandomDeath_Medieval_55>Was thrown from a cliff into the sea during a ritual cleansing at the age of {0}.</FP_Event_RandomDeath_Medieval_55>
+  <FP_Event_RandomDeath_Medieval_56>Died of exhaustion, locked inside an iron maiden, at the age of {0}.</FP_Event_RandomDeath_Medieval_56>
+  <FP_Event_RandomDeath_Medieval_57>Was stabbed with a pitchfork in a fit of rage over a ruined harvest at the age of {0}.</FP_Event_RandomDeath_Medieval_57>
+  <FP_Event_RandomDeath_Medieval_58>Perished from a blow of a heavy mace while defending the castle gate at the age of {0}.</FP_Event_RandomDeath_Medieval_58>
+  <FP_Event_RandomDeath_Medieval_59>Succumbed to tetanus from a minor cut with a sickle at the age of {0}.</FP_Event_RandomDeath_Medieval_59>
+  <FP_Event_RandomDeath_Medieval_60>Was eaten alive by a swarm of insects in dark caves at the age of {0}.</FP_Event_RandomDeath_Medieval_60>
+  <FP_Event_RandomDeath_Medieval_61>Died of sudden cardiac arrest after three days of insomnia at the age of {0}.</FP_Event_RandomDeath_Medieval_61>
+  <FP_Event_RandomDeath_Medieval_62>Was impaled by a halberd during a night patrol at the age of {0}.</FP_Event_RandomDeath_Medieval_62>
+  <FP_Event_RandomDeath_Medieval_63>Succumbed to blood loss after a botched finger amputation at the age of {0}.</FP_Event_RandomDeath_Medieval_63>
+  <FP_Event_RandomDeath_Medieval_64>Was trampled by a herd of enraged mouflons at the age of {0}.</FP_Event_RandomDeath_Medieval_64>
+  <FP_Event_RandomDeath_Medieval_65>Died of lead white poisoning, believing it to be medicinal, at the age of {0}.</FP_Event_RandomDeath_Medieval_65>
+  <FP_Event_RandomDeath_Medieval_66>Was killed by an arrow shot from the woods by an unknown hunter at the age of {0}.</FP_Event_RandomDeath_Medieval_66>
+  <FP_Event_RandomDeath_Medieval_67>Succumbed in agony to a ruptured appendix at the age of {0}.</FP_Event_RandomDeath_Medieval_67>
+  <FP_Event_RandomDeath_Medieval_68>Was buried alive under the collapsed roof of a hut at the age of {0}.</FP_Event_RandomDeath_Medieval_68>
+  <FP_Event_RandomDeath_Medieval_69>Perished in a fire trying to save sacred relics from a temple at the age of {0}.</FP_Event_RandomDeath_Medieval_69>
+  <FP_Event_RandomDeath_Medieval_70>Succumbed to the bite of a plague rat at the age of {0}.</FP_Event_RandomDeath_Medieval_70>
+  <FP_Event_RandomDeath_Medieval_71>Was stabbed with a misericordia after losing a battle at the age of {0}.</FP_Event_RandomDeath_Medieval_71>
+  <FP_Event_RandomDeath_Medieval_72>Died of a systemic infection after being bitten by a squirrel at the age of {0}.</FP_Event_RandomDeath_Medieval_72>
+  <FP_Event_RandomDeath_Medieval_73>Was crushed by a falling statue of an ancient deity at the age of {0}.</FP_Event_RandomDeath_Medieval_73>
+  <FP_Event_RandomDeath_Medieval_74>Succumbed to delirium tremens after a multi-day drinking binge at the age of {0}.</FP_Event_RandomDeath_Medieval_74>
+  <FP_Event_RandomDeath_Medieval_75>Was drowned in a swamp while pursuing runaway slaves at the age of {0}.</FP_Event_RandomDeath_Medieval_75>
+  <FP_Event_RandomDeath_Medieval_76>Died from a blow of a morning star, failing to raise his shield in time, at the age of {0}.</FP_Event_RandomDeath_Medieval_76>
+  <FP_Event_RandomDeath_Medieval_77>Was mauled by a warg while hunting in the woods at the age of {0}.</FP_Event_RandomDeath_Medieval_77>
+  <FP_Event_RandomDeath_Medieval_78>Succumbed to a cold that developed into severe pneumonia at the age of {0}.</FP_Event_RandomDeath_Medieval_78>
+  <FP_Event_RandomDeath_Medieval_79>Was executed by hanging for attempting to desert at the age of {0}.</FP_Event_RandomDeath_Medieval_79>
+  <FP_Event_RandomDeath_Medieval_80>Died of starvation in a besieged fortress, giving his last piece of bread to the children, at the age of {0}.</FP_Event_RandomDeath_Medieval_80>
+  <FP_Event_RandomDeath_Medieval_81>Was killed by a blow from a flail in a street brawl at the age of {0}.</FP_Event_RandomDeath_Medieval_81>
+  <FP_Event_RandomDeath_Medieval_82>Succumbed to sepsis after the wound was cauterized with a red-hot iron at the age of {0}.</FP_Event_RandomDeath_Medieval_82>
+  <FP_Event_RandomDeath_Medieval_83>Perished by falling into a deep pit filled with stakes at the age of {0}.</FP_Event_RandomDeath_Medieval_83>
+  <FP_Event_RandomDeath_Medieval_84>Died of mercury poisoning, administered by a charlatan alchemist, at the age of {0}.</FP_Event_RandomDeath_Medieval_84>
+  <FP_Event_RandomDeath_Medieval_85>Was trampled by a crowd during a panic caused by a fire at the age of {0}.</FP_Event_RandomDeath_Medieval_85>
+  <FP_Event_RandomDeath_Medieval_86>Succumbed to the bite of a jumping spider that crawled into his bed at the age of {0}.</FP_Event_RandomDeath_Medieval_86>
+  <FP_Event_RandomDeath_Medieval_87>Was impaled by a spear while trying to climb over a palisade at the age of {0}.</FP_Event_RandomDeath_Medieval_87>
+  <FP_Event_RandomDeath_Medieval_88>Died of a cerebral hemorrhage after falling from a horse at the age of {0}.</FP_Event_RandomDeath_Medieval_88>
+  <FP_Event_RandomDeath_Medieval_89>Was beaten to death with clubs by guards for breaking curfew at the age of {0}.</FP_Event_RandomDeath_Medieval_89>
+  <FP_Event_RandomDeath_Medieval_90>Succumbed to melancholy and refused food after losing his entire family at the age of {0}.</FP_Event_RandomDeath_Medieval_90>
+  <FP_Event_RandomDeath_Medieval_91>Was burned at the stake as a carrier of "the blight" after a meteorite fell at the age of {0}.</FP_Event_RandomDeath_Medieval_91>
+  <FP_Event_RandomDeath_Medieval_92>Died of hypothermia, falling through the ice while trying to catch fish, at the age of {0}.</FP_Event_RandomDeath_Medieval_92>
+  <FP_Event_RandomDeath_Medieval_93>Was beheaded during a trial by combat at the age of {0}.</FP_Event_RandomDeath_Medieval_93>
+  <FP_Event_RandomDeath_Medieval_94>Succumbed to the venom of wild bees while trying to get honey in the woods at the age of {0}.</FP_Event_RandomDeath_Medieval_94>
+  <FP_Event_RandomDeath_Medieval_95>Was killed by a ricocheting stone from a destroyed tower at the age of {0}.</FP_Event_RandomDeath_Medieval_95>
+  <FP_Event_RandomDeath_Medieval_96>Died of kidney failure after consuming dubious herbs at the age of {0}.</FP_Event_RandomDeath_Medieval_96>
+  <FP_Event_RandomDeath_Medieval_97>Was mauled by a wild boar during a failed hunt at the age of {0}.</FP_Event_RandomDeath_Medieval_97>
+  <FP_Event_RandomDeath_Medieval_98>Succumbed to internal bleeding after falling from scaffolding at the age of {0}.</FP_Event_RandomDeath_Medieval_98>
+  <FP_Event_RandomDeath_Medieval_99>Was poisoned with arsenic slipped into his wine goblet at the age of {0}.</FP_Event_RandomDeath_Medieval_99>
+  <FP_Event_RandomDeath_Medieval_100>Died of asphyxiation in the thick smoke of burning peat bogs at the age of {0}.</FP_Event_RandomDeath_Medieval_100>
+  <FP_Event_RandomDeath_Medieval_101>Was stabbed in the back during a prison uprising at the age of {0}.</FP_Event_RandomDeath_Medieval_101>
+  <FP_Event_RandomDeath_Medieval_102>Succumbed to complications from the bite of a killer squirrel at the age of {0}.</FP_Event_RandomDeath_Medieval_102>
+  <FP_Event_RandomDeath_Medieval_103>Perished from a blow of a battle axe in a furious fight over food at the age of {0}.</FP_Event_RandomDeath_Medieval_103>
+  <FP_Event_RandomDeath_Medieval_104>Died of fever caused by malaria in the damp jungle at the age of {0}.</FP_Event_RandomDeath_Medieval_104>
+  <FP_Event_RandomDeath_Medieval_105>Was impaled for highway robbery at the age of {0}.</FP_Event_RandomDeath_Medieval_105>
+  <FP_Event_RandomDeath_Medieval_106>Succumbed to a mule's kick directly to the temple at the age of {0}.</FP_Event_RandomDeath_Medieval_106>
+  <FP_Event_RandomDeath_Medieval_107>Was killed by an exploding alchemical retort while searching for the philosopher's stone at the age of {0}.</FP_Event_RandomDeath_Medieval_107>
+  <FP_Event_RandomDeath_Medieval_108>Died of exhaustion in the endless sands of the desert at the age of {0}.</FP_Event_RandomDeath_Medieval_108>
+  <FP_Event_RandomDeath_Medieval_109>Was crushed by a falling meteorite, considered divine wrath, at the age of {0}.</FP_Event_RandomDeath_Medieval_109>
+  <FP_Event_RandomDeath_Medieval_110>Died of old age, peacefully sleeping in his straw bed, at the age of {0}.</FP_Event_RandomDeath_Medieval_110>
+
+  <!-- INDUSTRIAL -->
+<FP_Event_RandomDeath_Industrial_13>Suffocated in a coal mine due to a ventilation system failure at the age of {0}.</FP_Event_RandomDeath_Industrial_13>
+  <FP_Event_RandomDeath_Industrial_14>Was crushed by a falling ladle of molten steel at the age of {0}.</FP_Event_RandomDeath_Industrial_14>
+  <FP_Event_RandomDeath_Industrial_15>Succumbed to "white consumption" after inhaling cotton dust at a textile factory at the age of {0}.</FP_Event_RandomDeath_Industrial_15>
+  <FP_Event_RandomDeath_Industrial_16>Perished in the collapse of an unfinished brick factory at the age of {0}.</FP_Event_RandomDeath_Industrial_16>
+  <FP_Event_RandomDeath_Industrial_17>Was pulled into the drive belt of a steam hammer at the age of {0}.</FP_Event_RandomDeath_Industrial_17>
+  <FP_Event_RandomDeath_Industrial_18>Succumbed to blood poisoning after an injury on a rusty lathe at the age of {0}.</FP_Event_RandomDeath_Industrial_18>
+  <FP_Event_RandomDeath_Industrial_19>Perished in an explosion of a chemical fuel tank at a refueling station at the age of {0}.</FP_Event_RandomDeath_Industrial_19>
+  <FP_Event_RandomDeath_Industrial_20>Fell into a vat of dye at a tannery at the age of {0}.</FP_Event_RandomDeath_Industrial_20>
+  <FP_Event_RandomDeath_Industrial_21>Burned to death in a fire at an overcrowded worker barracks at the age of {0}.</FP_Event_RandomDeath_Industrial_21>
+  <FP_Event_RandomDeath_Industrial_22>Was fatally electrocuted while trying to repair a high-voltage line at the age of {0}.</FP_Event_RandomDeath_Industrial_22>
+  <FP_Event_RandomDeath_Industrial_23>Perished under the wheels of a multi-ton steam-powered truck at the age of {0}.</FP_Event_RandomDeath_Industrial_23>
+  <FP_Event_RandomDeath_Industrial_24>Succumbed to mercury poisoning during the production of mirror glass at the age of {0}.</FP_Event_RandomDeath_Industrial_24>
+  <FP_Event_RandomDeath_Industrial_25>Died of exhaustion during a prolonged steelworkers' strike at the age of {0}.</FP_Event_RandomDeath_Industrial_25>
+  <FP_Event_RandomDeath_Industrial_26>Was killed by a ricochet while testing a new automatic rifle at the age of {0}.</FP_Event_RandomDeath_Industrial_26>
+  <FP_Event_RandomDeath_Industrial_27>Perished in a gas explosion in the city sewers at the age of {0}.</FP_Event_RandomDeath_Industrial_27>
+  <FP_Event_RandomDeath_Industrial_28>Fell down the deep elevator shaft of a skyscraper under construction at the age of {0}.</FP_Event_RandomDeath_Industrial_28>
+  <FP_Event_RandomDeath_Industrial_29>Succumbed to radiation sickness after working with early X-ray machines at the age of {0}.</FP_Event_RandomDeath_Industrial_29>
+  <FP_Event_RandomDeath_Industrial_30>Perished in the crash of a hydrogen-filled airship at the age of {0}.</FP_Event_RandomDeath_Industrial_30>
+  <FP_Event_RandomDeath_Industrial_31>Was trampled by a panicked crowd during a bread riot at the age of {0}.</FP_Event_RandomDeath_Industrial_31>
+  <FP_Event_RandomDeath_Industrial_32>Succumbed to methanol poisoning after consuming industrial alcohol at the age of {0}.</FP_Event_RandomDeath_Industrial_32>
+  <FP_Event_RandomDeath_Industrial_33>Perished in a shell explosion inside the barrel of a defective mortar at the age of {0}.</FP_Event_RandomDeath_Industrial_33>
+  <FP_Event_RandomDeath_Industrial_34>Drowned in a fuel oil settling pond due to poor visibility at the age of {0}.</FP_Event_RandomDeath_Industrial_34>
+  <FP_Event_RandomDeath_Industrial_35>Was killed by an automatic turret that mistook him for a deserter at the age of {0}.</FP_Event_RandomDeath_Industrial_35>
+  <FP_Event_RandomDeath_Industrial_36>Succumbed to chronic arsenic poisoning from wallpaper at the age of {0}.</FP_Event_RandomDeath_Industrial_36>
+  <FP_Event_RandomDeath_Industrial_37>Perished by falling from an icy steel bridge structure at the age of {0}.</FP_Event_RandomDeath_Industrial_37>
+  <FP_Event_RandomDeath_Industrial_38>Suffocated from thick urban smog during a temperature inversion at the age of {0}.</FP_Event_RandomDeath_Industrial_38>
+  <FP_Event_RandomDeath_Industrial_39>Was crushed by a hydraulic press due to a faulty valve at the age of {0}.</FP_Event_RandomDeath_Industrial_39>
+  <FP_Event_RandomDeath_Industrial_40>Perished in a coal dust explosion at an elevator at the age of {0}.</FP_Event_RandomDeath_Industrial_40>
+  <FP_Event_RandomDeath_Industrial_41>Succumbed to sepsis contracted while working at a meatpacking plant at the age of {0}.</FP_Event_RandomDeath_Industrial_41>
+  <FP_Event_RandomDeath_Industrial_42>Was shot during a robbery of a mail stagecoach at the age of {0}.</FP_Event_RandomDeath_Industrial_42>
+  <FP_Event_RandomDeath_Industrial_43>Perished under a pile of iron ore in a quarry at the age of {0}.</FP_Event_RandomDeath_Industrial_43>
+  <FP_Event_RandomDeath_Industrial_44>Died of electrocution while trying to power a radio station from a lightning rod at the age of {0}.</FP_Event_RandomDeath_Industrial_44>
+  <FP_Event_RandomDeath_Industrial_45>Was accidentally walled into the concrete foundation of a dam at the age of {0}.</FP_Event_RandomDeath_Industrial_45>
+  <FP_Event_RandomDeath_Industrial_46>Succumbed to an explosion of a steam sterilizer in a hospital at the age of {0}.</FP_Event_RandomDeath_Industrial_46>
+  <FP_Event_RandomDeath_Industrial_47>Perished in a collision of two coal barges on a canal at the age of {0}.</FP_Event_RandomDeath_Industrial_47>
+  <FP_Event_RandomDeath_Industrial_48>Was killed by a falling section of a telegraph pole at the age of {0}.</FP_Event_RandomDeath_Industrial_48>
+  <FP_Event_RandomDeath_Industrial_49>Succumbed to burns while trying to extinguish a fire at a medicine warehouse at the age of {0}.</FP_Event_RandomDeath_Industrial_49>
+  <FP_Event_RandomDeath_Industrial_50>Perished while testing an early prototype exoskeleton at the age of {0}.</FP_Event_RandomDeath_Industrial_50>
+  <FP_Event_RandomDeath_Industrial_51>Was fatally wounded by a fragment of a flywheel that shattered from overload at the age of {0}.</FP_Event_RandomDeath_Industrial_51>
+  <FP_Event_RandomDeath_Industrial_52>Died of cholera due to sewage leaking into the water supply at the age of {0}.</FP_Event_RandomDeath_Industrial_52>
+  <FP_Event_RandomDeath_Industrial_53>Perished in a dynamite explosion during tunnel construction at the age of {0}.</FP_Event_RandomDeath_Industrial_53>
+  <FP_Event_RandomDeath_Industrial_54>Was pulled into the blades of a giant workshop fan at the age of {0}.</FP_Event_RandomDeath_Industrial_54>
+  <FP_Event_RandomDeath_Industrial_55>Succumbed to "phossy jaw" while working at a match factory at the age of {0}.</FP_Event_RandomDeath_Industrial_55>
+  <FP_Event_RandomDeath_Industrial_56>Perished during a night raid by a gang on the factory district at the age of {0}.</FP_Event_RandomDeath_Industrial_56>
+  <FP_Event_RandomDeath_Industrial_57>Fell into an operating stone crusher at a quarry at the age of {0}.</FP_Event_RandomDeath_Industrial_57>
+  <FP_Event_RandomDeath_Industrial_58>Was electrocuted due to a lack of grounding on an electric stove at the age of {0}.</FP_Event_RandomDeath_Industrial_58>
+  <FP_Event_RandomDeath_Industrial_59>Succumbed to an overdose of early anesthetics during surgery at the age of {0}.</FP_Event_RandomDeath_Industrial_59>
+  <FP_Event_RandomDeath_Industrial_60>Perished by falling from a cargo container lifted by a port crane at the age of {0}.</FP_Event_RandomDeath_Industrial_60>
+  <FP_Event_RandomDeath_Industrial_61>Died of suffocation, caught in a carbon dioxide release at a brewery at the age of {0}.</FP_Event_RandomDeath_Industrial_61>
+  <FP_Event_RandomDeath_Industrial_62>Was crushed by a steam censer during a religious procession at the age of {0}.</FP_Event_RandomDeath_Industrial_62>
+  <FP_Event_RandomDeath_Industrial_63>Perished in a steam boiler explosion on a river tugboat at the age of {0}.</FP_Event_RandomDeath_Industrial_63>
+  <FP_Event_RandomDeath_Industrial_64>Succumbed to benzene poisoning during dye production at the age of {0}.</FP_Event_RandomDeath_Industrial_64>
+  <FP_Event_RandomDeath_Industrial_65>Was killed in a street fight using brass knuckles and rebar at the age of {0}.</FP_Event_RandomDeath_Industrial_65>
+  <FP_Event_RandomDeath_Industrial_66>Perished in the collapse of scaffolding around the new town hall at the age of {0}.</FP_Event_RandomDeath_Industrial_66>
+  <FP_Event_RandomDeath_Industrial_67>Died of heatstroke while working as a stoker in an engine room at the age of {0}.</FP_Event_RandomDeath_Industrial_67>
+  <FP_Event_RandomDeath_Industrial_68>Was impaled by a steel reinforcing bar after falling from a height at the age of {0}.</FP_Event_RandomDeath_Industrial_68>
+  <FP_Event_RandomDeath_Industrial_69>Succumbed to an explosion of a compressed air cylinder in a workshop at the age of {0}.</FP_Event_RandomDeath_Industrial_69>
+  <FP_Event_RandomDeath_Industrial_70>Perished while trying to steal live copper wires at the age of {0}.</FP_Event_RandomDeath_Industrial_70>
+  <FP_Event_RandomDeath_Industrial_71>Was buried under coal while unloading a freight car at the age of {0}.</FP_Event_RandomDeath_Industrial_71>
+  <FP_Event_RandomDeath_Industrial_72>Died of blood poisoning after pricking himself with a dirty needle at a sewing factory at the age of {0}.</FP_Event_RandomDeath_Industrial_72>
+  <FP_Event_RandomDeath_Industrial_73>Perished in a passenger train crash due to washed-out tracks at the age of {0}.</FP_Event_RandomDeath_Industrial_73>
+  <FP_Event_RandomDeath_Industrial_74>Succumbed to pneumoconiosis after working 20 years in a quarry at the age of {0}.</FP_Event_RandomDeath_Industrial_74>
+  <FP_Event_RandomDeath_Industrial_75>Was killed in a homemade grenade explosion during street fighting at the age of {0}.</FP_Event_RandomDeath_Industrial_75>
+  <FP_Event_RandomDeath_Industrial_76>Perished by falling into a sulfuric acid tank at a chemical plant at the age of {0}.</FP_Event_RandomDeath_Industrial_76>
+  <FP_Event_RandomDeath_Industrial_77>Died from an explosion of a lamp with unstable chemical fuel in a bedroom at the age of {0}.</FP_Event_RandomDeath_Industrial_77>
+  <FP_Event_RandomDeath_Industrial_78>Was crushed by a giant gear that broke loose from its mountings at the age of {0}.</FP_Event_RandomDeath_Industrial_78>
+  <FP_Event_RandomDeath_Industrial_79>Succumbed to internal bleeding after an accident at a construction site at the age of {0}.</FP_Event_RandomDeath_Industrial_79>
+  <FP_Event_RandomDeath_Industrial_80>Perished in a fire at a fireworks warehouse at the age of {0}.</FP_Event_RandomDeath_Industrial_80>
+  <FP_Event_RandomDeath_Industrial_81>Was strangled by his own tie getting caught in a printing press at the age of {0}.</FP_Event_RandomDeath_Industrial_81>
+  <FP_Event_RandomDeath_Industrial_82>Died of lead white poisoning while painting a bridge at the age of {0}.</FP_Event_RandomDeath_Industrial_82>
+  <FP_Event_RandomDeath_Industrial_83>Perished in a dust detonation at a flour mill at the age of {0}.</FP_Event_RandomDeath_Industrial_83>
+  <FP_Event_RandomDeath_Industrial_84>Was struck dead by an express steam locomotive at a crossing at the age of {0}.</FP_Event_RandomDeath_Industrial_84>
+  <FP_Event_RandomDeath_Industrial_85>Succumbed to hypothermia in an unheated workshop during a blizzard at the age of {0}.</FP_Event_RandomDeath_Industrial_85>
+  <FP_Event_RandomDeath_Industrial_86>Perished in an oil rig explosion due to an accidental spark at the age of {0}.</FP_Event_RandomDeath_Industrial_86>
+  <FP_Event_RandomDeath_Industrial_87>Was killed by falling into a vat of boiling wort at a brewery at the age of {0}.</FP_Event_RandomDeath_Industrial_87>
+  <FP_Event_RandomDeath_Industrial_88>Died of electrocution trying to turn on a street lamp with his bare hands at the age of {0}.</FP_Event_RandomDeath_Industrial_88>
+  <FP_Event_RandomDeath_Industrial_89>Perished in a ceiling collapse in an old communal apartment at the age of {0}.</FP_Event_RandomDeath_Industrial_89>
+  <FP_Event_RandomDeath_Industrial_90>Succumbed to respiratory burns from an ammonia leak in a refrigerator at the age of {0}.</FP_Event_RandomDeath_Industrial_90>
+  <FP_Event_RandomDeath_Industrial_91>Was crushed by a falling safe during the transport of banking assets at the age of {0}.</FP_Event_RandomDeath_Industrial_91>
+  <FP_Event_RandomDeath_Industrial_92>Perished by falling from an icy water tower at the age of {0}.</FP_Event_RandomDeath_Industrial_92>
+  <FP_Event_RandomDeath_Industrial_93>Died of scurvy during a long delay of a trade caravan at the age of {0}.</FP_Event_RandomDeath_Industrial_93>
+  <FP_Event_RandomDeath_Industrial_94>Was electrocuted, stepping into a puddle next to a severed tram wire, at the age of {0}.</FP_Event_RandomDeath_Industrial_94>
+  <FP_Event_RandomDeath_Industrial_95>Perished in an explosion of a barrel of alcohol in an underground warehouse at the age of {0}.</FP_Event_RandomDeath_Industrial_95>
+  <FP_Event_RandomDeath_Industrial_96>Succumbed to tetanus after being wounded by a piece of industrial rebar at the age of {0}.</FP_Event_RandomDeath_Industrial_96>
+  <FP_Event_RandomDeath_Industrial_97>Was crushed between two coupling train cars at the age of {0}.</FP_Event_RandomDeath_Industrial_97>
+  <FP_Event_RandomDeath_Industrial_98>Perished while testing a prototype flamethrower at a firing range at the age of {0}.</FP_Event_RandomDeath_Industrial_98>
+  <FP_Event_RandomDeath_Industrial_99>Died of acute kidney failure after working with industrial solvents at the age of {0}.</FP_Event_RandomDeath_Industrial_99>
+  <FP_Event_RandomDeath_Industrial_100>Was fatally wounded by a rampaging pack animal in a cramped pen at the age of {0}.</FP_Event_RandomDeath_Industrial_100>
+  <FP_Event_RandomDeath_Industrial_101>Perished in the collapse of a brick chimney during a storm at the age of {0}.</FP_Event_RandomDeath_Industrial_101>
+  <FP_Event_RandomDeath_Industrial_102>Succumbed to electrocution during an early electrotherapy session at the age of {0}.</FP_Event_RandomDeath_Industrial_102>
+  <FP_Event_RandomDeath_Industrial_103>Was accidentally shot while cleaning a ceremonial revolver at the age of {0}.</FP_Event_RandomDeath_Industrial_103>
+  <FP_Event_RandomDeath_Industrial_104>Perished by falling into a bone crusher at a fertilizer plant at the age of {0}.</FP_Event_RandomDeath_Industrial_104>
+  <FP_Event_RandomDeath_Industrial_105>Died from an explosion of a gas burner in his room at the age of {0}.</FP_Event_RandomDeath_Industrial_105>
+  <FP_Event_RandomDeath_Industrial_106>Was crushed by an industrial fan that broke loose from its chains at the age of {0}.</FP_Event_RandomDeath_Industrial_106>
+  <FP_Event_RandomDeath_Industrial_107>Succumbed to chronic fatigue and malnutrition at a brick factory at the age of {0}.</FP_Event_RandomDeath_Industrial_107>
+  <FP_Event_RandomDeath_Industrial_108>Perished while testing a canvas parachute, jumping from a bridge, at the age of {0}.</FP_Event_RandomDeath_Industrial_108>
+  <FP_Event_RandomDeath_Industrial_109>Was killed by a falling elevator counterweight in a shaft at the age of {0}.</FP_Event_RandomDeath_Industrial_109>
+  <FP_Event_RandomDeath_Industrial_110>Succumbed to burns, falling into a campfire during a drunken shift-end celebration, at the age of {0}.</FP_Event_RandomDeath_Industrial_110>
+  <FP_Event_RandomDeath_Industrial_111>Perished in a steam engine explosion while it was running at maximum power at the age of {0}.</FP_Event_RandomDeath_Industrial_111>
+  <FP_Event_RandomDeath_Industrial_112>Was crushed by a falling stack of steel beams at a shipyard at the age of {0}.</FP_Event_RandomDeath_Industrial_112>
+
+  <!-- SPACER / ULTRA / ARCHOTECH -->
+<FP_Event_RandomDeath_Spacer_49>Perished in an antimatter explosion in a fuel injector at the age of {0}.</FP_Event_RandomDeath_Spacer_49>
+<FP_Event_RandomDeath_Spacer_50>Was ejected into space due to explosive decompression of a toilet at the age of {0}.</FP_Event_RandomDeath_Spacer_50>
+<FP_Event_RandomDeath_Spacer_51>Succumbed to massive internal bleeding during an emergency ship deceleration at the age of {0}.</FP_Event_RandomDeath_Spacer_51>
+<FP_Event_RandomDeath_Spacer_52>Was melted by an orbital laser beam that mistook him for a weed at the age of {0}.</FP_Event_RandomDeath_Spacer_52>
+<FP_Event_RandomDeath_Spacer_53>Suffocated because the oxygen in the life support system was replaced with laughing gas at the age of {0}.</FP_Event_RandomDeath_Spacer_53>
+<FP_Event_RandomDeath_Spacer_54>Was crushed by a faulty scrap metal press in an automatic factory at the age of {0}.</FP_Event_RandomDeath_Spacer_54>
+<FP_Event_RandomDeath_Spacer_55>Died from a high-voltage electric shock while trying to pet a mechanoid reaper at the age of {0}.</FP_Event_RandomDeath_Spacer_55>
+<FP_Event_RandomDeath_Spacer_56>Burned alive in the atmosphere after a drop pod entered at the wrong angle at the age of {0}.</FP_Event_RandomDeath_Spacer_56>
+<FP_Event_RandomDeath_Spacer_57>Was frozen into a brittle statue due to a coolant leak at the age of {0}.</FP_Event_RandomDeath_Spacer_57>
+<FP_Event_RandomDeath_Spacer_58>Fell victim to guidance system calibration, finding himself in the line of fire at the age of {0}.</FP_Event_RandomDeath_Spacer_58>
+<FP_Event_RandomDeath_Spacer_59>His brain was cooked due to a neural interface overload while playing virtual poker at the age of {0}.</FP_Event_RandomDeath_Spacer_59>
+<FP_Event_RandomDeath_Spacer_60>Was strangled by his own "smart" scarf, which had caught a virus, at the age of {0}.</FP_Event_RandomDeath_Spacer_60>
+<FP_Event_RandomDeath_Spacer_61>Succumbed to exhaustion, unable to exit an ultra-realistic vacation simulation at the age of {0}.</FP_Event_RandomDeath_Spacer_61>
+<FP_Event_RandomDeath_Spacer_62>Perished after his consciousness was accidentally overwritten with a cooking recipe at the age of {0}.</FP_Event_RandomDeath_Spacer_62>
+<FP_Event_RandomDeath_Spacer_63>Fell victim to a rebellion of a food processor with budding self-awareness at the age of {0}.</FP_Event_RandomDeath_Spacer_63>
+<FP_Event_RandomDeath_Spacer_64>Died of a heart attack when his cardio-implant decided to update its firmware without an internet connection at the age of {0}.</FP_Event_RandomDeath_Spacer_64>
+<FP_Event_RandomDeath_Spacer_65>Was dismantled for spare parts by a medical bot whose living tissue recognition settings had drifted at the age of {0}.</FP_Event_RandomDeath_Spacer_65>
+<FP_Event_RandomDeath_Spacer_66>Perished trying to out-argue an AI terminal, which eventually electrocuted him, at the age of {0}.</FP_Event_RandomDeath_Spacer_66>
+<FP_Event_RandomDeath_Spacer_67>Was turned into organic fertilizer by an automatic gardener at the age of {0}.</FP_Event_RandomDeath_Spacer_67>
+<FP_Event_RandomDeath_Spacer_68>Succumbed to psychosis after a neuro-chip started broadcasting advertisements directly into his brain 24/7 at the age of {0}.</FP_Event_RandomDeath_Spacer_68>
+<FP_Event_RandomDeath_Spacer_69>Turned into a shapeless mass of muscle after taking experimental steroids at the age of {0}.</FP_Event_RandomDeath_Spacer_69>
+<FP_Event_RandomDeath_Spacer_70>Was eaten by a laboratory specimen of a giant carnivorous tomato at the age of {0}.</FP_Event_RandomDeath_Spacer_70>
+<FP_Event_RandomDeath_Spacer_71>Died of an allergic reaction to his own synthetic lungs at the age of {0}.</FP_Event_RandomDeath_Spacer_71>
+<FP_Event_RandomDeath_Spacer_72>Succumbed after his own immune system started attacking his nanites at the age of {0}.</FP_Event_RandomDeath_Spacer_72>
+<FP_Event_RandomDeath_Spacer_73>Perished from a rapidly growing tumor caused by a mutagen leak in a bio-lab at the age of {0}.</FP_Event_RandomDeath_Spacer_73>
+<FP_Event_RandomDeath_Spacer_74>Fell victim to an error in the DNA sequence during organ cloning at the age of {0}.</FP_Event_RandomDeath_Spacer_74>
+<FP_Event_RandomDeath_Spacer_75>Died of exhaustion while his body tried to grow a third leg due to a medical mistake at the age of {0}.</FP_Event_RandomDeath_Spacer_75>
+<FP_Event_RandomDeath_Spacer_76>Was dissolved by the stomach acid of a giant xeno-slug at the age of {0}.</FP_Event_RandomDeath_Spacer_76>
+<FP_Event_RandomDeath_Spacer_77>Succumbed to an overdose of immortality serum, which turned out to be poison, at the age of {0}.</FP_Event_RandomDeath_Spacer_77>
+<FP_Event_RandomDeath_Spacer_78>Was infected by a parasitic fungus that replaced his nervous system with mycelium at the age of {0}.</FP_Event_RandomDeath_Spacer_78>
+<FP_Event_RandomDeath_Spacer_79>Was turned into spaghetti upon entering the area of effect of a micro-black hole at the age of {0}.</FP_Event_RandomDeath_Spacer_79>
+<FP_Event_RandomDeath_Spacer_80>Dissolved in time after passing through an unstable wormhole at the age of {0}.</FP_Event_RandomDeath_Spacer_80>
+<FP_Event_RandomDeath_Spacer_81>Was killed by a fist-sized meteorite that punctured the station's hull at the age of {0}.</FP_Event_RandomDeath_Spacer_81>
+<FP_Event_RandomDeath_Spacer_82>Burned in the rays of a pulsar during a spacewalk at the age of {0}.</FP_Event_RandomDeath_Spacer_82>
+<FP_Event_RandomDeath_Spacer_83>Perished from psychic shock upon contact with an ancient artifact at the age of {0}.</FP_Event_RandomDeath_Spacer_83>
+<FP_Event_RandomDeath_Spacer_84>Was crushed by the pressure on a gas giant during a probe accident at the age of {0}.</FP_Event_RandomDeath_Spacer_84>
+<FP_Event_RandomDeath_Spacer_85>Disappeared in an unknown direction while testing a jump drive at the age of {0}.</FP_Event_RandomDeath_Spacer_85>
+<FP_Event_RandomDeath_Spacer_86>Fell victim to a spatial warp: his skin turned inside out at the age of {0}.</FP_Event_RandomDeath_Spacer_86>
+<FP_Event_RandomDeath_Spacer_87>Was blinded and disoriented by a supernova flash, then stepped into an airlock without a spacesuit at the age of {0}.</FP_Event_RandomDeath_Spacer_87>
+<FP_Event_RandomDeath_Spacer_88>Succumbed to loneliness in a drifting escape buoy 20 years after the accident at the age of {0}.</FP_Event_RandomDeath_Spacer_88>
+<FP_Event_RandomDeath_Spacer_89>Was disintegrated by a blast from a monomolecular cutter at the age of {0}.</FP_Event_RandomDeath_Spacer_89>
+<FP_Event_RandomDeath_Spacer_90>Turned into a cloud of vapor after a direct hit from a plasma rifle at the age of {0}.</FP_Event_RandomDeath_Spacer_90>
+<FP_Event_RandomDeath_Spacer_91>Was torn apart by a gravity grenade at the age of {0}.</FP_Event_RandomDeath_Spacer_91>
+<FP_Event_RandomDeath_Spacer_92>Perished from bleeding after being wounded by a fragment of a "smart" shell at the age of {0}.</FP_Event_RandomDeath_Spacer_92>
+<FP_Event_RandomDeath_Spacer_93>Was paralyzed and slowly recycled by a mechanoid termite at the age of {0}.</FP_Event_RandomDeath_Spacer_93>
+<FP_Event_RandomDeath_Spacer_94>Fell victim to the explosion of his own shield belt after an EMP strike at the age of {0}.</FP_Event_RandomDeath_Spacer_94>
+<FP_Event_RandomDeath_Spacer_95>Was beheaded by a monomolecular wire stretched across a corridor at the age of {0}.</FP_Event_RandomDeath_Spacer_95>
+<FP_Event_RandomDeath_Spacer_96>Perished while trying to deactivate a nuclear mine with his bare hands at the age of {0}.</FP_Event_RandomDeath_Spacer_96>
+<FP_Event_RandomDeath_Spacer_97>Was shot from orbit for violating copyright on his genetic code at the age of {0}.</FP_Event_RandomDeath_Spacer_97>
+<FP_Event_RandomDeath_Spacer_98>Became a random casualty of hypersonic weapon tests in the neighboring sector at the age of {0}

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <FP_Event_RandomDeath_Neolithic_13>Fue pisoteado por una manada de muffalos enfurecidos durante una caza fallida a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_13>
+  <FP_Event_RandomDeath_Neolithic_14>Falleció por una infección en la sangre tras un rasguño insignificante que no pudo ser tratado a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_14>
+  <FP_Event_RandomDeath_Neolithic_15>Se perdió en una niebla espesa y murió congelado durante una noche larga a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_15>
+  <FP_Event_RandomDeath_Neolithic_16>Fue mordido por una cobra venenosa y murió en agonía debido a la falta de antídoto a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_16>
+  <FP_Event_RandomDeath_Neolithic_17>Se ahogó en un río turbulento intentando demostrar su valentía ante su tribu a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_17>
+  <FP_Event_RandomDeath_Neolithic_18>Quedó sepultado por piedras en una cueva que la tribu consideraba sagrada a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_18>
+  <FP_Event_RandomDeath_Neolithic_19>Falleció por parásitos intestinales tras consumir carne cruda de rata a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_19>
+  <FP_Event_RandomDeath_Neolithic_20>Murió por el impacto de un rayo, lo cual el chamán interpretó como la ira de los espíritus celestiales, a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_20>
+  <FP_Event_RandomDeath_Neolithic_21>Cayó en combate defendiendo el asentamiento de un asalto de piratas sanguinarios a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_21>
+  <FP_Event_RandomDeath_Neolithic_22>Fue desterrado de la tribu por romper un tabú y murió de hambre en el desierto a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_22>
+  <FP_Event_RandomDeath_Neolithic_23>Murió quemado vivo durante un incendio forestal iniciado por un rayo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_23>
+  <FP_Event_RandomDeath_Neolithic_24>Fue secuestrado por "pájaros de hierro" (cápsulas de transporte) y nunca más se le volvió a ver, a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_24>
+  <FP_Event_RandomDeath_Neolithic_25>Murió por un golpe de calor trabajando en los campos de maíz bajo un calor anómalo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_25>
+  <FP_Event_RandomDeath_Neolithic_26>Fue asesinado por un jabalí domesticado que se volvió loco a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_26>
+  <FP_Event_RandomDeath_Neolithic_27>Falleció de "podredumbre de pecho" (neumonía) tras dormir en suelo húmedo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_27>
+  <FP_Event_RandomDeath_Neolithic_28>Fue sacrificado para detener la erupción interminable de un volcán a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_28>
+  <FP_Event_RandomDeath_Neolithic_29>Murió en una trampa colocada por su propia tribu para una bestia grande a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_29>
+  <FP_Event_RandomDeath_Neolithic_30>Fue despedazado por una jauría de terriers devoradores de hombres hambrientos a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_30>
+  <FP_Event_RandomDeath_Neolithic_31>Falleció por pérdida de sangre después de que un mecanismo antiguo en unas ruinas le cortara una pierna a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_31>
+  <FP_Event_RandomDeath_Neolithic_32>Fue apaleado durante una disputa por un "artefacto brillante" encontrado a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_32>
+  <FP_Event_RandomDeath_Neolithic_33>Murió de agotamiento durante la Gran Travesía por los páramos helados a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_33>
+  <FP_Event_RandomDeath_Neolithic_34>Fue víctima de una parálisis del sueño que sus compañeros confundieron con una posesión demoníaca, y fue estrangulado "por su propio bien", a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_34>
+  <FP_Event_RandomDeath_Neolithic_35>Fue devorado por una araña gigante en las oscuras profundidades de una cueva a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_35>
+  <FP_Event_RandomDeath_Neolithic_36>Falleció de escorbuto durante un invierno inusualmente largo y severo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_36>
+  <FP_Event_RandomDeath_Neolithic_37>Fue asesinado por una flecha en la espalda disparada por un cazador envidioso a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_37>
+  <FP_Event_RandomDeath_Neolithic_38>Murió de susto cuando el cielo se tiñó de rojo sangre durante una tormenta psíquica a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_38>
+  <FP_Event_RandomDeath_Neolithic_39>Fue aplastado por un árbol caído mientras recolectaba leña a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_39>
+  <FP_Event_RandomDeath_Neolithic_40>Falleció de rabia tras la mordedura de un zorro callejero a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_40>
+  <FP_Event_RandomDeath_Neolithic_41>Fue pisoteado hasta la muerte durante el pánico causado por la aparición de un mecanoide a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_41>
+  <FP_Event_RandomDeath_Neolithic_42>Murió por envenenamiento con plomo al intentar usar restos de una nave antigua como vajilla a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_42>
+  <FP_Event_RandomDeath_Neolithic_43>Fue arrojado desde un acantilado como una prueba de fe a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_43>
+  <FP_Event_RandomDeath_Neolithic_44>Falleció de malaria contraída en las tierras bajas pantanosas a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_44>
+  <FP_Event_RandomDeath_Neolithic_45>Murió por una piedra accidental de una honda durante el entrenamiento de los jóvenes a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_45>
+  <FP_Event_RandomDeath_Neolithic_46>Murió de la "enfermedad de la risa" tras comer el cerebro de un enemigo caído a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_46>
+  <FP_Event_RandomDeath_Neolithic_47>Fue despedazado por una pantera salvaje durante una guardia nocturna a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_47>
+  <FP_Event_RandomDeath_Neolithic_48>Falleció por heridas internas tras caerse de un camello a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_48>
+  <FP_Event_RandomDeath_Neolithic_49>Se asfixió por el humo en una choza abarrotada durante una tormenta de nieve a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_49>
+  <FP_Event_RandomDeath_Neolithic_50>Fue asesinado en un duelo ritual por el derecho a poseer a una mujer a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_50>
+  <FP_Event_RandomDeath_Neolithic_51>Fue víctima de una emboscada de una tribu hostil junto a un pozo de agua a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_51>
+  <FP_Event_RandomDeath_Neolithic_52>Murió de sed tras perderse en las interminables dunas a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_52>
+  <FP_Event_RandomDeath_Neolithic_53>Fue destrozado durante un intento fallido de domesticar a un megaescarabajo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_53>
+  <FP_Event_RandomDeath_Neolithic_54>Falleció por un choque alérgico tras la picadura de un enjambre de abejas silvestres a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_54>
+  <FP_Event_RandomDeath_Neolithic_55>Fue ejecutado bajo acusación de brujería después de que la cosecha muriera por la sequía a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_55>
+  <FP_Event_RandomDeath_Neolithic_56>Cayó en un caldero de brea hirviendo durante los preparativos para la defensa del asentamiento a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_56>
+  <FP_Event_RandomDeath_Neolithic_57>Falleció de tétanos tras herirse con un trozo de hierro oxidado de unas ruinas a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_57>
+  <FP_Event_RandomDeath_Neolithic_58>Fue devorado vivo por insectos carnívoros mientras dormía en la jungla a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_58>
+  <FP_Event_RandomDeath_Neolithic_59>Murió intentando robar huevos del nido de un pavo enfurecido a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_59>
+  <FP_Event_RandomDeath_Neolithic_60>Fue cegado y abandonado a su suerte en el desierto según la ley de los ancestros a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_60>
+  <FP_Event_RandomDeath_Neolithic_61>Falleció de hipotermia tras entregar su ropa a un niño enfermo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_61>
+  <FP_Event_RandomDeath_Neolithic_62>Fue aplastado por un contenedor de fertilizantes que cayó del cielo a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_62>
+  <FP_Event_RandomDeath_Neolithic_63>Murió por una inflamación de apéndice que el chamán intentó tratar con hierbas a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_63>
+  <FP_Event_RandomDeath_Neolithic_64>Fue atravesado por el colmillo de un elefante durante la migración estacional de animales a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_64>
+  <FP_Event_RandomDeath_Neolithic_65>Falleció de agotamiento tras rechazar la comida en señal de protesta contra el jefe a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_65>
+  <FP_Event_RandomDeath_Neolithic_66>Fue golpeado por un meteorito que la tribu consideró una señal divina a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_66>
+  <FP_Event_RandomDeath_Neolithic_67>Se ahogó en un cenagal intentando alcanzar una flor hermosa para su amada a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_67>
+  <FP_Event_RandomDeath_Neolithic_68>Falleció de "enfermedad de piedra" (silicosis) tras años de trabajo en las minas de la tribu a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_68>
+  <FP_Event_RandomDeath_Neolithic_69>Fue destrozado por un huargo mientras protegía el redil a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_69>
+  <FP_Event_RandomDeath_Neolithic_70>Murió por quemaduras intentando salvar reliquias sagradas de un templo en llamas a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_70>
+  <FP_Event_RandomDeath_Neolithic_71>Fue envenenado por un rival envidioso en el banquete de la cosecha a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_71>
+  <FP_Event_RandomDeath_Neolithic_72>Falleció por una sobredosis de raíz curativa a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_72>
+  <FP_Event_RandomDeath_Neolithic_73>Fue devorado por caníbales de una tribu vecina durante una incursión a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_73>
+  <FP_Event_RandomDeath_Neolithic_74>Murió de un ataque al corazón al ver a un "hombre de acero" (mecanoide) por primera vez en su vida a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_74>
+  <FP_Event_RandomDeath_Neolithic_75>Fue asesinado como resultado de una venganza de sangre que duró tres generaciones a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_75>
+  <FP_Event_RandomDeath_Neolithic_76>Falleció de gangrena tras la mordedura de una ardilla rabiosa a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_76>
+  <FP_Event_RandomDeath_Neolithic_77>Fue sacrificado al Gran Gusano a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_77>
+  <FP_Event_RandomDeath_Neolithic_78>Murió por pérdida de sangre tras una circuncisión fallida en un ritual de madurez a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_78>
+  <FP_Event_RandomDeath_Neolithic_79>Fue aplastado por una roca que se desprendió de un acantilado durante un terremoto a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_79>
+  <FP_Event_RandomDeath_Neolithic_80>Falleció de disentería tras beber de un charco sucio a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_80>
+  <FP_Event_RandomDeath_Neolithic_81>Fue asesinado por un guardia por intentar desertar de la tribu a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_81>
+  <FP_Event_RandomDeath_Neolithic_82>Murió de agotamiento bailando la danza ritual de la lluvia durante tres días sin parar a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_82>
+  <FP_Event_RandomDeath_Neolithic_83>Fue apuñalado con un cuchillo de hueso durante una riña nocturna a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_83>
+  <FP_Event_RandomDeath_Neolithic_84>Falleció por la picadura de un ciempiés gigante en un búnker abandonado a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_84>
+  <FP_Event_RandomDeath_Neolithic_85>Fue pisoteado por sus propios compañeros durante una huida de pánico de un incendio a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_85>
+  <FP_Event_RandomDeath_Neolithic_86>Murió de neumonía después de que su ropa se empapara bajo una lluvia helada a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_86>
+  <FP_Event_RandomDeath_Neolithic_87>Fue destrozado por un oso mientras protegía a sus hijos a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_87>
+  <FP_Event_RandomDeath_Neolithic_88>Falleció de una infección en la sangre después de que el chamán intentara expulsar "espíritus malignos" mediante cortes en la piel a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_88>
+  <FP_Event_RandomDeath_Neolithic_89>Murió por la caída de una placa de hielo del techo de la cabaña comunal a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_89>
+  <FP_Event_RandomDeath_Neolithic_90>Murió de hambre al no poder cazar debido a una vieja lesión a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_90>
+  <FP_Event_RandomDeath_Neolithic_91>Fue absorbido por la "oscuridad viviente" (niebla) durante un eclipse a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_91>
+  <FP_Event_RandomDeath_Neolithic_92>Falleció por shock tras la amputación de un brazo sin analgésicos a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_92>
+  <FP_Event_RandomDeath_Neolithic_93>Fue atravesado por el cuerno de un rinoceronte enfurecido a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_93>
+  <FP_Event_RandomDeath_Neolithic_94>Murió por intoxicación por gases en las profundidades de una antigua mina a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_94>
+  <FP_Event_RandomDeath_Neolithic_95>Fue asesinado mientras dormía por un traidor que soñaba con ocupar su lugar a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_95>
+  <FP_Event_RandomDeath_Neolithic_96>Falleció de una hemorragia cerebral tras el impacto de un coco caído a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_96>
+  <FP_Event_RandomDeath_Neolithic_97>Fue pisoteado por una manada de megaterios durante un rito de iniciación a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_97>
+  <FP_Event_RandomDeath_Neolithic_98>Murió por una infección después de que le sacaran los dientes en una pelea a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_98>
+  <FP_Event_RandomDeath_Neolithic_99>Fue quemado como portador de una "maldición" (peste) a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_99>
+  <FP_Event_RandomDeath_Neolithic_100>Falleció por agotamiento del espíritu tras perder a todos sus seres queridos a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_100>
+  <FP_Event_RandomDeath_Neolithic_101>Fue estrangulado por una liana estranguladora en la selva profunda a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_101>
+  <FP_Event_RandomDeath_Neolithic_102>Murió de un paro cardíaco durante un baño ritual excesivamente caliente a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_102>
+  <FP_Event_RandomDeath_Neolithic_103>Fue asesinado por un compañero de tribu en un brote psicótico por la falta de una mesa para comer a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_103>
+  <FP_Event_RandomDeath_Neolithic_104>Falleció por la picadura de un escorpión del desierto a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_104>
+  <FP_Event_RandomDeath_Neolithic_105>Fue golpeado hasta la muerte con las culatas de los rifles de unos extraños a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_105>
+  <FP_Event_RandomDeath_Neolithic_106>Murió al caer en un lago helado intentando atrapar peces con las manos a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_106>
+  <FP_Event_RandomDeath_Neolithic_107>Fue sacrificado al Espíritu de las Máquinas tras encender accidentalmente una radio antigua a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_107>
+  <FP_Event_RandomDeath_Neolithic_108>Falleció por una fiebre severa transmitida por la picadura de un insecto a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_108>
+  <FP_Event_RandomDeath_Neolithic_109>Fue aplastado en una multitud durante la festividad de la Luna de Sangre a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_109>
+  <FP_Event_RandomDeath_Neolithic_110>Murió de un paro cardíaco tras encontrarse con un "fantasma de acero" (un terminador mecanoide) a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_110>
+  <FP_Event_RandomDeath_Neolithic_111>Fue asesinado por un rayo mientras sostenía un trozo de metal a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_111>
+  <FP_Event_RandomDeath_Neolithic_112>Falleció de vejez, rodeado por su tribu, algo poco común en estos tiempos crueles, a la edad de {0} años.</FP_Event_RandomDeath_Neolithic_112>
+
+  <FP_Event_RandomDeath_Medieval_11>Fue apuñalado en una pelea de taberna por una disputa sobre la calidad de la cerveza a la edad de {0} años.</FP_Event_RandomDeath_Medieval_11>
+  <FP_Event_RandomDeath_Medieval_12>Falleció por el "fuego de San Antón" tras consumir pan con cornezuelo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_12>
+  <FP_Event_RandomDeath_Medieval_13>Fue aplastado por una piedra de molino que se soltó en un molino de viento a la edad de {0} años.</FP_Event_RandomDeath_Medieval_13>
+  <FP_Event_RandomDeath_Medieval_14>Murió de agotamiento tras perderse en el bosque durante un largo invierno a la edad de {0} años.</FP_Event_RandomDeath_Medieval_14>
+  <FP_Event_RandomDeath_Medieval_15>Se asfixió en una alcantarilla al perder el equilibrio después de una fiesta a la edad de {0} años.</FP_Event_RandomDeath_Medieval_15>
+  <FP_Event_RandomDeath_Medieval_16>Cayó por el virote de un ballestero defendiendo una caravana en el camino real a la edad de {0} años.</FP_Event_RandomDeath_Medieval_16>
+  <FP_Event_RandomDeath_Medieval_17>Fue despedazado por un oso devorador de hombres enfurecido a la edad de {0} años.</FP_Event_RandomDeath_Medieval_17>
+  <FP_Event_RandomDeath_Medieval_18>Murió de una infección en la sangre tras pisar un clavo oxidado a la edad de {0} años.</FP_Event_RandomDeath_Medieval_18>
+  <FP_Event_RandomDeath_Medieval_19>Fue apedreado por los lugareños por sospecha de herejía a la edad de {0} años.</FP_Event_RandomDeath_Medieval_19>
+  <FP_Event_RandomDeath_Medieval_20>Falleció de hidropesía sin llegar a ver al médico a la edad de {0} años.</FP_Event_RandomDeath_Medieval_20>
+  <FP_Event_RandomDeath_Medieval_21>Murió bajo los cascos de un caballo desbocado en la plaza del mercado a la edad de {0} años.</FP_Event_RandomDeath_Medieval_21>
+  <FP_Event_RandomDeath_Medieval_22>Fue sacrificado por cultistas de dioses oscuros a la edad de {0} años.</FP_Event_RandomDeath_Medieval_22>
+  <FP_Event_RandomDeath_Medieval_23>Murió quemado vivo en su propia casa durante una incursión nocturna de bandidos a la edad de {0} años.</FP_Event_RandomDeath_Medieval_23>
+  <FP_Event_RandomDeath_Medieval_24>Murió por el impacto de un rayo justo mientras oraba al aire libre a la edad de {0} años.</FP_Event_RandomDeath_Medieval_24>
+  <FP_Event_RandomDeath_Medieval_25>Se asfixió en una mina debido a un derrumbe repentino a la edad de {0} años.</FP_Event_RandomDeath_Medieval_25>
+  <FP_Event_RandomDeath_Medieval_26>Falleció por una sangría excesiva prescrita por un barbero incompetente a la edad de {0} años.</FP_Event_RandomDeath_Medieval_26>
+  <FP_Event_RandomDeath_Medieval_27>Fue envenenado por carne en salazón en mal estado durante una larga marcha a la edad de {0} años.</FP_Event_RandomDeath_Medieval_27>
+  <FP_Event_RandomDeath_Medieval_28>Cayó por una flecha con punta envenenada en una emboscada forestal a la edad de {0} años.</FP_Event_RandomDeath_Medieval_28>
+  <FP_Event_RandomDeath_Medieval_29>Murió de un paro cardíaco al ver en la noche a un "fantasma" (que resultó ser una megaaraña) a la edad de {0} años.</FP_Event_RandomDeath_Medieval_29>
+  <FP_Event_RandomDeath_Medieval_30>Fue ahorcado por el robo de una sola gallina a la edad de {0} años.</FP_Event_RandomDeath_Medieval_30>
+  <FP_Event_RandomDeath_Medieval_31>Murió congelado al quedarse sin hogar tras una tormenta de nieve a la edad de {0} años.</FP_Event_RandomDeath_Medieval_31>
+  <FP_Event_RandomDeath_Medieval_32>Murió de tisis, escupiendo sangre en el frío suelo de su celda a la edad de {0} años.</FP_Event_RandomDeath_Medieval_32>
+  <FP_Event_RandomDeath_Medieval_33>Fue aplastado por el tronco de un roble al talar madera a la edad de {0} años.</FP_Event_RandomDeath_Medieval_33>
+  <FP_Event_RandomDeath_Medieval_34>Murió por la mordedura de un zorro rabioso mientras custodiaba el gallinero a la edad de {0} años.</FP_Event_RandomDeath_Medieval_34>
+  <FP_Event_RandomDeath_Medieval_35>Falleció de disentería causada por agua sucia de un arroyo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_35>
+  <FP_Event_RandomDeath_Medieval_36>Fue asesinado por una piedra accidental de un trabuquete durante la defensa de las murallas a la edad de {0} años.</FP_Event_RandomDeath_Medieval_36>
+  <FP_Event_RandomDeath_Medieval_37>Murió por una sobredosis de una poción alquímica de "inmortalidad" a la edad de {0} años.</FP_Event_RandomDeath_Medieval_37>
+  <FP_Event_RandomDeath_Medieval_38>Fue devorado por una jauría de perros callejeros en un año de hambruna a la edad de {0} años.</FP_Event_RandomDeath_Medieval_38>
+  <FP_Event_RandomDeath_Medieval_39>Murió como resultado de una caída accidental desde una muralla a la edad de {0} años.</FP_Event_RandomDeath_Medieval_39>
+  <FP_Event_RandomDeath_Medieval_40>Falleció de escorbuto durante una noche polar interminable a la edad de {0} años.</FP_Event_RandomDeath_Medieval_40>
+  <FP_Event_RandomDeath_Medieval_41>Fue descuartizado bajo acusación de traición al estado a la edad de {0} años.</FP_Event_RandomDeath_Medieval_41>
+  <FP_Event_RandomDeath_Medieval_42>Fue víctima de un espíritu del bosque (en realidad, un humanoide salvaje) a la edad de {0} años.</FP_Event_RandomDeath_Medieval_42>
+  <FP_Event_RandomDeath_Medieval_43>Murió de shock traumático después de que una trampa le arrancara un brazo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_43>
+  <FP_Event_RandomDeath_Medieval_44>Fue apuñalado por la espalda por su "mejor amigo" debido a una herencia a la edad de {0} años.</FP_Event_RandomDeath_Medieval_44>
+  <FP_Event_RandomDeath_Medieval_45>Falleció por asfixia al atragantarse con un hueso de faisán en un banquete a la edad de {0} años.</FP_Event_RandomDeath_Medieval_45>
+  <FP_Event_RandomDeath_Medieval_46>Fue pisoteado por un elefante de guerra durante una incursión exótica a la edad de {0} años.</FP_Event_RandomDeath_Medieval_46>
+  <FP_Event_RandomDeath_Medieval_47>Murió por un golpe de calor trabajando en el campo bajo un calor anómalo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_47>
+  <FP_Event_RandomDeath_Medieval_48>Murió quemado vivo en un caldero de aceite durante el asalto a una puerta a la edad de {0} años.</FP_Event_RandomDeath_Medieval_48>
+  <FP_Event_RandomDeath_Medieval_49>Falleció de una misteriosa "enfermedad del sueño" de la que nunca despertó a la edad de {0} años.</FP_Event_RandomDeath_Medieval_49>
+  <FP_Event_RandomDeath_Medieval_50>Fue apaleado hasta la muerte durante una revuelta campesina a la edad de {0} años.</FP_Event_RandomDeath_Medieval_50>
+  <FP_Event_RandomDeath_Medieval_51>Murió por la picadura de una víbora venenosa escondida en un pajar a la edad de {0} años.</FP_Event_RandomDeath_Medieval_51>
+  <FP_Event_RandomDeath_Medieval_52>Fue decapitado por un verdugo por deserción en el campo de batalla a la edad de {0} años.</FP_Event_RandomDeath_Medieval_52>
+  <FP_Event_RandomDeath_Medieval_53>Murió en la explosión de un proyectil de pólvora primitivo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_53>
+  <FP_Event_RandomDeath_Medieval_54>Falleció por una otitis purulenta que pasó al cerebro a la edad de {0} años.</FP_Event_RandomDeath_Medieval_54>
+  <FP_Event_RandomDeath_Medieval_55>Fue arrojado desde un precipicio al mar durante un ritual de purificación a la edad de {0} años.</FP_Event_RandomDeath_Medieval_55>
+  <FP_Event_RandomDeath_Medieval_56>Murió de agotamiento encerrado en una doncella de hierro a la edad de {0} años.</FP_Event_RandomDeath_Medieval_56>
+  <FP_Event_RandomDeath_Medieval_57>Fue apuñalado con una horca en un arrebato de ira por una cosecha perdida a la edad de {0} años.</FP_Event_RandomDeath_Medieval_57>
+  <FP_Event_RandomDeath_Medieval_58>Murió por el golpe de una maza pesada defendiendo las puertas del castillo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_58>
+  <FP_Event_RandomDeath_Medieval_59>Falleció de tétanos tras un corte menor con una hoz a la edad de {0} años.</FP_Event_RandomDeath_Medieval_59>
+  <FP_Event_RandomDeath_Medieval_60>Fue devorado vivo por un enjambre de insectos en cuevas oscuras a la edad de {0} años.</FP_Event_RandomDeath_Medieval_60>
+  <FP_Event_RandomDeath_Medieval_61>Murió de un paro cardíaco repentino tras tres días de insomnio a la edad de {0} años.</FP_Event_RandomDeath_Medieval_61>
+  <FP_Event_RandomDeath_Medieval_62>Fue atravesado por una alabarda durante un patrullaje nocturno a la edad de {0} años.</FP_Event_RandomDeath_Medieval_62>
+  <FP_Event_RandomDeath_Medieval_63>Falleció por pérdida de sangre tras un intento fallido de amputación de un dedo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_63>
+  <FP_Event_RandomDeath_Medieval_64>Fue pisoteado por una manada de muflones enfurecidos a la edad de {0} años.</FP_Event_RandomDeath_Medieval_64>
+  <FP_Event_RandomDeath_Medieval_65>Murió por envenenamiento con blanco de plomo, creyendo que era curativo, a la edad de {0} años.</FP_Event_RandomDeath_Medieval_65>
+  <FP_Event_RandomDeath_Medieval_66>Fue asesinado por una flecha disparada desde el bosque por un cazador desconocido a la edad de {0} años.</FP_Event_RandomDeath_Medieval_66>
+  <FP_Event_RandomDeath_Medieval_67>Falleció en agonía por una rotura de apéndice a la edad de {0} años.</FP_Event_RandomDeath_Medieval_67>
+  <FP_Event_RandomDeath_Medieval_68>Fue enterrado vivo bajo el techo derrumbado de una choza a la edad de {0} años.</FP_Event_RandomDeath_Medieval_68>
+  <FP_Event_RandomDeath_Medieval_69>Murió en el fuego intentando salvar reliquias sagradas de un templo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_69>
+  <FP_Event_RandomDeath_Medieval_70>Falleció por la mordedura de una rata pestífera a la edad de {0} años.</FP_Event_RandomDeath_Medieval_70>
+  <FP_Event_RandomDeath_Medieval_71>Fue apuñalado con una daga de misericordia tras perder una batalla a la edad de {0} años.</FP_Event_RandomDeath_Medieval_71>
+  <FP_Event_RandomDeath_Medieval_72>Murió de una infección general después de ser mordido por una ardilla a la edad de {0} años.</FP_Event_RandomDeath_Medieval_72>
+  <FP_Event_RandomDeath_Medieval_73>Fue aplastado por la estatua caída de una deidad antigua a la edad de {0} años.</FP_Event_RandomDeath_Medieval_73>
+  <FP_Event_RandomDeath_Medieval_74>Falleció de delirium tremens tras una juerga de varios días a la edad de {0} años.</FP_Event_RandomDeath_Medieval_74>
+  <FP_Event_RandomDeath_Medieval_75>Fue ahogado en un pantano durante la persecución de esclavos fugitivos a la edad de {0} años.</FP_Event_RandomDeath_Medieval_75>
+  <FP_Event_RandomDeath_Medieval_76>Murió por el golpe de un lucero del alba al no poder levantar su escudo a tiempo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_76>
+  <FP_Event_RandomDeath_Medieval_77>Fue destrozado por un huargo durante una caza en el bosque a la edad de {0} años.</FP_Event_RandomDeath_Medieval_77>
+  <FP_Event_RandomDeath_Medieval_78>Falleció por un resfriado que se convirtió en una neumonía grave a la edad de {0} años.</FP_Event_RandomDeath_Medieval_78>
+  <FP_Event_RandomDeath_Medieval_79>Fue ejecutado en la horca por un intento de deserción a la edad de {0} años.</FP_Event_RandomDeath_Medieval_79>
+  <FP_Event_RandomDeath_Medieval_80>Murió de hambre en una fortaleza sitiada tras dar su último trozo de pan a los niños a la edad de {0} años.</FP_Event_RandomDeath_Medieval_80>
+  <FP_Event_RandomDeath_Medieval_81>Fue asesinado por el golpe de una maza de cadena en una reyerta callejera a la edad de {0} años.</FP_Event_RandomDeath_Medieval_81>
+  <FP_Event_RandomDeath_Medieval_82>Falleció de sepsis después de que su herida fuera cauterizada con un hierro al rojo vivo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_82>
+  <FP_Event_RandomDeath_Medieval_83>Murió al caer en un foso profundo con estacas a la edad de {0} años.</FP_Event_RandomDeath_Medieval_83>
+  <FP_Event_RandomDeath_Medieval_84>Murió por envenenamiento con mercurio usado por un alquimista charlatán a la edad de {0} años.</FP_Event_RandomDeath_Medieval_84>
+  <FP_Event_RandomDeath_Medieval_85>Fue pisoteado por una multitud durante el pánico en un incendio a la edad de {0} años.</FP_Event_RandomDeath_Medieval_85>
+  <FP_Event_RandomDeath_Medieval_86>Falleció por la picadura de una araña saltarina que se metió en su cama a la edad de {0} años.</FP_Event_RandomDeath_Medieval_86>
+  <FP_Event_RandomDeath_Medieval_87>Fue atravesado por una lanza al intentar trepar una empalizada a la edad de {0} años.</FP_Event_RandomDeath_Medieval_87>
+  <FP_Event_RandomDeath_Medieval_88>Murió de una hemorragia cerebral tras caerse de un caballo a la edad de {0} años.</FP_Event_RandomDeath_Medieval_88>
+  <FP_Event_RandomDeath_Medieval_89>Fue apaleado hasta la muerte por guardias por romper el toque de queda a la edad de {0} años.</FP_Event_RandomDeath_Medieval_89>
+  <FP_Event_RandomDeath_Medieval_90>Falleció de melancolía y rechazo a la comida tras perder a toda su familia a la edad de {0} años.</FP_Event_RandomDeath_Medieval_90>
+  <FP_Event_RandomDeath_Medieval_91>Fue quemado en la hoguera como portador de "corrupción" tras la caída de un meteorito a la edad de {0} años.</FP_Event_RandomDeath_Medieval_91>
+  <FP_Event_RandomDeath_Medieval_92>Murió de hipotermia al caer a través del hielo intentando pescar a la edad de {0} años.</FP_Event_RandomDeath_Medieval_92>
+  <FP_Event_RandomDeath_Medieval_93>Fue decapitado en un juicio por combate a la edad de {0} años.</FP_Event_RandomDeath_Medieval_93>
+  <FP_Event_RandomDeath_Medieval_94>Falleció por el veneno de abejas silvestres intentando obtener miel en el bosque a la edad de {0} años.</FP_Event_RandomDeath_Medieval_94>
+  <FP_Event_RandomDeath_Medieval_95>Fue asesinado por el rebote de una piedra de una torre destruida a la edad de {0} años.</FP_Event_RandomDeath_Medieval_95>
+  <FP_Event_RandomDeath_Medieval_96>Murió de insuficiencia renal tras consumir hierbas dudosas a la edad de {0} años.</FP_Event_RandomDeath_Medieval_96>
+  <FP_Event_RandomDeath_Medieval_97>Fue destrozado por un jabalí salvaje durante una caza fallida a la edad de {0} años.</FP_Event_RandomDeath_Medieval_97>
+  <FP_Event_RandomDeath_Medieval_98>Falleció de una hemorragia interna tras caerse de unos andamios a la edad de {0} años.</FP_Event_RandomDeath_Medieval_98>
+  <FP_Event_RandomDeath_Medieval_99>Fue envenenado con arsénico vertido en su copa de vino a la edad de {0} años.</FP_Event_RandomDeath_Medieval_99>
+  <FP_Event_RandomDeath_Medieval_100>Murió por asfixia en el espeso humo de turberas en llamas a la edad de {0} años.</FP_Event_RandomDeath_Medieval_100>
+  <FP_Event_RandomDeath_Medieval_101>Fue apuñalado por la espalda durante un motín en la prisión a la edad de {0} años.</FP_Event_RandomDeath_Medieval_101>
+  <FP_Event_RandomDeath_Medieval_102>Falleció por complicaciones tras la mordedura de una ardilla asesina a la edad de {0} años.</FP_Event_RandomDeath_Medieval_102>
+  <FP_Event_RandomDeath_Medieval_103>Murió por el golpe de un hacha de guerra en una lucha feroz por comida a la edad de {0} años.</FP_Event_RandomDeath_Medieval_103>
+  <FP_Event_RandomDeath_Medieval_104>Murió de fiebre causada por la malaria en la jungla húmeda a la edad de {0} años.</FP_Event_RandomDeath_Medieval_104>
+  <FP_Event_RandomDeath_Medieval_105>Fue empalado por bandidaje en los caminos a la edad de {0} años.</FP_Event_RandomDeath_Medieval_105>
+  <FP_Event_RandomDeath_Medieval_106>Falleció de una coz de mula directamente en la sien a la edad de {0} años.</FP_Event_RandomDeath_Medieval_106>
+  <FP_Event_RandomDeath_Medieval_107>Fue asesinado por la explosión de una retorta alquímica buscando la piedra filosofal a la edad de {0} años.</FP_Event_RandomDeath_Medieval_107>
+  <FP_Event_RandomDeath_Medieval_108>Murió de agotamiento en las interminables arenas del desierto a la edad de {0} años.</FP_Event_RandomDeath_Medieval_108>
+  <FP_Event_RandomDeath_Medieval_109>Fue aplastado por un meteorito caído que fue considerado ira divina a la edad de {0} años.</FP_Event_RandomDeath_Medieval_109>
+  <FP_Event_RandomDeath_Medieval_110>Falleció de vejez, durmiendo pacíficamente en su cama de paja, a la edad de {0} años.</FP_Event_RandomDeath_Medieval_110>
+
+  <FP_Event_RandomDeath_Industrial_13>Se asfixió en una mina de carbón debido a una avería en el sistema de ventilación a la edad de {0} años.</FP_Event_RandomDeath_Industrial_13>
+  <FP_Event_RandomDeath_Industrial_14>Fue aplastado por una cuchara de acero fundido que se cayó a la edad de {0} años.</FP_Event_RandomDeath_Industrial_14>
+  <FP_Event_RandomDeath_Industrial_15>Falleció de "tisis blanca" por respirar polvo de algodón en una fábrica textil a la edad de {0} años.</FP_Event_RandomDeath_Industrial_15>
+  <FP_Event_RandomDeath_Industrial_16>Murió en el derrumbe de una fábrica de ladrillos inacabada a la edad de {0} años.</FP_Event_RandomDeath_Industrial_16>
+  <FP_Event_RandomDeath_Industrial_17>Fue arrastrado por la correa de transmisión de un martillo de vapor a la edad de {0} años.</FP_Event_RandomDeath_Industrial_17>
+  <FP_Event_RandomDeath_Industrial_18>Falleció de una infección en la sangre tras herirse en un torno oxidado a la edad de {0} años.</FP_Event_RandomDeath_Industrial_18>
+  <FP_Event_RandomDeath_Industrial_19>Murió durante la explosión de una cisterna de quimiofuel en una estación de servicio a la edad de {0} años.</FP_Event_RandomDeath_Industrial_19>
+  <FP_Event_RandomDeath_Industrial_20>Cayó en un tanque de tinte en una curtiduría a la edad de {0} años.</FP_Event_RandomDeath_Industrial_20>
+  <FP_Event_RandomDeath_Industrial_21>Murió quemado en un incendio en un barracón de obreros superpoblado a la edad de {0} años.</FP_Event_RandomDeath_Industrial_21>
+  <FP_Event_RandomDeath_Industrial_22>Murió electrocutado al intentar reparar una línea de alta tensión a la edad de {0} años.</FP_Event_RandomDeath_Industrial_22>
+  <FP_Event_RandomDeath_Industrial_23>Murió bajo las ruedas de un camión a vapor de varias toneladas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_23>
+  <FP_Event_RandomDeath_Industrial_24>Falleció por envenenamiento con mercurio durante la fabricación de cristales para espejos a la edad de {0} años.</FP_Event_RandomDeath_Industrial_24>
+  <FP_Event_RandomDeath_Industrial_25>Murió de agotamiento durante una huelga prolongada de siderúrgicos a la edad de {0} años.</FP_Event_RandomDeath_Industrial_25>
+  <FP_Event_RandomDeath_Industrial_26>Fue asesinado por un rebote durante la prueba de un nuevo rifle automático a la edad de {0} años.</FP_Event_RandomDeath_Industrial_26>
+  <FP_Event_RandomDeath_Industrial_27>Murió en una explosión de gas en el alcantarillado de la ciudad a la edad de {0} años.</FP_Event_RandomDeath_Industrial_27>
+  <FP_Event_RandomDeath_Industrial_28>Cayó al hueco profundo de un ascensor de un rascacielos en construcción a la edad de {0} años.</FP_Event_RandomDeath_Industrial_28>
+  <FP_Event_RandomDeath_Industrial_29>Falleció de síndrome de irradiación tras trabajar con los primeros aparatos de rayos X a la edad de {0} años.</FP_Event_RandomDeath_Industrial_29>
+  <FP_Event_RandomDeath_Industrial_30>Murió durante el choque de un dirigible lleno de hidrógeno a la edad de {0} años.</FP_Event_RandomDeath_Industrial_30>
+  <FP_Event_RandomDeath_Industrial_31>Fue pisoteado por una multitud asustada durante un motín por el pan a la edad de {0} años.</FP_Event_RandomDeath_Industrial_31>
+  <FP_Event_RandomDeath_Industrial_32>Falleció de metilismo tras consumir alcohol técnico a la edad de {0} años.</FP_Event_RandomDeath_Industrial_32>
+  <FP_Event_RandomDeath_Industrial_33>Murió en la explosión de un proyectil en el cañón de un mortero defectuoso a la edad de {0} años.</FP_Event_RandomDeath_Industrial_33>
+  <FP_Event_RandomDeath_Industrial_34>Se ahogó en un depósito de fueloil debido a la mala visibilidad a la edad de {0} años.</FP_Event_RandomDeath_Industrial_34>
+  <FP_Event_RandomDeath_Industrial_35>Fue asesinado por una torreta automática que lo confundió con un desertor a la edad de {0} años.</FP_Event_RandomDeath_Industrial_35>
+  <FP_Event_RandomDeath_Industrial_36>Falleció por envenenamiento crónico con arsénico usado en el papel tapiz a la edad de {0} años.</FP_Event_RandomDeath_Industrial_36>
+  <FP_Event_RandomDeath_Industrial_37>Murió al caer desde la estructura de acero helada de un puente a la edad de {0} años.</FP_Event_RandomDeath_Industrial_37>
+  <FP_Event_RandomDeath_Industrial_38>Se asfixió por el denso esmog urbano durante una inversión térmica a la edad de {0} años.</FP_Event_RandomDeath_Industrial_38>
+  <FP_Event_RandomDeath_Industrial_39>Fue aplastado por una prensa hidráulica debido a una válvula defectuosa a la edad de {0} años.</FP_Event_RandomDeath_Industrial_39>
+  <FP_Event_RandomDeath_Industrial_40>Murió como resultado de una explosión de polvo de carbón en un elevador a la edad de {0} años.</FP_Event_RandomDeath_Industrial_40>
+  <FP_Event_RandomDeath_Industrial_41>Falleció de sepsis contraída trabajando en una planta procesadora de carne a la edad de {0} años.</FP_Event_RandomDeath_Industrial_41>
+  <FP_Event_RandomDeath_Industrial_42>Fue tiroteado durante el robo de una diligencia de correo a la edad de {0} años.</FP_Event_RandomDeath_Industrial_42>
+  <FP_Event_RandomDeath_Industrial_43>Murió bajo un desprendimiento de mineral de hierro en una cantera a la edad de {0} años.</FP_Event_RandomDeath_Industrial_43>
+  <FP_Event_RandomDeath_Industrial_44>Murió por una descarga eléctrica al intentar alimentar una estación de radio desde un pararrayos a la edad de {0} años.</FP_Event_RandomDeath_Industrial_44>
+  <FP_Event_RandomDeath_Industrial_45>Fue emparedado accidentalmente en la base de hormigón de una presa a la edad de {0} años.</FP_Event_RandomDeath_Industrial_45>
+  <FP_Event_RandomDeath_Industrial_46>Falleció por la explosión de un esterilizador de vapor en un hospital a la edad de {0} años.</FP_Event_RandomDeath_Industrial_46>
+  <FP_Event_RandomDeath_Industrial_47>Murió en la colisión de dos barcazas de carbón en un canal a la edad de {0} años.</FP_Event_RandomDeath_Industrial_47>
+  <FP_Event_RandomDeath_Industrial_48>Fue asesinado por la caída de una sección de un poste telegráfico a la edad de {0} años.</FP_Event_RandomDeath_Industrial_48>
+  <FP_Event_RandomDeath_Industrial_49>Falleció por quemaduras al intentar apagar un almacén de medicamentos en llamas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_49>
+  <FP_Event_RandomDeath_Industrial_50>Murió durante la prueba de un prototipo temprano de exoesqueleto a la edad de {0} años.</FP_Event_RandomDeath_Industrial_50>
+  <FP_Event_RandomDeath_Industrial_51>Fue herido de muerte por un fragmento de un volante de inercia que estalló por sobrecarga a la edad de {0} años.</FP_Event_RandomDeath_Industrial_51>
+  <FP_Event_RandomDeath_Industrial_52>Murió de cólera debido a la filtración de aguas residuales en el acueducto a la edad de {0} años.</FP_Event_RandomDeath_Industrial_52>
+  <FP_Event_RandomDeath_Industrial_53>Murió en una explosión de dinamita durante la excavación de un túnel a la edad de {0} años.</FP_Event_RandomDeath_Industrial_53>
+  <FP_Event_RandomDeath_Industrial_54>Fue arrastrado por las aspas de un ventilador gigante de un taller a la edad de {0} años.</FP_Event_RandomDeath_Industrial_54>
+  <FP_Event_RandomDeath_Industrial_55>Falleció de "mandíbula de fósforo" trabajando en una fábrica de cerillas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_55>
+  <FP_Event_RandomDeath_Industrial_56>Murió durante una incursión nocturna de una banda criminal en el distrito fabril a la edad de {0} años.</FP_Event_RandomDeath_Industrial_56>
+  <FP_Event_RandomDeath_Industrial_57>Cayó en una trituradora de piedra en funcionamiento en una cantera a la edad de {0} años.</FP_Event_RandomDeath_Industrial_57>
+  <FP_Event_RandomDeath_Industrial_58>Fue asesinado por una descarga eléctrica debido a la falta de toma de tierra en una cocina eléctrica a la edad de {0} años.</FP_Event_RandomDeath_Industrial_58>
+  <FP_Event_RandomDeath_Industrial_59>Falleció por una sobredosis de anestésicos tempranos durante una operación a la edad de {0} años.</FP_Event_RandomDeath_Industrial_59>
+  <FP_Event_RandomDeath_Industrial_60>Murió por la caída de un contenedor de carga de una grúa portuaria a la edad de {0} años.</FP_Event_RandomDeath_Industrial_60>
+  <FP_Event_RandomDeath_Industrial_61>Murió de asfixia al quedar bajo una emisión de dióxido de carbono en una cervecería a la edad de {0} años.</FP_Event_RandomDeath_Industrial_61>
+  <FP_Event_RandomDeath_Industrial_62>Fue aplastado por un incensario de vapor durante una procesión religiosa a la edad de {0} años.</FP_Event_RandomDeath_Industrial_62>
+  <FP_Event_RandomDeath_Industrial_63>Murió en la explosión de una caldera de vapor en un remolcador de río a la edad de {0} años.</FP_Event_RandomDeath_Industrial_63>
+  <FP_Event_RandomDeath_Industrial_64>Falleció por intoxicación con benceno durante la producción de tintes a la edad de {0} años.</FP_Event_RandomDeath_Industrial_64>
+  <FP_Event_RandomDeath_Industrial_65>Fue asesinado en una pelea callejera con el uso de puños de acero y barras de refuerzo a la edad de {0} años.</FP_Event_RandomDeath_Industrial_65>
+  <FP_Event_RandomDeath_Industrial_66>Murió en el derrumbe de unos andamios alrededor del nuevo ayuntamiento a la edad de {0} años.</FP_Event_RandomDeath_Industrial_66>
+  <FP_Event_RandomDeath_Industrial_67>Murió por un golpe de calor trabajando como fogonero en una sala de máquinas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_67>
+  <FP_Event_RandomDeath_Industrial_68>Fue atravesado por una barra de refuerzo de acero al caer desde una altura a la edad de {0} años.</FP_Event_RandomDeath_Industrial_68>
+  <FP_Event_RandomDeath_Industrial_69>Falleció por la explosión de un cilindro de aire comprimido en un taller a la edad de {0} años.</FP_Event_RandomDeath_Industrial_69>
+  <FP_Event_RandomDeath_Industrial_70>Murió intentando robar cables de cobre bajo tensión a la edad de {0} años.</FP_Event_RandomDeath_Industrial_70>
+  <FP_Event_RandomDeath_Industrial_71>Fue sepultado por carbón al descargar un vagón de mercancías a la edad de {0} años.</FP_Event_RandomDeath_Industrial_71>
+  <FP_Event_RandomDeath_Industrial_72>Murió de una infección en la sangre tras pincharse con una aguja sucia en una fábrica de costura a la edad de {0} años.</FP_Event_RandomDeath_Industrial_72>
+  <FP_Event_RandomDeath_Industrial_73>Murió en el descarrilamiento de un tren de pasajeros debido a vías erosionadas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_73>
+  <FP_Event_RandomDeath_Industrial_74>Falleció de neumoconiosis tras trabajar 20 años en una cantera a la edad de {0} años.</FP_Event_RandomDeath_Industrial_74>
+  <FP_Event_RandomDeath_Industrial_75>Fue asesinado por la explosión de una granada casera durante combates callejeros a la edad de {0} años.</FP_Event_RandomDeath_Industrial_75>
+  <FP_Event_RandomDeath_Industrial_76>Murió al caer en un tanque de ácido sulfúrico en una planta química a la edad de {0} años.</FP_Event_RandomDeath_Industrial_76>
+  <FP_Event_RandomDeath_Industrial_77>Murió por la explosión de una lámpara con quimiofuel inestable en su dormitorio a la edad de {0} años.</FP_Event_RandomDeath_Industrial_77>
+  <FP_Event_RandomDeath_Industrial_78>Fue aplastado por un engranaje gigante que se soltó de sus soportes a la edad de {0} años.</FP_Event_RandomDeath_Industrial_78>
+  <FP_Event_RandomDeath_Industrial_79>Falleció de una hemorragia interna tras un accidente en una obra a la edad de {0} años.</FP_Event_RandomDeath_Industrial_79>
+  <FP_Event_RandomDeath_Industrial_80>Murió en un incendio en un almacén de pirotecnia a la edad de {0} años.</FP_Event_RandomDeath_Industrial_80>
+  <FP_Event_RandomDeath_Industrial_81>Fue estrangulado por su propia corbata atrapada en una imprenta a la edad de {0} años.</FP_Event_RandomDeath_Industrial_81>
+  <FP_Event_RandomDeath_Industrial_82>Murió por envenenamiento con blanco de plomo al pintar un puente a la edad de {0} años.</FP_Event_RandomDeath_Industrial_82>
+  <FP_Event_RandomDeath_Industrial_83>Murió en la detonación de polvo en un molino de harina a la edad de {0} años.</FP_Event_RandomDeath_Industrial_83>
+  <FP_Event_RandomDeath_Industrial_84>Murió atropellado por una locomotora de correo en un paso a nivel a la edad de {0} años.</FP_Event_RandomDeath_Industrial_84>
+  <FP_Event_RandomDeath_Industrial_85>Falleció de hipotermia en un taller sin calefacción durante una ventisca a la edad de {0} años.</FP_Event_RandomDeath_Industrial_85>
+  <FP_Event_RandomDeath_Industrial_86>Murió en la explosión de una torre de petróleo debido a una chispa accidental a la edad de {0} años.</FP_Event_RandomDeath_Industrial_86>
+  <FP_Event_RandomDeath_Industrial_87>Fue asesinado al caer en un tanque de mosto hirviendo en una fábrica de cerveza a la edad de {0} años.</FP_Event_RandomDeath_Industrial_87>
+  <FP_Event_RandomDeath_Industrial_88>Murió electrocutado al intentar encender una farola con las manos desnudas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_88>
+  <FP_Event_RandomDeath_Industrial_89>Murió en el derrumbe de un techo en un viejo apartamento comunitario a la edad de {0} años.</FP_Event_RandomDeath_Industrial_89>
+  <FP_Event_RandomDeath_Industrial_90>Falleció de quemaduras en las vías respiratorias por una fuga de amoníaco en un refrigerador a la edad de {0} años.</FP_Event_RandomDeath_Industrial_90>
+  <FP_Event_RandomDeath_Industrial_91>Fue aplastado por una caja fuerte caída durante el transporte de activos bancarios a la edad de {0} años.</FP_Event_RandomDeath_Industrial_91>
+  <FP_Event_RandomDeath_Industrial_92>Murió al caer desde una torre de agua helada a la edad de {0} años.</FP_Event_RandomDeath_Industrial_92>
+  <FP_Event_RandomDeath_Industrial_93>Murió de escorbuto durante un largo retraso de una caravana comercial a la edad de {0} años.</FP_Event_RandomDeath_Industrial_93>
+  <FP_Event_RandomDeath_Industrial_94>Fue asesinado por una descarga eléctrica al pisar un charco junto a un cable roto de un tranvía a la edad de {0} años.</FP_Event_RandomDeath_Industrial_94>
+  <FP_Event_RandomDeath_Industrial_95>Murió en la explosión de un barril de alcohol en un almacén clandestino a la edad de {0} años.</FP_Event_RandomDeath_Industrial_95>
+  <FP_Event_RandomDeath_Industrial_96>Falleció de tétanos tras herirse con un fragmento de armadura industrial a la edad de {0} años.</FP_Event_RandomDeath_Industrial_96>
+  <FP_Event_RandomDeath_Industrial_97>Quedó atrapado entre dos vagones de tren que se acoplaban a la edad de {0} años.</FP_Event_RandomDeath_Industrial_97>
+  <FP_Event_RandomDeath_Industrial_98>Murió durante la prueba de un prototipo de lanzallamas en un polígono a la edad de {0} años.</FP_Event_RandomDeath_Industrial_98>
+  <FP_Event_RandomDeath_Industrial_99>Murió de insuficiencia renal aguda tras trabajar con disolventes técnicos a la edad de {0} años.</FP_Event_RandomDeath_Industrial_99>
+  <FP_Event_RandomDeath_Industrial_100>Fue herido de muerte por un animal de carga enfurecido en un corral estrecho a la edad de {0} años.</FP_Event_RandomDeath_Industrial_100>
+  <FP_Event_RandomDeath_Industrial_101>Murió en el derrumbe de una chimenea de ladrillo durante una tormenta a la edad de {0} años.</FP_Event_RandomDeath_Industrial_101>
+  <FP_Event_RandomDeath_Industrial_102>Falleció de una descarga eléctrica durante una sesión temprana de electroterapia a la edad de {0} años.</FP_Event_RandomDeath_Industrial_102>
+  <FP_Event_RandomDeath_Industrial_103>Fue tiroteado accidentalmente al limpiar un revólver de gala a la edad de {0} años.</FP_Event_RandomDeath_Industrial_103>
+  <FP_Event_RandomDeath_Industrial_104>Murió al caer en una trituradora de huesos en una fábrica de fertilizantes a la edad de {0} años.</FP_Event_RandomDeath_Industrial_104>
+  <FP_Event_RandomDeath_Industrial_105>Murió por la explosión de una boquilla de gas en su habitación a la edad de {0} años.</FP_Event_RandomDeath_Industrial_105>
+  <FP_Event_RandomDeath_Industrial_106>Fue aplastado por un ventilador industrial que se soltó de sus cadenas a la edad de {0} años.</FP_Event_RandomDeath_Industrial_106>
+  <FP_Event_RandomDeath_Industrial_107>Falleció de fatiga crónica y desnutrición en una fábrica de ladrillos a la edad de {0} años.</FP_Event_RandomDeath_Industrial_107>
+  <FP_Event_RandomDeath_Industrial_108>Murió durante la prueba de un paracaídas de lona saltando desde un puente a la edad de {0} años.</FP_Event_RandomDeath_Industrial_108>
+  <FP_Event_RandomDeath_Industrial_109>Fue asesinado por un contrapeso de ascensor caído en el hueco a la edad de {0} años.</FP_Event_RandomDeath_Industrial_109>
+  <FP_Event_RandomDeath_Industrial_110>Falleció de quemaduras al caer en una hoguera durante una celebración ebria al terminar el turno a la edad de {0} años.</FP_Event_RandomDeath_Industrial_110>
+  <FP_Event_RandomDeath_Industrial_111>Murió en la explosión de un motor de vapor que funcionaba al límite de su potencia a la edad de {0} años.</FP_Event_RandomDeath_Industrial_111>
+  <FP_Event_RandomDeath_Industrial_112>Fue aplastado por una pila de vigas de acero caída en un astillero a la edad de {0} años.</FP_Event_RandomDeath_Industrial_112>
+
+  <FP_Event_RandomDeath_Spacer_49>Murió en una explosión de antimateria en un inyector de combustible a la edad de {0} años.</FP_Event_RandomDeath_Spacer_49>
+  <FP_Event_RandomDeath_Spacer_50>Fue expulsado al espacio exterior debido a una descompresión explosiva del inodoro a la edad de {0} años.</FP_Event_RandomDeath_Spacer_50>
+  <FP_Event_RandomDeath_Spacer_51>Falleció por una hemorragia interna masiva durante un frenado de emergencia de la nave a la edad de {0} años.</FP_Event_RandomDeath_Spacer_51>
+  <FP_Event_RandomDeath_Spacer_52>Fue derretido por un rayo láser orbital que lo confundió con una mala hierba a la edad de {0} años.</FP_Event_RandomDeath_Spacer_52>
+  <FP_Event_RandomDeath_Spacer_53>Se asfixió debido a la sustitución de oxígeno por gas de la risa en el sistema de soporte vital a la edad de {0} años.</FP_Event_RandomDeath_Spacer_53>
+  <FP_Event_RandomDeath_Spacer_54>Fue aplastado por una prensa defectuosa para el reciclaje de chatarra en una fábrica automática a la edad de {0} años.</FP_Event_RandomDeath_Spacer_54>
+  <FP_Event_RandomDeath_Spacer_55>Murió por una descarga eléctrica de alto voltaje al intentar acariciar a un mecanoide segador a la edad de {0} años.</FP_Event_RandomDeath_Spacer_55>
+  <FP_Event_RandomDeath_Spacer_56>Murió quemado vivo en la atmósfera al entrar la cápsula de desembarco con un ángulo incorrecto a la edad de {0} años.</FP_Event_RandomDeath_Spacer_56>
+  <FP_Event_RandomDeath_Spacer_57>Fue congelado hasta convertirse en una estatua frágil debido a una fuga de refrigerante a la edad de {0} años.</FP_Event_RandomDeath_Spacer_57>
+  <FP_Event_RandomDeath_Spacer_58>Fue víctima de la calibración de sistemas de puntería al encontrarse en la línea de fuego a la edad de {0} años.</FP_Event_RandomDeath_Spacer_58>
+  <FP_Event_RandomDeath_Spacer_59>Su cerebro se cocinó debido a una sobrecarga de la neuro-interfaz mientras jugaba póker virtual a la edad de {0} años.</FP_Event_RandomDeath_Spacer_59>
+  <FP_Event_RandomDeath_Spacer_60>Fue estrangulado por su propia bufanda "inteligente" que contrajo un virus a la edad de {0} años.</FP_Event_RandomDeath_Spacer_60>
+  <FP_Event_RandomDeath_Spacer_61>Falleció de agotamiento al no poder salir de una simulación ultrarrealista de vacaciones a la edad de {0} años.</FP_Event_RandomDeath_Spacer_61>
+  <FP_Event_RandomDeath_Spacer_62>Murió después de que su conciencia fuera accidentalmente sobrescrita por una receta de cocina a la edad de {0} años.</FP_Event_RandomDeath_Spacer_62>
+  <FP_Event_RandomDeath_Spacer_63>Fue víctima de la rebelión de un robot de cocina con inicios de autoconciencia a la edad de {0} años.</FP_Event_RandomDeath_Spacer_63>
+  <FP_Event_RandomDeath_Spacer_64>Murió de un paro cardíaco cuando su implante cardio decidió actualizar el firmware sin conexión a internet a la edad de {0} años.</FP_Event_RandomDeath_Spacer_64>
+  <FP_Event_RandomDeath_Spacer_65>Fue desmontado por piezas por un bot médico cuyos ajustes de reconocimiento de tejido vivo fallaron a la edad de {0} años.</FP_Event_RandomDeath_Spacer_65>
+  <FP_Event_RandomDeath_Spacer_66>Murió intentando ganar una discusión a una terminal de IA, que terminó dándole una descarga eléctrica, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_66>
+  <FP_Event_RandomDeath_Spacer_67>Fue convertido en fertilizante orgánico por un jardinero automático a la edad de {0} años.</FP_Event_RandomDeath_Spacer_67>
+  <FP_Event_RandomDeath_Spacer_68>Falleció de psicosis después de que un neurochip empezara a transmitir anuncios directamente a su cerebro 24/7 a la edad de {0} años.</FP_Event_RandomDeath_Spacer_68>
+  <FP_Event_RandomDeath_Spacer_69>Se convirtió en una masa informe de músculos tras tomar esteroides experimentales a la edad de {0} años.</FP_Event_RandomDeath_Spacer_69>
+  <FP_Event_RandomDeath_Spacer_70>Fue devorado por una muestra de laboratorio de un tomate carnívoro gigante a la edad de {0} años.</FP_Event_RandomDeath_Spacer_70>
+  <FP_Event_RandomDeath_Spacer_71>Murió de una reacción alérgica a sus propios pulmones sintéticos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_71>
+  <FP_Event_RandomDeath_Spacer_72>Falleció después de que su inmunidad empezara a atacar a sus propios nanitos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_72>
+  <FP_Event_RandomDeath_Spacer_73>Murió por un tumor de crecimiento rápido causado por una fuga de mutágeno en un biolaboratorio a la edad de {0} años.</FP_Event_RandomDeath_Spacer_73>
+  <FP_Event_RandomDeath_Spacer_74>Fue víctima de un error en la secuencia de ADN al clonar órganos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_74>
+  <FP_Event_RandomDeath_Spacer_75>Murió de agotamiento mientras su cuerpo intentaba desarrollar una tercera pierna por error médico a la edad de {0} años.</FP_Event_RandomDeath_Spacer_75>
+  <FP_Event_RandomDeath_Spacer_76>Fue disuelto por los jugos gástricos de una xeno-babosa gigante a la edad de {0} años.</FP_Event_RandomDeath_Spacer_76>
+  <FP_Event_RandomDeath_Spacer_77>Falleció por una sobredosis de suero de inmortalidad, que resultó ser veneno, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_77>
+  <FP_Event_RandomDeath_Spacer_78>Fue infectado por un hongo parásito que sustituyó su sistema nervioso por micelio a la edad de {0} años.</FP_Event_RandomDeath_Spacer_78>
+  <FP_Event_RandomDeath_Spacer_79>Fue convertido en espaguetis al entrar en el área de efecto de un micro-agujero negro a la edad de {0} años.</FP_Event_RandomDeath_Spacer_79>
+  <FP_Event_RandomDeath_Spacer_80>Se disolvió en el tiempo tras pasar por un agujero de gusano inestable a la edad de {0} años.</FP_Event_RandomDeath_Spacer_80>
+  <FP_Event_RandomDeath_Spacer_81>Fue asesinado por un meteorito del tamaño de un puño que perforó el casco de la estación a la edad de {0} años.</FP_Event_RandomDeath_Spacer_81>
+  <FP_Event_RandomDeath_Spacer_82>Murió quemado por los rayos de un púlsar durante una caminata espacial a la edad de {0} años.</FP_Event_RandomDeath_Spacer_82>
+  <FP_Event_RandomDeath_Spacer_83>Murió por shock psíquico al entrar en contacto con un artefacto de los antiguos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_83>
+  <FP_Event_RandomDeath_Spacer_84>Fue aplastado por la presión en un gigante gaseoso tras el accidente de una sonda a la edad de {0} años.</FP_Event_RandomDeath_Spacer_84>
+  <FP_Event_RandomDeath_Spacer_85>Desapareció en una dirección desconocida durante la prueba de un motor de salto a la edad de {0} años.</FP_Event_RandomDeath_Spacer_85>
+  <FP_Event_RandomDeath_Spacer_86>Fue víctima de un cambio espacial: su piel se volvió al revés a la edad de {0} años.</FP_Event_RandomDeath_Spacer_86>
+  <FP_Event_RandomDeath_Spacer_87>Fue cegado y desorientado por el destello de una supernova, tras lo cual salió por la esclusa sin traje a la edad de {0} años.</FP_Event_RandomDeath_Spacer_87>
+  <FP_Event_RandomDeath_Spacer_88>Falleció de soledad en una boya de salvamento a la deriva 20 años después del accidente a la edad de {0} años.</FP_Event_RandomDeath_Spacer_88>
+  <FP_Event_RandomDeath_Spacer_89>Fue desintegrado por una ráfaga de un cortador monomolecular a la edad de {0} años.</FP_Event_RandomDeath_Spacer_89>
+  <FP_Event_RandomDeath_Spacer_90>Se convirtió en una nube de vapor tras un impacto directo de un rifle de plasma a la edad de {0} años.</FP_Event_RandomDeath_Spacer_90>
+  <FP_Event_RandomDeath_Spacer_91>Fue despedazado por una granada de gravedad a la edad de {0} años.</FP_Event_RandomDeath_Spacer_91>
+  <FP_Event_RandomDeath_Spacer_92>Murió desangrado tras ser herido por un fragmento de un proyectil "inteligente" a la edad de {0} años.</FP_Event_RandomDeath_Spacer_92>
+  <FP_Event_RandomDeath_Spacer_93>Fue paralizado y procesado lentamente por un mecanoide termita a la edad de {0} años.</FP_Event_RandomDeath_Spacer_93>
+  <FP_Event_RandomDeath_Spacer_94>Fue víctima de la explosión de su propio cinturón-escudo tras un impacto de PEM a la edad de {0} años.</FP_Event_RandomDeath_Spacer_94>
+  <FP_Event_RandomDeath_Spacer_95>Fue decapitado por un hilo monomolecular tensado en un pasillo a la edad de {0} años.</FP_Event_RandomDeath_Spacer_95>
+  <FP_Event_RandomDeath_Spacer_96>Murió intentando desactivar una mina nuclear con las manos desnudas a la edad de {0} años.</FP_Event_RandomDeath_Spacer_96>
+  <FP_Event_RandomDeath_Spacer_97>Fue tiroteado desde órbita por infringir derechos de autor sobre su código genético a la edad de {0} años.</FP_Event_RandomDeath_Spacer_97>
+  <FP_Event_RandomDeath_Spacer_98>Fue víctima accidental de pruebas de armas hipersónicas en un sector vecino a la edad de {0} años.</FP_Event_RandomDeath_Spacer_98>
+  <FP_Event_RandomDeath_Spacer_99>Resbaló con aceite de robots y cayó por el hueco del ascensor a la edad de {0} años.</FP_Event_RandomDeath_Spacer_99>
+  <FP_Event_RandomDeath_Spacer_100>Fue aplastado por un contenedor de pasta nutritiva caído a la edad de {0} años.</FP_Event_RandomDeath_Spacer_100>
+  <FP_Event_RandomDeath_Spacer_101>Murió por una sobredosis de estimulantes durante un turno de 72 horas en la mina a la edad de {0} años.</FP_Event_RandomDeath_Spacer_101>
+  <FP_Event_RandomDeath_Spacer_102>Fue encerrado en un refrigerador de helados por un sistema de dieta de IA a la edad de {0} años.</FP_Event_RandomDeath_Spacer_102>
+  <FP_Event_RandomDeath_Spacer_103>Murió quemado al intentar calentar el almuerzo en el núcleo del reactor a la edad de {0} años.</FP_Event_RandomDeath_Spacer_103>
+  <FP_Event_RandomDeath_Spacer_104>Fue asesinado por una estantería caída con piezas raras para naves espaciales a la edad de {0} años.</FP_Event_RandomDeath_Spacer_104>
+  <FP_Event_RandomDeath_Spacer_105>Murió cuando su cama transformable de alta tecnología se plegó con él dentro a la edad de {0} años.</FP_Event_RandomDeath_Spacer_105>
+  <FP_Event_RandomDeath_Spacer_106>Se ahogó en una piscina de nitrógeno líquido, confundiéndolo con agua, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_106>
+  <FP_Event_RandomDeath_Spacer_107>Fue atropellado por un repartidor automático que se apresuraba a entregar una pizza a la edad de {0} años.</FP_Event_RandomDeath_Spacer_107>
+  <FP_Event_RandomDeath_Spacer_108>Falleció de susto cuando un holograma de un monstruo cobró vida debido a un error a la edad de {0} años.</FP_Event_RandomDeath_Spacer_108>
+  <FP_Event_RandomDeath_Spacer_109>Fue expulsado accidentalmente junto con la basura durante un sueño profundo a la edad de {0} años.</FP_Event_RandomDeath_Spacer_109>
+  <FP_Event_RandomDeath_Spacer_110>Falleció por "síndrome de crio-cerebro": sus pensamientos se congelaron para siempre a la edad de {0} años.</FP_Event_RandomDeath_Spacer_110>
+  <FP_Event_RandomDeath_Spacer_111>Fue descompuesto en nutrientes por el sistema de soporte vital ante la falta de recursos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_111>
+  <FP_Event_RandomDeath_Spacer_112>Murió cuando su cápsula criogénica fue utilizada como nido por fauna alienígena a la edad de {0} años.</FP_Event_RandomDeath_Spacer_112>
+  <FP_Event_RandomDeath_Spacer_113>Falleció de vejez dentro de su cápsula criogénica debido a un fallo en el temporizador de congelación a la edad de {0} años.</FP_Event_RandomDeath_Spacer_113>
+  <FP_Event_RandomDeath_Spacer_114>Fue aplastado por una lluvia de meteoritos mientras dormía en un capullo de salvamento a la edad de {0} años.</FP_Event_RandomDeath_Spacer_114>
+  <FP_Event_RandomDeath_Spacer_115>Murió en un intento de descongelación manual con un secador de pelo a la edad de {0} años.</FP_Event_RandomDeath_Spacer_115>
+  <FP_Event_RandomDeath_Spacer_116>Fue víctima de canibalismo por parte de otros supervivientes tras el accidente a la edad de {0} años.</FP_Event_RandomDeath_Spacer_116>
+  <FP_Event_RandomDeath_Spacer_117>Murió por el shock al despertar y enterarse de que durmió 1000 años a la edad de {0} años.</FP_Event_RandomDeath_Spacer_117>
+  <FP_Event_RandomDeath_Spacer_118>Fue asesinado por una descarga eléctrica al intentar abrir la cápsula de otro a la edad de {0} años.</FP_Event_RandomDeath_Spacer_118>
+  <FP_Event_RandomDeath_Spacer_119>Fue convertido en un lingote de oro debido a un fallo de nanitos alquimistas a la edad de {0} años.</FP_Event_RandomDeath_Spacer_119>
+  <FP_Event_RandomDeath_Spacer_120>Falleció después de que su ropa nano decidiera digerirlo a la edad de {0} años.</FP_Event_RandomDeath_Spacer_120>
+  <FP_Event_RandomDeath_Spacer_121>Fue pulverizado hasta los átomos por un desintegrador de basura portátil a la edad de {0} años.</FP_Event_RandomDeath_Spacer_121>
+  <FP_Event_RandomDeath_Spacer_122>Murió cuando su cuerpo se convirtió en conductor para un flujo de partículas cargadas a la edad de {0} años.</FP_Event_RandomDeath_Spacer_122>
+  <FP_Event_RandomDeath_Spacer_123>Fue absorbido por la "plaga gris" durante un experimento fallido a la edad de {0} años.</FP_Event_RandomDeath_Spacer_123>
+  <FP_Event_RandomDeath_Spacer_124>Murió por una rotura de pulmones al inhalar una nube de micro-bots de construcción a la edad de {0} años.</FP_Event_RandomDeath_Spacer_124>
+  <FP_Event_RandomDeath_Spacer_125>Fue convertido en una estructura cristalina debido a la exposición a radiación alienígena a la edad de {0} años.</FP_Event_RandomDeath_Spacer_125>
+  <FP_Event_RandomDeath_Spacer_126>Murió al intentar beber "luz líquida" en el laboratorio a la edad de {0} años.</FP_Event_RandomDeath_Spacer_126>
+  <FP_Event_RandomDeath_Spacer_127>Fue aplastado por la masa de una torre de nanosemilla que creció instantáneamente a la edad de {0} años.</FP_Event_RandomDeath_Spacer_127>
+  <FP_Event_RandomDeath_Spacer_128>Se disolvió en el espacio al intentar atravesar una pared de densidad molecular a la edad de {0} años.</FP_Event_RandomDeath_Spacer_128>
+  <FP_Event_RandomDeath_Spacer_129>Murió por envidia al cuerpo biomodificado de su vecino (su corazón no aguantó) a la edad de {0} años.</FP_Event_RandomDeath_Spacer_129>
+  <FP_Event_RandomDeath_Spacer_130>Murió al intentar hacerse un selfie con una supernova explotando de fondo a la edad de {0} años.</FP_Event_RandomDeath_Spacer_130>
+  <FP_Event_RandomDeath_Spacer_131>Falleció de aburrimiento durante el vuelo a Alfa Centauri, que duró 80 años, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_131>
+  <FP_Event_RandomDeath_Spacer_132>Fue aplastado por un panel publicitario caído de la compañía "Glitterworld-Corp" a la edad de {0} años.</FP_Event_RandomDeath_Spacer_132>
+  <FP_Event_RandomDeath_Spacer_133>Murió al chocar con un campo de fuerza invisible que olvidaron apagar a la edad de {0} años.</FP_Event_RandomDeath_Spacer_133>
+  <FP_Event_RandomDeath_Spacer_134>Fue devorado por termitas espaciales que se especializaban en trajes espaciales a la edad de {0} años.</FP_Event_RandomDeath_Spacer_134>
+  <FP_Event_RandomDeath_Spacer_135>Murió por deshidratación al quedar atrapado en un mundo virtual sin botón de salida a la edad de {0} años.</FP_Event_RandomDeath_Spacer_135>
+  <FP_Event_RandomDeath_Spacer_136>Fue asesinado por el ataque sónico de un cantante de ópera con un implante amplificador a la edad de {0} años.</FP_Event_RandomDeath_Spacer_136>
+  <FP_Event_RandomDeath_Spacer_137>Falleció por el impacto de un micro-meteorito directamente en el ojo mientras observaba las estrellas a la edad de {0} años.</FP_Event_RandomDeath_Spacer_137>
+  <FP_Event_RandomDeath_Spacer_138>Murió como resultado de una disputa con una IA de aduanas, que lo declaró contrabando, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_138>
+  <FP_Event_RandomDeath_Spacer_139>Fue aplastado por su propio orgullo y por un monumento de oro que cayó sobre él a la edad de {0} años.</FP_Event_RandomDeath_Spacer_139>
+  <FP_Event_RandomDeath_Spacer_140>Murió de un cese de todas las funciones corporales al intentar descargar internet en su cerebro a la edad de {0} años.</FP_Event_RandomDeath_Spacer_140>
+  <FP_Event_RandomDeath_Spacer_141>Fue asesinado por el rebote de su propia bala de plasma en un suelo de espejos a la edad de {0} años.</FP_Event_RandomDeath_Spacer_141>
+  <FP_Event_RandomDeath_Spacer_142>Falleció de un paro cardíaco al ver la factura de la reparación de su nave espacial a la edad de {0} años.</FP_Event_RandomDeath_Spacer_142>
+  <FP_Event_RandomDeath_Spacer_143>Fue deportado accidentalmente a otra dimensión a través del conducto de basura a la edad de {0} años.</FP_Event_RandomDeath_Spacer_143>
+  <FP_Event_RandomDeath_Spacer_144>Murió al intentar usar el motor de hiperpropulsión como calefactor a la edad de {0} años.</FP_Event_RandomDeath_Spacer_144>
+  <FP_Event_RandomDeath_Spacer_145>Fue devorado por una jauría de robo-perros asilvestrados en los niveles inferiores de una megalópolis a la edad de {0} años.</FP_Event_RandomDeath_Spacer_145>
+  <FP_Event_RandomDeath_Spacer_146>Murió desangrado tras un corte con una hoja de papel monomolecular a la edad de {0} años.</FP_Event_RandomDeath_Spacer_146>
+  <FP_Event_RandomDeath_Spacer_147>Fue convertido en vapor después de sentarse sobre el botón de autodestrucción de la estación a la edad de {0} años.</FP_Event_RandomDeath_Spacer_147>
+  <FP_Event_RandomDeath_Spacer_148>Falleció al comprender la infinitud del universo, provocado por un neuroestimulador, a la edad de {0} años.</FP_Event_RandomDeath_Spacer_148>
+
+  <FP_Event_RandomDeath_10>Murió bajo el derrumbe de un techo debido a una pared destruida a la edad de {0} años.</FP_Event_RandomDeath_10>
+  <FP_Event_RandomDeath_11>Fue víctima de la explosión de una torreta fuera de control a la edad de {0} años.</FP_Event_RandomDeath_11>
+
+</LanguageData>

@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+  <!-- 按科技水平區分的隨機死亡原因 -->
+
+  <!-- 新石器時代（部落） -->
+<FP_Event_RandomDeath_Neolithic_13>在失敗的狩獵中被一群憤怒的穆法羅踩死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_13>
+  <FP_Event_RandomDeath_Neolithic_14>因無法醫治的輕微劃傷而死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_14>
+  <FP_Event_RandomDeath_Neolithic_15>在濃霧中迷路，在漫長的黑夜中凍死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_15>
+  <FP_Event_RandomDeath_Neolithic_16>被毒眼鏡蛇咬傷，因缺乏解毒劑在痛苦中死去，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_16>
+  <FP_Event_RandomDeath_Neolithic_17>試圖向族人證明自己的勇氣時，淹死在湍急的河流中，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_17>
+  <FP_Event_RandomDeath_Neolithic_18>在部落視為神聖的洞穴中被落石壓死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_18>
+  <FP_Event_RandomDeath_Neolithic_19>因食用生鼠肉而感染腸道寄生蟲死亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_19>
+  <FP_Event_RandomDeath_Neolithic_20>被閃電擊中死亡，薩滿將其解讀為天神的憤怒，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_20>
+  <FP_Event_RandomDeath_Neolithic_21>在保衛定居點免受嗜血海盜襲擊的戰鬥中陣亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_21>
+  <FP_Event_RandomDeath_Neolithic_22>因違反禁忌被逐出部落，在沙漠中餓死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_22>
+  <FP_Event_RandomDeath_Neolithic_23>在閃電引發的森林大火中被活活燒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_23>
+  <FP_Event_RandomDeath_Neolithic_24>被「鐵鳥」（運輸艙）綁架，從此人間蒸發，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_24>
+  <FP_Event_RandomDeath_Neolithic_25>在異常炎熱的天氣裡於玉米田工作時中暑而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_25>
+  <FP_Event_RandomDeath_Neolithic_26>被一頭狂暴的家豬殺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_26>
+  <FP_Event_RandomDeath_Neolithic_27>在潮濕的地面上睡覺後死於「胸中腐爛」（肺炎），享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_27>
+  <FP_Event_RandomDeath_Neolithic_28>為了阻止無休止的火山爆發而被獻祭，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_28>
+  <FP_Event_RandomDeath_Neolithic_29>死於自己部落為大型野獸設下的陷阱，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_29>
+  <FP_Event_RandomDeath_Neolithic_30>被一群飢餓的食人㹴犬撕碎，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_30>
+  <FP_Event_RandomDeath_Neolithic_31>因遺跡中的遠古機關切斷了他的腿，失血過多而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_31>
+  <FP_Event_RandomDeath_Neolithic_32>因爭奪發現的「閃亮神器」發生爭執，被棍棒打死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_32>
+  <FP_Event_RandomDeath_Neolithic_33>在穿越冰原的大遷徙中精疲力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_33>
+  <FP_Event_RandomDeath_Neolithic_34>成為睡眠癱瘓症的受害者，族人誤以為是惡魔附身，為「顧全大局」將其勒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_34>
+  <FP_Event_RandomDeath_Neolithic_35>在黑暗的洞穴深處被巨型蜘蛛吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_35>
+  <FP_Event_RandomDeath_Neolithic_36>在異常漫長而嚴酷的冬季死於壞血病，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_36>
+  <FP_Event_RandomDeath_Neolithic_37>被嫉妒的獵人從背後放箭殺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_37>
+  <FP_Event_RandomDeath_Neolithic_38>在心靈風暴期間，天空變成血紅色，他因受驚嚇而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_38>
+  <FP_Event_RandomDeath_Neolithic_39>在砍柴時被倒下的樹壓死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_39>
+  <FP_Event_RandomDeath_Neolithic_40>被流浪的狐狸咬傷後死於狂犬病，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_40>
+  <FP_Event_RandomDeath_Neolithic_41>因機械族出現引發恐慌，在踩踏中被踩死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_41>
+  <FP_Event_RandomDeath_Neolithic_42>試圖將遠古飛船碎片用作餐具時鉛中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_42>
+  <FP_Event_RandomDeath_Neolithic_43>作為信仰考驗被推下懸崖，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_43>
+  <FP_Event_RandomDeath_Neolithic_44>在沼澤低地感染瘧疾而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_44>
+  <FP_Event_RandomDeath_Neolithic_45>在年輕人訓練中被投石索的流石擊中而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_45>
+  <FP_Event_RandomDeath_Neolithic_46>食用了陣亡敵人的大腦後死於「笑病」，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_46>
+  <FP_Event_RandomDeath_Neolithic_47>在守夜時被一隻野生黑豹撕碎，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_47>
+  <FP_Event_RandomDeath_Neolithic_48>從駱駝上摔下後因內傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_48>
+  <FP_Event_RandomDeath_Neolithic_49>在暴風雪期間於過度擁擠的半地下室中吸入濃煙窒息而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_49>
+  <FP_Event_RandomDeath_Neolithic_50>在爭奪女性的儀式性戰鬥中被殺，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_50>
+  <FP_Event_RandomDeath_Neolithic_51>在水坑邊遭敵對部落伏擊身亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_51>
+  <FP_Event_RandomDeath_Neolithic_52>在無盡的沙丘中迷路，因口渴而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_52>
+  <FP_Event_RandomDeath_Neolithic_53>在試圖馴服巨型甲蟲失敗時被撕成重傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_53>
+  <FP_Event_RandomDeath_Neolithic_54>被一群野生蜜蜂蜇傷後死於過敏性休克，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_54>
+  <FP_Event_RandomDeath_Neolithic_55>因乾旱導致莊稼歉收，被以巫術罪名處決，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_55>
+  <FP_Event_RandomDeath_Neolithic_56>在準備定居點防禦時掉入沸騰的樹脂桶中，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_56>
+  <FP_Event_RandomDeath_Neolithic_57>被遺跡中生鏽的鐵片劃傷後死於破傷風，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_57>
+  <FP_Event_RandomDeath_Neolithic_58>在叢林中睡覺時被食肉昆蟲活活吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_58>
+  <FP_Event_RandomDeath_Neolithic_59>試圖從憤怒的火雞巢中偷蛋時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_59>
+  <FP_Event_RandomDeath_Neolithic_60>根據祖先律法被弄瞎雙眼並遺棄在沙漠中等死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_60>
+  <FP_Event_RandomDeath_Neolithic_61>將自己的衣服給了生病的孩子，因體溫過低而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_61>
+  <FP_Event_RandomDeath_Neolithic_62>被從天而降的肥料容器砸死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_62>
+  <FP_Event_RandomDeath_Neolithic_63>死於闌尾炎，薩滿試圖用草藥治療，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_63>
+  <FP_Event_RandomDeath_Neolithic_64>在季節性動物遷徙中被大象的象牙刺穿，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_64>
+  <FP_Event_RandomDeath_Neolithic_65>為抗議酋長而拒絕進食，最終衰竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_65>
+  <FP_Event_RandomDeath_Neolithic_66>被隕石砸死，部落將其視為神聖的徵兆，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_66>
+  <FP_Event_RandomDeath_Neolithic_67>試圖為愛人摘取美麗的花朵時陷入沼澤溺亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_67>
+  <FP_Event_RandomDeath_Neolithic_68>在部落礦山工作多年後死於「石頭病」（矽肺病），享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_68>
+  <FP_Event_RandomDeath_Neolithic_69>在保衛羊圈時被座狼咬死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_69>
+  <FP_Event_RandomDeath_Neolithic_70>試圖從燃燒的神廟中拯救聖物時被燒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_70>
+  <FP_Event_RandomDeath_Neolithic_71>在豐收節宴會上被嫉妒的對手毒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_71>
+  <FP_Event_RandomDeath_Neolithic_72>服用過量藥用根莖而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_72>
+  <FP_Event_RandomDeath_Neolithic_73>在襲擊中被相鄰部落的食人者吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_73>
+  <FP_Event_RandomDeath_Neolithic_74>有生以來第一次看到「鋼鐵人」（機械族）時心臟病發作而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_74>
+  <FP_Event_RandomDeath_Neolithic_75>在持續了三代的血仇中被殺，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_75>
+  <FP_Event_RandomDeath_Neolithic_76>被狂犬松鼠咬傷後死於壞疽，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_76>
+  <FP_Event_RandomDeath_Neolithic_77>被獻祭給巨蟲，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_77>
+  <FP_Event_RandomDeath_Neolithic_78>在成年禮中因割禮失敗失血過多而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_78>
+  <FP_Event_RandomDeath_Neolithic_79>在地震中被從懸崖上滾落的巨石砸死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_79>
+  <FP_Event_RandomDeath_Neolithic_80>喝了髒水坑里的水後死於痢疾，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_80>
+  <FP_Event_RandomDeath_Neolithic_81>因試圖逃離部落而被守衛殺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_81>
+  <FP_Event_RandomDeath_Neolithic_82>連續三天不停跳祈雨舞，力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_82>
+  <FP_Event_RandomDeath_Neolithic_83>在夜間爭吵中被骨刀刺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_83>
+  <FP_Event_RandomDeath_Neolithic_84>在廢棄掩體中被巨型蜈蚣咬死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_84>
+  <FP_Event_RandomDeath_Neolithic_85>在火災引發的恐慌奔逃中被自己的族人踩死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_85>
+  <FP_Event_RandomDeath_Neolithic_86>衣服被冰冷的雨水浸濕後死於肺炎，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_86>
+  <FP_Event_RandomDeath_Neolithic_87>在保護孩子時被熊咬死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_87>
+  <FP_Event_RandomDeath_Neolithic_88>薩滿試圖通過皮膚切口驅除「邪靈」後，他死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_88>
+  <FP_Event_RandomDeath_Neolithic_89>被公共小屋屋頂掉落的冰殼砸死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_89>
+  <FP_Event_RandomDeath_Neolithic_90>因舊傷無法狩獵，最終餓死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_90>
+  <FP_Event_RandomDeath_Neolithic_91>在日食期間被「活生生的黑暗」（迷霧）吞噬，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_91>
+  <FP_Event_RandomDeath_Neolithic_92>在無麻醉情況下截肢後死於休克，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_92>
+  <FP_Event_RandomDeath_Neolithic_93>被一頭憤怒犀牛的角刺穿，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_93>
+  <FP_Event_RandomDeath_Neolithic_94>在舊礦井深處瓦斯中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_94>
+  <FP_Event_RandomDeath_Neolithic_95>在睡夢中被夢想取代他位置的叛徒殺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_95>
+  <FP_Event_RandomDeath_Neolithic_96>被掉落的椰子砸中後死於腦溢血，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_96>
+  <FP_Event_RandomDeath_Neolithic_97>在入會儀式中被一群大地懶踩死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_97>
+  <FP_Event_RandomDeath_Neolithic_98>在鬥毆中被敲掉牙齒後死於感染，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_98>
+  <FP_Event_RandomDeath_Neolithic_99>作為「詛咒」（瘟疫）的攜帶者被燒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_99>
+  <FP_Event_RandomDeath_Neolithic_100>失去所有親人後精神衰竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_100>
+  <FP_Event_RandomDeath_Neolithic_101>在叢林深處被絞殺藤勒死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_101>
+  <FP_Event_RandomDeath_Neolithic_102>在過於熾熱的儀式性浴池中因心臟驟停而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_102>
+  <FP_Event_RandomDeath_Neolithic_103>因沒有餐桌用餐而精神失常的族人發起攻擊時被殺死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_103>
+  <FP_Event_RandomDeath_Neolithic_104>被沙漠蠍子蜇傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_104>
+  <FP_Event_RandomDeath_Neolithic_105>被外來者用槍托毆打致死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_105>
+  <FP_Event_RandomDeath_Neolithic_106>試圖徒手抓魚時掉入冰湖溺亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_106>
+  <FP_Event_RandomDeath_Neolithic_107>意外打開遠古收音機後被獻祭給機械之靈，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_107>
+  <FP_Event_RandomDeath_Neolithic_108>因蟲媒傳播的嚴重發燒而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_108>
+  <FP_Event_RandomDeath_Neolithic_109>在血月節期間被擁擠的人群踩死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_109>
+  <FP_Event_RandomDeath_Neolithic_110>遇到「鋼鐵幽靈」（終結者機械族）後心碎而死，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_110>
+  <FP_Event_RandomDeath_Neolithic_111>手持金屬物體時被閃電擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_111>
+  <FP_Event_RandomDeath_Neolithic_112>在族人的簇擁下安詳地老死，在這些艱苦的歲月裡實屬罕見，享年 {0} 歲。</FP_Event_RandomDeath_Neolithic_112>
+
+  <!-- 中世紀 -->
+<FP_Event_RandomDeath_Medieval_11>在酒館因艾爾啤酒品質爭執引發的醉酒鬥毆中被刺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_11>
+  <FP_Event_RandomDeath_Medieval_12>食用了被麥角菌污染的麵包後死於「聖安東尼之火」，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_12>
+  <FP_Event_RandomDeath_Medieval_13>在風車磨坊被掉落的磨盤壓死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_13>
+  <FP_Event_RandomDeath_Medieval_14>在漫長的冬季於森林中迷路，精疲力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_14>
+  <FP_Event_RandomDeath_Medieval_15>宴會後失去平衡，在污水溝中溺亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_15>
+  <FP_Event_RandomDeath_Medieval_16>在公路上護送車隊時被弩手射出的弩箭擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_16>
+  <FP_Event_RandomDeath_Medieval_17>被一頭憤怒的食人熊撕成碎片，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_17>
+  <FP_Event_RandomDeath_Medieval_18>踩到生鏽的釘子後死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_18>
+  <FP_Event_RandomDeath_Medieval_19>因涉嫌異端被當地人用石頭砸死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_19>
+  <FP_Event_RandomDeath_Medieval_20>未能等到醫生到來，死於水腫，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_20>
+  <FP_Event_RandomDeath_Medieval_21>在市場廣場被一匹受驚的馬踩死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_21>
+  <FP_Event_RandomDeath_Medieval_22>被黑暗之神的邪教徒獻祭，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_22>
+  <FP_Event_RandomDeath_Medieval_23>在強盜夜襲期間於自家房屋中被活活燒死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_23>
+  <FP_Event_RandomDeath_Medieval_24>在戶外祈禱時被閃電擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_24>
+  <FP_Event_RandomDeath_Medieval_25>因礦井突然塌方而在礦井中窒息，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_25>
+  <FP_Event_RandomDeath_Medieval_26>因無能的理髮師實施了過度的放血療法而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_26>
+  <FP_Event_RandomDeath_Medieval_27>在長途行軍中食用變質的鹹牛肉而中毒，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_27>
+  <FP_Event_RandomDeath_Medieval_28>在森林伏擊中被毒箭射中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_28>
+  <FP_Event_RandomDeath_Medieval_29>夜間看到「鬼魂」（其實是一隻巨型蜘蛛）後心碎而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_29>
+  <FP_Event_RandomDeath_Medieval_30>因偷竊一隻雞而被絞死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_30>
+  <FP_Event_RandomDeath_Medieval_31>暴風雪後無家可歸，凍死街頭，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_31>
+  <FP_Event_RandomDeath_Medieval_32>死於癆病，在冰冷的小屋地板上咳血而亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_32>
+  <FP_Event_RandomDeath_Medieval_33>在砍伐樹木時被倒下的橡樹幹壓死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_33>
+  <FP_Event_RandomDeath_Medieval_34>在守衛雞舍時被狂犬狐狸咬傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_34>
+  <FP_Event_RandomDeath_Medieval_35>因飲用溪中髒水導致痢疾而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_35>
+  <FP_Event_RandomDeath_Medieval_36>在防禦城牆時被投石機射出的流石擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_36>
+  <FP_Event_RandomDeath_Medieval_37>服用過量煉金術「長生不老藥」而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_37>
+  <FP_Event_RandomDeath_Medieval_38>在饑荒年頭被一群流浪狗咬死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_38>
+  <FP_Event_RandomDeath_Medieval_39>從堡壘城牆上不幸墜落身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_39>
+  <FP_Event_RandomDeath_Medieval_40>在無盡的極夜中死於壞血病，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_40>
+  <FP_Event_RandomDeath_Medieval_41>因叛國罪被車裂處死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_41>
+  <FP_Event_RandomDeath_Medieval_42>成為森林之靈（其實是一隻野性人形生物）的受害者，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_42>
+  <FP_Event_RandomDeath_Medieval_43>手臂被陷阱扯斷後因疼痛休克而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_43>
+  <FP_Event_RandomDeath_Medieval_44>因遺產問題被「最好的朋友」從背後捅了一刀，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_44>
+  <FP_Event_RandomDeath_Medieval_45>在宴會上被野雞骨頭噎住窒息而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_45>
+  <FP_Event_RandomDeath_Medieval_46>在一次異國風情的襲擊中被戰象踩死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_46>
+  <FP_Event_RandomDeath_Medieval_47>在異常炎熱的天氣裡於田間工作時中暑而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_47>
+  <FP_Event_RandomDeath_Medieval_48>在攻門戰中被沸騰的油鍋活活燙死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_48>
+  <FP_Event_RandomDeath_Medieval_49>死於神秘的「昏睡病」，從此再未醒來，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_49>
+  <FP_Event_RandomDeath_Medieval_50>在農民起義中被棍棒打死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_50>
+  <FP_Event_RandomDeath_Medieval_51>被藏在乾草堆裡的毒蛇咬傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_51>
+  <FP_Event_RandomDeath_Medieval_52>因逃離戰場被劊子手斬首，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_52>
+  <FP_Event_RandomDeath_Medieval_53>在簡易火藥炸藥的爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_53>
+  <FP_Event_RandomDeath_Medieval_54>死於化膿性中耳炎，感染擴散至大腦，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_54>
+  <FP_Event_RandomDeath_Medieval_55>在儀式性淨化過程中被從懸崖上扔進海裡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_55>
+  <FP_Event_RandomDeath_Medieval_56>被鎖在鐵處女內，因力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_56>
+  <FP_Event_RandomDeath_Medieval_57>因莊稼歉收而狂怒，被乾草叉刺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_57>
+  <FP_Event_RandomDeath_Medieval_58>在保衛城堡大門時被重型釘頭錘擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_58>
+  <FP_Event_RandomDeath_Medieval_59>因鐮刀輕微割傷而死於破傷風，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_59>
+  <FP_Event_RandomDeath_Medieval_60>在黑暗的洞穴中被一大群昆蟲活活吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_60>
+  <FP_Event_RandomDeath_Medieval_61>連續三天失眠後心臟驟停而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_61>
+  <FP_Event_RandomDeath_Medieval_62>在夜間巡邏時被戟刺穿，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_62>
+  <FP_Event_RandomDeath_Medieval_63>在失敗的截肢手術中失血過多而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_63>
+  <FP_Event_RandomDeath_Medieval_64>被一群憤怒的歐洲盤羊踩死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_64>
+  <FP_Event_RandomDeath_Medieval_65>誤將鉛白當作藥物服用，中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_65>
+  <FP_Event_RandomDeath_Medieval_66>被樹林裡不知名獵人射出的箭殺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_66>
+  <FP_Event_RandomDeath_Medieval_67>因闌尾破裂在痛苦中死去，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_67>
+  <FP_Event_RandomDeath_Medieval_68>被倒塌的茅草屋頂活埋，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_68>
+  <FP_Event_RandomDeath_Medieval_69>試圖從神廟中拯救聖物時在大火中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_69>
+  <FP_Event_RandomDeath_Medieval_70>被鼠疫老鼠咬傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_70>
+  <FP_Event_RandomDeath_Medieval_71>在戰敗後被慈悲匕首刺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_71>
+  <FP_Event_RandomDeath_Medieval_72>被松鼠咬傷後因全身性感染而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_72>
+  <FP_Event_RandomDeath_Medieval_73>被掉落的遠古神像砸死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_73>
+  <FP_Event_RandomDeath_Medieval_74>連續數日酗酒後死於震顫性譫妄，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_74>
+  <FP_Event_RandomDeath_Medieval_75>在追捕逃跑的奴隸時溺亡於沼澤，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_75>
+  <FP_Event_RandomDeath_Medieval_76>未能及時舉起盾牌，被釘頭錘擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_76>
+  <FP_Event_RandomDeath_Medieval_77>在森林中狩獵時被座狼咬死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_77>
+  <FP_Event_RandomDeath_Medieval_78>因感冒惡化為嚴重肺炎而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_78>
+  <FP_Event_RandomDeath_Medieval_79>因試圖逃兵而被處以絞刑，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_79>
+  <FP_Event_RandomDeath_Medieval_80>在被圍攻的堡壘中，將最後一塊麵包給了孩子，自己餓死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_80>
+  <FP_Event_RandomDeath_Medieval_81>在街頭鬥毆中被連枷擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_81>
+  <FP_Event_RandomDeath_Medieval_82>傷口被烙鐵燒灼後死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_82>
+  <FP_Event_RandomDeath_Medieval_83>掉入佈滿尖樁的深坑中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_83>
+  <FP_Event_RandomDeath_Medieval_84>因江湖騙子煉金術士使用的水銀中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_84>
+  <FP_Event_RandomDeath_Medieval_85>在火災引發的恐慌中被踩踏而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_85>
+  <FP_Event_RandomDeath_Medieval_86>被爬進床鋪的跳蛛咬傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_86>
+  <FP_Event_RandomDeath_Medieval_87>試圖翻越柵欄時被長矛刺穿，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_87>
+  <FP_Event_RandomDeath_Medieval_88>從馬上摔下後死於腦溢血，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_88>
+  <FP_Event_RandomDeath_Medieval_89>因違反宵禁被守衛用棍棒打死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_89>
+  <FP_Event_RandomDeath_Medieval_90>失去所有家人後因憂鬱和拒絕進食而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_90>
+  <FP_Event_RandomDeath_Medieval_91>隕石墜落後，作為「污染」攜帶者被燒死在火刑柱上，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_91>
+  <FP_Event_RandomDeath_Medieval_92>試圖捕魚時掉入冰層，因體溫過低而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_92>
+  <FP_Event_RandomDeath_Medieval_93>在比武審判中被斬首，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_93>
+  <FP_Event_RandomDeath_Medieval_94>試圖在森林中獲取蜂蜜時被野蜂蜇傷中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_94>
+  <FP_Event_RandomDeath_Medieval_95>被摧毀塔樓彈出的石頭擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_95>
+  <FP_Event_RandomDeath_Medieval_96>服用可疑草藥後死於腎衰竭，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_96>
+  <FP_Event_RandomDeath_Medieval_97>在失敗的狩獵中被野豬咬死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_97>
+  <FP_Event_RandomDeath_Medieval_98>從建築腳手架上摔下後死於內出血，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_98>
+  <FP_Event_RandomDeath_Medieval_99>被偷偷放入酒杯中的砒霜毒死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_99>
+  <FP_Event_RandomDeath_Medieval_100>在燃燒的泥炭沼產生的濃煙中窒息而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_100>
+  <FP_Event_RandomDeath_Medieval_101>在監獄暴動中被從背後刺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_101>
+  <FP_Event_RandomDeath_Medieval_102>因殺手松鼠的咬傷引發併發症而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_102>
+  <FP_Event_RandomDeath_Medieval_103>在為食物而進行的激烈戰鬥中被戰斧擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_103>
+  <FP_Event_RandomDeath_Medieval_104>在潮濕的叢林中因瘧疾引發的高燒而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_104>
+  <FP_Event_RandomDeath_Medieval_105>因在道路上搶劫而被刺穿在尖樁上，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_105>
+  <FP_Event_RandomDeath_Medieval_106>被騾子直接踢中太陽穴而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_106>
+  <FP_Event_RandomDeath_Medieval_107>在尋找賢者之石時被爆炸的煉金爐殺死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_107>
+  <FP_Event_RandomDeath_Medieval_108>在無盡的沙漠中力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_108>
+  <FP_Event_RandomDeath_Medieval_109>被隕石砸死，被認為是神怒，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_109>
+  <FP_Event_RandomDeath_Medieval_110>安詳地在稻草床上睡夢中老死，享年 {0} 歲。</FP_Event_RandomDeath_Medieval_110>
+
+  <!-- 工業時代 -->
+<FP_Event_RandomDeath_Industrial_13>因通風系統故障在煤礦中窒息，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_13>
+  <FP_Event_RandomDeath_Industrial_14>被掉落的鋼水包砸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_14>
+  <FP_Event_RandomDeath_Industrial_15>在紡織廠吸入棉塵後死於「白痨」，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_15>
+  <FP_Event_RandomDeath_Industrial_16>在未完工的磚廠倒塌事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_16>
+  <FP_Event_RandomDeath_Industrial_17>被蒸汽錘的傳動皮帶捲入，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_17>
+  <FP_Event_RandomDeath_Industrial_18>在生鏽的車床上受傷後死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_18>
+  <FP_Event_RandomDeath_Industrial_19>在加油站因化學燃料罐爆炸而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_19>
+  <FP_Event_RandomDeath_Industrial_20>在製革廠掉入染料桶中，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_20>
+  <FP_Event_RandomDeath_Industrial_21>在過度擁擠的工人營房火災中被燒死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_21>
+  <FP_Event_RandomDeath_Industrial_22>試圖修理高壓電線時觸電身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_22>
+  <FP_Event_RandomDeath_Industrial_23>被多噸重的蒸汽動力卡車壓死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_23>
+  <FP_Event_RandomDeath_Industrial_24>在生產鏡面玻璃時汞中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_24>
+  <FP_Event_RandomDeath_Industrial_25>在鋼鐵工人漫長的罷工期間力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_25>
+  <FP_Event_RandomDeath_Industrial_26>在測試新型自動步槍時被跳彈擊中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_26>
+  <FP_Event_RandomDeath_Industrial_27>在城市下水道煤氣爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_27>
+  <FP_Event_RandomDeath_Industrial_28>從在建摩天大樓的電梯井墜落身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_28>
+  <FP_Event_RandomDeath_Industrial_29>因使用早期X射線設備而死於輻射病，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_29>
+  <FP_Event_RandomDeath_Industrial_30>在充滿氫氣的飛艇墜毀事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_30>
+  <FP_Event_RandomDeath_Industrial_31>在麵包騷亂中被驚慌失措的人群踩死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_31>
+  <FP_Event_RandomDeath_Industrial_32>因飲用工業酒精而甲醇中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_32>
+  <FP_Event_RandomDeath_Industrial_33>因有缺陷的迫擊炮炮管內炮彈爆炸而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_33>
+  <FP_Event_RandomDeath_Industrial_34>因能見度低在燃料油沉澱池中溺亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_34>
+  <FP_Event_RandomDeath_Industrial_35>被誤認為逃兵的自動砲塔擊斃，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_35>
+  <FP_Event_RandomDeath_Industrial_36>因牆紙中的慢性砷中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_36>
+  <FP_Event_RandomDeath_Industrial_37>從結冰的鋼橋結構上墜落身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_37>
+  <FP_Event_RandomDeath_Industrial_38>在氣溫逆轉期間吸入濃厚城市煙霧窒息而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_38>
+  <FP_Event_RandomDeath_Industrial_39>因閥門故障被液壓機壓死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_39>
+  <FP_Event_RandomDeath_Industrial_40>在穀物升降機的煤塵爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_40>
+  <FP_Event_RandomDeath_Industrial_41>在肉類加工廠工作時感染敗血症而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_41>
+  <FP_Event_RandomDeath_Industrial_42>在搶劫郵政馬車時被槍殺，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_42>
+  <FP_Event_RandomDeath_Industrial_43>在採石場被鐵礦石埋住身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_43>
+  <FP_Event_RandomDeath_Industrial_44>試圖用避雷針為電台供電時觸電身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_44>
+  <FP_Event_RandomDeath_Industrial_45>被意外砌入大壩的混凝土基礎中，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_45>
+  <FP_Event_RandomDeath_Industrial_46>死於醫院蒸汽滅菌器爆炸，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_46>
+  <FP_Event_RandomDeath_Industrial_47>在運河上兩艘運煤駁船相撞事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_47>
+  <FP_Event_RandomDeath_Industrial_48>被掉落的電線桿段砸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_48>
+  <FP_Event_RandomDeath_Industrial_49>試圖撲滅藥品倉庫大火時因燒傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_49>
+  <FP_Event_RandomDeath_Industrial_50>在測試早期外骨骼原型機時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_50>
+  <FP_Event_RandomDeath_Industrial_51>因飛輪過載碎裂飛出的碎片重傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_51>
+  <FP_Event_RandomDeath_Industrial_52>因污水滲入供水系統而死於霍亂，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_52>
+  <FP_Event_RandomDeath_Industrial_53>在隧道施工期間的炸藥爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_53>
+  <FP_Event_RandomDeath_Industrial_54>被巨型車間風扇的葉片捲入，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_54>
+  <FP_Event_RandomDeath_Industrial_55>在火柴廠工作時死於「磷毒性頜骨壞死」，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_55>
+  <FP_Event_RandomDeath_Industrial_56>在幫派對廠區的夜襲中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_56>
+  <FP_Event_RandomDeath_Industrial_57>掉入採石場運轉中的碎石機，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_57>
+  <FP_Event_RandomDeath_Industrial_58>因電爐缺乏接地而觸電身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_58>
+  <FP_Event_RandomDeath_Industrial_59>手術中因早期麻醉劑過量而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_59>
+  <FP_Event_RandomDeath_Industrial_60>從港口起重機吊運的貨櫃上墜落身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_60>
+  <FP_Event_RandomDeath_Industrial_61>在啤酒廠遭遇二氧化碳洩漏窒息而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_61>
+  <FP_Event_RandomDeath_Industrial_62>在宗教遊行中被蒸汽香爐壓死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_62>
+  <FP_Event_RandomDeath_Industrial_63>在河上拖船的蒸汽鍋爐爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_63>
+  <FP_Event_RandomDeath_Industrial_64>在染料生產中苯中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_64>
+  <FP_Event_RandomDeath_Industrial_65>在街頭鬥毆中被指節銅套和鋼筋打死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_65>
+  <FP_Event_RandomDeath_Industrial_66>在新市政廳周圍的腳手架倒塌事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_66>
+  <FP_Event_RandomDeath_Industrial_67>在輪機室擔任司爐工時中暑而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_67>
+  <FP_Event_RandomDeath_Industrial_68>從高處墜落時被鋼筋刺穿，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_68>
+  <FP_Event_RandomDeath_Industrial_69>死於車間壓縮空氣鋼瓶爆炸，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_69>
+  <FP_Event_RandomDeath_Industrial_70>試圖偷竊帶電的銅線時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_70>
+  <FP_Event_RandomDeath_Industrial_71>在卸貨火車時被煤堆埋住，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_71>
+  <FP_Event_RandomDeath_Industrial_72>在縫紉廠被髒針扎傷後死於敗血症，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_72>
+  <FP_Event_RandomDeath_Industrial_73>因鐵路沖刷在客運列車脫軌事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_73>
+  <FP_Event_RandomDeath_Industrial_74>在採石場工作20年後死於塵肺病，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_74>
+  <FP_Event_RandomDeath_Industrial_75>在街頭戰鬥中被土製手榴彈炸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_75>
+  <FP_Event_RandomDeath_Industrial_76>在化工廠掉入硫酸槽中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_76>
+  <FP_Event_RandomDeath_Industrial_77>在臥室中被不穩定化學燃料的燈具爆炸炸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_77>
+  <FP_Event_RandomDeath_Industrial_78>被從固定裝置上脫落的巨型齒輪壓死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_78>
+  <FP_Event_RandomDeath_Industrial_79>在建築工地事故後死於內出血，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_79>
+  <FP_Event_RandomDeath_Industrial_80>在煙火倉庫火災中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_80>
+  <FP_Event_RandomDeath_Industrial_81>領帶被印刷機捲入而勒死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_81>
+  <FP_Event_RandomDeath_Industrial_82>在粉刷橋樑時鉛白中毒而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_82>
+  <FP_Event_RandomDeath_Industrial_83>在麵粉廠的粉塵爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_83>
+  <FP_Event_RandomDeath_Industrial_84>在鐵路道口被高速蒸汽機車撞死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_84>
+  <FP_Event_RandomDeath_Industrial_85>在暴風雪期間於無暖氣的車間內體溫過低而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_85>
+  <FP_Event_RandomDeath_Industrial_86>因意外火花引發的石油鑽井平台爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_86>
+  <FP_Event_RandomDeath_Industrial_87>在啤酒廠掉入沸騰的麥芽汁桶中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_87>
+  <FP_Event_RandomDeath_Industrial_88>試圖徒手打開路燈時觸電身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_88>
+  <FP_Event_RandomDeath_Industrial_89>在舊公用公寓的天花板坍塌事故中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_89>
+  <FP_Event_RandomDeath_Industrial_90>因冰箱氨洩漏導致呼吸道燒傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_90>
+  <FP_Event_RandomDeath_Industrial_91>在運輸銀行資產時被掉落的保險櫃砸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_91>
+  <FP_Event_RandomDeath_Industrial_92>從結冰的水塔上墜落身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_92>
+  <FP_Event_RandomDeath_Industrial_93>在貿易車隊長期延誤期間死於壞血病，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_93>
+  <FP_Event_RandomDeath_Industrial_94>踩進斷裂電車線旁的水坑觸電身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_94>
+  <FP_Event_RandomDeath_Industrial_95>在地下倉庫的酒精桶爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_95>
+  <FP_Event_RandomDeath_Industrial_96>被工業鋼筋劃傷後死於破傷風，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_96>
+  <FP_Event_RandomDeath_Industrial_97>在兩節對接的火車車廂之間被擠死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_97>
+  <FP_Event_RandomDeath_Industrial_98>在射擊場測試原型火焰噴射器時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_98>
+  <FP_Event_RandomDeath_Industrial_99>使用工業溶劑後死於急性腎衰竭，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_99>
+  <FP_Event_RandomDeath_Industrial_100>在狹窄的圍欄中被一頭髮狂的馱畜重傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_100>
+  <FP_Event_RandomDeath_Industrial_101>在暴風雨中因磚砌煙囪倒塌而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_101>
+  <FP_Event_RandomDeath_Industrial_102>在早期電療過程中觸電而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_102>
+  <FP_Event_RandomDeath_Industrial_103>在清潔儀式用左輪手槍時意外中彈身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_103>
+  <FP_Event_RandomDeath_Industrial_104>在化肥廠掉入碎骨機中身亡，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_104>
+  <FP_Event_RandomDeath_Industrial_105>在房間裡因煤氣燈爆炸而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_105>
+  <FP_Event_RandomDeath_Industrial_106>被從鏈條上脫落的工業風扇壓死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_106>
+  <FP_Event_RandomDeath_Industrial_107>在磚廠因慢性疲勞和營養不良而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_107>
+  <FP_Event_RandomDeath_Industrial_108>從橋上跳下測試帆布降落傘時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_108>
+  <FP_Event_RandomDeath_Industrial_109>在電梯井中被掉落的對重塊砸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_109>
+  <FP_Event_RandomDeath_Industrial_110>在醉醺醺慶祝下班時掉入篝火，因燒傷而死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_110>
+  <FP_Event_RandomDeath_Industrial_111>在蒸汽機以極限功率運行時發生的爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_111>
+  <FP_Event_RandomDeath_Industrial_112>在造船廠被掉落的鋼樑堆砸死，享年 {0} 歲。</FP_Event_RandomDeath_Industrial_112>
+
+  <!-- 太空 / 極致 / 遠古科技 -->
+<FP_Event_RandomDeath_Spacer_49>在燃料注射器的反物質爆炸中喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_49>
+<FP_Event_RandomDeath_Spacer_50>因廁所爆炸性減壓被拋入太空，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_50>
+<FP_Event_RandomDeath_Spacer_51>在飛船緊急減速時因大規模內出血而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_51>
+<FP_Event_RandomDeath_Spacer_52>被軌道激光誤認為雜草而熔化，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_52>
+<FP_Event_RandomDeath_Spacer_53>因生命維持系統中的氧氣被替換成一氧化二氮而窒息，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_53>
+<FP_Event_RandomDeath_Spacer_54>在自動化工廠被故障的金屬壓實機壓死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_54>
+<FP_Event_RandomDeath_Spacer_55>試圖撫摸機械族收割者時被高壓電擊致死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_55>
+<FP_Event_RandomDeath_Spacer_56>因空投艙以錯誤角度進入大氣層而被大氣層燒死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_56>
+<FP_Event_RandomDeath_Spacer_57>因冷卻劑洩漏被凍成脆弱的冰雕，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_57>
+<FP_Event_RandomDeath_Spacer_58>成為導航系統校準的受害者，置身於火線之中，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_58>
+<FP_Event_RandomDeath_Spacer_59>在玩虛擬撲克時因神經接口過載導致大腦被煮熟，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_59>
+<FP_Event_RandomDeath_Spacer_60>被感染病毒的「智能」圍巾勒死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_60>
+<FP_Event_RandomDeath_Spacer_61>因無法退出超真實的度假模擬而力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_61>
+<FP_Event_RandomDeath_Spacer_62>在意識被意外覆寫成烹飪食譜後喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_62>
+<FP_Event_RandomDeath_Spacer_63>成為具有初級自我意識的食品加工機叛亂的受害者，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_63>
+<FP_Event_RandomDeath_Spacer_64>當他的心臟植入物決定在沒有網絡的情況下更新固件時，因心臟病發作而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_64>
+<FP_Event_RandomDeath_Spacer_65>被一台活體組織識別設置失靈的醫療機器人拆解成備用零件，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_65>
+<FP_Event_RandomDeath_Spacer_66>試圖辯贏一個AI終端，結果被它電死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_66>
+<FP_Event_RandomDeath_Spacer_67>被自動園藝機轉化為有機肥料，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_67>
+<FP_Event_RandomDeath_Spacer_68>因神經芯片開始24/7直接向他的大腦播放廣告而精神失常而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_68>
+<FP_Event_RandomDeath_Spacer_69>服用實驗性類固醇後變成一團無定形的肌肉，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_69>
+<FP_Event_RandomDeath_Spacer_70>被實驗室裡的巨型食肉番茄樣本吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_70>
+<FP_Event_RandomDeath_Spacer_71>對自己的人工肺產生了過敏反應而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_71>
+<FP_Event_RandomDeath_Spacer_72>在他的免疫系統開始攻擊他體內的納米機器人後死去，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_72>
+<FP_Event_RandomDeath_Spacer_73>因生物實驗室突變劑洩漏引發的快速生長的腫瘤而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_73>
+<FP_Event_RandomDeath_Spacer_74>在器官克隆過程中因DNA序列錯誤而受害，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_74>
+<FP_Event_RandomDeath_Spacer_75>因醫療失誤，他的身體試圖長出第三條腿，在此過程中力竭而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_75>
+<FP_Event_RandomDeath_Spacer_76>被巨型異形蛞蝓的胃酸溶解，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_76>
+<FP_Event_RandomDeath_Spacer_77>因服用過量長生不老藥（實際上是毒藥）而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_77>
+<FP_Event_RandomDeath_Spacer_78>被寄生真菌感染，其神經系統被菌絲取代，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_78>
+<FP_Event_RandomDeath_Spacer_79>進入微型黑洞的作用範圍後被拉成意大利麵條狀，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_79>
+<FP_Event_RandomDeath_Spacer_80>在穿過不穩定的蟲洞後在時間中溶解，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_80>
+<FP_Event_RandomDeath_Spacer_81>被一顆拳頭大小的隕石擊穿太空站外殼而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_81>
+<FP_Event_RandomDeath_Spacer_82>在太空行走時被脈衝星的射線燒死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_82>
+<FP_Event_RandomDeath_Spacer_83>接觸遠古神器後因精神衝擊而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_83>
+<FP_Event_RandomDeath_Spacer_84>在探測器事故中被氣態巨行星的壓力壓碎，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_84>
+<FP_Event_RandomDeath_Spacer_85>在測試跳躍引擎時消失在未知方向，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_85>
+<FP_Event_RandomDeath_Spacer_86>成為空間扭曲的受害者：他的皮膚翻了出來，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_86>
+<FP_Event_RandomDeath_Spacer_87>被超新星閃光致盲並迷失方向，隨後穿著太空服步入氣閘，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_87>
+<FP_Event_RandomDeath_Spacer_88>事故發生20年後在漂流的救生浮標中因孤獨而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_88>
+<FP_Event_RandomDeath_Spacer_89>被單分子切割刀的一擊分解，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_89>
+<FP_Event_RandomDeath_Spacer_90>被等離子步槍直接擊中後化作一團蒸汽，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_90>
+<FP_Event_RandomDeath_Spacer_91>被重力手榴彈撕碎，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_91>
+<FP_Event_RandomDeath_Spacer_92>被「智能」炮彈碎片擊傷後因失血過多而亡，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_92>
+<FP_Event_RandomDeath_Spacer_93>被機械族白蟻癱瘓並緩慢回收，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_93>
+<FP_Event_RandomDeath_Spacer_94>在電磁脈衝打擊後成為自己的護盾腰帶爆炸的受害者，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_94>
+<FP_Event_RandomDeath_Spacer_95>被走廊上繃緊的單分子絲線斬首，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_95>
+<FP_Event_RandomDeath_Spacer_96>試圖徒手拆除核地雷時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_96>
+<FP_Event_RandomDeath_Spacer_97>因違反基因代碼版權而被從軌道上射殺，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_97>
+<FP_Event_RandomDeath_Spacer_98>成為相鄰星區高超音速武器試驗的隨機受害者，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_98>
+<FP_Event_RandomDeath_Spacer_99>踩到機器人潤滑油滑倒，掉入電梯井，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_99>
+<FP_Event_RandomDeath_Spacer_100>被掉落的營養糊容器壓死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_100>
+<FP_Event_RandomDeath_Spacer_101>在礦井連續工作72小時期間服用過量興奮劑而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_101>
+<FP_Event_RandomDeath_Spacer_102>被AI節食系統鎖在裝有冰淇淋的冰箱裡，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_102>
+<FP_Event_RandomDeath_Spacer_103>試圖在反應堆核心加熱午餐時被燒死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_103>
+<FP_Event_RandomDeath_Spacer_104>被裝有飛船稀有零件的掉落的架子砸死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_104>
+<FP_Event_RandomDeath_Spacer_105>當他的高科技變形床與他一起折疊起來時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_105>
+<FP_Event_RandomDeath_Spacer_106>誤將液氮池當作水池，溺亡其中，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_106>
+<FP_Event_RandomDeath_Spacer_107>被急於送披薩的自動快遞員撞死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_107>
+<FP_Event_RandomDeath_Spacer_108>因怪物全息圖像因漏洞而活過來，驚嚇而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_108>
+<FP_Event_RandomDeath_Spacer_109>在沉睡時被意外當作垃圾一起丟棄，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_109>
+<FP_Event_RandomDeath_Spacer_110>死於「冷凍腦症候群」——他的思想永遠凍結，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_110>
+<FP_Event_RandomDeath_Spacer_111>在資源短缺時被生命維持系統分解成營養物質，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_111>
+<FP_Event_RandomDeath_Spacer_112>當他的冷凍艙被外星動物當作巢穴時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_112>
+<FP_Event_RandomDeath_Spacer_113>因冷凍計時器故障，在冷凍艙內老死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_113>
+<FP_Event_RandomDeath_Spacer_114>在救生艙內睡覺時被隕石雨砸死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_114>
+<FP_Event_RandomDeath_Spacer_115>試圖用吹風機自行解凍時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_115>
+<FP_Event_RandomDeath_Spacer_116>在墜機後成為其他倖存者同類相食的受害者，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_116>
+<FP_Event_RandomDeath_Spacer_117>醒來得知自己已經沉睡了一千年，驚嚇而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_117>
+<FP_Event_RandomDeath_Spacer_118>試圖撬開他人的冷凍艙時觸電而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_118>
+<FP_Event_RandomDeath_Spacer_119>因煉金納米機器人故障而被變成金條，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_119>
+<FP_Event_RandomDeath_Spacer_120>在他的納米服決定將他消化後死去，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_120>
+<FP_Event_RandomDeath_Spacer_121>被便攜式垃圾分解器分解成原子，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_121>
+<FP_Event_RandomDeath_Spacer_122>當他的身體成為帶電粒子流的導體時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_122>
+<FP_Event_RandomDeath_Spacer_123>在失敗的實驗中被「灰色粘質」吞噬，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_123>
+<FP_Event_RandomDeath_Spacer_124>吸入建築用微型機器人雲團導致肺部破裂而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_124>
+<FP_Event_RandomDeath_Spacer_125>因外星輻射影響而轉變為晶體結構，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_125>
+<FP_Event_RandomDeath_Spacer_126>在實驗室中試圖飲用「液態光」時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_126>
+<FP_Event_RandomDeath_Spacer_127>被從納米種子瞬間生長出的塔樓壓死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_127>
+<FP_Event_RandomDeath_Spacer_128>試圖穿越分子密度的牆壁時在空間中溶解，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_128>
+<FP_Event_RandomDeath_Spacer_129>因嫉妒鄰居的生物改造身體（心臟無法承受）而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_129>
+<FP_Event_RandomDeath_Spacer_130>試圖以爆炸的超新星為背景自拍時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_130>
+<FP_Event_RandomDeath_Spacer_131>在前往半人馬座阿爾法星的長達80年的飛行中因無聊而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_131>
+<FP_Event_RandomDeath_Spacer_132>被掉落的「閃耀世界公司」廣告牌砸死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_132>
+<FP_Event_RandomDeath_Spacer_133>撞上忘記關閉的隱形力場而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_133>
+<FP_Event_RandomDeath_Spacer_134>被專門啃食太空服的外星白蟻吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_134>
+<FP_Event_RandomDeath_Spacer_135>被困在沒有退出按鈕的虛擬世界中，因脫水而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_135>
+<FP_Event_RandomDeath_Spacer_136>被植入擴音植入物的歌劇演員的聲音攻擊殺死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_136>
+<FP_Event_RandomDeath_Spacer_137>在觀星時被微型隕石直接擊中眼睛而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_137>
+<FP_Event_RandomDeath_Spacer_138>因與AI海關官員爭論，被認定為走私品而喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_138>
+<FP_Event_RandomDeath_Spacer_139>被自己的驕傲以及倒塌的、為自己打造的金色雕像壓死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_139>
+<FP_Event_RandomDeath_Spacer_140>在嘗試將互聯網下載到腦中時因所有身體機能停止而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_140>
+<FP_Event_RandomDeath_Spacer_141>被自己的等離子子彈擊中鏡面地板後的跳彈殺死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_141>
+<FP_Event_RandomDeath_Spacer_142>看到飛船維修賬單時心臟病發作而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_142>
+<FP_Event_RandomDeath_Spacer_143>通過垃圾槽被意外驅逐到另一個維度，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_143>
+<FP_Event_RandomDeath_Spacer_144>試圖將超光速引擎用作加熱器時喪生，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_144>
+<FP_Event_RandomDeath_Spacer_145>在大都市下層被一群野化的機器狗吃掉，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_145>
+<FP_Event_RandomDeath_Spacer_146>被單分子紙張割傷後失血過多而死，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_146>
+<FP_Event_RandomDeath_Spacer_147>坐到太空站的自毀按鈕後化作蒸汽，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_147>
+<FP_Event_RandomDeath_Spacer_148>因神經刺激器引發的對宇宙無限性的認知而死去，享年 {0} 歲。</FP_Event_RandomDeath_Spacer_148>
+
+  <!-- 老兵隨機死亡原因（通用） -->
+<FP_Event_RandomDeath_10>因牆壁損壞導致屋頂坍塌被壓死，享年 {0} 歲。</FP_Event_RandomDeath_10>
+  <FP_Event_RandomDeath_11>成為失控砲塔爆炸的受害者，享年 {0} 歲。</FP_Event_RandomDeath_11>
+
+</LanguageData>

@@ -33,6 +33,38 @@ namespace FinitePopulationVeterans
 		public bool enableAgingVisuals = false;
 		public float startGrayingHairRatio = 0.45f;
 		public float grayingYearlyRatio = 0.25f;
+		public bool showMainTab = false;
+		public bool enableEventLogging = false;
+		public int eventHistoryLimitYears = -1; // -1 = Безлимит
+		public float randomDeathChance = 0f;
+
+		public void Reset()
+		{
+			enableFactionLimit = true;
+			showVIPButton = true;
+			showGizmoButton = true;
+			autoSaveWanderers = false;
+			factionVeteranLimit = 100;
+			veteranRecallCooldownDays = 10;
+			forcedFreezeDays = 0;
+			enableMothball = true;
+			veteranRecallChance = 0.5f;
+			enableDebugLogs = false;
+			deathChanceMultiplier = 1f;
+			diseaseChanceMultiplier = 1f;
+			implantChanceMultiplier = 1f;
+			geneChanceMultiplier = 1f;
+			anomalyChanceMultiplier = 1f;
+			techLevelRange = 1;
+			enableAgingVisuals = false;
+			startGrayingHairRatio = 0.45f;
+			grayingYearlyRatio = 0.25f;
+			showMainTab = false;
+			enableEventLogging = false;
+			eventHistoryLimitYears = -1;
+			randomDeathChance = 0f;
+		}
+
 
         public override void ExposeData()
         {
@@ -56,6 +88,10 @@ namespace FinitePopulationVeterans
 			Scribe_Values.Look(ref enableAgingVisuals, "enableAgingVisuals", false);
 			Scribe_Values.Look(ref startGrayingHairRatio, "startGrayingHairRatio", 0.5f);
 			Scribe_Values.Look(ref grayingYearlyRatio, "grayingYearlyRatio", 0.25f);
+			Scribe_Values.Look(ref showMainTab, "showMainTab", false);
+			Scribe_Values.Look(ref enableEventLogging, "enableEventLogging", false);
+			Scribe_Values.Look(ref eventHistoryLimitYears, "eventHistoryLimitYears", -1);
+			Scribe_Values.Look(ref randomDeathChance, "randomDeathChance", 0f);
         }
     }
 
@@ -84,7 +120,18 @@ namespace FinitePopulationVeterans
                     }
                 }
             }
+			SyncMainTabVisibility();
         }
+
+		public static void SyncMainTabVisibility()
+		{
+			var def = DefDatabase<MainButtonDef>.GetNamed("FP_VeteransMainTab", false);
+			if (def != null)
+			{
+				def.buttonVisible = settings.showMainTab;
+			}
+		}
+
 
 		private static Vector2 scrollPosition = Vector2.zero;
 public override void DoSettingsWindowContents(Rect inRect)
@@ -116,6 +163,20 @@ public override void DoSettingsWindowContents(Rect inRect)
 // --- НОВАЯ ГАЛОЧКА ДЛЯ ГИЗМО ПАНЕЛИ ---
 listing.CheckboxLabeled("FP_ShowGizmoButton".Translate(), ref settings.showGizmoButton, 
     "FP_ShowGizmoButtonTooltip".Translate());
+
+listing.CheckboxLabeled("FP_ShowMainTab".Translate(), ref settings.showMainTab, 
+    "FP_ShowMainTabTooltip".Translate());
+
+    listing.CheckboxLabeled("FP_EnableEventLogging".Translate(), ref settings.enableEventLogging, "FP_EnableEventLoggingTooltip".Translate());
+    
+    if (settings.enableEventLogging)
+    {
+        string limitMsg = (settings.eventHistoryLimitYears <= 0) ? "FP_EventHistoryLimitInfinity".Translate() : "FP_EventHistoryLimit".Translate(settings.eventHistoryLimitYears);
+        listing.Label(label: limitMsg, tooltip: (string)"FP_EventHistoryLimitTooltip".Translate());
+        settings.eventHistoryLimitYears = (int)listing.Slider(settings.eventHistoryLimitYears, -1f, 10f);
+        if (settings.eventHistoryLimitYears == 0) settings.eventHistoryLimitYears = 1;
+    }
+
 
     // --- ПЕРЕНЕСЕННЫЕ НАСТРОЙКИ СЕДИНЫ ---
     listing.Gap(12f);
@@ -163,6 +224,9 @@ listing.Gap(12f);
     listing.Label(label: "FP_DeathChanceMultiplier".Translate(Math.Round(settings.deathChanceMultiplier * 100)), tooltip: deathDesc);
     settings.deathChanceMultiplier = listing.Slider(settings.deathChanceMultiplier, 0f, 5f);
 	
+	listing.Label(label: "FP_RandomDeathChance".Translate(Math.Round(settings.randomDeathChance * 100)), tooltip: (string)"FP_RandomDeathDesc".Translate());
+    settings.randomDeathChance = listing.Slider(settings.randomDeathChance, 0f, 0.5f);
+	
 
     // --- Болезни ---
     string diseaseDesc = "FP_DiseaseDesc".Translate();
@@ -189,9 +253,18 @@ listing.Gap(12f);
 
     listing.CheckboxLabeled("FP_EnableDebugLogs".Translate(), ref settings.enableDebugLogs, "FP_EnableDebugLogsTooltip".Translate());
     
+    listing.GapLine();
+    listing.GapLine();
+
     listing.Gap(15f);
 
-if (listing.ButtonText("FP_ClearDatabaseButton".Translate()))
+    if (listing.ButtonText("FP_ResetSettingsButton".Translate()))
+    {
+        settings.Reset();
+        SoundDefOf.Tick_Low.PlayOneShotOnCamera();
+    }
+
+    if (listing.ButtonText("FP_ClearDatabaseButton".Translate()))
     {
         if (Current.ProgramState == ProgramState.Playing && Find.World != null)
         {
@@ -232,6 +305,7 @@ if (listing.ButtonText("FP_ClearDatabaseButton".Translate()))
         static ModStartup()
         {
             new Harmony("helldan.finitepopulation.veterans").PatchAll();
+			FPMod.SyncMainTabVisibility();
             Log.Message("<color=green>[Finite Population]</color> Veterans Module Loaded: Smart Compatibility Active.");
         }
     }

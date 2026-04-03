@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <MainButtonDef>
+    <defName>FP_VeteransMainTab</defName>
+    <label>veterans</label>
+    <description>View and manage saved veterans from past maps and colonies.</description>
+    <tabWindowClass>FinitePopulationVeterans.MainTabWindow_Veterans</tabWindowClass>
+    <order>85</order>
+    <iconPath>UI/Icons/EP_Menu</iconPath>
+    <minimized>true</minimized>
+    <validWithoutMap>true</validWithoutMap>
+  </MainButtonDef>
+</Defs>

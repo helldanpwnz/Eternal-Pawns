@@ -2,83 +2,118 @@
 <LanguageData>
   <FP_SettingsCategory>Eternal Pawns</FP_SettingsCategory>
 
-  <FP_EnableFactionLimit>Enable faction veteran limit</FP_EnableFactionLimit>
-  <FP_EnableFactionLimitTooltip>If enabled, new pawns are not saved once the limit is reached. Returning veterans are always saved.</FP_EnableFactionLimitTooltip>
-  <FP_FactionVeteranLimit>Faction veteran limit: {0}</FP_FactionVeteranLimit>
-  <FP_FactionVeteranLimitTooltip>Maximum number of veterans in the pool.\n\nSet to 0 so the mod saves ONLY the characters you manually marked (with a star).</FP_FactionVeteranLimitTooltip>
+  <FP_EnableFactionLimit>Enable Faction Veteran Limit</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>If enabled, new pawns will not be saved once the limit is reached. Returning veterans are always saved regardless of the limit.</FP_EnableFactionLimitTooltip>
+  <FP_FactionVeteranLimit>Veteran Limit per Faction: {0}</FP_FactionVeteranLimit>
+  <FP_FactionVeteranLimitTooltip>Maximum number of veterans in the pool for each faction.\n\nSet to 0 to save ONLY characters you manually mark (with a star).</FP_FactionVeteranLimitTooltip>
   
-  <FP_ShowVIPButton>Show “Remember pawn” button</FP_ShowVIPButton>
-  <FP_ShowVIPButtonTooltip>Shows the “Memory” button on the Social tab. Lets you manually save any NPC to the veteran database (bypassing limits and quest-pawn filters) and also write notes for a specific pawn if needed.</FP_ShowVIPButtonTooltip>
+  <FP_ShowVIPButton>Show 'Memory' Button in Social Tab</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>Displays the 'Memory' button in the Social tab. Allows you to manually save any NPC to the veteran database (bypassing limits and filters) and write personal notes for specific pawns.</FP_ShowVIPButtonTooltip>
 
-  <FP_VeteranRecallCooldownDays>Rest days after returning: {0}</FP_VeteranRecallCooldownDays>
-  <FP_VeteranRecallCooldownDaysTooltip>Delay before a veteran can be recalled again.</FP_VeteranRecallCooldownDaysTooltip>
+  <FP_VeteranRecallCooldownDays>Rest Days After Return: {0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>Cooldown period before a veteran can be summoned again.</FP_VeteranRecallCooldownDaysTooltip>
 
-  <FP_ForcedFreezeDays>Days until freeze: {0}</FP_ForcedFreezeDays>
-  <FP_ForcedFreezeDaysTooltip>After how many idle days to “put the pawn to sleep” for performance.</FP_ForcedFreezeDaysTooltip>
+  <FP_ForcedFreezeDays>Days Until Hibernation: {0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>Number of rest days before 'hibernating' a pawn for optimization purposes.</FP_ForcedFreezeDaysTooltip>
 
-  <FP_VeteranRecallChance>Veteran recall chance: {0}%</FP_VeteranRecallChance>
-  <FP_VeteranRecallChanceTooltip>Chance to use a veteran instead of generating a new pawn.</FP_VeteranRecallChanceTooltip>
+  <FP_VeteranRecallChance>Veteran Recall Chance: {0}%</FP_VeteranRecallChance>
+  <FP_VeteranRecallChanceTooltip>Probability of using an existing veteran instead of generating a new pawn for world events.</FP_VeteranRecallChanceTooltip>
 
-  <FP_DeathChanceMultiplier>Old-age death multiplier per year: {0}%</FP_DeathChanceMultiplier>
-  <FP_DeathDesc>Annual death chance for all veterans older than 60:\n\n• Archotech: 0.05%\n• Ultratech: 0.5%\n• Spacer: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Tribal: 7.5%\n\nThis slider scales the chances listed above.</FP_DeathDesc>
+  <FP_DeathChanceMultiplier>Old Age Mortality Multiplier: {0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>Annual probability of death for veterans over 60 years old:\n\n• Archotech: 0.05%\n• Ultratech: 0.5%\n• Spacer: 1.5%\n• Industrial: 2.5%\n• Medieval: 5.0%\n• Neolithic: 7.5%\n\nThis slider scales the chances listed above.</FP_DeathDesc>
+  
+  <FP_RandomDeathChance>Annual Random Death Chance: {0}%</FP_RandomDeathChance>
+  <FP_RandomDeathDesc>Probability of a veteran dying each year from unknown circumstances (accidents, diseases, conflicts). This applies to pawns of ANY age.</FP_RandomDeathDesc>
 
-  <FP_DiseaseChanceMultiplier>Annual disease chance multiplier: {0}%</FP_DiseaseChanceMultiplier>
-  <FP_DiseaseDesc>Chance to get a chronic disease per year (age 60+):\n\n• Archotech: 0.25%\n• Ultratech: 0.5%\n• Spacer: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Tribal: 10.0%\n\nThis slider scales the chances listed above.</FP_DiseaseDesc>
+  <FP_DiseaseChanceMultiplier>Annual Disease Chance Multiplier: {0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>Annual probability of developing a chronic disease (60+ years):\n\n• Archotech: 0.25%\n• Ultratech: 0.5%\n• Spacer: 2.5%\n• Industrial: 5.0%\n• Medieval: 7.5%\n• Neolithic: 10.0%\n\nThis slider scales the chances listed above.</FP_DiseaseDesc>
 
-  <FP_ImplantChanceMultiplier>Annual implant chance multiplier: {0}%</FP_ImplantChanceMultiplier>
-  <FP_ImplantDesc>HOW IT WORKS:\n1. Treatment (All tech levels): If a veteran is missing an arm, leg, or eye, the faction will install a prosthetic of its tech level (Tribal — wooden, Empire — bionic).\n2. Upgrade (Industrial+): 10% chance per year to replace a healthy body part with a more efficient implant.\n\nThis slider scales the overall probability of these events.</FP_ImplantDesc>
+  <FP_ImplantChanceMultiplier>Annual Implant/Healing Chance Multiplier: {0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>HOW IT WORKS:\n1. Healing (All levels): If a veteran is missing a limb or eye, the faction will provide a prosthesis appropriate for their tech level (Tribal — wood, Empire — bionics).\n2. Upgrade (Industrial+): 10% annual chance to replace a healthy body part with a more efficient implant.\n\nThis slider scales the overall probability of these events.</FP_ImplantDesc>
 
-  <FP_GeneChanceMultiplier>Annual gene chance multiplier: {0}%</FP_GeneChanceMultiplier>
-  <FP_GeneChanceTooltip>10% chance for a gene (Spacer+), 5% chance for an Arch-gene (Ultra+).</FP_GeneChanceTooltip>
+  <FP_GeneChanceMultiplier>Annual Gene Change Multiplier: {0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>10% chance for a normal gene (Spacer+), 5% for an Archite gene (Ultra+).</FP_GeneChanceTooltip>
 
-  <FP_AnomalyChanceMultiplier>Annual mutation chance multiplier: {0}%</FP_AnomalyChanceMultiplier>
-  <FP_AnomalyChanceTooltip>5% chance of contact with the Void (Tribal and Medieval).</FP_AnomalyChanceTooltip>
+  <FP_AnomalyChanceMultiplier>Annual Mutation/Anomaly Chance: {0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>5% chance for a Void contact event (Neolithic and Medieval tech levels).</FP_AnomalyChanceTooltip>
 
-  <FP_EnableDebugLogs>Enable detailed logs</FP_EnableDebugLogs>
-  <FP_EnableDebugLogsTooltip>Print events to the console (~).</FP_EnableDebugLogsTooltip>
+  <FP_EnableDebugLogs>Enable Detailed Logs</FP_EnableDebugLogs>
+  <FP_EnableDebugLogsTooltip>Output internal events to the dev console (~).</FP_EnableDebugLogsTooltip>
 
   <FP_ClearDatabaseButton>CLEAR VETERAN DATABASE</FP_ClearDatabaseButton>
-  <FP_ClearDatabaseConfirm>Are you absolutely sure you want to completely delete all veterans from the database? This action cannot be undone!</FP_ClearDatabaseConfirm>
+  <FP_ClearDatabaseConfirm>Are you absolutely sure you want to permanently delete all veterans from the database? This action is irreversible!</FP_ClearDatabaseConfirm>
   <FP_DatabaseClearedMessage>Veteran database cleared successfully!</FP_DatabaseClearedMessage>
+  <FP_ResetSettingsButton>RESET SETTINGS</FP_ResetSettingsButton>
   
+  <FP_AgingYear>Cycle Aging: 1 Year</FP_AgingYear>
+  <FP_AgingDays>Cycle Aging: {0} Days</FP_AgingDays>
+  <FP_AgingTooltip>Determines how many days a veteran ages per world aging cycle. Default is 60 days (1 year).</FP_AgingTooltip>
+ 
+  <FP_ShowGizmoButton>Show Memory Button in Action Panel (Gizmo)</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>Display the 'Memory' button in the bottom action bar when a pawn is selected.</FP_ShowGizmoButtonTooltip>
   
-  <FP_ShowGizmoButton>Show memory button in Gizmo panel</FP_ShowGizmoButton>
-  <FP_ShowGizmoButtonTooltip>Display the "Memory" button in the bottom action panel (Gizmo) when a pawn is selected.</FP_ShowGizmoButtonTooltip>
+  <FP_AutoSaveWanderers>Automatically Save Wanderers</FP_AutoSaveWanderers>
+  <FP_AutoSaveWanderersTooltip>Automatically assign a permanent faction and save representatives of hidden or temporary factions (Ancients, refugees, beggars, etc.) when they leave the map.</FP_AutoSaveWanderersTooltip>
   
-  <FP_AutoSaveWanderers>Auto-save wanderers</FP_AutoSaveWanderers>
-  <FP_AutoSaveWanderersTooltip>Automatically find a new permanent faction and save members of hidden or temporary factions (Ancients, refugees, beggars, etc.) when they leave the map.</FP_AutoSaveWanderersTooltip>
-  
-  <FP_TechLevelRange>Allowed tech level difference: {0}</FP_TechLevelRange>
-  <FP_TechLevelRangeTooltip>Determines which factions wanderers can join.\n\n0 = Strictly same tech level.\n1 = Same or adjacent (e.g., Spacer joins Ultra or Industrial).\n5 = Any tech level (Ancients can join neolithic tribes).</FP_TechLevelRangeTooltip>
-  
-  
-  
+  <FP_TechLevelRange>Tech Level Deviation Tolerance: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>Determines which factions wanderers can join.\n\n0 = Strict tech level match.\n1 = Match or adjacent (e.g., Spacer can join Ultra or Industrial).\n5 = Any level (Ancients can join tribals).</FP_TechLevelRangeTooltip>
+
   <FP_MemoryHeader>Memory: {0}</FP_MemoryHeader>
-  <FP_OpenPawnMemoryPanelDesc>Open the memory and status management panel for this pawn.</FP_OpenPawnMemoryPanelDesc>
+  <FP_OpenPawnMemoryPanelDesc>Open memory panel to manage this pawn's status and notes.</FP_OpenPawnMemoryPanelDesc>
 
-  <FP_StatusVeteran><b>Familiar</b>\nI have met them before. Somewhere in the world they walk their own path, and who knows when we’ll meet again.</FP_StatusVeteran>
-  <FP_StatusPinned><b>I’ll remember you</b>\nYou have singled this person out from the crowd. If they leave these lands alive, their story will continue.</FP_StatusPinned>
-  <FP_StatusUnknown><b>Take a closer look</b>\nIn this harsh world it’s easy to vanish without a trace. Pick them out of the crowd in hopes of meeting again.</FP_StatusUnknown>
+  <FP_StatusVeteran><b>Acquaintance</b>\nI've met them before. They have their own path in the world, and who knows when we'll meet again.</FP_StatusVeteran>
+  <FP_StatusPinned><b>I'll Remember You</b>\nYou've marked this character. If they leave these lands alive, their story will continue.</FP_StatusPinned>
+  <FP_StatusDead><b>Rest in Peace</b>\nThis person's story has ended. Their records will remain in our archives for one more aging year.</FP_StatusDead>
+  <FP_StatusUnknown><b>Keep Watch</b>\nIn this harsh world, it's easy to disappear without a trace. Mark them to ensure their journey is tracked.</FP_StatusUnknown>
 
-  <FP_AlreadyInHistory>Already in history</FP_AlreadyInHistory>
-  <FP_AlreadyInHistoryMsg>This character has already become part of the world’s history.</FP_AlreadyInHistoryMsg>
-  <FP_ForgetPawn>Forget</FP_ForgetPawn>
-  <FP_RememberPawn>Remember pawn</FP_RememberPawn>
+  <FP_AlreadyInHistory>Already in History</FP_AlreadyInHistory>
+  <FP_AlreadyInHistoryMsg>This character is already part of the world's history.</FP_AlreadyInHistoryMsg>
+  <FP_ForgetPawn>Forget Character</FP_ForgetPawn>
+  <FP_RememberPawn>Remember Character</FP_RememberPawn>
   
-  <FP_PersonalNotes>Personal notes:</FP_PersonalNotes>
+  <FP_PersonalNotes>Personal Notes:</FP_PersonalNotes>
   <FP_MemoryButton>Memory</FP_MemoryButton>
   
-  
-  
-  
-  
-  <FP_EnableMothball>Enable mothball (freeze) system</FP_EnableMothball>
-  <FP_EnableMothballTooltip>Allows the mod to put idle pawns to sleep for performance reasons. Disable if you use aggressive optimization mods that conflict with this.</FP_EnableMothballTooltip>
+  <FP_EnableMothball>Enable Hibernation (Mothball)</FP_EnableMothball>
+  <FP_EnableMothballTooltip>Allows the mod to 'put to sleep' inactive pawns to improve performance. Disable if using other aggressive optimization mods.</FP_EnableMothballTooltip>
 
-  <FP_EnableAgingVisuals>Enable hair graying</FP_EnableAgingVisuals>
-  <FP_EnableAgingVisualsTooltip>If enabled, humanoids will gradually grow gray hair as they age.</FP_EnableAgingVisualsTooltip>
-  <FP_StartGrayingRatio>Graying starts at: {0}% of life</FP_StartGrayingRatio>
-  <FP_StartGrayingRatioTooltip>Percentage of life expectancy when gray hair begins to appear. For humans (80 years), 45% is about 36 years.</FP_StartGrayingRatioTooltip>
-  <FP_GrayingYearlyRatio>Full graying takes: {0}% of life</FP_GrayingYearlyRatio>
-  <FP_GrayingYearlyRatioTooltip>Determines the speed of graying. At 25%, a human will become fully white by age 80. Higher values = slower graying.</FP_GrayingYearlyRatioTooltip>
+  <FP_EnableAgingVisuals>Enable Hair Graying</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>If enabled, humans and human-like creatures will gradually gray with biological age.</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>Graying Start: {0}% of Lifespan</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>Percentage of lifespan when hair starts turning gray. For humans (80 years), 45% is approximately 36 years.</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>Graying Speed: {0}% of Lifespan</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>Determines how quickly hair turns gray. At 25%, a person will be fully gray by age 80. Higher values make the process slower.</FP_GrayingYearlyRatioTooltip>
+
+  <FP_ShowMainTab>Show Veterans Tab in Bottom Bar</FP_ShowMainTab>
+  <FP_ShowMainTabTooltip>Adds a 'Veterans' button to the bottom bar, allowing you to view all saved characters by faction.</FP_ShowMainTabTooltip>
+  <FP_VeteransTabHeader>World Veteran List</FP_VeteransTabHeader>
+  <FP_UnknownFaction>Unknown Faction</FP_UnknownFaction>
+  <FP_Details>Details</FP_Details>
+  <FP_History>History</FP_History>
+  <FP_Dead>Dead</FP_Dead>
+  <FP_WorldManagerNotFound>World manager not found.</FP_WorldManagerNotFound>
+  <FP_AddedOn>In my notes since: {0}</FP_AddedOn>
+  <FP_EventsButton>Events</FP_EventsButton>
+  <FP_EventsHeader>History: {0}</FP_EventsHeader>
+  <FP_NoEventsCaught>No records yet.</FP_NoEventsCaught>
+  <FP_YearHeader>Year {0}</FP_YearHeader>
+  <FP_Event_Aged>Years leave their mark: biological age reached {0}.</FP_Event_Aged>
+  <FP_Event_SkillUp>Mastery in {0} honed to a new level ({1}).</FP_Event_SkillUp>
+  <FP_Event_Implant>Body modified: {0} now replaces {1}.</FP_Event_Implant>
+  <FP_Event_RegenPart>Miracle of flesh: {0} is restored.</FP_Event_RegenPart>
+  <FP_Event_RegenScar>Scars of the past erased: {0} healed without a trace.</FP_Event_RegenScar>
+  <FP_Event_Gene>Nature itself shifted: new gene manifested — {0}.</FP_Event_Gene>
+  <FP_Event_Disease>The weight of years took its toll — developed {0}.</FP_Event_Disease>
+  <FP_Event_Anomaly>The Void touched this person, leaving a mark: {0}.</FP_Event_Anomaly>
+  <FP_Event_NaturalDeath>Died of old age at biological age {0}.</FP_Event_NaturalDeath>
+  <FP_Event_DiedOf>Life came to an end due to: {0}, at the age of {1}.</FP_Event_DiedOf>
+  <FP_Event_DiedInBattle>Fell on the battlefield at the age of {0}.</FP_Event_DiedInBattle>
+  <FP_Event_KilledByPawn>Fell at the hand of {1} ({0}), at the age of {2}.</FP_Event_KilledByPawn>
+  <FP_Event_KilledByDamage>Life was cut short by: {0}, at the age of {1}.</FP_Event_KilledByDamage>
+  <FP_EventsTooltip>View the life history and events of this person during their time in the world.</FP_EventsTooltip>
+  <FP_EnableEventLogging>Track Event History</FP_EnableEventLogging>
+  <FP_EnableEventLoggingTooltip>If enabled, the mod will record key events in veterans' lives (aging, skills, implants). This slightly increases save file size.</FP_EnableEventLoggingTooltip>
+  <FP_EventHistoryLimit>Retain Event History for {0} Years</FP_EventHistoryLimit>
+  <FP_EventHistoryLimitInfinity>Retain Event History Indefinitely</FP_EventHistoryLimitInfinity>
+  <FP_EventHistoryLimitTooltip>Determines how long to keep event records. Older records are automatically pruned annually.</FP_EventHistoryLimitTooltip>
 </LanguageData>

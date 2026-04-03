@@ -1,84 +1,119 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <LanguageData>
-  <FP_SettingsCategory>永恒棋子</FP_SettingsCategory>
+  <FP_SettingsCategory>Eternal Pawns</FP_SettingsCategory>
 
-  <FP_EnableFactionLimit>启用每个派系的老兵上限</FP_EnableFactionLimit>
-  <FP_EnableFactionLimitTooltip>启用后，达到上限时将不再保存新棋子。回归的老兵始终会被保存。</FP_EnableFactionLimitTooltip>
-  <FP_FactionVeteranLimit>每个派系的老兵上限：{0}</FP_FactionVeteranLimit>
-  <FP_FactionVeteranLimitTooltip>老兵池中的最大老兵数量。\n\n设置为 0，则模组只会保存你手动标记（用星标）的角色。</FP_FactionVeteranLimitTooltip>
+  <FP_EnableFactionLimit>启用派系老兵限制</FP_EnableFactionLimit>
+  <FP_EnableFactionLimitTooltip>如果启用，达到限制后将不再保存新的老兵。回归的老兵始终会被保存。</FP_EnableFactionLimitTooltip>
+  <FP_FactionVeteranLimit>每个派系老兵上限: {0}</FP_FactionVeteranLimit>
+  <FP_FactionVeteranLimitTooltip>每个派系老兵池的最大数量。\n\n设置为0则仅保存你手动标记（五角星）的角色。</FP_FactionVeteranLimitTooltip>
   
-  <FP_ShowVIPButton>显示“记住角色”按钮</FP_ShowVIPButton>
-  <FP_ShowVIPButtonTooltip>在“社交”标签页显示“记忆”按钮。允许你将任何 NPC 手动保存到老兵数据库（绕过上限以及任务棋子的过滤），并在需要时为特定棋子撰写备注。</FP_ShowVIPButtonTooltip>
+  <FP_ShowVIPButton>在社交界面显示“记忆”按钮</FP_ShowVIPButton>
+  <FP_ShowVIPButtonTooltip>在社交选项卡中显示“记忆”按钮。允许你手动将任何NPC保存到老兵数据库，并记录个人备注。</FP_ShowVIPButtonTooltip>
 
-  <FP_VeteranRecallCooldownDays>回归后休整天数：{0}</FP_VeteranRecallCooldownDays>
-  <FP_VeteranRecallCooldownDaysTooltip>老兵再次被召回前的等待时间。</FP_VeteranRecallCooldownDaysTooltip>
+  <FP_VeteranRecallCooldownDays>回归后休息天数: {0}</FP_VeteranRecallCooldownDays>
+  <FP_VeteranRecallCooldownDaysTooltip>老兵再次被征召前所需的冷却天数。</FP_VeteranRecallCooldownDaysTooltip>
 
-  <FP_ForcedFreezeDays>进入休眠前天数：{0}</FP_ForcedFreezeDays>
-  <FP_ForcedFreezeDaysTooltip>闲置多少天后为优化性能将棋子“休眠”。</FP_ForcedFreezeDaysTooltip>
+  <FP_ForcedFreezeDays>进入休眠前的天数: {0}</FP_ForcedFreezeDays>
+  <FP_ForcedFreezeDaysTooltip>为了性能优化，老兵在休息多少天后会进入“休眠”状态。</FP_ForcedFreezeDaysTooltip>
 
-  <FP_VeteranRecallChance>召回老兵几率：{0}%</FP_VeteranRecallChance>
-  <FP_VeteranRecallChanceTooltip>用老兵替代生成新棋子的概率。</FP_VeteranRecallChanceTooltip>
+  <FP_VeteranRecallChance>老兵召唤概率: {0}%</FP_RecallChance>
+  <FP_VeteranRecallChanceTooltip>在生成新小人时，使用现有老兵替代新生成角色的概率。</FP_VeteranRecallChanceTooltip>
 
-  <FP_DeathChanceMultiplier>每年因年老死亡倍率：{0}%</FP_DeathChanceMultiplier>
-  <FP_DeathDesc>所有 60 岁以上老兵的年度死亡概率：\n\n• Archotech：0.05%\n• Ultratech：0.5%\n• Spacer：1.5%\n• Industrial：2.5%\n• Medieval：5.0%\n• Tribal：7.5%\n\n此滑条将按比例缩放上述概率。</FP_DeathDesc>
+  <FP_DeathChanceMultiplier>老龄化死亡率倍率: {0}%</FP_DeathChanceMultiplier>
+  <FP_DeathDesc>60岁以上老兵每年的死亡概率：\n\n• 超凡级: 0.05%\n• 终极科技: 0.5%\n• 太空级: 1.5%\n• 工业级: 2.5%\n• 中世纪: 5.0%\n• 部落级: 7.5%\n\n此滑块将按比例缩放上述概率。</FP_DeathDesc>
+  
+  <FP_RandomDeathChance>年度随机死亡概率: {0}%</FP_RandomDeathChance>
+  <FP_RandomDeathDesc>老兵每年因未知原因（意外、疾病、冲突）死亡的概率。此项适用于任何年龄的老兵。</FP_RandomDeathDesc>
 
-  <FP_DiseaseChanceMultiplier>每年患病几率倍率：{0}%</FP_DiseaseChanceMultiplier>
-  <FP_DiseaseDesc>每年获得慢性疾病的概率（60+ 岁）：\n\n• Archotech：0.25%\n• Ultratech：0.5%\n• Spacer：2.5%\n• Industrial：5.0%\n• Medieval：7.5%\n• Tribal：10.0%\n\n此滑条将按比例缩放上述概率。</FP_DiseaseDesc>
+  <FP_DiseaseChanceMultiplier>年度疾病概率倍率: {0}%</FP_DiseaseChanceMultiplier>
+  <FP_DiseaseDesc>每年的慢性病发作概率 (60岁+):\n\n• 超凡级: 0.25%\n• 终极科技: 0.5%\n• 太空级: 2.5%\n• 工业级: 5.0%\n• 中世纪: 7.5%\n• 部落级: 10.0%\n\n此滑块将按比例缩放上述概率。</FP_DiseaseDesc>
 
-  <FP_ImplantChanceMultiplier>每年植入物几率倍率：{0}%</FP_ImplantChanceMultiplier>
-  <FP_ImplantDesc>工作原理：\n1. 治疗（所有科技等级）：如果老兵缺失手臂、腿或眼睛，派系会安装其科技等级对应的义体（部落——木制，帝国——仿生）。\n2. 升级（工业+）：每年 10% 的概率将健康的身体部位替换为更高效的植入物。\n\n此滑条将按比例缩放这些事件的总体概率。</FP_ImplantDesc>
+  <FP_ImplantChanceMultiplier>年度植入/治疗概率倍率: {0}%</FP_ImplantChanceMultiplier>
+  <FP_ImplantDesc>运行机制：\n1. 治疗（所有级别）：如果老兵缺失肢体或眼睛，其派系将为其提供对应科技级别的假肢。\n2. 升级（工业级+）：每年有10%的概率将健康的身体部位替换为更高效的植入物。\n\n此滑块将缩放这些事件的总概率。</FP_ImplantDesc>
 
-  <FP_GeneChanceMultiplier>每年基因几率倍率：{0}%</FP_GeneChanceMultiplier>
-  <FP_GeneChanceTooltip>获得基因的概率为 10%（太空+），获得 Arch-基因的概率为 5%（超科+）。</FP_GeneChanceTooltip>
+  <FP_GeneChanceMultiplier>年度基因变更概率倍率: {0}%</FP_GeneChanceMultiplier>
+  <FP_GeneChanceTooltip>太空级+有10%概率获得普通基因，终极科技+有5%概率获得超凡基因。</FP_GeneChanceTooltip>
 
-  <FP_AnomalyChanceMultiplier>每年突变几率倍率：{0}%</FP_AnomalyChanceMultiplier>
-  <FP_AnomalyChanceTooltip>与虚空接触的概率为 5%（部落与中世纪）。</FP_AnomalyChanceTooltip>
+  <FP_AnomalyChanceMultiplier>年度突变/异变概率: {0}%</FP_AnomalyChanceMultiplier>
+  <FP_AnomalyChanceTooltip>部落和中世纪科技级别会有5%概率发生虚空接触事件。</FP_AnomalyChanceTooltip>
 
   <FP_EnableDebugLogs>启用详细日志</FP_EnableDebugLogs>
-  <FP_EnableDebugLogsTooltip>将事件输出到控制台（~）。</FP_EnableDebugLogsTooltip>
+  <FP_EnableDebugLogsTooltip>将内部事件输出到开发控制台 (~)。</FP_EnableDebugLogsTooltip>
 
   <FP_ClearDatabaseButton>清空老兵数据库</FP_ClearDatabaseButton>
-  <FP_ClearDatabaseConfirm>你确定要从数据库中彻底删除所有老兵吗？此操作不可撤销！</FP_ClearDatabaseConfirm>
+  <FP_ClearDatabaseConfirm>你绝对确定要永久删除所有老兵吗？此操作不可逆！</FP_ClearDatabaseConfirm>
   <FP_DatabaseClearedMessage>老兵数据库已成功清空！</FP_DatabaseClearedMessage>
+  <FP_ResetSettingsButton>重置设置</FP_ResetSettingsButton>
   
-  <FP_ShowGizmoButton>在底部面板 (Gizmo) 中显示记忆按钮</FP_ShowGizmoButton>
-  <FP_ShowGizmoButtonTooltip>选中人物时，在底部操作面板 (Gizmo) 中显示“记忆”按钮。</FP_ShowGizmoButtonTooltip>
+  <FP_AgingYear>每个周期老化：1年</FP_AgingYear>
+  <FP_AgingDays>每个周期老化：{0}天</FP_AgingDays>
+  <FP_AgingTooltip>决定老兵在世界老化周期中老化多少天。默认值为60天（1年）。</FP_AgingTooltip>
+ 
+  <FP_ShowGizmoButton>在动作面板显示记忆按钮 (Gizmo)</FP_ShowGizmoButton>
+  <FP_ShowGizmoButtonTooltip>选中角色时，在底部动作栏显示“记忆”按钮。</FP_ShowGizmoButtonTooltip>
   
   <FP_AutoSaveWanderers>自动保存流浪者</FP_AutoSaveWanderers>
-  <FP_AutoSaveWanderersTooltip>当隐藏或临时派系（远古人物、难民、乞丐等）的成员离开地图时，自动为他们寻找新的永久派系并保存。</FP_AutoSaveWanderersTooltip>
+  <FP_AutoSaveWanderersTooltip>当隐藏或临时派系（古代人、难民、乞丐等）离开地图时，自动为其分配一个永久派系并予以保存。</FP_AutoSaveWanderersTooltip>
   
-  <FP_TechLevelRange>允许的科技级别差异：{0}</FP_TechLevelRange>
-  <FP_TechLevelRangeTooltip>决定流浪者可以加入哪些派系。\n\n0 = 必须是相同的科技级别。\n1 = 相同或相邻（例如：太空时代可以加入超凡时代或工业时代）。\n5 = 任何科技级别（远古人物可以加入使用长矛的部落）。</FP_TechLevelRangeTooltip>
-  
-  
-  
-  
-  <FP_MemoryHeader>记忆：{0}</FP_MemoryHeader>
-  <FP_OpenPawnMemoryPanelDesc>打开该角色的记忆与状态管理面板。</FP_OpenPawnMemoryPanelDesc>
+  <FP_TechLevelRange>科技等级偏离容差: {0}</FP_TechLevelRange>
+  <FP_TechLevelRangeTooltip>决定流浪者可以加入哪些派系。\n\n0 = 严格匹配自身科技等级。\n1 = 匹配或相邻等级。\n5 = 任意等级。</FP_TechLevelRangeTooltip>
 
-  <FP_StatusVeteran><b>熟面孔</b>\n我以前见过他/她。世界某处他/她正走着自己的路，谁又知道我们何时会再相见。</FP_StatusVeteran>
-  <FP_StatusPinned><b>我会记住你</b>\n你从人群中挑出了这个人。若他/她能活着离开这片土地，他/她的故事将会延续。</FP_StatusPinned>
-  <FP_StatusUnknown><b>多留意</b>\n在这残酷的世界里，人很容易无声无息地消失。把他/她从人群中挑出来，期待将来还能再见。</FP_StatusUnknown>
+  <FP_MemoryHeader>记忆: {0}</FP_MemoryHeader>
+  <FP_OpenPawnMemoryPanelDesc>打开记忆面板，管理该角色的状态和备注。</FP_OpenPawnMemoryPanelDesc>
 
-  <FP_AlreadyInHistory>已记录在历史中</FP_AlreadyInHistory>
+  <FP_StatusVeteran><b>熟人</b>\n我以前见过他。在这个世界上他有自己的路要走，谁知道什么时候会再次见面。</FP_StatusVeteran>
+  <FP_StatusPinned><b>我会记住你</b>\n你特别标记了该角色。如果他能活着离开这片土地，他的故事将会延续。</FP_StatusPinned>
+  <FP_StatusDead><b>安息吧</b>\n这个人的故事已在此周期画上了句号。他的记录将在档案中保留一个老化年。</FP_StatusDead>
+  <FP_StatusUnknown><b>保持关注</b>\n在这个残酷的世界里，很容易消失得无影无踪。标记他以确保追踪他的旅程。</FP_StatusUnknown>
+
+  <FP_AlreadyInHistory>已在历史中</FP_AlreadyInHistory>
   <FP_AlreadyInHistoryMsg>该角色已成为世界历史的一部分。</FP_AlreadyInHistoryMsg>
-  <FP_ForgetPawn>遗忘</FP_ForgetPawn>
+  <FP_ForgetPawn>遗忘角色</FP_ForgetPawn>
   <FP_RememberPawn>记住角色</FP_RememberPawn>
   
   <FP_PersonalNotes>个人备注：</FP_PersonalNotes>
   <FP_MemoryButton>记忆</FP_MemoryButton>
   
-  
-  
-  
-  
-  <FP_EnableMothball>启用冬眠（冻结）系统</FP_EnableMothball>
-  <FP_EnableMothballTooltip>允许mod让空闲的兵卒休眠以提高性能。如果您使用可能发生冲突的激进优化mod，请禁用此选项。</FP_EnableMothballTooltip>
+  <FP_EnableMothball>启用休眠系统 (Mothball)</FP_EnableMothball>
+  <FP_EnableMothballTooltip>允许模组使非活跃的小人进入“睡眠”状态以提升性能。</FP_EnableMothballTooltip>
 
-  <FP_EnableAgingVisuals>启用发色衰老</FP_EnableAgingVisuals>
-  <FP_EnableAgingVisualsTooltip>如果启用，仿人生物在衰老过程中会逐渐长出白发。</FP_EnableAgingVisualsTooltip>
-  <FP_StartGrayingRatio>衰老开始于: {0}% 预期寿命</FP_StartGrayingRatio>
-  <FP_StartGrayingRatioTooltip>开始长出白发的预期寿命百分比。对于人类（80年），45%约为36岁。</FP_StartGrayingRatioTooltip>
-  <FP_GrayingYearlyRatio>完全白发需要: {0}% 预期寿命</FP_GrayingYearlyRatio>
-  <FP_GrayingYearlyRatioTooltip>决定发色衰老的速度。在25%时，人类到80岁时将完全变白。数值越高 = 衰老越慢。</FP_GrayingYearlyRatioTooltip>
+  <FP_EnableAgingVisuals>启用白发</FP_EnableAgingVisuals>
+  <FP_EnableAgingVisualsTooltip>如果启用，人类及类似生物的头发会随着生物年龄的增长而逐渐变白。</FP_EnableAgingVisualsTooltip>
+  <FP_StartGrayingRatio>开始变白的比例：{0}% 寿命</FP_StartGrayingRatio>
+  <FP_StartGrayingRatioTooltip>寿命中开始出现灰发的百分比。对于人类（80岁），45%约为36岁。</FP_StartGrayingRatioTooltip>
+  <FP_GrayingYearlyRatio>变白速度：{0}% 寿命</FP_GrayingYearlyRatio>
+  <FP_GrayingYearlyRatioTooltip>决定头发变白的速度。</FP_GrayingYearlyRatioTooltip>
+
+  <FP_ShowMainTab>在底部栏显示老兵选项卡</FP_ShowMainTab>
+  <FP_ShowMainTabTooltip>在底部管理栏增加“老兵”按钮，以便按派系查看所有已保存的角色。</FP_ShowMainTabTooltip>
+  <FP_VeteransTabHeader>世界老兵名单</FP_VeteransTabHeader>
+  <FP_UnknownFaction>未知派系</FP_UnknownFaction>
+  <FP_Details>详情</FP_Details>
+  <FP_History>历史</FP_History>
+  <FP_Dead>死亡</FP_Dead>
+  <FP_WorldManagerNotFound>未找到世界管理器。</FP_WorldManagerNotFound>
+  <FP_AddedOn>记录于: {0}</FP_AddedOn>
+  <FP_EventsButton>事件</FP_EventsButton>
+  <FP_EventsHeader>历史: {0}</FP_EventsHeader>
+  <FP_NoEventsCaught>暂无记录。</FP_NoEventsCaught>
+  <FP_YearHeader>第{0}年</FP_YearHeader>
+  <FP_Event_Aged>岁月留下痕迹：生物年龄达到 {0} 岁。</FP_Event_Aged>
+  <FP_Event_SkillUp>{0} 技能达到了新等级 ({1})。</FP_Event_SkillUp>
+  <FP_Event_Implant>身体改良：{0} 现已替换了 {1}。</FP_Event_Implant>
+  <FP_Event_RegenPart>血肉奇迹：{0} 已重新长出。</FP_Event_RegenPart>
+  <FP_Event_RegenScar>昔日伤疤消逝：{0} 已无痕愈合。</FP_Event_RegenScar>
+  <FP_Event_Gene>天性变异：表现出新基因 —— {0}。</FP_Event_Gene>
+  <FP_Event_Disease>岁月之沉重终显 —— 患上了 {0}。</FP_Event_Disease>
+  <FP_Event_Anomaly>虚空触及了此人，留下印记：{0}。</FP_Event_Anomaly>
+  <FP_Event_DiedOf>生命归于寂静，死因：{0}，终年 {1} 岁。</FP_Event_DiedOf>
+  <FP_Event_DiedInBattle>英勇就义于沙场，终年 {0} 岁。</FP_Event_DiedInBattle>
+  <FP_Event_KilledByPawn>卒于 {1} 之手 ({0})，终年 {2} 岁。</FP_Event_KilledByPawn>
+  <FP_Event_KilledByDamage>生命因 {0} 戛然而止，终年 {1} 岁。</FP_Event_KilledByDamage>
+  <FP_Event_NaturalDeath>寿终正寝，终年{0}岁。</FP_Event_NaturalDeath>
+  <FP_EventsTooltip>查看此人在世期间的生平记录与重大事件。</FP_EventsTooltip>
+  <FP_EnableEventLogging>追踪事件历史</FP_EnableEventLogging>
+  <FP_EnableEventLoggingTooltip>如果启用，模组将记录老兵的关键生活事件（年龄增长、技能、植入）。这会略微增加存档大小。</FP_EnableEventLoggingTooltip>
+  <FP_EventHistoryLimit>保留过去 {0} 年的事件历史</FP_EventHistoryLimit>
+  <FP_EventHistoryLimitInfinity>永久保留事件历史</FP_EventHistoryLimitInfinity>
+  <FP_EventHistoryLimitTooltip>决定事件记录的保存时长。旧记录将每年自动清理。</FP_EventHistoryLimitTooltip>
 </LanguageData>
