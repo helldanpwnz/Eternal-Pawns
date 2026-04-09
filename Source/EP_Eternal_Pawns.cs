@@ -120,6 +120,7 @@ namespace FinitePopulationVeterans
         public Dictionary<int, Color> originalHairColors = new Dictionary<int, Color>();
         public Dictionary<int, List<PawnEvent>> pawnEvents = new Dictionary<int, List<PawnEvent>>();
         public Dictionary<int, DeceasedPawnRecord> deceasedPawns = new Dictionary<int, DeceasedPawnRecord>(); // ID -> Данные
+        public Dictionary<int, int> factionWipeTicks = new Dictionary<int, int>(); // ID фракции -> Тик начала "вымирания"
         private int currentAgingCycleTicks = -1; // Метка для разброса дат
 private List<long> tmpBioValues; // Для сохранения
 private List<int> tmpTicksKeys;   // Для сохранения
@@ -303,8 +304,10 @@ private void CleanPawnHealth(Pawn p, bool fullHeal)
 			Scribe_Collections.Look(ref originalHairColors, "originalHairColors", LookMode.Value, LookMode.Value);
 			Scribe_Collections.Look(ref pawnEvents, "pawnEvents", LookMode.Value, LookMode.Deep);
             Scribe_Collections.Look(ref deceasedPawns, "deceasedPawns", LookMode.Value, LookMode.Deep);
+Scribe_Collections.Look(ref factionWipeTicks, "factionWipeTicks", LookMode.Value, LookMode.Value);
 if (pawnEvents == null) pawnEvents = new Dictionary<int, List<PawnEvent>>();
 if (deceasedPawns == null) deceasedPawns = new Dictionary<int, DeceasedPawnRecord>();
+if (factionWipeTicks == null) factionWipeTicks = new Dictionary<int, int>();
 
 if (savedBioAges == null) savedBioAges = new Dictionary<int, long>();
 if (pawnNotes == null) pawnNotes = new Dictionary<int, string>();
@@ -418,6 +421,7 @@ public override void WorldComponentTick()
         ticksToNextCleanup = 600000; // Заводим таймер заново на 10 дней
         ProcessMissionCleanup();
         CleanupDeceasedPawns();
+        ProcessFactionWipeCleanup();
     }
         // Если это первый тик новой игры — сразу считаем таймер по настройкам
     if (ticksToNextUpdate < 0)
@@ -453,6 +457,91 @@ private void CleanupDeceasedPawns()
     int cutoff = Find.TickManager.TicksGame - agingYearTicks;
     var toRemove = deceasedPawns.Where(kvp => kvp.Value.deathTick < cutoff).Select(kvp => kvp.Key).ToList();
     foreach (var id in toRemove) deceasedPawns.Remove(id);
+}
+
+private void ProcessFactionWipeCleanup()
+{
+    if (!FPMod.Settings.enableFactionWipeCleanup)
+    {
+        if (factionWipeTicks.Count > 0) factionWipeTicks.Clear();
+        return;
+    }
+
+    int currentTick = Find.TickManager.TicksGame;
+    int cleanupTicks = FPMod.Settings.factionWipeCleanupDays * 60000;
+
+    // 1. ПРОВЕРЯЕМ ВСЕ ФРАКЦИИ В ПУЛЕ
+    var poolFactions = veteranPool.Keys.ToList();
+    foreach (int fId in poolFactions)
+    {
+        // Ищем фракцию в живых
+        Faction f = Find.FactionManager.AllFactions.FirstOrDefault(x => x.loadID == fId);
+        
+        // Считаем поселения
+        bool hasSettlements = Find.WorldObjects.Settlements.Any(s => s.Faction != null && s.Faction.loadID == fId);
+
+        if (!hasSettlements)
+        {
+            // Если поселений нет — ставим на счетчик (если еще не стоит)
+            if (!factionWipeTicks.ContainsKey(fId))
+            {
+                factionWipeTicks[fId] = currentTick;
+                if (FPMod.Settings.enableDebugLogs)
+                    Log.Message($"<color=yellow>[FP-Wipe]</color> Фракция ID:{fId} потеряла все поселения. Запущен таймер удаления.");
+            }
+            else
+            {
+                // Если таймер истек — УДАЛЯЕМ
+                if (currentTick >= factionWipeTicks[fId] + cleanupTicks)
+                {
+                    PurgeFactionVeterans(fId);
+                    factionWipeTicks.Remove(fId);
+                }
+            }
+        }
+        else
+        {
+            // Если поселения появились — снимаем со счетчика
+            if (factionWipeTicks.ContainsKey(fId))
+            {
+                factionWipeTicks.Remove(fId);
+                if (FPMod.Settings.enableDebugLogs)
+                    Log.Message($"<color=green>[FP-Wipe]</color> Фракция ID:{fId} восстановила поселения. Таймер сброшен.");
+            }
+        }
+    }
+
+    // Чистим саму таблицу счетчиков от мусора (если фракции уже нет в пуле)
+    var wipeKeys = factionWipeTicks.Keys.ToList();
+    foreach (var wk in wipeKeys)
+    {
+        if (!veteranPool.ContainsKey(wk)) factionWipeTicks.Remove(wk);
+    }
+}
+
+private void PurgeFactionVeterans(int fId)
+{
+    if (veteranPool.TryGetValue(fId, out VeteranGroup group))
+    {
+        if (FPMod.Settings.enableDebugLogs)
+            Log.Message($"<color=red>[FP-Purge]</color> Фракция ID:{fId} окончательно уничтожена. Удаляем {group.pawns.Count} ветеранов.");
+
+        foreach (Pawn p in group.pawns)
+        {
+            if (p != null)
+            {
+                allVeteranIdsCache.Remove(p.thingIDNumber);
+                veteranAddTicks.Remove(p.thingIDNumber);
+                veteransOnMission.Remove(p.thingIDNumber);
+                savedBioAges.Remove(p.thingIDNumber);
+                pawnNotes.Remove(p.thingIDNumber);
+                originalHairColors.Remove(p.thingIDNumber);
+                // Мы не убиваем пешку, чтобы не спамить в историю смертей, 
+                // просто позволяем игре ее стереть (GC), так как мы ее больше не защищаем.
+            }
+        }
+        veteranPool.Remove(fId);
+    }
 }
 
         public void RegisterDeathMetadata(Pawn p, DamageInfo? dinfo = null, string flavorKey = null)

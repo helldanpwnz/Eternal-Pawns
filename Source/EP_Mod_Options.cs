@@ -37,6 +37,8 @@ namespace FinitePopulationVeterans
 		public bool enableEventLogging = false;
 		public int eventHistoryLimitYears = -1; // -1 = Безлимит
 		public float randomDeathChance = 0f;
+		public bool enableFactionWipeCleanup = false;
+		public int factionWipeCleanupDays = 30;
 
 		public void Reset()
 		{
@@ -63,6 +65,8 @@ namespace FinitePopulationVeterans
 			enableEventLogging = false;
 			eventHistoryLimitYears = -1;
 			randomDeathChance = 0f;
+			enableFactionWipeCleanup = false;
+			factionWipeCleanupDays = 30;
 		}
 
 
@@ -92,6 +96,8 @@ namespace FinitePopulationVeterans
 			Scribe_Values.Look(ref enableEventLogging, "enableEventLogging", false);
 			Scribe_Values.Look(ref eventHistoryLimitYears, "eventHistoryLimitYears", -1);
 			Scribe_Values.Look(ref randomDeathChance, "randomDeathChance", 0f);
+			Scribe_Values.Look(ref enableFactionWipeCleanup, "enableFactionWipeCleanup", false);
+			Scribe_Values.Look(ref factionWipeCleanupDays, "factionWipeCleanupDays", 30);
         }
     }
 
@@ -166,6 +172,13 @@ listing.CheckboxLabeled("FP_ShowGizmoButton".Translate(), ref settings.showGizmo
 
 listing.CheckboxLabeled("FP_ShowMainTab".Translate(), ref settings.showMainTab, 
     "FP_ShowMainTabTooltip".Translate());
+
+listing.CheckboxLabeled("FP_EnableFactionWipeCleanup".Translate(), ref settings.enableFactionWipeCleanup, "FP_EnableFactionWipeCleanupTooltip".Translate());
+if (settings.enableFactionWipeCleanup)
+{
+    listing.Label("FP_FactionWipeCleanupDays".Translate(settings.factionWipeCleanupDays), -1, "FP_FactionWipeCleanupDaysTooltip".Translate());
+    settings.factionWipeCleanupDays = (int)listing.Slider(settings.factionWipeCleanupDays, 1f, 100f);
+}
 
     listing.CheckboxLabeled("FP_EnableEventLogging".Translate(), ref settings.enableEventLogging, "FP_EnableEventLoggingTooltip".Translate());
     

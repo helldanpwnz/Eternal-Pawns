@@ -86,6 +86,11 @@
 
   <FP_ShowMainTab>Mostrar pestaña de veteranos en la barra inferior</FP_ShowMainTab>
   <FP_ShowMainTabTooltip>Añade un botón de 'Veteranos' a la barra inferior para ver a todos los personajes guardados.</FP_ShowMainTabTooltip>
+
+  <FP_EnableFactionWipeCleanup>Limpieza al destruir la facción</FP_EnableFactionWipeCleanup>
+  <FP_EnableFactionWipeCleanupTooltip>Si está habilitado, los veteranos de una facción se eliminarán si la facción no tiene asentamientos en el mapa del mundo durante un determinado periodo de tiempo.</FP_EnableFactionWipeCleanupTooltip>
+  <FP_FactionWipeCleanupDays>Días hasta la eliminación: {0}</FP_FactionWipeCleanupDays>
+  <FP_FactionWipeCleanupDaysTooltip>Número de días después de perder el último asentamiento antes de que los veteranos de esta facción sean eliminados permanentemente de la memoria.</FP_FactionWipeCleanupDaysTooltip>
   <FP_VeteransTabHeader>Lista de Veteranos del Mundo</FP_VeteransTabHeader>
   <FP_UnknownFaction>Facción desconocida</FP_UnknownFaction>
   <FP_Details>Detalles</FP_Details>

@@ -86,6 +86,11 @@
 
   <FP_ShowMainTab>在底部栏显示老兵选项卡</FP_ShowMainTab>
   <FP_ShowMainTabTooltip>在底部管理栏增加“老兵”按钮，以便按派系查看所有已保存的角色。</FP_ShowMainTabTooltip>
+
+  <FP_EnableFactionWipeCleanup>派系覆灭清理</FP_EnableFactionWipeCleanup>
+  <FP_EnableFactionWipeCleanupTooltip>如果开启，当派系在世界地图上没有任何定居点且达到设定时间后，该派系的退伍军人将被删除。</FP_EnableFactionWipeCleanupTooltip>
+  <FP_FactionWipeCleanupDays>删除前等待天数: {0}</FP_FactionWipeCleanupDays>
+  <FP_FactionWipeCleanupDaysTooltip>失去最后一个定居点后，该派系的退伍军人从记忆中永久移除前的等待天数。</FP_FactionWipeCleanupDaysTooltip>
   <FP_VeteransTabHeader>世界老兵名单</FP_VeteransTabHeader>
   <FP_UnknownFaction>未知派系</FP_UnknownFaction>
   <FP_Details>详情</FP_Details>

@@ -86,6 +86,11 @@
 
   <FP_ShowMainTab>Show Veterans Tab in Bottom Bar</FP_ShowMainTab>
   <FP_ShowMainTabTooltip>Adds a 'Veterans' button to the bottom bar, allowing you to view all saved characters by faction.</FP_ShowMainTabTooltip>
+
+  <FP_EnableFactionWipeCleanup>Cleanup on Faction Destruction</FP_EnableFactionWipeCleanup>
+  <FP_EnableFactionWipeCleanupTooltip>If enabled, veterans of a faction will be deleted if the faction has no settlements on the world map for a certain period of time.</FP_EnableFactionWipeCleanupTooltip>
+  <FP_FactionWipeCleanupDays>Days Until Deletion: {0}</FP_FactionWipeCleanupDays>
+  <FP_FactionWipeCleanupDaysTooltip>Number of days after losing the last settlement before the veterans of this faction are permanently removed from memory.</FP_FactionWipeCleanupDaysTooltip>
   <FP_VeteransTabHeader>World Veteran List</FP_VeteransTabHeader>
   <FP_UnknownFaction>Unknown Faction</FP_UnknownFaction>
   <FP_Details>Details</FP_Details>

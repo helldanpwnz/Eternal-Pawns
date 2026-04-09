@@ -93,6 +93,11 @@
 
   <FP_ShowMainTab>Показывать вкладку ветеранов в нижней панели</FP_ShowMainTab>
   <FP_ShowMainTabTooltip>Добавляет кнопку 'Ветераны' в нижнюю панель управления, позволяя просматривать всех сохраненных персонажей по фракциям.</FP_ShowMainTabTooltip>
+
+  <FP_EnableFactionWipeCleanup>Очистка при уничтожении фракции</FP_EnableFactionWipeCleanup>
+  <FP_EnableFactionWipeCleanupTooltip>Если включено, ветераны фракции будут удалены, если у фракции не осталось поселений на карте мира в течение определенного времени.</FP_EnableFactionWipeCleanupTooltip>
+  <FP_FactionWipeCleanupDays>Дней до удаления: {0}</FP_FactionWipeCleanupDays>
+  <FP_FactionWipeCleanupDaysTooltip>Через сколько дней после потери последнего поселения ветераны этой фракции будут окончательно удалены из памяти.</FP_FactionWipeCleanupDaysTooltip>
   <FP_VeteransTabHeader>Список ветеранов мира</FP_VeteransTabHeader>
   <FP_UnknownFaction>Неизвестная фракция</FP_UnknownFaction>
   <FP_Details>Детали</FP_Details>
