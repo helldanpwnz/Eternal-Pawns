@@ -12,7 +12,7 @@ namespace FinitePopulationVeterans
     public class MainTabWindow_Veterans : MainTabWindow
     {
         private Vector2 scrollPosition = Vector2.zero;
-        private static HashSet<int> collapsedFactions = new HashSet<int>();
+        private static HashSet<int> expandedFactions = new HashSet<int>();
 
         public override Vector2 InitialSize => new Vector2(450f, 600f);
 
@@ -41,7 +41,7 @@ namespace FinitePopulationVeterans
             {
                 if (kvp.Value == null || kvp.Value.pawns.Count == 0) continue;
                 viewHeight += 40f; // Высота кнопки фракции
-                if (!collapsedFactions.Contains(kvp.Key))
+                if (expandedFactions.Contains(kvp.Key))
                 {
                     viewHeight += kvp.Value.pawns.Count * 28f; // Высота строк пешек
                     // Добавляем высоту для мертвых записей
@@ -67,12 +67,12 @@ namespace FinitePopulationVeterans
                 Rect factionRect = new Rect(0, curY, viewRect.width, 40f);
                 
                 string factionName = faction?.Name ?? "FP_UnknownFaction".Translate();
-                string arrow = collapsedFactions.Contains(factionId) ? "► " : "▼ ";
+                string arrow = expandedFactions.Contains(factionId) ? "▼ " : "► ";
                 
                 if (Widgets.ButtonText(factionRect, "", true, true, true))
                 {
-                    if (collapsedFactions.Contains(factionId)) collapsedFactions.Remove(factionId);
-                    else collapsedFactions.Add(factionId);
+                    if (expandedFactions.Contains(factionId)) expandedFactions.Remove(factionId);
+                    else expandedFactions.Add(factionId);
                     SoundDefOf.Tick_High.PlayOneShotOnCamera();
                 }
 
@@ -112,7 +112,7 @@ namespace FinitePopulationVeterans
                 curY += 40f;
 
                 // Список пешек внутри фракции
-                if (!collapsedFactions.Contains(factionId))
+                if (expandedFactions.Contains(factionId))
                 {
                     foreach (var p in group.pawns)
                     {

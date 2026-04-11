@@ -143,7 +143,7 @@ namespace FinitePopulationVeterans
 public override void DoSettingsWindowContents(Rect inRect)
 {
     // 1. Область прокрутки
-    Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, 1000f);
+    Rect viewRect = new Rect(0f, 0f, inRect.width - 16f, 1600f);
     Widgets.BeginScrollView(inRect, ref scrollPosition, viewRect);
 
     Listing_Standard listing = new Listing_Standard();
